@@ -1,9 +1,9 @@
-#include "Player.h"
+#include "Jogador.h"
 
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(1000, 800), "teste");
-    Player jogador;
+    sf::RenderWindow window(sf::VideoMode(1000, 600), "teste");
+    Jogador jogador(50);
 
     while (window.isOpen()) {
         sf::Event evento;
@@ -13,9 +13,10 @@ int main()
             }
         }
         window.clear();
-        jogador.Execute();
+        jogador.Executar();
         window.draw(jogador.print());
         window.display();
+        window.setFramerateLimit(60);
     }
 
     return 0;

@@ -4,13 +4,13 @@
 class Ente
 {
 protected:
-	int id; //n sei pra q serve
+	int id;                        //n sei pra q serve
 	sf::RectangleShape box;
 public:
 	Ente(float tam);
 	~Ente();
 
-	sf::RectangleShape print();
+	sf::RectangleShape print();  //vai mudar depois que tiver o derenciador grafico
 
-	virtual void Execute() = 0;
+	virtual void Executar() = 0;
 };
