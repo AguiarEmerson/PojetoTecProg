@@ -3,5 +3,5 @@
 
 #include <SFML/Graphics.hpp>
 
-#define GRAVIDADE 0.3
+#define GRAVIDADE 0.29
 #define XRL8 1.0
