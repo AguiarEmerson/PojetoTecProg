@@ -11,4 +11,5 @@ void ListaEntidades::incluir(Entidade* pE)
 }
 void ListaEntidades::percorrer()
 {
+	int p;
 }
