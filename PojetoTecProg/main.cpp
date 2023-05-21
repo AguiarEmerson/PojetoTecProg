@@ -1,5 +1,5 @@
 #include "Jogador.h"
-
+using namespace Entidades;
 int main()
 {
     sf::RenderWindow window(sf::VideoMode(1000, 600), "teste");
