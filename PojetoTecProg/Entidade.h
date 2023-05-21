@@ -8,7 +8,8 @@ protected:
 	sf::Vector2f vel;
 	bool ta_no_chao;
 public:
-	Entidade(float tam=10.0, sf::Vector2f p= sf::Vector2f(0.0,0.0), sf::Vector2f v = sf::Vector2f(8.0, 0.0));
+	Entidade(sf::Vector2f tam, sf::Vector2f p= sf::Vector2f(0.0,0.0), sf::Vector2f v = sf::Vector2f(8.0, 0.0));
+	Entidade();
 	~Entidade();
 	
 	void setpos(sf::Vector2f p);

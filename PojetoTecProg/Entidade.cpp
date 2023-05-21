@@ -1,11 +1,19 @@
 #include "Entidade.h"
 
-Entidade::Entidade(float tam, sf::Vector2f p, sf::Vector2f v):
+Entidade::Entidade(sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v):
 	Ente(tam),
 	ta_no_chao(false)
 {
 	setpos(p);
 	setvel(v);
+}
+
+Entidade::Entidade() :
+	Ente(),
+	ta_no_chao(false)
+{
+	setpos(sf::Vector2f(0.0, 0.0));
+	setvel(sf::Vector2f(8.0, 0.0));
 }
 
 Entidade::~Entidade()

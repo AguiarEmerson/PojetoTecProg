@@ -3,7 +3,7 @@
 int main()
 {
     sf::RenderWindow window(sf::VideoMode(1000, 600), "teste");
-    Jogador jogador(50);
+    Jogador jogador;
 
     while (window.isOpen()) {
         sf::Event evento;

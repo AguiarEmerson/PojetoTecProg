@@ -1,11 +1,18 @@
 #include "Jogador.h"
 
-Jogador::Jogador(float tam, sf::Vector2f p, sf::Vector2f v, int h,int xp):
+Jogador::Jogador(sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v, int h,int xp):
 	Personagem(tam,p,v,h),
 	pontos(xp)
 {
 	box.setFillColor(sf::Color::Green);
 }
+
+Jogador::Jogador() :
+	Personagem(),
+	pontos(0)
+{
+}
+
 Jogador::~Jogador()
 {
 
