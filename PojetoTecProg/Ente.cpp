@@ -1,10 +1,10 @@
 #include "Ente.h"
 
-Ente::Ente(float tam):
-	box(sf::Vector2f(tam,tam))
+Ente::Ente(sf::Vector2f tam):
+	box(tam)
 {
-	id = 0;
 }
+
 Ente::~Ente()
 {
 }
