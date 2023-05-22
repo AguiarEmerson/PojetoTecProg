@@ -4,4 +4,4 @@
 #include <SFML/Graphics.hpp>
 
 #define GRAVIDADE 0.3
-#define XRL8 1.0
+#define RAIO_VISAO 100.0

@@ -1,9 +1,14 @@
-#include "Jogador.h"
+#include "Inimigo.h"
+
 using namespace Entidades;
 int main()
 {
+
     sf::RenderWindow window(sf::VideoMode(1000, 600), "teste");
     Jogador jogador;
+    Inimigo inimigo(sf::Vector2f(10.0, 10.0), sf::Vector2f(500.0, 0.0), sf::Vector2f(1.0, 0.0));
+    inimigo.setjogador(&jogador);
+    
 
     while (window.isOpen()) {
         sf::Event evento;
@@ -14,7 +19,9 @@ int main()
         }
         window.clear();
         jogador.Executar();
+        inimigo.Executar();
         window.draw(jogador.print());
+        window.draw(inimigo.print());
         window.display();
         window.setFramerateLimit(60);
     }

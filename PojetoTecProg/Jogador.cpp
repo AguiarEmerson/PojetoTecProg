@@ -13,6 +13,7 @@ namespace Entidades
 		Personagem(),
 		pontos(0)
 	{
+		box.setFillColor(sf::Color::Green);
 	}
 
 	Jogador::~Jogador()
@@ -45,11 +46,11 @@ namespace Entidades
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
 			pula();
 		}
-		chaotemp();
-		gravidade();
 	}
 	void Jogador::Executar()
 	{
 		move();
+		chaotemp();
+		gravidade();
 	}
 }

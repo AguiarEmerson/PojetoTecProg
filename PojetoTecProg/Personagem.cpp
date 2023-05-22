@@ -17,13 +17,4 @@ namespace Entidades
 	Personagem::~Personagem()
 	{
 	}
-
-	void Personagem::operator++()
-	{
-		hp++;
-	}
-	void Personagem::operator--()
-	{
-		hp--;
-	}
 }
