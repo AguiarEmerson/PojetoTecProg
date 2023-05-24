@@ -5,7 +5,7 @@ using namespace Listas;
 using namespace Entidades;
 int main()
 {
-
+    //oi
     sf::RenderWindow window(sf::VideoMode(1000, 600), "teste");
     Jogador jogador;
     ListaEntidades list;
