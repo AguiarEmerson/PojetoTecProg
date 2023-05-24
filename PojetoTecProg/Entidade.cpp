@@ -14,8 +14,8 @@ namespace Entidades
 		Ente(),
 		ta_no_chao(false)
 	{
-		setpos(sf::Vector2f(0.0, 0.0));
-		setvel(sf::Vector2f(8.0, 0.0));
+		setpos(sf::Vector2f(500.0, 0.0));
+		setvel(sf::Vector2f(3.0, 0.0));
 	}
 
 	Entidade::~Entidade()
