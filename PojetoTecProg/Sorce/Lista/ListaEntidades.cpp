@@ -1,4 +1,4 @@
-#include "ListaEntidades.h"
+#include "..\Lista\ListaEntidades.h"
 
 namespace Listas {
 	ListaEntidades::ListaEntidades() {
@@ -18,6 +18,10 @@ namespace Listas {
 	}
 	void ListaEntidades::retirar(Entidade* pE) {
 		LEs.pop(pE);
+	}
+	int ListaEntidades::getTam()
+	{
+		return LEs.getTam();
 	}
 }
 

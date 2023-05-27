@@ -1,4 +1,4 @@
-#include "Inimigo.h"
+#include "..\Entidades\Personagens\Inimigo.h"
 
 namespace Entidades
 {
@@ -7,6 +7,7 @@ namespace Entidades
 			Personagem(tam, p, v, h),
 			jogador(NULL)
 		{
+			id = "inimigo";
 			direcao = rand() % 2;
 			box.setFillColor(sf::Color::Red);
 		}

@@ -1,5 +1,5 @@
-#include "Inimigo.h"
-#include "ListaEntidades.h"
+#include "..\Entidades\Personagens\Inimigo.h"
+#include "..\Lista\ListaEntidades.h"
 
 using namespace Listas;
 using namespace Entidades;

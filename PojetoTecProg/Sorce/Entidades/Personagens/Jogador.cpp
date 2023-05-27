@@ -1,4 +1,4 @@
-#include "Jogador.h"
+#include "..\Entidades\Personagens\Jogador.h"
 
 namespace Entidades
 {
@@ -8,6 +8,7 @@ namespace Entidades
 			Personagem(tam, p, v, h),
 			pontos(xp)
 		{
+			id = "jogador";
 			box.setFillColor(sf::Color::Green);
 		}
 
