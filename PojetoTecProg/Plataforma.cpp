@@ -2,5 +2,8 @@
 
 namespace Entidade
 {
+	namespace Obstaculos
+	{
 
+	}
 }

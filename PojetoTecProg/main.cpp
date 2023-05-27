@@ -3,6 +3,7 @@
 
 using namespace Listas;
 using namespace Entidades;
+using namespace Personagens;
 int main()
 {
     //oi

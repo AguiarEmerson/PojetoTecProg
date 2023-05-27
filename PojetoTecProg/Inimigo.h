@@ -3,23 +3,24 @@
 
 namespace Entidades
 {
-	class Inimigo :public Personagem
-	{
-	protected:
-		Jogador* jogador;
-		int direcao;
-	public:
-		Inimigo(sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v = sf::Vector2f(3.0, 0.0), int h = 3);
-		Inimigo();
+	namespace Personagens {
+		class Inimigo :public Personagem
+		{
+		protected:
+			Jogador* jogador;
+			int direcao;
+		public:
+			Inimigo(sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v = sf::Vector2f(3.0, 0.0), int h = 3);
+			Inimigo();
 
-		~Inimigo();
+			~Inimigo();
 
-		void setjogador(Jogador* j);
-		void moveraleatorio();
-		void move();
-		void Perseguir();
+			void setjogador(Jogador* j);
+			void moveraleatorio();
+			void move();
+			void Perseguir();
 
-		void Executar();
-	};
-
+			void Executar();
+		};
+	}
 }
