@@ -1,4 +1,4 @@
-#include "ListaEntidades.h"
+#include "..\Lista\ListaEntidades.h"
 
 namespace Listas {
 	ListaEntidades::ListaEntidades() {

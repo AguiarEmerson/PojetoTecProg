@@ -1,4 +1,4 @@
-#include "Ente.h"
+#include "..\Ente.h"
 
 Ente::Ente( sf::Vector2f tam) :
 	box(tam)

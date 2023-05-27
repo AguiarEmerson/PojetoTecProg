@@ -1,4 +1,4 @@
-#include "Obstaculo.h"
+#include "..\Entidades\Obstaculos\Obstaculo.h"
 
 namespace Entidades
 {

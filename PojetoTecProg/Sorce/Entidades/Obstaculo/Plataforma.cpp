@@ -1,4 +1,4 @@
-#include "Plataforma.h"
+#include "..\Entidades\Obstaculos\Plataforma.h"
 
 namespace Entidade
 {
