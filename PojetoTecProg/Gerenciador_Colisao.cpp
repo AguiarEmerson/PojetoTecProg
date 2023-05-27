@@ -42,7 +42,7 @@ namespace Gerenciadores
 						if (ds.x < 0.0f && ds.y < 0.0f)
 						{
 						}
-							//auxprincipal->colide(auxsecundaria);
+							//auxprincipal->colide(auxsecundaria,sf::Vector2f ds);
 						//agora fazer as conclusões da colisao
 					}
 					if (lista->getEnt(i)->getId() == "inimigo")
@@ -51,7 +51,7 @@ namespace Gerenciadores
 						sf::Vector2f ds = calculaColisao(auxprincipal, auxsecundaria);
 						if (ds.x < 0.0f && ds.y < 0.0f)
 						{
-							auxprincipal->colide(auxsecundaria);
+							auxprincipal->colide(auxsecundaria,ds);
 						}
 							
 						//agora fazer as conclusões da colisao
@@ -78,6 +78,7 @@ namespace Gerenciadores
 			}
 		}
 	}
+	//pegamos o código do monitor giovanni pois 
 	sf::Vector2f Gerenciador_Colisao::calculaColisao(Entidade* entidade1, Entidade* entidade2)
 	{
 		sf::Vector2f pos1 = entidade1->getpos();

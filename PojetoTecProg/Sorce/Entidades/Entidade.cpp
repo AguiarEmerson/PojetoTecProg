@@ -68,7 +68,7 @@ namespace Entidades
 	{
 		return box.getSize();
 	}
-	void Entidade::colide(Entidade* secundaria)
+	void Entidade::colide(Entidade* secundaria,sf::Vector2f ds)
 	{
 		int tipocolis;
 		//o tipo de colisão é 0 para pra baixo, 1 para o lado direito, 2 para cima e 3 para o lado esquerdo
@@ -81,23 +81,30 @@ namespace Entidades
 		sf::Vector2f tam1 = this->getTam();
 		sf::Vector2f tam2 = secundaria->getTam();
 
-		if (pos2.y <= pos1.y + tam1.y)
+		if (ds.y <= 0.0f && ds.x <= 0.0f)
 		{
-			
-			this->setpos(sf::Vector2f(pos1.x,pos1.y+tam1.y+vel1.y));
-		}
-		 if ((pos2.y - tam2.y) >= pos1.y)
-		{
-			this->setpos(sf::Vector2f(pos1.x, pos1.y + vel1.y));
-
-		}
-		 if ((pos2.x + tam2.x >= pos1.x))
-		{
-			this->setpos(sf::Vector2f(pos1.x + vel1.x, pos1.y));
-		}
-		 if ((pos2.x <= pos1.x + tam1.x))
-		{
-			this->setpos(sf::Vector2f(pos1.x + tam1.x - vel1.x, pos1.y));
+			if (ds.y <= ds.x)
+			{
+				printf("oi");
+				//bloco 1 acima do 2
+				if (pos.y < pos2.y)
+				{
+					pos.y += ds.y;
+				}
+				else
+				{
+					pos.y -= ds.y;
+				}
+			}
+			else
+				if (pos.x < pos2.x)
+				{
+					pos.x -= ds.x;
+				}
+				else
+				{
+					pos.x += ds.x;
+				}
 		}
 	}
 }

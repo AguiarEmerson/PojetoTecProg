@@ -17,7 +17,7 @@ int main()
     sf::RenderWindow window(sf::VideoMode(1000, 600), "teste");
     Jogador jogador;
     ListaEntidades list;
-    Inimigo inimigo(sf::Vector2f(10.0, 10.0), sf::Vector2f(500.0, 0.0), sf::Vector2f(1.0, 0.0));
+    Inimigo inimigo(sf::Vector2f(10.0, 10.0), sf::Vector2f(500.0, -23.0), sf::Vector2f(1.0, 0.0));
     inimigo.setjogador(&jogador);
     list.incluir(static_cast<Entidade*>(&jogador));
     list.incluir(static_cast<Entidade*>(&inimigo));
