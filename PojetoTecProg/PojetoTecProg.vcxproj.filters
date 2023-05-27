@@ -15,60 +15,69 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="Sorce\Gerenciadores\Grafico.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Ente.cpp">
+    <ClCompile Include="Sorce\Jogo.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Entidade.cpp">
+    <ClCompile Include="Sorce\Entidades\Obstaculo\Obstaculo.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Jogador.cpp">
+    <ClCompile Include="Sorce\Entidades\Obstaculo\Plataforma.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Personagem.cpp">
+    <ClCompile Include="Sorce\Entidades\Personagens\Inimigo.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Inimigo.cpp">
+    <ClCompile Include="Sorce\Entidades\Personagens\Jogador.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Plataforma.cpp">
+    <ClCompile Include="Sorce\Entidades\Personagens\Personagem.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="ListaEntidades.cpp">
+    <ClCompile Include="Sorce\Entidades\Entidade.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Obstaculo.cpp">
+    <ClCompile Include="Sorce\Lista\ListaEntidades.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="Sorce\Ente.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="Sorce\main.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="stdafx.h">
+    <ClInclude Include="Include\Gerenciadores\Grafico.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Ente.h">
+    <ClInclude Include="Include\Jogo.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Entidade.h">
+    <ClInclude Include="Include\Entidades\Obstaculos\Obstaculo.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Jogador.h">
+    <ClInclude Include="Include\Entidades\Obstaculos\Plataforma.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Personagem.h">
+    <ClInclude Include="Include\Entidades\Personagens\Inimigo.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Inimigo.h">
+    <ClInclude Include="Include\Entidades\Personagens\Jogador.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Plataforma.h">
+    <ClInclude Include="Include\Entidades\Personagens\Personagem.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="ListaEntidades.h">
+    <ClInclude Include="Include\Entidades\Entidade.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Obstaculo.h">
+    <ClInclude Include="Include\Ente.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\stdafx.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
   </ItemGroup>
