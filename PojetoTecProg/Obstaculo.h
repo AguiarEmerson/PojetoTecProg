@@ -1,16 +1,14 @@
 #pragma once
-#include "Obstaculo.H"
+#include "Entidade.h"
 
 namespace Entidades
 {
 	namespace Obstaculos
 	{
-		class Plataforma :public Obstaculo
+		class Obstaculo :public Entidade
 		{
 		protected:
-
 		public:
-
 		};
 	}
 }
