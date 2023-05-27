@@ -1,4 +1,4 @@
-#include "Inimigo.h"
+#include "..\Entidades\Personagens\Inimigo.h"
 
 namespace Entidades
 {

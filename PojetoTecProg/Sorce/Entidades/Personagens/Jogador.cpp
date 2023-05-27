@@ -1,4 +1,4 @@
-#include "Jogador.h"
+#include "..\Entidades\Personagens\Jogador.h"
 
 namespace Entidades
 {
