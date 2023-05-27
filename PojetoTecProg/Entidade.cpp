@@ -2,7 +2,7 @@
 
 namespace Entidades
 {
-	Entidade::Entidade(sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v) :
+	Entidade::Entidade( sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v) :
 		Ente(tam),
 		ta_no_chao(false)
 	{

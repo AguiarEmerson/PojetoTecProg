@@ -2,7 +2,7 @@
 
 namespace Entidades
 {
-	Inimigo::Inimigo(sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v, int h):
+	Inimigo::Inimigo( sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v, int h) :
 		Personagem(tam, p, v, h),
 		jogador(NULL)
 	{

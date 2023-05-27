@@ -19,9 +19,8 @@ namespace Listas
 			Elemento() { pProx = nullptr; pInfo = nullptr; }
 			~Elemento() {}
 			TL* getData() { return pInfo; }
-			void setData(TL* pp) { pInfo = pp; }
+			void setData(TL* pp) { pInfo = pp;}
 			void setProx(Elemento<TL>* prox) { pProx = prox; }
-			Elemento<TL>* goProx(Elemento<TL>* temp) { return temp->getProx(); }
 			Elemento<TL>* getProx() { return pProx; }
 
 		};
@@ -38,13 +37,15 @@ namespace Listas
 	private:
 		Elemento<TL>* pPrimeiro;
 		Elemento<TL>* pUltimo;
-		int tam;
+		Elemento<TL>* pAtual;
+		int tam;	
 	};
 	template<class TL>
 	Lista<TL>::Lista()
 	{
 		pPrimeiro = nullptr;
-		pUltimo = 0;
+		pUltimo = nullptr;
+		pAtual = nullptr;
 		tam = 0;
 	}
 	template<class TL>
@@ -61,11 +62,11 @@ namespace Listas
 	template<class TL>
 	TL* Lista<TL>::getElem(int posicao) {
 		int i;
-		Elemento<TL>* temp = pPrimeiro;
+		pAtual = pPrimeiro;
 		for (i = 0; i < posicao; i++) {
-			temp = temp->goProx(temp);
+			pAtual=pAtual->getProx();
 		}
-		return temp->getData();
+		return pAtual->getData();
 	}
 	template<class TL>
 	void Lista<TL> ::push(TL* item)
@@ -104,28 +105,29 @@ namespace Listas
 	template<class TL>
 	void Lista<TL>::pop(TL* item)
 	{
-		Elemento<TL>* temp = pPrimeiro;
-		Elemento<TL>* antTemp = nullptr;
-		while (temp->getData() != item)
+		pAtual = pPrimeiro;
+		Elemento<TL>* antAtual = nullptr;
+		while (pAtual->getData() != item)
 		{
-			antTemp = temp;
-			temp = temp->goProx(temp);
+			antAtual = pAtual;
+			pAtual=pAtual->getProx();
 		}
-		if (temp == pPrimeiro)
+		if (pAtual == pPrimeiro)
 		{
-			pPrimeiro = temp->getProx();
+			pPrimeiro = pAtual->getProx();
 		}
-		else if (temp == pUltimo)
+		else if (pAtual == pUltimo)
 		{
-			antTemp->setProx(nullptr);
-			pUltimo = antTemp;
+			antAtual->setProx(nullptr);
+			pUltimo = antAtual;
 		}
 		else
 		{
-			antTemp->setProx(temp->getProx());
+			antAtual->setProx(pAtual->getProx());
 		}
-		delete temp;
+		delete pAtual;
 		tam--;
+		pAtual = nullptr;
 	}
 	//template<class TL>
 	//Lista<TL>::Elemento<TL>* Lista<TL>::getPrim() 
