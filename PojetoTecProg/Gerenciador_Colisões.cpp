@@ -35,13 +35,17 @@ namespace Gerenciadores
 					if (lista->getEnt(i)->getId() == "obstaculo")
 					{
 						auxsecundaria = lista->getEnt(i);
-						calculaColisao(auxprincipal, auxsecundaria);
+						sf::Vector2f ds = calculaColisao(auxprincipal, auxsecundaria);
+						if (ds.x < 0.0f && ds.y < 0.0f)
+							auxprincipal->colide(auxsecundaria);
 						//agora fazer as conclusões da colisao
 					}
 					if (lista->getEnt(i)->getId() == "inimigo")
 					{
 						auxsecundaria = lista->getEnt(i);
-						calculaColisao(auxprincipal, auxsecundaria);
+						sf::Vector2f ds = calculaColisao(auxprincipal, auxsecundaria);
+						if (ds.x < 0.0f && ds.y < 0.0f)
+							auxprincipal->colide(auxsecundaria);
 						//agora fazer as conclusões da colisao
 					}
 				}
@@ -54,7 +58,9 @@ namespace Gerenciadores
 					if (lista->getEnt(i)->getId() == "obstaculo")
 					{
 						auxsecundaria = lista->getEnt(i);
-						calculaColisao(auxprincipal, auxsecundaria);
+						sf::Vector2f ds = calculaColisao(auxprincipal, auxsecundaria);
+						if (ds.x < 0.0f && ds.y < 0.0f)
+							auxprincipal->colide(auxsecundaria);
 					}
 				}
 			}
