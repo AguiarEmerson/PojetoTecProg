@@ -1,4 +1,4 @@
-#include "Gerenciador_Colisões.h"
+#include "Gerenciador_Colisao.h"
 namespace Gerenciadores
 {
 
@@ -27,13 +27,13 @@ namespace Gerenciadores
 		for (i = 0; i < tam; i++)
 		{
 			//se for um personagem entra no loop
-			if (1/*lista->getEnt(i)->getId() == "personagem"*/)
+			if (lista->getEnt(i)->getId() == "personagem")
 			{
 				auxprincipal = lista->getEnt(i);
 				//loop para testar cada personagem com cada obstáculo
 				for (i = 0; i < tam; i++)
 				{
-					if (1/*lista->getEnt(i)->getId() == "obstaculo"*/)
+					if (lista->getEnt(i)->getId() == "obstaculo")
 					{
 						auxsecundaria = lista->getEnt(i);
 						sf::Vector2f ds = calculaColisao(auxprincipal, auxsecundaria);
@@ -43,19 +43,20 @@ namespace Gerenciadores
 							//auxprincipal->colide(auxsecundaria);
 						//agora fazer as conclusões da colisao
 					}
-					if (1/*lista->getEnt(i)->getId() == "inimigo"*/)
+					if (lista->getEnt(i)->getId() == "inimigo")
 					{
 						auxsecundaria = lista->getEnt(i);
 						sf::Vector2f ds = calculaColisao(auxprincipal, auxsecundaria);
 						if (ds.x < 0.0f && ds.y < 0.0f)
 						{
+							printf("oi");
 						}
 							//auxprincipal->colide(auxsecundaria);
 						//agora fazer as conclusões da colisao
 					}
 				}
 			}
-			if (1/*lista->getEnt(i)->getId()= "inimigo"*/)
+			if (lista->getEnt(i)->getId()== "inimigo")
 			{
 				auxprincipal = lista->getEnt(i);
 				for (i = 0; i < tam; i++)

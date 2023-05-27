@@ -1,12 +1,19 @@
 #include "..\Entidades\Personagens\Inimigo.h"
 #include "..\Lista\ListaEntidades.h"
 
+
+#include <string>
+using std::string;
+
 using namespace Listas;
 using namespace Entidades;
 using namespace Personagens;
 int main()
 {
-    //oi
+    
+    string ou("ois");
+    if (ou == "ois")
+        printf("oi");
     sf::RenderWindow window(sf::VideoMode(1000, 600), "teste");
     Jogador jogador;
     ListaEntidades list;
@@ -14,6 +21,7 @@ int main()
     inimigo.setjogador(&jogador);
     list.incluir(static_cast<Entidade*>(&jogador));
     list.incluir(static_cast<Entidade*>(&inimigo));
+
     
 
     while (window.isOpen()) {

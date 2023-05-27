@@ -18,6 +18,31 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Gerenciador_Colisao.cpp" />
+    <ClCompile Include="Sorce\Ente.cpp" />
+    <ClCompile Include="Sorce\Entidades\Entidade.cpp" />
+    <ClCompile Include="Sorce\Entidades\Obstaculo\Obstaculo.cpp" />
+    <ClCompile Include="Sorce\Entidades\Obstaculo\Plataforma.cpp" />
+    <ClCompile Include="Sorce\Entidades\Personagens\Inimigo.cpp" />
+    <ClCompile Include="Sorce\Entidades\Personagens\Jogador.cpp" />
+    <ClCompile Include="Sorce\Entidades\Personagens\Personagem.cpp" />
+    <ClCompile Include="Sorce\Lista\ListaEntidades.cpp" />
+    <ClCompile Include="Sorce\main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Gerenciador_Colisao.h" />
+    <ClInclude Include="Include\Ente.h" />
+    <ClInclude Include="Include\Entidades\Entidade.h" />
+    <ClInclude Include="Include\Entidades\Obstaculos\Obstaculo.h" />
+    <ClInclude Include="Include\Entidades\Obstaculos\Plataforma.h" />
+    <ClInclude Include="Include\Entidades\Personagens\Inimigo.h" />
+    <ClInclude Include="Include\Entidades\Personagens\Jogador.h" />
+    <ClInclude Include="Include\Entidades\Personagens\Personagem.h" />
+    <ClInclude Include="Include\Lista\Lista.h" />
+    <ClInclude Include="Include\Lista\ListaEntidades.h" />
+    <ClInclude Include="Include\stdafx.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -138,12 +163,6 @@
       <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-audio-d.lib;sfml-network-d.lib;sfml-system-d.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="Gerenciador_Colisões.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Gerenciador_Colisões.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

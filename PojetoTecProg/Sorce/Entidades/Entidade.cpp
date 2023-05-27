@@ -66,6 +66,6 @@ namespace Entidades
 	}
 	sf::Vector2f Entidade::getTam()
 	{
-		return tam;
+		return box.getSize();
 	}
 }

@@ -25,7 +25,7 @@ namespace Listas {
 	}
 	Entidade* ListaEntidades::getEnt(int pos)
 	{
-		LEs.getElem(pos);
+		return LEs.getElem(pos);
 	}
 }
 
