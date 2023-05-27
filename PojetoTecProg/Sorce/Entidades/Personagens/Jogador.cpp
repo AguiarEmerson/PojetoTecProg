@@ -17,6 +17,7 @@ namespace Entidades
 			pontos(0)
 		{
 			box.setFillColor(sf::Color::Green);
+			id = "jogador";
 		}
 
 		Jogador::~Jogador()
@@ -27,7 +28,7 @@ namespace Entidades
 		void Jogador::pula()
 		{
 			if (ta_no_chao) {
-				setvel(sf::Vector2f(vel.x, vel.y - 10));
+				setvel(sf::Vector2f(vel.x, vel.y - 5));
 			}
 			setpos(sf::Vector2f(pos.x, pos.y + vel.y));
 		}

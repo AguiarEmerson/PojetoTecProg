@@ -1,6 +1,8 @@
+#include "../Gerenciador_Colisao.h"
 #include "..\Entidades\Personagens\Inimigo.h"
 #include "..\Lista\ListaEntidades.h"
-
+#include<iostream>
+using namespace std;
 
 #include <string>
 using std::string;
@@ -8,12 +10,10 @@ using std::string;
 using namespace Listas;
 using namespace Entidades;
 using namespace Personagens;
+using namespace Gerenciadores;
 int main()
 {
-    
-    string ou("ois");
-    if (ou == "ois")
-        printf("oi");
+    Gerenciador_Colisao gerenciador;
     sf::RenderWindow window(sf::VideoMode(1000, 600), "teste");
     Jogador jogador;
     ListaEntidades list;
@@ -21,6 +21,10 @@ int main()
     inimigo.setjogador(&jogador);
     list.incluir(static_cast<Entidade*>(&jogador));
     list.incluir(static_cast<Entidade*>(&inimigo));
+
+    gerenciador.setLista(&list);
+
+
 
     
 
@@ -37,6 +41,8 @@ int main()
         window.draw(inimigo.print());
         window.display();
         window.setFramerateLimit(60);
+        gerenciador.executar();
+
     }
 
     return 0;

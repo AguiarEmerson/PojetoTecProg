@@ -26,5 +26,6 @@ namespace Entidades
 		sf::Vector2f getTam();
 
 		virtual void Executar() = 0;
+		void colide(Entidade* secundaria);
 	};
 }

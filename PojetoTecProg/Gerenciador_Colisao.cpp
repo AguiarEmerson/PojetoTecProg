@@ -1,4 +1,5 @@
 #include "Gerenciador_Colisao.h"
+
 namespace Gerenciadores
 {
 
@@ -19,6 +20,7 @@ namespace Gerenciadores
 	}
 	void Gerenciador_Colisao::executar()
 	{
+		
 		int i, tam;
 		tam = lista->getTam();
 		Entidade* auxprincipal;
@@ -27,7 +29,7 @@ namespace Gerenciadores
 		for (i = 0; i < tam; i++)
 		{
 			//se for um personagem entra no loop
-			if (lista->getEnt(i)->getId() == "personagem")
+			if (lista->getEnt(i)->getId() == "jogador")
 			{
 				auxprincipal = lista->getEnt(i);
 				//loop para testar cada personagem com cada obstáculo
@@ -49,20 +51,22 @@ namespace Gerenciadores
 						sf::Vector2f ds = calculaColisao(auxprincipal, auxsecundaria);
 						if (ds.x < 0.0f && ds.y < 0.0f)
 						{
-							printf("oi");
+							auxprincipal->colide(auxsecundaria);
 						}
-							//auxprincipal->colide(auxsecundaria);
+							
 						//agora fazer as conclusões da colisao
 					}
 				}
 			}
-			if (lista->getEnt(i)->getId()== "inimigo")
+			else if (lista->getEnt(i)->getId() == "inimigo")
 			{
+				
 				auxprincipal = lista->getEnt(i);
 				for (i = 0; i < tam; i++)
 				{
-					if (1/*lista->getEnt(i)->getId() == "obstaculo"*/)
+					if (lista->getEnt(i)->getId() == "obstaculo")
 					{
+						
 						auxsecundaria = lista->getEnt(i);
 						sf::Vector2f ds = calculaColisao(auxprincipal, auxsecundaria);
 						if (ds.x < 0.0f && ds.y < 0.0f)
