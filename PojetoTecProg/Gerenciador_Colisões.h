@@ -1,5 +1,5 @@
 #pragma once
-#include "ListaEntidades.h"
+#include "..\Lista\ListaEntidades.h"
 using namespace Listas;
 namespace Gerenciadores
 {
@@ -13,7 +13,7 @@ namespace Gerenciadores
 		~Gerenciador_Colisao();
 		void setLista(ListaEntidades* listaEnt);
 		void executar();
-		const int calculaColisao(Entidade* entidade1, Entidade* entidade2);
+		sf::Vector2f calculaColisao(Entidade* entidade1, Entidade* entidade2);
 
 
 	};

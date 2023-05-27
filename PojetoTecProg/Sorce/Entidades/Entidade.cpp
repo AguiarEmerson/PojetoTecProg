@@ -64,4 +64,8 @@ namespace Entidades
 			ta_no_chao = false;
 		}
 	}
+	sf::Vector2f Entidade::getTam()
+	{
+		return tam;
+	}
 }

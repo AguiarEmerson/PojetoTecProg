@@ -8,6 +8,7 @@ namespace Gerenciadores
 	}
 	Gerenciador_Colisao::Gerenciador_Colisao()
 	{
+		lista = nullptr;
 	}
 	Gerenciador_Colisao::~Gerenciador_Colisao()
 	{
@@ -26,47 +27,67 @@ namespace Gerenciadores
 		for (i = 0; i < tam; i++)
 		{
 			//se for um personagem entra no loop
-			if (lista->getEnt(i)->getId() == "personagem")
+			if (1/*lista->getEnt(i)->getId() == "personagem"*/)
 			{
 				auxprincipal = lista->getEnt(i);
 				//loop para testar cada personagem com cada obstáculo
 				for (i = 0; i < tam; i++)
 				{
-					if (lista->getEnt(i)->getId() == "obstaculo")
+					if (1/*lista->getEnt(i)->getId() == "obstaculo"*/)
 					{
 						auxsecundaria = lista->getEnt(i);
 						sf::Vector2f ds = calculaColisao(auxprincipal, auxsecundaria);
 						if (ds.x < 0.0f && ds.y < 0.0f)
-							auxprincipal->colide(auxsecundaria);
+						{
+						}
+							//auxprincipal->colide(auxsecundaria);
 						//agora fazer as conclusões da colisao
 					}
-					if (lista->getEnt(i)->getId() == "inimigo")
+					if (1/*lista->getEnt(i)->getId() == "inimigo"*/)
 					{
 						auxsecundaria = lista->getEnt(i);
 						sf::Vector2f ds = calculaColisao(auxprincipal, auxsecundaria);
 						if (ds.x < 0.0f && ds.y < 0.0f)
-							auxprincipal->colide(auxsecundaria);
+						{
+						}
+							//auxprincipal->colide(auxsecundaria);
 						//agora fazer as conclusões da colisao
 					}
 				}
 			}
-			if (lista->getEnt(i)->getId() == "inimigo")
+			if (1/*lista->getEnt(i)->getId()= "inimigo"*/)
 			{
 				auxprincipal = lista->getEnt(i);
 				for (i = 0; i < tam; i++)
 				{
-					if (lista->getEnt(i)->getId() == "obstaculo")
+					if (1/*lista->getEnt(i)->getId() == "obstaculo"*/)
 					{
 						auxsecundaria = lista->getEnt(i);
 						sf::Vector2f ds = calculaColisao(auxprincipal, auxsecundaria);
 						if (ds.x < 0.0f && ds.y < 0.0f)
-							auxprincipal->colide(auxsecundaria);
+						{
+						}
+							//auxprincipal->colide(auxsecundaria);
 					}
 				}
 			}
 		}
 	}
+	sf::Vector2f Gerenciador_Colisao::calculaColisao(Entidade* entidade1, Entidade* entidade2)
+	{
+		sf::Vector2f pos1 = entidade1->getpos();
+		sf::Vector2f pos2 = entidade2->getpos();
 
+		sf::Vector2f tam1 = entidade1->getTam();
+		sf::Vector2f tam2 = entidade2->getTam();
+
+		sf::Vector2f distanciaEntreCentros(
+			fabs((pos1.x + tam1.x / 2.0f) - (pos2.x + tam2.x / 2.0f)),
+			fabs((pos1.y + tam1.y / 2.0f) - (pos2.y + tam2.y / 2.0f))
+		);
+		sf::Vector2f somaMetadeRectangulo(tam1.x / 2.0f + tam2.x / 2.0f, tam1.y / 2.0f + tam2.y / 2.0f);
+		return sf::Vector2f(distanciaEntreCentros.x - somaMetadeRectangulo.x, distanciaEntreCentros.y - somaMetadeRectangulo.y);
+	}
 
 
 }

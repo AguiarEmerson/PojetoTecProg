@@ -23,6 +23,7 @@ namespace Entidades
 
 		void gravidade();
 		void chaotemp();   // chaozinho temporario pra testar enquanto ainda n tem plataforma
+		sf::Vector2f getTam();
 
 		virtual void Executar() = 0;
 	};
