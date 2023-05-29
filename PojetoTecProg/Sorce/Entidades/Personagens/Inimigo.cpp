@@ -109,11 +109,7 @@ namespace Entidades
 					{
 						pos.y -= ds.y;
 						vel.y = 0;
-						if (ta_no_chao)
-						{
-							secundaria->setTa_No_Chao(true);
-							secundaria->setpos(sf::Vector2f(secundaria->getpos().x, secundaria->getpos().y - ds.y));
-						}
+						
 					}
 				}
 

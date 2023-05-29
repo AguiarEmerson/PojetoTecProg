@@ -65,6 +65,35 @@ namespace Gerenciadores
 		for (i = 0; i < tam; i++)
 		{
 			//se for um personagem entra no loop
+			if (lista->getEnt(i)->getId() == "inimigo")
+			{
+
+				auxprincipal = lista->getEnt(i);
+				for (i = 0; i < tam; i++)
+				{
+					if (lista->getEnt(i)->getId() == "jogador")
+					{
+
+						auxsecundaria = lista->getEnt(i);
+						sf::Vector2f ds = calculaColisao(auxprincipal, auxsecundaria);
+						sf::Vector2f ds2 = calculaColisao(auxsecundaria, auxprincipal);
+						if (ds.x < 0.0f && ds.y < 0.0f)
+						{
+							auxprincipal->colide(auxsecundaria, ds);
+							auxsecundaria->colide(auxprincipal, ds);
+						}
+						else {
+							auxprincipal->setTa_No_Chao(false);
+							auxsecundaria->setTa_No_Chao(false);
+						}
+
+					}
+				}
+			}
+		}
+		/*for (i = 0; i < tam; i++)
+		{
+			//se for um personagem entra no loop
 			if (lista->getEnt(i)->getId() == "jogador")
 			{
 
@@ -86,32 +115,8 @@ namespace Gerenciadores
 					}
 				}
 			}
-		}
-		for (i = 0; i < tam; i++)
-		{
-			//se for um personagem entra no loop
-			if (lista->getEnt(i)->getId() == "inimigo")
-			{
-
-				auxprincipal = lista->getEnt(i);
-				for (i = 0; i < tam; i++)
-				{
-					if (lista->getEnt(i)->getId() == "jogador")
-					{
-
-						auxsecundaria = lista->getEnt(i);
-						sf::Vector2f ds = calculaColisao(auxprincipal, auxsecundaria);
-						if (ds.x < 0.0f && ds.y < 0.0f)
-						{
-							auxprincipal->colide(auxsecundaria, ds);
-						}
-						else
-							auxprincipal->setTa_No_Chao(false);
-
-					}
-				}
-			}
-		}
+		}*/
+		
 		
 		
 		
