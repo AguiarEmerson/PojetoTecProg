@@ -26,57 +26,145 @@ namespace Gerenciadores
 		Entidade* auxprincipal;
 		Entidade* auxsecundaria;
 		//for para identificar os jogadores
-		for (i = 0; i < tam; i++)
+		/*for (i = 0; i < tam; i++)
 		{
+			
+			
 			//se for um personagem entra no loop
 			if (lista->getEnt(i)->getId() == "jogador")
 			{
+				
 				auxprincipal = lista->getEnt(i);
 				//loop para testar cada personagem com cada obstáculo
 				for (i = 0; i < tam; i++)
 				{
-					if (lista->getEnt(i)->getId() == "obstaculo")
-					{
-						auxsecundaria = lista->getEnt(i);
-						sf::Vector2f ds = calculaColisao(auxprincipal, auxsecundaria);
-						if (ds.x < 0.0f && ds.y < 0.0f)
-						{
-						}
-							//auxprincipal->colide(auxsecundaria,sf::Vector2f ds);
-						//agora fazer as conclusões da colisao
-					}
 					if (lista->getEnt(i)->getId() == "inimigo")
-					{
-						auxsecundaria = lista->getEnt(i);
-						sf::Vector2f ds = calculaColisao(auxprincipal, auxsecundaria);
-						if (ds.x < 0.0f && ds.y < 0.0f)
-						{
-							auxprincipal->colide(auxsecundaria,ds);
-						}
-							
-						//agora fazer as conclusões da colisao
-					}
-				}
-			}
-			else if (lista->getEnt(i)->getId() == "inimigo")
-			{
-				
-				auxprincipal = lista->getEnt(i);
-				for (i = 0; i < tam; i++)
-				{
-					if (lista->getEnt(i)->getId() == "obstaculo")
 					{
 						
 						auxsecundaria = lista->getEnt(i);
 						sf::Vector2f ds = calculaColisao(auxprincipal, auxsecundaria);
 						if (ds.x < 0.0f && ds.y < 0.0f)
 						{
+							auxprincipal->colide(auxsecundaria, ds);
 						}
-							//auxprincipal->colide(auxsecundaria);
+						//agora fazer as conclusões da colisao
+					}
+					if (lista->getEnt(i)->getId() == "obstaculo")
+					{
+						auxsecundaria = lista->getEnt(i);
+						sf::Vector2f ds = calculaColisao(auxprincipal, auxsecundaria);
+						if (ds.x < 0.0f && ds.y < 0.0f)
+						{
+							auxprincipal->colide(auxsecundaria, ds);
+						}
+
+						//agora fazer as conclusões da colisao
+					}
+				}
+			}*/
+		for (i = 0; i < tam; i++)
+		{
+			//se for um personagem entra no loop
+			if (lista->getEnt(i)->getId() == "jogador")
+			{
+
+				auxprincipal = lista->getEnt(i);
+				for (i = 0; i < tam; i++)
+				{
+					if (lista->getEnt(i)->getId() == "inimigo")
+					{
+
+						auxsecundaria = lista->getEnt(i);
+						sf::Vector2f ds = calculaColisao(auxprincipal, auxsecundaria);
+						if (ds.x < 0.0f && ds.y < 0.0f)
+						{
+							auxprincipal->colide(auxsecundaria, ds);
+						}
+						else
+							auxprincipal->setTa_No_Chao(false);
+
 					}
 				}
 			}
 		}
+		for (i = 0; i < tam; i++)
+		{
+			//se for um personagem entra no loop
+			if (lista->getEnt(i)->getId() == "inimigo")
+			{
+
+				auxprincipal = lista->getEnt(i);
+				for (i = 0; i < tam; i++)
+				{
+					if (lista->getEnt(i)->getId() == "jogador")
+					{
+
+						auxsecundaria = lista->getEnt(i);
+						sf::Vector2f ds = calculaColisao(auxprincipal, auxsecundaria);
+						if (ds.x < 0.0f && ds.y < 0.0f)
+						{
+							auxprincipal->colide(auxsecundaria, ds);
+						}
+						else
+							auxprincipal->setTa_No_Chao(false);
+
+					}
+				}
+			}
+		}
+		
+		
+		
+		for (i = 0; i < tam; i++)
+			{
+				//se for um personagem entra no loop
+				if (lista->getEnt(i)->getId() == "jogador")
+				{
+
+					auxprincipal = lista->getEnt(i);
+					for (i = 0; i < tam; i++)
+					{
+						if (lista->getEnt(i)->getId() == "obstaculo")
+						{
+
+							auxsecundaria = lista->getEnt(i);
+							sf::Vector2f ds = calculaColisao(auxprincipal, auxsecundaria);
+							if (ds.x < 0.0f && ds.y < 0.0f)
+							{
+								auxprincipal->colide(auxsecundaria, ds);
+							}
+
+						}
+					}
+				}
+			}
+			for (i = 0; i < tam; i++)
+			{
+				//se for um personagem entra no loop
+				if (lista->getEnt(i)->getId() == "inimigo")
+				{
+			
+				
+
+					auxprincipal = lista->getEnt(i);
+					for (i = 0; i < tam; i++)
+					{
+						if (lista->getEnt(i)->getId() == "obstaculo")
+						{
+
+							auxsecundaria = lista->getEnt(i);
+							sf::Vector2f ds = calculaColisao(auxprincipal, auxsecundaria);
+							if (ds.x < 0.0f && ds.y < 0.0f)
+							{
+								auxprincipal->colide(auxsecundaria, ds);
+							}
+
+						}
+					}
+				}
+			}
+			
+		
 	}
 	//pegamos o código do monitor giovanni pois 
 	sf::Vector2f Gerenciador_Colisao::calculaColisao(Entidade* entidade1, Entidade* entidade2)

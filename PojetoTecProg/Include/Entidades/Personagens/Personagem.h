@@ -14,6 +14,8 @@ namespace Entidades
 			~Personagem();
 
 			virtual void Executar() = 0;
+			virtual void colide(Entidade* secundaria, sf::Vector2f ds) = 0;
+			
 		};
 	}
 }

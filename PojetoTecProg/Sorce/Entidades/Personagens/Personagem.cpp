@@ -18,5 +18,7 @@ namespace Entidades
 		Personagem::~Personagem()
 		{
 		}
+
+		
 	}
 }

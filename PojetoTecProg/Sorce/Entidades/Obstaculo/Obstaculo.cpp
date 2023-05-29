@@ -8,10 +8,12 @@ namespace Entidades
 			Entidade(tam, p, v)
 		{
 			id = "obstaculo";
+			danoso = 0;
 		}
 		Obstaculo::Obstaculo() :
 			Entidade()
 		{
+			danoso = 0;
 		}
 		Obstaculo::~Obstaculo()
 		{}

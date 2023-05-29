@@ -53,58 +53,12 @@ namespace Entidades
 		}
 		setpos(sf::Vector2f(pos.x, pos.y + vel.y));
 	}
-
-	void Entidade::chaotemp()
-	{
-		if (pos.y > 500) {
-			ta_no_chao = true;
-			setpos(sf::Vector2f(pos.x, 500));
-		}
-		else {
-			ta_no_chao = false;
-		}
-	}
 	sf::Vector2f Entidade::getTam()
 	{
 		return box.getSize();
 	}
-	void Entidade::colide(Entidade* secundaria,sf::Vector2f ds)
+	void Entidade::setTa_No_Chao(const bool chao)
 	{
-		int tipocolis;
-		//o tipo de colisão é 0 para pra baixo, 1 para o lado direito, 2 para cima e 3 para o lado esquerdo
-		sf::Vector2f pos1 = this->getpos();
-		sf::Vector2f pos2 = secundaria->getpos();
-
-		sf::Vector2f vel1 = this->getvel();
-		sf::Vector2f vel2 = secundaria->getvel();
-
-		sf::Vector2f tam1 = this->getTam();
-		sf::Vector2f tam2 = secundaria->getTam();
-
-		if (ds.y <= 0.0f && ds.x <= 0.0f)
-		{
-			if (ds.y <= ds.x)
-			{
-				printf("oi");
-				//bloco 1 acima do 2
-				if (pos.y < pos2.y)
-				{
-					pos.y += ds.y;
-				}
-				else
-				{
-					pos.y -= ds.y;
-				}
-			}
-			else
-				if (pos.x < pos2.x)
-				{
-					pos.x -= ds.x;
-				}
-				else
-				{
-					pos.x += ds.x;
-				}
-		}
+		ta_no_chao = chao;
 	}
 }
