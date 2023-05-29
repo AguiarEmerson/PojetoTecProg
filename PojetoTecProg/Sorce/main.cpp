@@ -44,10 +44,10 @@ int main()
         }
         window.clear();
         list.percorrer();
-        window.draw(jogador.print());
-        window.draw(inimigo.print());
-        window.draw(plataforma.print());
-        window.draw(plataforma2.print());
+        window.draw(jogador.desenhar());
+        window.draw(inimigo.desenhar());
+        window.draw(plataforma.desenhar());
+        window.draw(plataforma2.desenhar());
         window.display();
         window.setFramerateLimit(60);
         gerenciador.executar();
