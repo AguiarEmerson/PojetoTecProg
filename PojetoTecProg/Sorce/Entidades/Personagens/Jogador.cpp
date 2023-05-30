@@ -91,6 +91,8 @@ namespace Entidades
 					{
 						pos.y += ds.y;
 						ta_no_chao = true;
+						/*if (secundaria->getId() == "inimigo")
+							pula();*/
 					}
 					else 
 					{
