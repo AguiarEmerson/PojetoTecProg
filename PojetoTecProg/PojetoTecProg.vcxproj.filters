@@ -18,7 +18,7 @@
     <ClCompile Include="Sorce\Gerenciadores\Grafico.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Sorce\Jogo.cpp">
+    <ClCompile Include="Sorce\Principal.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
     <ClCompile Include="Sorce\Entidades\Obstaculo\Obstaculo.cpp">
@@ -53,7 +53,7 @@
     <ClInclude Include="Include\Gerenciadores\Grafico.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Jogo.h">
+    <ClInclude Include="Include\Principal.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
     <ClInclude Include="Include\Entidades\Obstaculos\Obstaculo.h">

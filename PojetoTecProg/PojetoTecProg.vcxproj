@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Sorce\Jogo.cpp" />
+    <ClCompile Include="Sorce\Principal.cpp" />
     <ClCompile Include="Sorce\Ente.cpp" />
     <ClCompile Include="Sorce\Entidades\Entidade.cpp" />
     <ClCompile Include="Sorce\Entidades\Obstaculo\Obstaculo.cpp" />
@@ -41,7 +41,7 @@
     <ClInclude Include="Include\Entidades\Personagens\Personagem.h" />
     <ClInclude Include="Include\Gerenciadores\Grafico.h" />
     <ClInclude Include="Include\stdafx.h" />
-    <ClInclude Include="Include\Jogo.h" />
+    <ClInclude Include="Include\Principal.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

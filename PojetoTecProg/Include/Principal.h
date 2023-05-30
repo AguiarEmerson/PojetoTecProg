@@ -3,15 +3,12 @@
 #include "..\Lista\ListaEntidades.h"
 #include "..\Gerenciadores\Grafico.h"
 
-using namespace Personagens;
-using namespace Gerenciadores;
-class jogo
+class Principal
 {
 private:
-	Grafico* Gerenciador_grafico;
-	Jogador player;
+	static Gerenciadores::Grafico* Pgrafico;
 public:
-	jogo();
-	~jogo();
+	Principal();
+	~Principal();
 	void exectutar();
 };

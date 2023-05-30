@@ -49,6 +49,7 @@ namespace Entidades
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
 				pula();
 			}
+			Pgrafico->atualizacam(pos);
 		}
 		void Jogador::Executar()
 		{

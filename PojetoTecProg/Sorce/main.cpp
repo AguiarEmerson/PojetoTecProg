@@ -7,7 +7,7 @@ using namespace Personagens;
 int main()
 {
     //oi
-    sf::RenderWindow window(sf::VideoMode(1000, 600), "teste");
+    sf::RenderWindow window(sf::VideoMode(TAMW_X, TAMW_Y), "teste");
     Jogador jogador;
     ListaEntidades list;
     Inimigo inimigo(sf::Vector2f(10.0, 10.0), sf::Vector2f(500.0, 0.0), sf::Vector2f(1.0, 0.0));

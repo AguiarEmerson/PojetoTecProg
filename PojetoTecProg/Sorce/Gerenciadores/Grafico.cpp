@@ -9,57 +9,97 @@ namespace Gerenciadores {
 	Grafico* Grafico::getgrafico()
 	{
 		if (gerenciador_grafico == nullptr) {
-			Grafico();
+			gerenciador_grafico= new Grafico();
 		}
 		return gerenciador_grafico;
 	}
 
 	Grafico::Grafico():
-	window(new sf::RenderWindow(sf::VideoMode(LARGURA, ALTURA), "UAAU FUNCIONA", sf::Style::Titlebar | sf::Style::Close)),
-	cam(sf::Vector2f(LARGURA / 2, ALTURA / 2), sf::Vector2f(LARGURA, ALTURA))
+	window(new sf::RenderWindow(sf::VideoMode(TAMW_X, TAMW_Y), "UAAU FUNCIONA", sf::Style::Titlebar | sf::Style::Close)),
+	camera(sf::Vector2f(TAMW_X / 2,TAMW_Y  / 2), sf::Vector2f(TAMW_X, TAMW_Y))
 	{
+		if (window == nullptr) {
+			std::cout << "ERROR nao foi possivel criar uma janela grafica" << std::endl;
+			exit(1);
+		}
 	}
 
 	Grafico::~Grafico()
 	{
-		gerenciador_grafico = nullptr;
+		if (window) {
+			delete(window);
+			window = nullptr;
+		}
 	}
-	void Grafico::Render(sf::RectangleShape box)
+	void Grafico::desenha(sf::RectangleShape box)
 	{
 		window->draw(box);
 	}
 
-	void Grafico::display()
+	const bool Grafico::verificaJanelaAberta() {
+		return window->isOpen();
+	}
+
+	void Grafico::mostra()
 	{
 		if (window->isOpen()) {
 			window->display();
 		}
 	}
 
-	void Grafico::clear()
+	void Grafico::limpa()
 	{
 		if (window->isOpen()) {
 			window->clear();
 		}
 	}
 
-	void Grafico::close()
+	void Grafico::fecha()
 	{
 		window->close();
 	}
 
-	void Grafico::setPjogador(Entidades::Personagens::Jogador* p)
+
+	void Grafico::atualizacam(sf::Vector2f pos)
 	{
-		Pjogador = p;
+		camera.setCenter(pos);
+		window->setView(camera);
 	}
 
-	void Grafico::alinhacam()
-	{
-		cam.setCenter(sf::Vector2f(Pjogador->getpos().x, Pjogador->getpos().y));
-		window->setView(cam);
+	sf::View Grafico::getcamera() {
+		return camera;
 	}
 
-	sf::RenderWindow* Grafico::getwindow() {
+	void Grafico::resetarJanela() {
+		camera.setCenter(TAMW_X / 2.0f, TAMW_Y / 2.0f);
+		window->setView(camera);
+	}
+
+	sf::Vector2f Grafico::getTamJanela(){
+		return (sf::Vector2f)window->getSize();
+	}
+
+	sf::RenderWindow* Grafico::getjanela() {
 		return window;
 	}
-}
+
+	void Grafico::setLista(ListaEntidades* listaEnt)
+	{
+		lista = listaEnt;
+	}
+
+	void Grafico::executar() {
+		int i, tam;
+		tam = lista->getTam();
+		if (verificaJanelaAberta()) {
+			limpa();
+			for (i = 0; i < tam; i++) {
+				desenha(lista->)
+			}
+
+
+
+
+		}
+	}
+}	
