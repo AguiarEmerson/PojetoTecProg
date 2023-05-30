@@ -15,8 +15,11 @@ using namespace Gerenciadores;
 using namespace Obstaculos;
 int main()
 {
+
     Gerenciador_Colisao gerenciador;
-    sf::RenderWindow window(sf::VideoMode(1000, 600), "teste");
+
+    //oi
+    sf::RenderWindow window(sf::VideoMode(TAMW_X, TAMW_Y), "teste");
     Jogador jogador;
     ListaEntidades list;
     Plataforma plataforma(sf::Vector2f(1000.0, 100.0), sf::Vector2f(0.0, 580.0), sf::Vector2f(0.0, 0.0));

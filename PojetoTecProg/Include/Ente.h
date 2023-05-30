@@ -1,10 +1,12 @@
 #pragma once
 #include"stdafx.h"
 
+#include"..\Gerenciadores\Grafico.h"
 
 class Ente
 {
-protected:               
+protected:
+	static Gerenciadores::Grafico* Pgrafico;
 	sf::RectangleShape box;
 	sf::Clock relogio;
 	string id;
