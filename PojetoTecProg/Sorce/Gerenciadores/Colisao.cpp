@@ -1,24 +1,24 @@
-#include "Gerenciador_Colisao.h"
+#include "..\Gerenciadores\Colisao.h"
 
 namespace Gerenciadores
 {
 
-	Gerenciador_Colisao::Gerenciador_Colisao(ListaEntidades* listaEnt)
+	Colisao::Colisao(ListaEntidades* listaEnt)
 	{
 		lista = listaEnt;
 	}
-	Gerenciador_Colisao::Gerenciador_Colisao()
+	Colisao::Colisao()
 	{
 		lista = nullptr;
 	}
-	Gerenciador_Colisao::~Gerenciador_Colisao()
+	Colisao::~Colisao()
 	{
 	}
-	void Gerenciador_Colisao::setLista(ListaEntidades* listaEnt)
+	void Colisao::setLista(ListaEntidades* listaEnt)
 	{
 		lista = listaEnt;
 	}
-	void Gerenciador_Colisao::executar()
+	void Colisao::executar()
 	{
 		
 		int i, tam;
@@ -172,7 +172,7 @@ namespace Gerenciadores
 		
 	}
 	//pegamos o código do monitor giovanni pois 
-	sf::Vector2f Gerenciador_Colisao::calculaColisao(Entidade* entidade1, Entidade* entidade2)
+	sf::Vector2f Colisao::calculaColisao(Entidade* entidade1, Entidade* entidade2)
 	{
 		sf::Vector2f pos1 = entidade1->getpos();
 		sf::Vector2f pos2 = entidade2->getpos();

@@ -15,12 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-
-
-
-    <ClCompile Include="Sorce\Gerenciadores\Grafico.cpp">
-      <Filter>Arquivos de Origem</Filter>
-    </ClCompile>
     <ClCompile Include="Sorce\Principal.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
@@ -31,15 +25,11 @@
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
     <ClCompile Include="Sorce\Entidades\Personagens\Inimigo.cpp">
-
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
     <ClCompile Include="Sorce\Entidades\Personagens\Jogador.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-
-
-
     <ClCompile Include="Sorce\Entidades\Personagens\Personagem.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
@@ -53,14 +43,16 @@
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
     <ClCompile Include="Sorce\main.cpp">
-
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="Sorce\Gerenciadores\Grafico.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="Sorce\Gerenciadores\Colisao.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-
-
-
     <ClInclude Include="Include\Gerenciadores\Grafico.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
@@ -74,15 +66,11 @@
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
     <ClInclude Include="Include\Entidades\Personagens\Inimigo.h">
-
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
     <ClInclude Include="Include\Entidades\Personagens\Jogador.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-
-
-
     <ClInclude Include="Include\Entidades\Personagens\Personagem.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
@@ -93,7 +81,15 @@
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
     <ClInclude Include="Include\stdafx.h">
-
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Gerenciadores\Colisao.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Lista\Lista.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Lista\ListaEntidades.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
   </ItemGroup>
