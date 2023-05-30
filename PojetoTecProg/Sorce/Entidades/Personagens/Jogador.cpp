@@ -1,4 +1,6 @@
 #include "..\Entidades\Personagens\Jogador.h"
+#include"..\Gerenciadores\Grafico.h"
+
 
 namespace Entidades
 {
@@ -51,7 +53,7 @@ namespace Entidades
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
 				pula();
 			}
-			Pgrafico->atualizacam(pos);
+			Pgrafico->atualizacam(sf::Vector2f(pos.x,TAMW_Y/2.0));
 		}
 		void Jogador::Executar()
 		{

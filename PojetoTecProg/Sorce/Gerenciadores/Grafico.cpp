@@ -1,10 +1,8 @@
 #include"..\Gerenciadores\Grafico.h"
 
-
-
 namespace Gerenciadores {
 
-	Grafico* gerenciador_grafico = nullptr;
+	Grafico* Grafico::gerenciador_grafico = nullptr;
 
 	Grafico* Grafico::getgrafico()
 	{
@@ -15,7 +13,8 @@ namespace Gerenciadores {
 	}
 
 	Grafico::Grafico():
-	window(new sf::RenderWindow(sf::VideoMode(TAMW_X, TAMW_Y), "UAAU FUNCIONA", sf::Style::Titlebar | sf::Style::Close)),
+	lista(nullptr),
+	window(new sf::RenderWindow(sf::VideoMode((unsigned int)TAMW_X, (unsigned int)TAMW_Y), "UAAU FUNCIONA", sf::Style::Titlebar | sf::Style::Close)),
 	camera(sf::Vector2f(TAMW_X / 2,TAMW_Y  / 2), sf::Vector2f(TAMW_X, TAMW_Y))
 	{
 		if (window == nullptr) {
@@ -92,14 +91,18 @@ namespace Gerenciadores {
 		int i, tam;
 		tam = lista->getTam();
 		if (verificaJanelaAberta()) {
+			sf::Event evento;
+			if (window->pollEvent(evento)) {
+				if (evento.type == sf::Event::Closed) {
+					fecha();
+				}
+			}
 			limpa();
 			for (i = 0; i < tam; i++) {
-				desenha(lista->)
+				desenha(lista->getEnt(i)->getbox());
 			}
-
-
-
-
+			mostra();
+			window->setFramerateLimit(60);
 		}
 	}
 }	
