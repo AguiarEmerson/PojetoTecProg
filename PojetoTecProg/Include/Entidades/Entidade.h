@@ -10,6 +10,7 @@ namespace Entidades
 		sf::Vector2f pos;
 		sf::Vector2f vel;
 		bool ta_no_chao;
+		bool podeMover;
 	public:
 		Entidade(sf::Vector2f tam, sf::Vector2f p = sf::Vector2f(0.0, 0.0), sf::Vector2f v = sf::Vector2f(8.0, 0.0));
 		Entidade();
@@ -28,5 +29,6 @@ namespace Entidades
 		virtual void colide(Entidade* secundaria, sf::Vector2f ds) = 0;
 
 		void setTa_No_Chao(const bool chao);
+		void setPodeMover(const bool mover);
 	};
 }

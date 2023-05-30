@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include<math.h>
 using std::string;
 
 

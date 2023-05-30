@@ -19,10 +19,12 @@ namespace Entidades
 			void moveraleatorio();
 			void move();
 			void Perseguir();
+			void coice(Entidade* entidade,float angulo);
 
 			void Executar();
 
 			void colide(Entidade* secundaria, sf::Vector2f ds);
+			void tomaDano();
 		};
 	}
 }

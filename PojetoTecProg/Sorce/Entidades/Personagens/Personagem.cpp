@@ -19,6 +19,15 @@ namespace Entidades
 		{
 		}
 
+		void Personagem::setAc(sf::Vector2f aceleracao)
+		{
+			ac = aceleracao;
+		}
+		sf::Vector2f Personagem::getAc()
+		{
+			return ac;
+		}
+
 		
 	}
 }

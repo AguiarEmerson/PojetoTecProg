@@ -11,6 +11,7 @@ namespace Entidades
 			pontos(xp)
 		{
 			id = "jogador";
+			podeMover = true;
 			box.setFillColor(sf::Color::Green);
 		}
 
@@ -30,30 +31,37 @@ namespace Entidades
 		void Jogador::pula()
 		{
 			if (ta_no_chao) {
-				setvel(sf::Vector2f(vel.x, vel.y - 10.0f));
+				setvel(sf::Vector2f(vel.x, vel.y - 10.0f)); 
+				setpos(sf::Vector2f(pos.x, pos.y + vel.y));
 			}
 			ta_no_chao = false;
+			
 			setpos(sf::Vector2f(pos.x, pos.y + vel.y));
 		}
 
 		void Jogador::move()
 		{
-			/*if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {		n tem porque mudar em y
-				setpos(pos.x, pos.y - vel);
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
+				pula();
 			}
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
-				setpos(pos.x, pos.y + vel);
-			}*/
+			
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
 				setpos(sf::Vector2f(pos.x - vel.x, pos.y));
 			}
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
 				setpos(sf::Vector2f(pos.x + vel.x, pos.y));
 			}
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
-				pula();
+			Pgrafico->atualizacam(sf::Vector2f(pos.x, TAMW_Y / 2.0));
+			if (!(ac.x >= -0.5 && ac.x <= 0.5))
+			{
+				pos = pos - ac;
+
+				if (ac.x < 0)
+					ac.x += 0.5;
+				else
+					ac.x -= 0.5;
 			}
-			Pgrafico->atualizacam(sf::Vector2f(pos.x,TAMW_Y/2.0));
+			
 			
 		}
 		void Jogador::Executar()
@@ -62,7 +70,7 @@ namespace Entidades
 
 			gravidade();
 			move();
-			//chaotemp();
+			
 			
 		}
 
@@ -80,30 +88,41 @@ namespace Entidades
 					if (pos.x < pos2.x)
 					{
 						pos.x += ds.x;
+						
 					}
 					else
 					{
 						pos.x -= ds.x;
+						
 					}
 				}
 				else
 				{
 					if (pos.y < pos2.y)
 					{
-						pos.y += ds.y;
 						ta_no_chao = true;
-						/*if (secundaria->getId() == "inimigo")
-							pula();*/
+						pos.y += ds.y;
+						if (secundaria->getId() == "inimigo") {
+							esmagaInimigo(secundaria);
+						}
+						
 					}
 					else 
 					{
 						pos.y -= ds.y;
 						vel.y = 0;
+						
 					}
 				}
 
 			}
 
+
+		}
+		void Jogador::esmagaInimigo(Entidade* inimigo)
+		{
+			pula(); 
+			
 		}
 	}
 }

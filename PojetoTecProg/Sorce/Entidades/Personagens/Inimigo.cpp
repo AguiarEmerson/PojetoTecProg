@@ -50,6 +50,19 @@ namespace Entidades
 
 		void Inimigo::move()
 		{
+			if (!(ac.x>=-0.5&&ac.x<=0.5&&ac.y>=-0.5&&ac.y<=0.5))
+			{
+				pos = pos - ac;
+				
+				if (ac.x < 0)
+					ac.x += 0.5;
+				else
+					ac.x -= 0.5;
+				if (ac.y < 0)
+					ac.y += 0.5;
+				else
+					ac.y -= 0.5;
+			}
 			sf::Vector2f posjogador = jogador->getpos();
 			if (fabs(posjogador.x - pos.x) < RAIO_VISAO && fabs(posjogador.y - pos.y) < RAIO_VISAO)
 			{
@@ -61,21 +74,35 @@ namespace Entidades
 
 		void Inimigo::Perseguir()
 		{
-			if (jogador->getpos().x > pos.x)
-			{
-				setpos(sf::Vector2f(pos.x + vel.x, pos.y));
-			}
-			if (jogador->getpos().x < pos.x)
-			{
-				setpos(sf::Vector2f(pos.x - vel.x, pos.y));
+			if (podeMover) {
+				if (jogador->getpos().x > pos.x)
+				{
+					setpos(sf::Vector2f(pos.x + vel.x, pos.y));
+				}
+				if (jogador->getpos().x < pos.x)
+				{
+					setpos(sf::Vector2f(pos.x - vel.x, pos.y));
+				}
 			}
 
 		}
+		
+		void Inimigo::coice(Entidade* entidade,float angulo)
+		{
+			ac.x = ac.x + cos(angulo) * 7;
+			vel.y = vel.y + sin(angulo) * 7;
+			Jogador* jogador = nullptr;
+			jogador = static_cast<Jogador*>(entidade);
+			jogador->setAc(sf::Vector2f(-(jogador->getAc().x + cos(angulo) * 7), jogador->getAc().y));
+			jogador->setvel(sf::Vector2f(jogador->getvel().x, jogador->getvel().y - sin(angulo) * 7));
+
+
+		}
+
 
 		void Inimigo::Executar()
 		{
 			move();
-			//chaotemp();
 			gravidade();
 		}
 
@@ -83,7 +110,10 @@ namespace Entidades
 		{
 			//o tipo de colisão é 0 para pra baixo, 1 para o lado direito, 2 para cima e 3 para o lado esquerdo
 			sf::Vector2f pos2 = secundaria->getpos();
+			sf::Vector2f tam2 = secundaria->getTam();
+			sf::Vector2f tam1 = this->getTam();
 
+			float angulo;
 			if (ds.y <= 0.0f && ds.x <= 0.0f)
 			{
 				if (ds.y <= ds.x)
@@ -92,10 +122,17 @@ namespace Entidades
 					if (pos.x < pos2.x)
 					{
 						pos.x += ds.x;
+						angulo = atan2f((pos2.y + tam2.y - pos.y - tam1.y),(pos2.x + tam2.x - pos.x - tam1.x));
+						if (secundaria->getId() == "jogador")
+							coice(secundaria, angulo);
 					}
 					else
 					{
 						pos.x -= ds.x;
+						angulo = atan2f((pos2.y + tam2.y - pos.y - tam1.y), (pos2.x + tam2.x - pos.x - tam1.x));
+						if (secundaria->getId() == "jogador")
+							coice(secundaria, angulo);
+				
 					}
 				}
 				else
@@ -107,13 +144,19 @@ namespace Entidades
 					}
 					else
 					{
+						if (secundaria->getId() == "jogador")
+							tomaDano();
 						pos.y -= ds.y;
 						vel.y = 0;
-						
 					}
 				}
 
 			}
+		}
+
+		void Inimigo::tomaDano()
+		{
+			num_vidas--;
 		}
 	}
 }

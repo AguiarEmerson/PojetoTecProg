@@ -8,6 +8,7 @@ namespace Entidades
 		{
 		protected:	//private pra usar a sobrecarga de operadores e farmar requisito
 			int num_vidas;
+			sf::Vector2f ac;
 		public:
 			Personagem(sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v, int h);
 			Personagem();
@@ -15,6 +16,9 @@ namespace Entidades
 
 			virtual void Executar() = 0;
 			virtual void colide(Entidade* secundaria, sf::Vector2f ds) = 0;
+
+			void setAc(sf::Vector2f aceleracao);
+			sf::Vector2f getAc();
 			
 		};
 	}
