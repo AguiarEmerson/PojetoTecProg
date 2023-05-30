@@ -66,8 +66,6 @@ namespace Entidades
 		{
 			//o tipo de colisão é 0 para pra baixo, 1 para o lado direito, 2 para cima e 3 para o lado esquerdo
 			sf::Vector2f pos2 = secundaria->getpos();
-			printf("%d", ta_no_chao);
-			printf("oi");
 		
 
 			if (ds.y <= 0.0f && ds.x <= 0.0f)
