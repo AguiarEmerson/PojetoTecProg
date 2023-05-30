@@ -21,6 +21,8 @@ namespace Entidades
 			void Perseguir();
 
 			void Executar();
+
+			void colide(Entidade* secundaria, sf::Vector2f ds);
 		};
 	}
 }

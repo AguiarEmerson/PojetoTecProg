@@ -11,10 +11,10 @@ protected:
 	sf::Clock relogio;
 	string id;
 public:
-	Ente(sf::Vector2f tam = sf::Vector2f(10.0, 10.0));
+	Ente(sf::Vector2f tam = sf::Vector2f(60.0, 60.0));
 	~Ente();
 
-	sf::RectangleShape print(); 
+	sf::RectangleShape desenhar(); 
 
 	virtual void Executar() = 0;
 	string getId();

@@ -5,18 +5,20 @@ namespace Entidades
 	namespace Personagens {
 		Personagem::Personagem(sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v, int h) :
 			Entidade(tam, p, v),
-			hp(h)
+			num_vidas(h)
 		{
 		}
 
 		Personagem::Personagem() :
 			Entidade(),
-			hp(3)
+			num_vidas(3)
 		{
 		}
 
 		Personagem::~Personagem()
 		{
 		}
+
+		
 	}
 }

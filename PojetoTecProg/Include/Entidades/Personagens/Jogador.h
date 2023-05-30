@@ -15,6 +15,7 @@ namespace Entidades
 			void pula();
 			void move();
 			void Executar();
+			void colide(Entidade* secundaria, sf::Vector2f ds);
 		};
 	}
 }

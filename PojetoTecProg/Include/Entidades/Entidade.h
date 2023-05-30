@@ -22,8 +22,11 @@ namespace Entidades
 		sf::Vector2f getvel();
 
 		void gravidade();
-		void chaotemp();   // chaozinho temporario pra testar enquanto ainda n tem plataforma
+		sf::Vector2f getTam();
 
 		virtual void Executar() = 0;
+		virtual void colide(Entidade* secundaria, sf::Vector2f ds) = 0;
+
+		void setTa_No_Chao(const bool chao);
 	};
 }

@@ -17,6 +17,7 @@ namespace Entidades
 			pontos(0)
 		{
 			box.setFillColor(sf::Color::Green);
+			id = "jogador";
 		}
 
 		Jogador::~Jogador()
@@ -27,8 +28,9 @@ namespace Entidades
 		void Jogador::pula()
 		{
 			if (ta_no_chao) {
-				setvel(sf::Vector2f(vel.x, vel.y - 10));
+				setvel(sf::Vector2f(vel.x, vel.y - 10.0f));
 			}
+			ta_no_chao = false;
 			setpos(sf::Vector2f(pos.x, pos.y + vel.y));
 		}
 
@@ -53,9 +55,52 @@ namespace Entidades
 		}
 		void Jogador::Executar()
 		{
-			move();
-			chaotemp();
+
+
 			gravidade();
+			move();
+			//chaotemp();
+			
+		}
+
+		void Jogador::colide(Entidade* secundaria, sf::Vector2f ds)
+		{
+			//o tipo de colisão é 0 para pra baixo, 1 para o lado direito, 2 para cima e 3 para o lado esquerdo
+			sf::Vector2f pos2 = secundaria->getpos();
+			printf("%d", ta_no_chao);
+			printf("oi");
+		
+
+			if (ds.y <= 0.0f && ds.x <= 0.0f)
+			{
+				if (ds.y <= ds.x)
+				{
+					//bloco 1 acima do 2
+					if (pos.x < pos2.x)
+					{
+						pos.x += ds.x;
+					}
+					else
+					{
+						pos.x -= ds.x;
+					}
+				}
+				else
+				{
+					if (pos.y < pos2.y)
+					{
+						pos.y += ds.y;
+						ta_no_chao = true;
+					}
+					else 
+					{
+						pos.y -= ds.y;
+						vel.y = 0;
+					}
+				}
+
+			}
+
 		}
 	}
 }

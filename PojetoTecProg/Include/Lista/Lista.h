@@ -10,18 +10,18 @@ namespace Listas
 	public:
 		Lista();
 		~Lista();
-		template <class TL> class Elemento
+		template <class TE> class Elemento
 		{
 		private:
-			Elemento<TL>* pProx;
-			TL* pInfo;
+			Elemento<TE>* pProx;
+			TE* pInfo;
 		public:
 			Elemento() { pProx = nullptr; pInfo = nullptr; }
 			~Elemento() {}
-			TL* getData() { return pInfo; }
-			void setData(TL* pp) { pInfo = pp;}
-			void setProx(Elemento<TL>* prox) { pProx = prox; }
-			Elemento<TL>* getProx() { return pProx; }
+			TE* getData() { return pInfo; }
+			void setData(TE* pp) { pInfo = pp;}
+			void setProx(Elemento<TE>* prox) { pProx = prox; }
+			Elemento<TE>* getProx() { return pProx; }
 
 		};
 

@@ -53,15 +53,12 @@ namespace Entidades
 		}
 		setpos(sf::Vector2f(pos.x, pos.y + vel.y));
 	}
-
-	void Entidade::chaotemp()
+	sf::Vector2f Entidade::getTam()
 	{
-		if (pos.y > 500) {
-			ta_no_chao = true;
-			setpos(sf::Vector2f(pos.x, 500));
-		}
-		else {
-			ta_no_chao = false;
-		}
+		return box.getSize();
+	}
+	void Entidade::setTa_No_Chao(const bool chao)
+	{
+		ta_no_chao = chao;
 	}
 }

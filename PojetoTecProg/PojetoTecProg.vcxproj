@@ -19,7 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+
     <ClCompile Include="Sorce\Principal.cpp" />
+
     <ClCompile Include="Sorce\Ente.cpp" />
     <ClCompile Include="Sorce\Entidades\Entidade.cpp" />
     <ClCompile Include="Sorce\Entidades\Obstaculo\Obstaculo.cpp" />
@@ -27,11 +29,12 @@
     <ClCompile Include="Sorce\Entidades\Personagens\Inimigo.cpp" />
     <ClCompile Include="Sorce\Entidades\Personagens\Jogador.cpp" />
     <ClCompile Include="Sorce\Entidades\Personagens\Personagem.cpp" />
-    <ClCompile Include="Sorce\Gerenciadores\Grafico.cpp" />
+
     <ClCompile Include="Sorce\Lista\ListaEntidades.cpp" />
     <ClCompile Include="Sorce\main.cpp" />
   </ItemGroup>
   <ItemGroup>
+
     <ClInclude Include="Include\Ente.h" />
     <ClInclude Include="Include\Entidades\Entidade.h" />
     <ClInclude Include="Include\Entidades\Obstaculos\Obstaculo.h" />
@@ -39,9 +42,11 @@
     <ClInclude Include="Include\Entidades\Personagens\Inimigo.h" />
     <ClInclude Include="Include\Entidades\Personagens\Jogador.h" />
     <ClInclude Include="Include\Entidades\Personagens\Personagem.h" />
+
     <ClInclude Include="Include\Gerenciadores\Grafico.h" />
     <ClInclude Include="Include\stdafx.h" />
     <ClInclude Include="Include\Principal.h" />
+
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

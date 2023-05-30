@@ -11,7 +11,7 @@ Ente::~Ente()
 {
 }
 
-sf::RectangleShape Ente::print()
+sf::RectangleShape Ente::desenhar()
 {
 	return box;
 }
