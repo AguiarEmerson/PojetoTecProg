@@ -3,14 +3,14 @@
 using namespace Listas;
 namespace Gerenciadores
 {
-	class Gerenciador_Colisao
+	class Colisao
 	{
 	private:
 		ListaEntidades* lista;
 	public:
-		Gerenciador_Colisao(ListaEntidades* listaEnt);
-		Gerenciador_Colisao();
-		~Gerenciador_Colisao();
+		Colisao(ListaEntidades* listaEnt);
+		Colisao();
+		~Colisao();
 		void setLista(ListaEntidades* listaEnt);
 		void executar();
 		sf::Vector2f calculaColisao(Entidade* entidade1, Entidade* entidade2);
