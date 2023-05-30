@@ -4,8 +4,8 @@ Gerenciadores::Grafico* Principal::Pgrafico = Gerenciadores::Grafico::getgrafico
 
 Principal::Principal():
     jogador(),
-    plataforma(sf::Vector2f(1000.0, 100.0), sf::Vector2f(0.0, 580.0), sf::Vector2f(0.0, 0.0)),
-    plataforma2(sf::Vector2f(800.0, 100.0), sf::Vector2f(0.0, 400.0), sf::Vector2f(0.0, 0.0)),
+    plataforma(sf::Vector2f(10000.0, 100.0), sf::Vector2f(-5000.0, 580.0), sf::Vector2f(0.0, 0.0)),
+    plataforma2(sf::Vector2f(800.0, 10.0), sf::Vector2f(0.0, 410.0), sf::Vector2f(0.0, 0.0)),
     inimigo(sf::Vector2f(50.0, 50.0), sf::Vector2f(500.0, -213.0), sf::Vector2f(1.0, 0.0))
 {
     if (Pgrafico == nullptr) {

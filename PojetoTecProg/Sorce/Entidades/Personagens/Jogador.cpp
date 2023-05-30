@@ -54,6 +54,7 @@ namespace Entidades
 				pula();
 			}
 			Pgrafico->atualizacam(sf::Vector2f(pos.x,TAMW_Y/2.0));
+			
 		}
 		void Jogador::Executar()
 		{
