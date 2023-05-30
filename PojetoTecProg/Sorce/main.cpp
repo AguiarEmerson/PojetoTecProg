@@ -1,4 +1,17 @@
-#include "../Gerenciador_Colisao.h"
+#include "..\Principal.h"
+
+int main()
+{
+    Principal objPricipal;
+    objPricipal.executar();
+    return 0;
+}
+
+
+
+
+
+/*#include "..\Gerenciadores\Colisao.h"
 #include "..\Entidades\Personagens\Inimigo.h"
 #include "..\Lista\ListaEntidades.h"
 #include "..\Entidades\Obstaculos\Plataforma.h"
@@ -15,8 +28,10 @@ using namespace Gerenciadores;
 using namespace Obstaculos;
 int main()
 {
-    Gerenciador_Colisao gerenciador;
-    sf::RenderWindow window(sf::VideoMode(1000, 600), "teste");
+    Colisao gerenciador;
+
+    //oi
+    sf::RenderWindow window(sf::VideoMode((unsigned int)TAMW_X, (unsigned int)TAMW_Y), "teste");
     Jogador jogador;
     ListaEntidades list;
     Plataforma plataforma(sf::Vector2f(1000.0, 100.0), sf::Vector2f(0.0, 580.0), sf::Vector2f(0.0, 0.0));
@@ -55,6 +70,6 @@ int main()
     }
 
     return 0;
-}
+}*/
 
 
