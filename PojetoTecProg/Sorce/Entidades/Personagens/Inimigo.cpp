@@ -122,7 +122,7 @@ namespace Entidades
 					if (pos.x < pos2.x)
 					{
 						pos.x += ds.x;
-						angulo = atan2f((pos2.y + tam2.y - pos.y - tam1.y),(pos2.x + tam2.x - pos.x - tam1.x));
+						angulo = atan2f((pos2.y + tam2.y - pos.y - tam1.y), (pos2.x + tam2.x - pos.x - tam1.x));
 						if (secundaria->getId() == "jogador")
 							coice(secundaria, angulo);
 					}
@@ -157,6 +157,7 @@ namespace Entidades
 		void Inimigo::tomaDano()
 		{
 			num_vidas--;
+			printf("oi");
 		}
 	}
 }
