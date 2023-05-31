@@ -66,12 +66,9 @@ namespace Entidades
 		}
 		void Jogador::Executar()
 		{
-
-
 			gravidade();
 			move();
-			
-			
+			verificaVida();
 		}
 
 		void Jogador::colide(Entidade* secundaria, sf::Vector2f ds)

@@ -93,6 +93,7 @@ namespace Entidades
 			vel.y = vel.y + sin(angulo) * 7;
 			Jogador* jogador = nullptr;
 			jogador = static_cast<Jogador*>(entidade);
+			jogador->tomaDano();
 			jogador->setAc(sf::Vector2f(-(jogador->getAc().x + cos(angulo) * 7), jogador->getAc().y));
 			jogador->setvel(sf::Vector2f(jogador->getvel().x, jogador->getvel().y - sin(angulo) * 7));
 			
@@ -142,6 +143,10 @@ namespace Entidades
 					{
 						pos.y += ds.y;
 						ta_no_chao = true;
+						if (secundaria->getId() == "jogador")
+						{
+							esmagaJogador(secundaria);
+						}
 					}
 					else
 					{
@@ -162,6 +167,17 @@ namespace Entidades
 			Jogador* jogador = nullptr;
 			jogador = static_cast<Jogador*>(secundaria);
 			jogador->esmagaInimigo(this);
+		}
+
+		void Inimigo::esmagaJogador(Entidade* entidade)
+		{
+			Jogador* jogador = nullptr;
+			jogador = static_cast<Jogador*>(entidade);
+			jogador->tomaDano();
+			vel.y=-10.0f;
+			ta_no_chao = false;
+			jogador->setvel(sf::Vector2f(jogador->getvel().x, -jogador->getvel().y));
+			printf("oi");
 		}
 
 		

@@ -25,6 +25,7 @@ namespace Entidades
 
 			void colide(Entidade* secundaria, sf::Vector2f ds);
 			void esmagado(Entidade* secundaria);
+			void esmagaJogador(Entidade* entidade);
 
 			
 		};
