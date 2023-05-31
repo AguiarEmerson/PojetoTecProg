@@ -28,6 +28,15 @@ namespace Entidades
 			return ac;
 		}
 
-		
+		void Personagem::verificaVida()
+		{
+			if (num_vidas == 0)
+				vivo = false;
+		}
+
+		void Personagem::tomaDano()
+		{
+			num_vidas--;
+		}
 	}
 }

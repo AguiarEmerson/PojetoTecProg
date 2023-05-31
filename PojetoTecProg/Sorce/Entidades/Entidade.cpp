@@ -9,6 +9,7 @@ namespace Entidades
 		podeMover = true;
 		setpos(p);
 		setvel(v);
+		vivo = true;
 	}
 
 	Entidade::Entidade() :
@@ -65,5 +66,11 @@ namespace Entidades
 	void Entidade::setPodeMover(const bool mover)
 	{
 		podeMover = mover;
+	}
+	void Entidade::setVivo(const bool vive) {
+		vivo = vive;
+	}
+	const bool Entidade::getVivo() {
+		return vivo;
 	}
 }

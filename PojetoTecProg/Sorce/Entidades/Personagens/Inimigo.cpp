@@ -95,7 +95,7 @@ namespace Entidades
 			jogador = static_cast<Jogador*>(entidade);
 			jogador->setAc(sf::Vector2f(-(jogador->getAc().x + cos(angulo) * 7), jogador->getAc().y));
 			jogador->setvel(sf::Vector2f(jogador->getvel().x, jogador->getvel().y - sin(angulo) * 7));
-
+			
 
 		}
 
@@ -104,6 +104,7 @@ namespace Entidades
 		{
 			move();
 			gravidade();
+			verificaVida();
 		}
 
 		void Inimigo::colide(Entidade* secundaria, sf::Vector2f ds)
@@ -145,7 +146,7 @@ namespace Entidades
 					else
 					{
 						if (secundaria->getId() == "jogador")
-							tomaDano();
+							esmagado(secundaria);
 						pos.y -= ds.y;
 						vel.y = 0;
 					}
@@ -154,10 +155,15 @@ namespace Entidades
 			}
 		}
 
-		void Inimigo::tomaDano()
+
+		void Inimigo::esmagado(Entidade* secundaria)
 		{
-			num_vidas--;
-			printf("oi");
+			tomaDano();
+			Jogador* jogador = nullptr;
+			jogador = static_cast<Jogador*>(secundaria);
+			jogador->esmagaInimigo(this);
 		}
+
+		
 	}
 }

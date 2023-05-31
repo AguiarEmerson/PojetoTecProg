@@ -99,7 +99,8 @@ namespace Gerenciadores {
 			}
 			limpa();
 			for (i = 0; i < tam; i++) {
-				desenha(lista->getEnt(i)->getbox());
+				if(lista->getEnt(i)->getVivo()==true)
+					desenha(lista->getEnt(i)->getbox());
 			}
 			mostra();
 			window->setFramerateLimit(60);

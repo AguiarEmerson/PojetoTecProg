@@ -26,7 +26,7 @@ namespace Gerenciadores
 		Entidade* auxprincipal;
 		Entidade* auxsecundaria;
 		//for para identificar os jogadores
-		for (i = 0; i < tam; i++)
+		/*for (i = 0; i < tam; i++)
 		{
 
 
@@ -59,20 +59,65 @@ namespace Gerenciadores
 						}
 
 						//agora fazer as conclusões da colisao
-					}*/
+					}
+				}
+			}
+		}*/
+		for (i = 0; i < tam; i++)
+		{
+			//se for um personagem entra no loop
+			if (lista->getEnt(i)->getId() == "inimigo" && lista->getEnt(i)->getVivo() == true)
+			{
+				
+				auxprincipal = lista->getEnt(i);
+				for (i = 0; i < tam; i++)
+				{
+					if (lista->getEnt(i)->getId() == "jogador" && lista->getEnt(i)->getVivo() == true)
+					{
+
+						auxsecundaria = lista->getEnt(i);
+						/*sf::Vector2f ds2 = calculaColisao(auxsecundaria, auxprincipal);
+
+						if (ds2.x < 0.0f && ds2.y < 0.0f)
+						{
+							auxsecundaria->colide(auxprincipal, ds2);
+
+						}
+						else {
+							auxsecundaria->setTa_No_Chao(false);
+
+
+						}*/
+
+						sf::Vector2f ds = calculaColisao(auxprincipal, auxsecundaria);
+						if (ds.x < 0.0f && ds.y < 0.0f)
+						{
+							auxprincipal->colide(auxsecundaria, ds);
+
+						}
+						else {
+							auxprincipal->setTa_No_Chao(false);
+
+
+						}
+
+
+
+
+					}
 				}
 			}
 		}
-		/*for (i = 0; i < tam; i++)
+		for (i = 0; i < tam; i++)
 		{
 			//se for um personagem entra no loop
-			if (lista->getEnt(i)->getId() == "jogador")
+			if (lista->getEnt(i)->getId() == "jogador"&&lista->getEnt(i)->getVivo() == true)
 			{
 
 				auxprincipal = lista->getEnt(i);
 				for (i = 0; i < tam; i++)
 				{
-					if (lista->getEnt(i)->getId() == "inimigo")
+					if (lista->getEnt(i)->getId() == "inimigo" && lista->getEnt(i)->getVivo() == true)
 					{
 
 						auxsecundaria = lista->getEnt(i);
@@ -88,104 +133,58 @@ namespace Gerenciadores
 				}
 			}
 		}
-		*/for (i = 0; i < tam; i++)
+		
+
+		for (i = 0; i < tam; i++)
 		{
 			//se for um personagem entra no loop
-			if (lista->getEnt(i)->getId() == "inimigo")
+			if (lista->getEnt(i)->getId() == "jogador" && lista->getEnt(i)->getVivo() == true)
 			{
 
 				auxprincipal = lista->getEnt(i);
 				for (i = 0; i < tam; i++)
 				{
-					if (lista->getEnt(i)->getId() == "jogador")
+					if (lista->getEnt(i)->getId() == "obstaculo" && lista->getEnt(i)->getVivo() == true)
 					{
 
 						auxsecundaria = lista->getEnt(i);
-						//sf::Vector2f ds2 = calculaColisao(auxsecundaria, auxprincipal);
 						sf::Vector2f ds = calculaColisao(auxprincipal, auxsecundaria);
-						
-						/*if (ds2.x < 0.0f && ds2.y < 0.0f)
-						{
-							auxsecundaria->colide(auxprincipal, ds2);
-
-						}
-						else {
-							auxsecundaria->setTa_No_Chao(false);
-
-
-						}*/
 						if (ds.x < 0.0f && ds.y < 0.0f)
 						{
 							auxprincipal->colide(auxsecundaria, ds);
-
 						}
-						else {
-							auxprincipal->setTa_No_Chao(false);
-
-
-						}
-						
-						
 
 					}
 				}
 			}
 		}
-		
-		
-		
-		
-		
 		for (i = 0; i < tam; i++)
+		{
+			//se for um personagem entra no loop
+			if (lista->getEnt(i)->getId() == "inimigo" && lista->getEnt(i)->getVivo() == true)
 			{
-				//se for um personagem entra no loop
-				if (lista->getEnt(i)->getId() == "jogador")
+
+
+
+				auxprincipal = lista->getEnt(i);
+				for (i = 0; i < tam; i++)
 				{
-
-					auxprincipal = lista->getEnt(i);
-					for (i = 0; i < tam; i++)
+					if (lista->getEnt(i)->getId() == "obstaculo" && lista->getEnt(i)->getVivo() == true)
 					{
-						if (lista->getEnt(i)->getId() == "obstaculo")
+
+						auxsecundaria = lista->getEnt(i);
+						sf::Vector2f ds = calculaColisao(auxprincipal, auxsecundaria);
+						if (ds.x < 0.0f && ds.y < 0.0f)
 						{
-
-							auxsecundaria = lista->getEnt(i);
-							sf::Vector2f ds = calculaColisao(auxprincipal, auxsecundaria);
-							if (ds.x < 0.0f && ds.y < 0.0f)
-							{
-								auxprincipal->colide(auxsecundaria, ds);
-							}
-
+							auxprincipal->colide(auxsecundaria, ds);
 						}
+
 					}
 				}
 			}
-			for (i = 0; i < tam; i++)
-			{
-				//se for um personagem entra no loop
-				if (lista->getEnt(i)->getId() == "inimigo")
-				{
-			
-				
-
-					auxprincipal = lista->getEnt(i);
-					for (i = 0; i < tam; i++)
-					{
-						if (lista->getEnt(i)->getId() == "obstaculo")
-						{
-
-							auxsecundaria = lista->getEnt(i);
-							sf::Vector2f ds = calculaColisao(auxprincipal, auxsecundaria);
-							if (ds.x < 0.0f && ds.y < 0.0f)
-							{
-								auxprincipal->colide(auxsecundaria, ds);
-							}
-
-						}
-					}
-				}
-			}
-			
 		
+
+		}
 	}
 	//pegamos o código do monitor giovanni pois 
 	sf::Vector2f Colisao::calculaColisao(Entidade* entidade1, Entidade* entidade2)

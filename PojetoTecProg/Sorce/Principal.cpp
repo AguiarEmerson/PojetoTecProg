@@ -18,6 +18,8 @@ Principal::Principal():
     lista.incluir(static_cast<Entidade*>(&jogador));
     lista.incluir(static_cast<Entidade*>(&inimigo));
 
+    jogador.setVivo(true);
+
     colisoes.setLista(&lista);
     Pgrafico->setLista(&lista);
 

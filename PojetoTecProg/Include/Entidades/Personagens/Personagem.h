@@ -19,6 +19,10 @@ namespace Entidades
 
 			void setAc(sf::Vector2f aceleracao);
 			sf::Vector2f getAc();
+
+			void verificaVida();
+
+			void tomaDano();
 			
 		};
 	}

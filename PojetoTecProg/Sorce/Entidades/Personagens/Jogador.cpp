@@ -100,10 +100,10 @@ namespace Entidades
 				{
 					if (pos.y < pos2.y)
 					{
-						ta_no_chao = true;
 						pos.y += ds.y;
-						if (secundaria->getId() == "inimigo") {
-							esmagaInimigo(secundaria);
+						if (secundaria->getId() == "obstaculo")
+						{
+							ta_no_chao = true;
 						}
 						
 					}
@@ -121,8 +121,11 @@ namespace Entidades
 		}
 		void Jogador::esmagaInimigo(Entidade* inimigo)
 		{
-			pula(); 
+			setvel(sf::Vector2f(vel.x, - 15.0f));
 			
+			ta_no_chao = false;
 		}
+
+		
 	}
 }

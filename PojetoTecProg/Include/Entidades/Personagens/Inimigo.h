@@ -24,7 +24,9 @@ namespace Entidades
 			void Executar();
 
 			void colide(Entidade* secundaria, sf::Vector2f ds);
-			void tomaDano();
+			void esmagado(Entidade* secundaria);
+
+			
 		};
 	}
 }
