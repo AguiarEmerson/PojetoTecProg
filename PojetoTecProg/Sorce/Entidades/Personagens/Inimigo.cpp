@@ -54,16 +54,18 @@ namespace Entidades
 					if (pos.x < pos2.x)
 					{
 						pos.x += ds.x;
-						angulo = atan2f((pos2.y + tam2.y - pos.y - tam1.y), (pos2.x + tam2.x - pos.x - tam1.x));
-						if (secundaria->getId() == "jogador")
+						if (secundaria->getId() == "jogador") {
+							angulo = atan2f((pos2.y + tam2.y - pos.y - tam1.y), (pos2.x + tam2.x - pos.x - tam1.x));
 							coice(secundaria, angulo);
+						}
 					}
 					else
 					{
 						pos.x -= ds.x;
-						angulo = atan2f((pos2.y + tam2.y - pos.y - tam1.y), (pos2.x + tam2.x - pos.x - tam1.x));
-						if (secundaria->getId() == "jogador")
+						if (secundaria->getId() == "jogador") {
+							angulo = atan2f((pos2.y + tam2.y - pos.y - tam1.y), (pos2.x + tam2.x - pos.x - tam1.x));
 							coice(secundaria, angulo);
+						}
 				
 					}
 				}
@@ -84,6 +86,7 @@ namespace Entidades
 							esmagado(secundaria);
 						pos.y -= ds.y;
 						vel.y = 0;
+	
 					}
 				}
 
@@ -107,7 +110,7 @@ namespace Entidades
 			vel.y=-10.0f;
 			ta_no_chao = false;
 			jogador->setvel(sf::Vector2f(jogador->getvel().x, -jogador->getvel().y));
-			printf("oi");
+
 		}
 
 		

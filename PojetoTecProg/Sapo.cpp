@@ -7,10 +7,12 @@ namespace Entidades
 			Inimigo(tam, p, v, h)
 		{
 			direcao = rand() % 2;
+			altura = 0;
 		}
 		Sapo::Sapo() :
 			Inimigo()
 		{
+			altura = 0;
 			direcao = rand() % 2;
 		}
 		Sapo::~Sapo()
@@ -19,9 +21,9 @@ namespace Entidades
 		void Sapo::move() {
 			if (ta_no_chao) {
 				float dt = relogio.getElapsedTime().asSeconds();
-				if (dt >= 1.0) {
-					relogio.restart();
+				if (dt >= 2.0) {
 					pula();
+					relogio.restart();
 					direcao = rand() % 2;
 				}
 				
@@ -44,7 +46,8 @@ namespace Entidades
 
 		void Sapo::pula() {
 			if (ta_no_chao) {
-				setvel(sf::Vector2f(vel.x, vel.y - 16.0f));
+				altura = float(rand() % 10)+6.5;
+				setvel(sf::Vector2f(vel.x, vel.y - altura));
 				setpos(sf::Vector2f(pos.x, pos.y + vel.y));
 			}
 			ta_no_chao = false;

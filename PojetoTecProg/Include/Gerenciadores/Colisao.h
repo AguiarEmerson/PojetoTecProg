@@ -1,5 +1,6 @@
 #pragma once
 #include "..\Lista\ListaEntidades.h"
+#include"..\Lista\Lista.h"
 using namespace Listas;
 namespace Gerenciadores
 {
@@ -7,6 +8,11 @@ namespace Gerenciadores
 	{
 	private:
 		ListaEntidades* lista;
+		std::list<Entidade*>listaInimigo;
+		std::list<Entidade*>listaObstaculo;
+		std::vector<Entidade*>listaJogador;
+
+
 	public:
 		Colisao(ListaEntidades* listaEnt);
 		Colisao();

@@ -9,6 +9,7 @@ namespace Entidades
 		{
 		protected:
 			int direcao;
+			float altura;
 
 		public:
 

@@ -22,6 +22,7 @@ private:
 	Jogador jogador;
 	Plataforma plataforma;
 	Plataforma plataforma2;
+	Cachorro cachorro;
 	Sapo sapo;
 
 public:
