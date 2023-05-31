@@ -1,7 +1,8 @@
 #pragma once
 #include "..\Gerenciadores\Grafico.h"
 #include "..\Gerenciadores\Colisao.h"
-#include "..\Entidades\Personagens\Inimigo.h"
+#include "..\cachorro.h"
+#include "..\Sapo.h"
 #include "..\Lista\ListaEntidades.h"
 #include "..\Entidades\Obstaculos\Plataforma.h"
 
@@ -21,7 +22,7 @@ private:
 	Jogador jogador;
 	Plataforma plataforma;
 	Plataforma plataforma2;
-	Inimigo inimigo;
+	Sapo sapo;
 
 public:
 	Principal();

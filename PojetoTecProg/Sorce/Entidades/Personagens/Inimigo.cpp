@@ -4,88 +4,26 @@ namespace Entidades
 {
 	namespace Personagens {
 		Inimigo::Inimigo(sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v, int h) :
-			Personagem(tam, p, v, h),
-			jogador(NULL)
+			Personagem(tam, p, v, h)
 		{
 			id = "inimigo";
-			direcao = rand() % 2;
 			box.setFillColor(sf::Color::Red);
+			dano = 0;
+			
 		}
 
 		Inimigo::Inimigo() :
-			Personagem(),
-			jogador(NULL)
+			Personagem()
 		{
-			direcao = rand() % 2;
+			
 			box.setFillColor(sf::Color::Red);
+			dano = 0;
 		}
 
 		Inimigo::~Inimigo()
 		{
-			jogador = NULL;
 		}
 
-		void Inimigo::setjogador(Jogador* j)
-		{
-			jogador = j;
-		}
-
-		void Inimigo::moveraleatorio()
-		{
-			if (direcao == 0)
-			{
-				setpos(sf::Vector2f(pos.x + vel.x, pos.y));
-			}
-			if (direcao == 1)
-			{
-				setpos(sf::Vector2f(pos.x - vel.x, pos.y));
-			}
-
-			float dt = relogio.getElapsedTime().asSeconds();
-			if (dt >= 1.0) {
-				direcao = rand() % 2;
-				relogio.restart();
-			}
-		}
-
-		void Inimigo::move()
-		{
-			if (!(ac.x>=-0.5&&ac.x<=0.5&&ac.y>=-0.5&&ac.y<=0.5))
-			{
-				pos = pos - ac;
-				
-				if (ac.x < 0)
-					ac.x += 0.5;
-				else
-					ac.x -= 0.5;
-				if (ac.y < 0)
-					ac.y += 0.5;
-				else
-					ac.y -= 0.5;
-			}
-			sf::Vector2f posjogador = jogador->getpos();
-			if (fabs(posjogador.x - pos.x) < RAIO_VISAO && fabs(posjogador.y - pos.y) < RAIO_VISAO)
-			{
-				Perseguir();
-			}
-			else
-				moveraleatorio();
-		}
-
-		void Inimigo::Perseguir()
-		{
-			if (podeMover) {
-				if (jogador->getpos().x > pos.x)
-				{
-					setpos(sf::Vector2f(pos.x + vel.x, pos.y));
-				}
-				if (jogador->getpos().x < pos.x)
-				{
-					setpos(sf::Vector2f(pos.x - vel.x, pos.y));
-				}
-			}
-
-		}
 		
 		void Inimigo::coice(Entidade* entidade,float angulo)
 		{
@@ -98,14 +36,6 @@ namespace Entidades
 			jogador->setvel(sf::Vector2f(jogador->getvel().x, jogador->getvel().y - sin(angulo) * 7));
 			
 
-		}
-
-
-		void Inimigo::Executar()
-		{
-			move();
-			gravidade();
-			verificaVida();
 		}
 
 		void Inimigo::colide(Entidade* secundaria, sf::Vector2f ds)

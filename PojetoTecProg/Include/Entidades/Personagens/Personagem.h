@@ -21,7 +21,6 @@ namespace Entidades
 			sf::Vector2f getAc();
 
 			void verificaVida();
-
 			void tomaDano();
 			
 		};
