@@ -84,13 +84,11 @@ namespace Entidades
 					//bloco 1 acima do 2
 					if (pos.x < pos2.x)
 					{
-						if(secundaria->getId()=="obstaculo")
 						pos.x += ds.x;
 						
 					}
 					else
 					{
-						if (secundaria->getId() == "obstaculo")
 						pos.x -= ds.x;
 						
 					}
@@ -99,20 +97,20 @@ namespace Entidades
 				{
 					if (pos.y < pos2.y)
 					{
-						if (secundaria->getId() == "obstaculo") {
+		
 							pos.y += ds.y;
 							if (secundaria->getId() == "obstaculo")
 							{
 								ta_no_chao = true;
 							}
-						}
+					
 					}
 					else 
 					{
-						if (secundaria->getId() == "obstaculo") {
+
 							pos.y -= ds.y;
 							vel.y = 0;
-						}
+						
 						
 					}
 				}
