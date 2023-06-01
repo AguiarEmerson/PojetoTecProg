@@ -6,6 +6,7 @@ namespace Entidades
 			jogador(NULL),
 			Inimigo(tam, p, v, h)
 		{
+			id = "cachorro";
 			direcao = rand() % 2;
 		}
 		Cachorro::Cachorro():
@@ -13,6 +14,7 @@ namespace Entidades
 			jogador(NULL)
 		{
 			direcao = rand() % 2;
+			id = "cachorro";
 		}
 		Cachorro::~Cachorro()
 		{
