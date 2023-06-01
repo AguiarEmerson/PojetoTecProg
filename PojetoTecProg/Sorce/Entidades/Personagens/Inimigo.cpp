@@ -82,10 +82,10 @@ namespace Entidades
 					}
 					else
 					{
-						if (secundaria->getId() == "jogador")
-							esmagado(secundaria);
 						pos.y -= ds.y;
 						vel.y = 0;
+						if (secundaria->getId() == "jogador")
+							esmagado(secundaria);
 	
 					}
 				}

@@ -39,7 +39,6 @@ namespace Entidades
 					if (pos.y < pos2.y)
 					{
 						pos.y += ds.y;
-						secundaria->setTa_No_Chao(true);
 					}
 					else
 					{

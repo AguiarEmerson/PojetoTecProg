@@ -66,8 +66,8 @@ namespace Entidades
 		}
 		void Jogador::Executar()
 		{
-			gravidade();
 			move();
+			gravidade();
 			verificaVida();
 		}
 
@@ -97,21 +97,13 @@ namespace Entidades
 				{
 					if (pos.y < pos2.y)
 					{
-		
-							pos.y += ds.y;
-							if (secundaria->getId() == "obstaculo")
-							{
-								ta_no_chao = true;
-							}
-					
+						pos.y += ds.y;
+						ta_no_chao = true;
 					}
 					else 
 					{
-
-							pos.y -= ds.y;
-							vel.y = 0;
-						
-						
+						pos.y -= ds.y;
+						vel.y = 0;
 					}
 				}
 
@@ -121,8 +113,7 @@ namespace Entidades
 		}
 		void Jogador::esmagaInimigo(Entidade* inimigo)
 		{
-			setvel(sf::Vector2f(vel.x, - 15.0f));
-			
+			setvel(sf::Vector2f(vel.x, - 10.0f));
 			ta_no_chao = false;
 		}
 
