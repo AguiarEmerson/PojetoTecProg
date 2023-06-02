@@ -30,13 +30,13 @@ namespace Entidades
 		
 		void Inimigo::coice(Entidade* entidade,float angulo)
 		{
-			ac.x = ac.x + cos(angulo) * 7;
-			vel.y = vel.y + sin(angulo) * 7;
+			ac.x = ac.x + cos(angulo) * VELOCIDADECOICE;
+			vel.y = vel.y + sin(angulo) * VELOCIDADECOICE;
 			Jogador* jogador = nullptr;
 			jogador = static_cast<Jogador*>(entidade);
 			jogador->tomaDano(dano);
-			jogador->setAc(sf::Vector2f(-(jogador->getAc().x + cos(angulo) * 7), jogador->getAc().y));
-			jogador->setvel(sf::Vector2f(jogador->getvel().x, jogador->getvel().y - sin(angulo) * 7));
+			jogador->setAc(sf::Vector2f(-(jogador->getAc().x + cos(angulo) * VELOCIDADECOICE), jogador->getAc().y));
+			jogador->setvel(sf::Vector2f(jogador->getvel().x, jogador->getvel().y - sin(angulo) * VELOCIDADECOICE));
 			
 
 		}

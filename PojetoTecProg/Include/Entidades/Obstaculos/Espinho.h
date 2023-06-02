@@ -11,6 +11,8 @@ namespace Entidades
 		{
 		protected:
 			float dt;
+			float tempo_total;
+			bool primeiro_ciclo;
 			int dano;
 		public:
 			Espinho(sf::Vector2f tam, sf::Vector2f p = sf::Vector2f(0.0, 0.0), sf::Vector2f v = sf::Vector2f(0.0, 0.0));
@@ -19,6 +21,8 @@ namespace Entidades
 			void Executar();
 			void colide(Entidade* secundaria, sf::Vector2f ds);
 			void danoPersonagem(Personagem* personagem);
+
+			void primTempoTotal();
 		};
 	}
 }

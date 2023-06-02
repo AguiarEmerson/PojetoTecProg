@@ -60,11 +60,11 @@ namespace Entidades
 				novapos.x = pos.x + rand() % int(getTam().x - projetil.getTam().x);
 				novapos.y = pos.y - (projetil.getTam().y + 1.0f);
 				if (direcao == 1) 
-					novavel.x = (rand() % 5)+5.0f;
+					novavel.x = (rand() % 5)+VELMINPROJETILX;
 				
 				else
-					novavel.x = ( - rand() % 5 )- 5.0f;
-				novavel.y = -((rand() % 5) + 10.0f);
+					novavel.x = ( - rand() % 5 )- VELMINPROJETILX;
+				novavel.y = -((rand() % 5) + VELMINPROJETILY);
 
 				projetil.reiniciaProjetil(novapos, novavel);
 			}

@@ -25,19 +25,26 @@ namespace Entidades
 		}
 		void Espinho::Executar()
 		{	
-			dt = Pgrafico->getrelogio().getElapsedTime().asSeconds();
+			dt = Pgrafico->getrelogio().getElapsedTime().asSeconds()-tempo_total;
 		}
 		void Espinho::colide(Entidade* secundaria, sf::Vector2f ds) {
 
 		}
 		void Espinho::danoPersonagem(Personagem* personagem) {
-			if (dt >= 8) {
+			if (dt >= TEMPOESPINHO) {
 				personagem->tomaDano(dano);
-				Pgrafico->getrelogio().restart();
+				tempo_total+=TEMPOESPINHO;
 			}
 
 
 		}
 
+		void Espinho::primTempoTotal() {
+			if (primeiro_ciclo)
+			{
+				primeiro_ciclo = 0;
+				tempo_total = Pgrafico->getrelogio().getElapsedTime().asSeconds();
+			}
+		}
 	}
 }

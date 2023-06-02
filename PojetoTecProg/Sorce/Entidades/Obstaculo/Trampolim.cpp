@@ -27,14 +27,14 @@ namespace Entidades
 		}
 		void Trampolim::Executar() 
 		{
-			dt = Pgrafico->getrelogio().getElapsedTime().asSeconds();
+			dt = Pgrafico->getrelogio().getElapsedTime().asSeconds()-tempo_total;
 		}
 		void Trampolim::jogadorPula(Entidade* joga) 
 		{
-			if (dt >= 5.0f && podePular == false)
+			if (dt >= TEMPOTRAMPOLIM && podePular == false)
 			{
 				podePular = true;
-				Pgrafico->getrelogio().restart();
+				tempo_total+=TEMPOTRAMPOLIM;
 			}
 				
 		}
@@ -47,6 +47,15 @@ namespace Entidades
 		{
 			podePular = pula;
 		}
+
+		void Trampolim::primTempoTotal() {
+			if (primeiro_ciclo)
+			{
+				primeiro_ciclo = 0;
+				tempo_total = Pgrafico->getrelogio().getElapsedTime().asSeconds();
+			}
+		}
+
 		
 
 	}

@@ -33,7 +33,7 @@ namespace Entidades
 		void Jogador::pula()
 		{
 			if (ta_no_chao) {
-				setvel(sf::Vector2f(vel.x, vel.y - 10.0f)); 
+				setvel(sf::Vector2f(vel.x, vel.y - VELOCIDADEPULO)); 
 				setpos(sf::Vector2f(pos.x, pos.y + vel.y));
 			}
 			ta_no_chao = false;
@@ -90,11 +90,11 @@ namespace Entidades
 						if (secundaria->getId() == "projetil")
 						{
 							deletaProjetil(secundaria);
-							setAc(sf::Vector2f(-2*secundaria->getvel().x, 0.0f));
+							setAc(sf::Vector2f(-FORCAPROJETIL*secundaria->getvel().x, 0.0f));
 						}
 						if (secundaria->getId() == "espinho")
 						{
-							setAc(sf::Vector2f(5 * vel.x, 0.0f));
+							setAc(sf::Vector2f(IMPULSOESPINHOL * vel.x, 0.0f));
 							danoEspinho(secundaria);
 						}
 					}
@@ -104,11 +104,11 @@ namespace Entidades
 						if (secundaria->getId() == "projetil")
 						{
 							deletaProjetil(secundaria);
-							setAc(sf::Vector2f(-2*secundaria->getvel().x, 0));
+							setAc(sf::Vector2f(-FORCAPROJETIL*secundaria->getvel().x, 0));
 						}
 						if (secundaria->getId() == "espinho")
 						{
-								setAc(sf::Vector2f(-5 * vel.x, 0.0f));
+								setAc(sf::Vector2f(-IMPULSOESPINHOL * vel.x, 0.0f));
 								danoEspinho(secundaria);
 						}
 					}
@@ -128,11 +128,11 @@ namespace Entidades
 						if (secundaria->getId() == "projetil")
 						{
 							deletaProjetil(secundaria);
-							setAc(sf::Vector2f(-2*secundaria->getvel().x, 0));
+							setAc(sf::Vector2f(-FORCAPROJETIL*secundaria->getvel().x, 0));
 						}
 						if (secundaria->getId() == "espinho")
 						{
-							setvel(sf::Vector2f(vel.x, -16.0f));
+							setvel(sf::Vector2f(vel.x, -PULOALTO));
 							ta_no_chao = false;
 							danoEspinho(secundaria);
 						}
@@ -145,7 +145,7 @@ namespace Entidades
 						if (secundaria->getId() == "projetil")
 						{
 							deletaProjetil(secundaria);
-							setAc(sf::Vector2f(-2*secundaria->getvel().x, 0));
+							setAc(sf::Vector2f(-FORCAPROJETIL*secundaria->getvel().x, 0));
 						}
 						if (secundaria->getId() == "espinho")
 						{
@@ -161,7 +161,7 @@ namespace Entidades
 		}
 		void Jogador::esmagaInimigo(Entidade* inimigo)
 		{
-			setvel(sf::Vector2f(vel.x, - 10.0f));
+			setvel(sf::Vector2f(vel.x, - VELOCIDADEPULO));
 			ta_no_chao = false;
 		}
 		void Jogador::deletaProjetil(Entidade* projetil)
@@ -182,7 +182,7 @@ namespace Entidades
 				setTa_No_Chao(true);
 			else
 			{
-				setvel(sf::Vector2f(vel.x, -15.0f));
+				setvel(sf::Vector2f(vel.x, -PULOALTO));
 				ta_no_chao = false;
 				trampolim->setPodePular(false);
 			}
