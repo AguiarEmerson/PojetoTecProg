@@ -1,11 +1,12 @@
 #pragma once
 #include "..\Gerenciadores\Grafico.h"
 #include "..\Gerenciadores\Colisao.h"
-#include "..\cachorro.h"
-#include "..\Sapo.h"
+#include "..\Entidades\Personagens\Cachorro.h"
+#include "..\Entidades\Personagens\Sapo.h"
+#include "..\Entidades\Personagens\Macaco.h"
 #include "..\Lista\ListaEntidades.h"
 #include "..\Entidades\Obstaculos\Plataforma.h"
-#include "..\Macaco.h"
+
 
 using namespace Listas;
 using namespace Entidades;

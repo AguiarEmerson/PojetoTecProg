@@ -1,5 +1,5 @@
 #pragma once
-#include "Include/Entidades/Entidade.h"
+#include "Entidade.h"
 namespace Entidades
 {
 	class Projetil : public Entidade

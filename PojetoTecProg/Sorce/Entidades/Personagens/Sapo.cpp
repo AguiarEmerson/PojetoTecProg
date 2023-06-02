@@ -1,5 +1,5 @@
-#include"..\Entidades\Personagens\Sapo.h"
-#include"..\Gerenciadores\Grafico.h"
+#include "..\Entidades\Personagens\Sapo.h"
+#include "..\Gerenciadores\Grafico.h"
 
 namespace Entidades
 {
@@ -7,17 +7,17 @@ namespace Entidades
 		Sapo::Sapo(sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v, int h) :
 			Inimigo(tam, p, v, h)
 		{
+			id = "sapo";
 			direcao = rand() % 2;
 			altura = 0;
 		}
-
 		Sapo::Sapo() :
 			Inimigo()
 		{
-			direcao = rand() % 2;
+			id = "sapo";
 			altura = 0;
+			direcao = rand() % 2;
 		}
-
 		Sapo::~Sapo()
 		{
 		}

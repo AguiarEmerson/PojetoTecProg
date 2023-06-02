@@ -1,6 +1,6 @@
 #pragma once
-#include "..\Personagens\Inimigo.h"
-#include "..\Personagens\Jogador.h"
+#include "..\Entidades\Personagens\Inimigo.h"
+#include "..\Entidades\Personagens\Jogador.h"
 
 namespace Entidades
 {
@@ -8,9 +8,8 @@ namespace Entidades
 		class Cachorro :public Inimigo {
 		protected:
 			Jogador* jogador;
-			int direcao;
 		public:
-			Cachorro(sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v, int h);
+			Cachorro(sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v = sf::Vector2f(3.0, 0.0), int h = 3);
 			Cachorro();
 
 			~Cachorro();

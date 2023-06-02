@@ -3,7 +3,7 @@
 namespace Entidades
 {
 	Entidade::Entidade( sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v) :
-		Ente(tam),
+		Ente(),
 		ta_no_chao(false)
 	{
 		podeMover = true;
@@ -23,6 +23,17 @@ namespace Entidades
 	Entidade::~Entidade()
 	{
 	}
+
+	void Entidade::setbox(sf::Vector2f tam)
+	{
+		box = sf::RectangleShape(tam);
+	}
+
+	sf::RectangleShape Entidade::getbox()
+	{
+		return box;
+	}
+
 
 	void Entidade::setpos(sf::Vector2f p)
 	{

@@ -1,5 +1,5 @@
-#include"..\Entidades\Personagens\cachorro.h"
-#include"..\Gerenciadores\Grafico.h"
+#include "..\Entidades\Personagens\Cachorro.h"
+#include "..\Gerenciadores\Grafico.h"
 
 namespace Entidades
 {
@@ -8,16 +8,16 @@ namespace Entidades
 			jogador(NULL),
 			Inimigo(tam, p, v, h)
 		{
+			id = "cachorro";
 			direcao = rand() % 2;
 		}
-
-		Cachorro::Cachorro() :
-			jogador(NULL),
-			Inimigo()
+		Cachorro::Cachorro():
+			Inimigo(),
+			jogador(NULL)
 		{
 			direcao = rand() % 2;
+			id = "cachorro";
 		}
-
 		Cachorro::~Cachorro()
 		{
 			jogador = NULL;
