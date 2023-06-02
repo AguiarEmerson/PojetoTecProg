@@ -55,13 +55,13 @@ namespace Entidades
 				int direcao;
 				direcao = rand() % 2;
 				novapos.x = pos.x + rand() % int(getTam().x - projetil.getTam().x);
-				novapos.y = pos.y - (projetil.getTam().y + 1.0);
+				novapos.y = pos.y - (projetil.getTam().y + 1.0f);
 				if (direcao == 1) 
-					novavel.x = (rand() % 5)+5;
+					novavel.x = (rand() % 5)+5.0f;
 				
 				else
-					novavel.x = ( - rand() % 5 )- 5;
-				novavel.y = -((rand() % 5) + 10);
+					novavel.x = ( - rand() % 5 )- 5.0f;
+				novavel.y = -((rand() % 5) + 10.0f);
 
 				projetil.reiniciaProjetil(novapos, novavel);
 			}

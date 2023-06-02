@@ -49,7 +49,7 @@ namespace Entidades
 
 		void Sapo::pula() {
 			if (ta_no_chao) {
-				altura = float(rand() % 10)+6.5;
+				altura = float(rand() % 10)+6.5f;
 				setvel(sf::Vector2f(vel.x, vel.y - altura));
 				setpos(sf::Vector2f(pos.x, pos.y + vel.y));
 			}

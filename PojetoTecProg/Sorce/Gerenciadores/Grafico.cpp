@@ -33,6 +33,7 @@ namespace Gerenciadores {
 	void Grafico::desenha(sf::RectangleShape box)
 	{
 		window->draw(box);
+		
 	}
 
 	const bool Grafico::verificaJanelaAberta() {

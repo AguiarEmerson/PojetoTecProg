@@ -2,6 +2,7 @@
 #include "Personagem.h"
 #include"..\Projetil.h"
 #include"..\Obstaculos\Trampolim.h"
+#include"..\Obstaculos\Espinho.h"
 
 
 namespace Entidades

@@ -11,6 +11,7 @@ class Ente
 protected:
 	static Gerenciadores::Grafico* Pgrafico;
 	string id;
+	sf::Clock relogio;
 public:
 	Ente();
 	~Ente();

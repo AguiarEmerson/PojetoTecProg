@@ -6,6 +6,7 @@
 #include "..\Entidades\Personagens\Macaco.h"
 #include "..\Lista\ListaEntidades.h"
 #include "..\Entidades\Obstaculos\Plataforma.h"
+#include "..\Entidades\Obstaculos\Espinho.h"
 
 
 using namespace Listas;

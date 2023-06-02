@@ -1,4 +1,5 @@
-#include "Espinho.h"
+#include "..\..\..\Include\Entidades\Obstaculos\Espinho.h"
+#include "..\Gerenciadores\Grafico.h"
 namespace Entidades
 {
 	namespace Obstaculos
@@ -24,7 +25,7 @@ namespace Entidades
 		}
 		void Espinho::Executar()
 		{	
-			dt = relogio.getElapsedTime().asSeconds();
+			dt = Pgrafico->getrelogio().getElapsedTime().asSeconds();
 		}
 		void Espinho::colide(Entidade* secundaria, sf::Vector2f ds) {
 
@@ -32,7 +33,7 @@ namespace Entidades
 		void Espinho::danoPersonagem(Personagem* personagem) {
 			if (dt >= 8) {
 				personagem->tomaDano(dano);
-				relogio.restart();
+				Pgrafico->getrelogio().restart();
 			}
 
 
