@@ -20,6 +20,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cachorro.cpp" />
+    <ClCompile Include="Macaco.cpp" />
+    <ClCompile Include="Projetil.cpp" />
     <ClCompile Include="Sapo.cpp" />
     <ClCompile Include="Sorce\Gerenciadores\Colisao.cpp" />
     <ClCompile Include="Sorce\Gerenciadores\Grafico.cpp" />
@@ -49,6 +51,8 @@
     <ClInclude Include="Include\Lista\ListaEntidades.h" />
     <ClInclude Include="Include\stdafx.h" />
     <ClInclude Include="Include\Principal.h" />
+    <ClInclude Include="Macaco.h" />
+    <ClInclude Include="Projetil.h" />
     <ClInclude Include="Sapo.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

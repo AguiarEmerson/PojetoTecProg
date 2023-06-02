@@ -1,7 +1,10 @@
 #pragma once
 #include "..\Lista\ListaEntidades.h"
 #include"..\Lista\Lista.h"
+#include"..\..\Macaco.h"
 using namespace Listas;
+using namespace Entidades;
+using namespace Personagens;
 namespace Gerenciadores
 {
 	class Colisao
@@ -11,6 +14,9 @@ namespace Gerenciadores
 		std::list<Entidade*>listaInimigo;
 		std::list<Entidade*>listaObstaculo;
 		std::vector<Entidade*>listaJogador;
+		std::list<Entidade*>listaProjetil;
+
+
 
 
 	public:

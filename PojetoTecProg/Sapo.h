@@ -8,7 +8,7 @@ namespace Entidades
 		class Sapo :public Inimigo
 		{
 		protected:
-			int direcao;
+		
 			float altura;
 
 		public:

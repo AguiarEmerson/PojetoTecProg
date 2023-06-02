@@ -8,6 +8,7 @@ namespace Entidades
 		{
 		protected:
 			int dano;
+			int direcao;
 		public:
 			Inimigo(sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v = sf::Vector2f(3.0, 0.0), int h = 3);
 			Inimigo();
@@ -23,6 +24,7 @@ namespace Entidades
 			void colide(Entidade* secundaria, sf::Vector2f ds);
 			void esmagado(Entidade* secundaria);
 			void esmagaJogador(Entidade* entidade);
+			void sapoBate(Entidade* entidade);
 
 			
 		};

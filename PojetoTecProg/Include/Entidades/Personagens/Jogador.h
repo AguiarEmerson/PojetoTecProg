@@ -1,5 +1,6 @@
 #pragma once
 #include "Personagem.h"
+#include"..\..\..\Projetil.h"
 
 
 namespace Entidades
@@ -19,6 +20,7 @@ namespace Entidades
 			void Executar();
 			void colide(Entidade* secundaria, sf::Vector2f ds);
 			void esmagaInimigo(Entidade* inimigo);
+			void deletaProjetil(Entidade* projetil);
 		};
 	}
 }

@@ -66,8 +66,8 @@ namespace Entidades
 		}
 		void Jogador::Executar()
 		{
-			gravidade();
 			move();
+			gravidade();
 			verificaVida();
 		}
 
@@ -85,33 +85,49 @@ namespace Entidades
 					if (pos.x < pos2.x)
 					{
 						pos.x += ds.x;
-						
+						if (secundaria->getId() == "projetil")
+						{
+							deletaProjetil(secundaria);
+							tomaDano();
+							setAc(sf::Vector2f(-2*secundaria->getvel().x, 0));
+						}
 					}
 					else
 					{
-						pos.x -= ds.x;
-						
+						pos.x -= ds.x;	
+						if (secundaria->getId() == "projetil")
+						{
+							deletaProjetil(secundaria);
+							tomaDano();
+							setAc(sf::Vector2f(-2*secundaria->getvel().x, 0));
+						}
 					}
 				}
 				else
 				{
 					if (pos.y < pos2.y)
 					{
-		
-							pos.y += ds.y;
-							if (secundaria->getId() == "obstaculo")
-							{
-								ta_no_chao = true;
-							}
-					
+						if(secundaria->getId()=="obstaculo")
+							ta_no_chao = true;
+						pos.y += ds.y;
+						if (secundaria->getId() == "projetil")
+						{
+							deletaProjetil(secundaria);
+							tomaDano();
+							setAc(sf::Vector2f(-2*secundaria->getvel().x, 0));
+						}
 					}
 					else 
 					{
-
-							pos.y -= ds.y;
+						pos.y -= ds.y;
+						if (secundaria->getId() == "obstaculo")
 							vel.y = 0;
-						
-						
+						if (secundaria->getId() == "projetil")
+						{
+							deletaProjetil(secundaria);
+							tomaDano();
+							setAc(sf::Vector2f(-2*secundaria->getvel().x, 0));
+						}
 					}
 				}
 
@@ -121,9 +137,14 @@ namespace Entidades
 		}
 		void Jogador::esmagaInimigo(Entidade* inimigo)
 		{
-			setvel(sf::Vector2f(vel.x, - 15.0f));
-			
+			setvel(sf::Vector2f(vel.x, - 10.0f));
 			ta_no_chao = false;
+		}
+		void Jogador::deletaProjetil(Entidade* projetil)
+		{
+			Projetil* projet = NULL;
+			projet = static_cast<Projetil*>(projetil);
+			projet->setExiste(false);
 		}
 
 		

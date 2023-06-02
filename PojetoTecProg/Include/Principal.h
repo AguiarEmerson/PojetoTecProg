@@ -5,6 +5,7 @@
 #include "..\Sapo.h"
 #include "..\Lista\ListaEntidades.h"
 #include "..\Entidades\Obstaculos\Plataforma.h"
+#include "..\Macaco.h"
 
 using namespace Listas;
 using namespace Entidades;
@@ -24,6 +25,7 @@ private:
 	Plataforma plataforma2;
 	Cachorro cachorro;
 	Sapo sapo;
+	Macaco macaco;
 
 public:
 	Principal();

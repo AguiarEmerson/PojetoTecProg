@@ -22,6 +22,7 @@ namespace Gerenciadores
 		listaInimigo.clear();
 		listaObstaculo.clear();
 		listaJogador.clear();
+		listaProjetil.clear();
 			
 	}
 	void Colisao::setLista(ListaEntidades* listaEnt)
@@ -34,13 +35,21 @@ namespace Gerenciadores
 		{
 			if (lista->getEnt(i)->getId() == "obstaculo")
 				listaObstaculo.push_back(lista->getEnt(i));
-			else if (lista->getEnt(i)->getId() == "inimigo") 
+			else if (lista->getEnt(i)->getId() == "cachorro"|| lista->getEnt(i)->getId() == "sapo")
 				listaInimigo.push_back(lista->getEnt(i));
 			else if (lista->getEnt(i)->getId() == "jogador")
-				listaJogador.push_back(lista->getEnt(i));
-		
+				listaJogador.push_back(lista->getEnt(i));	
+			else if (lista->getEnt(i)->getId() == "macaco")
+			{
+				listaInimigo.push_back(lista->getEnt(i));
+				Macaco* macaco = NULL;
+				macaco = static_cast<Macaco*>(lista->getEnt(i));
+				listaObstaculo.push_back(static_cast<Entidade*>(macaco->getProjetil()));
 				
+			}
+		
 		}
+
 	}
 	void Colisao::executar()
 	{
@@ -50,9 +59,13 @@ namespace Gerenciadores
 
 		Entidade* auxprincipal;
 		Entidade* auxsecundaria;
+
+		bool colidiu;
+
 		for (it=listaInimigo.begin();it!=listaInimigo.end(); it++)
 		{
 			auxprincipal = *it;
+			colidiu = false;
 			if (auxprincipal->getVivo() == true) {
 				for (it2 = listaObstaculo.begin(); it2 != listaObstaculo.end(); it2++)
 				{
@@ -61,38 +74,37 @@ namespace Gerenciadores
 					{
 						sf::Vector2f ds = calculaColisao(auxprincipal, auxsecundaria);
 
-						if (ds.x < 0.0f && ds.y < 0.0f) 
+						if (ds.x < 0.0f && ds.y < 0.0f) {
 							auxprincipal->colide(auxsecundaria, ds);
-						else
-							auxprincipal->setTa_No_Chao(false);
-						
-						
+							colidiu = true;
+						}
 					}
 
 				}
+				if (colidiu == false)
+					auxprincipal->setTa_No_Chao(false);
+
 			}
 		}
 		for (it3 = listaJogador.begin(); it3 != listaJogador.end(); it3++)
 		{
 			auxprincipal = *it3;
+			colidiu = false;
 			if (auxprincipal->getVivo() == true) {
 				for (it2 = listaObstaculo.begin(); it2 != listaObstaculo.end(); it2++)
 				{
 					auxsecundaria = *it2;
 	
 
-					if (auxsecundaria->getVivo() == true)
-					{
-						sf::Vector2f ds = calculaColisao(auxprincipal, auxsecundaria);
+					sf::Vector2f ds = calculaColisao(auxprincipal, auxsecundaria);
 
-						if (ds.x < 0.0f && ds.y < 0.0f)
-							auxprincipal->colide(auxsecundaria, ds);
-						else
-							auxprincipal->setTa_No_Chao(false);
-						
+					if (ds.x < 0.0f && ds.y < 0.0f) {
+						auxprincipal->colide(auxsecundaria, ds);
+						colidiu = true;
 					}
-
 				}
+				if (colidiu == false)
+					auxprincipal->setTa_No_Chao(false);
 			}
 		}
 		for (it = listaInimigo.begin(); it != listaInimigo.end(); it++)
@@ -106,12 +118,28 @@ namespace Gerenciadores
 					{
 						sf::Vector2f ds = calculaColisao(auxprincipal, auxsecundaria);
 
-						if (ds.x < 0.0f && ds.y < 0.0f)
+						if (ds.x < 0.0f && ds.y < 0.0f) {
 							auxprincipal->colide(auxsecundaria, ds);
-						
+						}	
 					}
 
 				}
+			}
+		}
+		for (it3 = listaJogador.begin(); it3 != listaJogador.end(); it3++)
+		{
+			auxprincipal = *it3;
+			if (auxprincipal->getVivo() == true) {
+				for (it2 = listaProjetil.begin(); it2 != listaProjetil.end(); it2++)
+				{
+					auxsecundaria = *it2;
+					sf::Vector2f ds = calculaColisao(auxprincipal, auxsecundaria);
+					if (ds.x < 0.0f && ds.y < 0.0f) {
+						auxprincipal->colide(auxsecundaria, ds);
+					
+					}
+				}
+				
 			}
 		}
 	}

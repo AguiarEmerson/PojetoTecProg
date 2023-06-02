@@ -6,7 +6,6 @@ namespace Entidades
 		Inimigo::Inimigo(sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v, int h) :
 			Personagem(tam, p, v, h)
 		{
-			id = "inimigo";
 			box.setFillColor(sf::Color::Red);
 			dano = 0;
 			
@@ -82,10 +81,10 @@ namespace Entidades
 					}
 					else
 					{
-						if (secundaria->getId() == "jogador")
-							esmagado(secundaria);
 						pos.y -= ds.y;
 						vel.y = 0;
+						if (secundaria->getId() == "jogador")
+							esmagado(secundaria);
 	
 					}
 				}
@@ -100,6 +99,7 @@ namespace Entidades
 			Jogador* jogador = nullptr;
 			jogador = static_cast<Jogador*>(secundaria);
 			jogador->esmagaInimigo(this);
+			
 		}
 
 		void Inimigo::esmagaJogador(Entidade* entidade)
@@ -112,6 +112,7 @@ namespace Entidades
 			jogador->setvel(sf::Vector2f(jogador->getvel().x, -jogador->getvel().y));
 
 		}
+		
 
 		
 	}
