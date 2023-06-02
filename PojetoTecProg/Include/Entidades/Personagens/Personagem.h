@@ -13,6 +13,7 @@ namespace Entidades
 			Personagem(sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v, int h);
 			Personagem();
 			~Personagem();
+			
 
 			virtual void Executar() = 0;
 			virtual void colide(Entidade* secundaria, sf::Vector2f ds) = 0;

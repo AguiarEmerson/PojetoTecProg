@@ -1,4 +1,6 @@
-#include "cachorro.h"
+#include "..\Entidades\Personagens\Cachorro.h"
+#include "..\Gerenciadores\Grafico.h"
+
 namespace Entidades
 {
 	namespace Personagens {
@@ -38,10 +40,10 @@ namespace Entidades
 				setpos(sf::Vector2f(pos.x - vel.x, pos.y));
 			}
 
-			float dt = relogio.getElapsedTime().asSeconds();
+			float dt = Pgrafico->getrelogio().getElapsedTime().asSeconds();
 			if (dt >= 1.0) {
 				direcao = rand() % 2;
-				relogio.restart();
+				Pgrafico->getrelogio().restart();
 			}
 		}
 

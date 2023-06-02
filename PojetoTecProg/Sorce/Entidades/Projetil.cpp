@@ -1,4 +1,4 @@
-#include "Projetil.h"
+#include "../Entidades/Projetil.h"
 namespace Entidades
 {
 	Projetil::Projetil(sf::Vector2f tam, sf::Vector2f p , sf::Vector2f v ):

@@ -12,6 +12,7 @@ namespace Gerenciadores
 	private:
 		sf::RenderWindow* window;
 		sf::View camera;
+		sf::Clock relogio;
 
 		ListaEntidades* lista;
 
@@ -31,6 +32,7 @@ namespace Gerenciadores
 		void resetarJanela();
 		sf::Vector2f getTamJanela();
 		sf::RenderWindow* getjanela();
+		sf::Clock getrelogio();
 		void setLista(ListaEntidades* listaEnt);
 		void executar();
 	};

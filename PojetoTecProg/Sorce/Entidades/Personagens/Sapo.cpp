@@ -1,4 +1,5 @@
-#include "Sapo.h"
+#include "..\Entidades\Personagens\Sapo.h"
+#include "..\Gerenciadores\Grafico.h"
 
 namespace Entidades
 {
@@ -22,10 +23,10 @@ namespace Entidades
 		}
 		void Sapo::move() {
 			if (ta_no_chao) {
-				float dt = relogio.getElapsedTime().asSeconds();
+				float dt = Pgrafico->getrelogio().getElapsedTime().asSeconds();
 				if (dt >= 2.0) {
 					pula();
-					relogio.restart();
+					Pgrafico->getrelogio().restart();
 					direcao = rand() % 2;
 				}
 				
