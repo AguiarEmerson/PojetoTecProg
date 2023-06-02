@@ -1,4 +1,5 @@
 #include "..\Entidades\Personagens\Macaco.h"
+#include "..\Gerenciadores\Grafico.h"
 
 namespace Entidades
 {
@@ -22,7 +23,7 @@ namespace Entidades
 		void Macaco::move() {
 
 	
-			float dt = relogio.getElapsedTime().asSeconds();
+			float dt = Pgrafico->getrelogio().getElapsedTime().asSeconds();
 			if (dt >= 2.0&&dt<=4) {
 				direcao = rand() % 2;
 			}
@@ -34,7 +35,7 @@ namespace Entidades
 					setpos(sf::Vector2f(getpos().x - getvel().x, getpos().y));
 			}
 			else
-				relogio.restart();
+				Pgrafico->getrelogio().restart();
 		}
 		void Macaco::Executar()
 		{

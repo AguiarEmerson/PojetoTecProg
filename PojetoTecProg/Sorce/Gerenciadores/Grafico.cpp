@@ -82,6 +82,11 @@ namespace Gerenciadores {
 		return window;
 	}
 
+	sf::Clock Grafico::getrelogio()
+	{
+		return relogio;
+	}
+
 	void Grafico::setLista(ListaEntidades* listaEnt)
 	{
 		lista = listaEnt;

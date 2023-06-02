@@ -1,4 +1,6 @@
 #include "..\Entidades\Obstaculos\Trampolim.h"
+#include "..\Gerenciadores\Grafico.h"
+
 namespace Entidades
 {
 	namespace Obstaculos
@@ -25,14 +27,14 @@ namespace Entidades
 		}
 		void Trampolim::Executar() 
 		{
-			dt = relogio.getElapsedTime().asSeconds();
+			dt = Pgrafico->getrelogio().getElapsedTime().asSeconds();
 		}
 		void Trampolim::jogadorPula(Entidade* joga) 
 		{
 			if (dt >= 8.0f && podePular == false)
 			{
 				podePular = true;
-				relogio.restart();
+				Pgrafico->getrelogio().restart();
 			}
 				
 		}
