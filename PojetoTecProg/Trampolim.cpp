@@ -13,7 +13,7 @@ namespace Entidades
 		Trampolim::Trampolim():
 			Obstaculo()
 		{
-			podePular = true;
+
 			id = "trampolim";
 		}
 
