@@ -68,7 +68,6 @@ namespace Entidades
 		}
 		void Jogador::Executar()
 		{
-			printf("oi");
 			move();
 			gravidade();
 			verificaVida();

@@ -7,6 +7,7 @@ namespace Entidades
 		ta_no_chao(false)
 	{
 		podeMover = true;
+		setbox(tam);
 		setpos(p);
 		setvel(v);
 		vivo = true;
@@ -16,6 +17,7 @@ namespace Entidades
 		Ente(),
 		ta_no_chao(false)
 	{
+		setbox(sf::Vector2f(50.0, 50.0));
 		setpos(sf::Vector2f(500.0, 0.0));
 		setvel(sf::Vector2f(3.0, 0.0));
 	}

@@ -19,6 +19,7 @@ namespace Gerenciadores
 		//singleton
 		static Grafico* gerenciador_grafico;
 		Grafico();
+		
 	public:
 		~Grafico();
 		static Grafico* getgrafico();
