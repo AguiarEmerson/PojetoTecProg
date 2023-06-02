@@ -15,13 +15,19 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Sorce\Principal.cpp">
+    <ClCompile Include="Sorce\Ente.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="Sorce\main.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
     <ClCompile Include="Sorce\Entidades\Obstaculo\Obstaculo.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
     <ClCompile Include="Sorce\Entidades\Obstaculo\Plataforma.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="Sorce\Entidades\Personagens\Cachorro.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
     <ClCompile Include="Sorce\Entidades\Personagens\Inimigo.cpp">
@@ -36,19 +42,13 @@
     <ClCompile Include="Sorce\Entidades\Entidade.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Sorce\Lista\ListaEntidades.cpp">
-      <Filter>Arquivos de Origem</Filter>
-    </ClCompile>
-    <ClCompile Include="Sorce\Ente.cpp">
-      <Filter>Arquivos de Origem</Filter>
-    </ClCompile>
-    <ClCompile Include="Sorce\main.cpp">
+    <ClCompile Include="Sorce\Gerenciadores\Colisao.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
     <ClCompile Include="Sorce\Gerenciadores\Grafico.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Sorce\Gerenciadores\Colisao.cpp">
+    <ClCompile Include="Sorce\Lista\ListaEntidades.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
     <ClCompile Include="Sorce\Entidades\Personagens\Cachorro.cpp">
@@ -69,18 +69,30 @@
     <ClCompile Include="Sorce\Fases\Fase.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
+    <ClCompile Include="Espinho.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Include\Gerenciadores\Grafico.h">
+    <ClInclude Include="Include\Ente.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\stdafx.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
     <ClInclude Include="Include\Principal.h">
+      <Filter>Arquivos de Recurso</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Entidades\Entidade.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
     <ClInclude Include="Include\Entidades\Obstaculos\Obstaculo.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
     <ClInclude Include="Include\Entidades\Obstaculos\Plataforma.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Entidades\Personagens\Cachorro.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
     <ClInclude Include="Include\Entidades\Personagens\Inimigo.h">
@@ -92,16 +104,13 @@
     <ClInclude Include="Include\Entidades\Personagens\Personagem.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Entidades\Entidade.h">
-      <Filter>Arquivos de Cabeçalho</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Ente.h">
-      <Filter>Arquivos de Cabeçalho</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\stdafx.h">
+    <ClInclude Include="Include\Entidades\Personagens\Sapo.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
     <ClInclude Include="Include\Gerenciadores\Colisao.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Gerenciadores\Grafico.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
     <ClInclude Include="Include\Lista\Lista.h">
@@ -128,5 +137,36 @@
     <ClInclude Include="Include\Fases\Fase.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
+    <ClInclude Include="Espinho.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Debug\PojetoTecProg.exe.recipe">
+      <Filter>Arquivos de Recurso</Filter>
+    </None>
+    <None Include="Debug\PojetoTecProg.tlog\CL.command.1.tlog" />
+    <None Include="Debug\PojetoTecProg.tlog\CL.read.1.tlog" />
+    <None Include="Debug\PojetoTecProg.tlog\CL.write.1.tlog" />
+    <None Include="Debug\PojetoTecProg.tlog\link.12244.read.1.tlog" />
+    <None Include="Debug\PojetoTecProg.tlog\link.12244.write.1.tlog" />
+    <None Include="Debug\PojetoTecProg.tlog\link.12244-cvtres.read.1.tlog" />
+    <None Include="Debug\PojetoTecProg.tlog\link.12244-cvtres.write.1.tlog" />
+    <None Include="Debug\PojetoTecProg.tlog\link.12244-rc.read.1.tlog" />
+    <None Include="Debug\PojetoTecProg.tlog\link.12244-rc.write.1.tlog" />
+    <None Include="Debug\PojetoTecProg.tlog\link.command.1.tlog" />
+    <None Include="Debug\PojetoTecProg.tlog\link.read.1.tlog" />
+    <None Include="Debug\PojetoTecProg.tlog\link.write.1.tlog" />
+    <None Include="Debug\PojetoTecProg.tlog\link-cvtres.read.1.tlog" />
+    <None Include="Debug\PojetoTecProg.tlog\link-cvtres.write.1.tlog" />
+    <None Include="Debug\PojetoTecProg.tlog\link-rc.read.1.tlog" />
+    <None Include="Debug\PojetoTecProg.tlog\link-rc.write.1.tlog" />
+    <None Include="Debug\PojetoTecProg.tlog\PojetoTecProg.lastbuildstate" />
+    <None Include="Debug\PojetoTecProg.tlog\unsuccessfulbuild" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Debug\PojetoTecProg.log">
+      <Filter>Arquivos de Recurso</Filter>
+    </Text>
   </ItemGroup>
 </Project>
