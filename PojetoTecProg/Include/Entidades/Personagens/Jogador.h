@@ -1,5 +1,7 @@
 #pragma once
 #include "Personagem.h"
+#include"..\..\..\Projetil.h"
+
 
 namespace Entidades
 {
@@ -8,6 +10,7 @@ namespace Entidades
 		{
 		protected:
 			int pontos;
+			
 		public:
 			Jogador(sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v = sf::Vector2f(3.0, 0.0), int h = 3, int xp = 0);
 			Jogador();
@@ -16,6 +19,8 @@ namespace Entidades
 			void move();
 			void Executar();
 			void colide(Entidade* secundaria, sf::Vector2f ds);
+			void esmagaInimigo(Entidade* inimigo);
+			void deletaProjetil(Entidade* projetil);
 		};
 	}
 }

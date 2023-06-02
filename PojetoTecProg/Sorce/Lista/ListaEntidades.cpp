@@ -13,7 +13,8 @@ namespace Listas {
 		int i,tam = LEs.getTam();
 		for (i = 0; i < tam; i++)
 		{
-			LEs.getElem(i)->Executar();
+			if(LEs.getElem(i)->getVivo()==true)
+				LEs.getElem(i)->Executar();
 		}
 	}
 	void ListaEntidades::retirar(Entidade* pE) {
@@ -27,5 +28,6 @@ namespace Listas {
 	{
 		return LEs.getElem(pos);
 	}
+	
 }
 

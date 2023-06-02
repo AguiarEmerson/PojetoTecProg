@@ -7,7 +7,7 @@ namespace Entidades
 		class Inimigo :public Personagem
 		{
 		protected:
-			Jogador* jogador;
+			int dano;
 			int direcao;
 		public:
 			Inimigo(sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v = sf::Vector2f(3.0, 0.0), int h = 3);
@@ -15,14 +15,18 @@ namespace Entidades
 
 			~Inimigo();
 
-			void setjogador(Jogador* j);
-			void moveraleatorio();
-			void move();
-			void Perseguir();
+			virtual void move() = 0;
+			
+			void coice(Entidade* entidade,float angulo);
 
-			void Executar();
+			virtual void Executar()=0;
 
 			void colide(Entidade* secundaria, sf::Vector2f ds);
+			void esmagado(Entidade* secundaria);
+			void esmagaJogador(Entidade* entidade);
+			void sapoBate(Entidade* entidade);
+
+			
 		};
 	}
 }

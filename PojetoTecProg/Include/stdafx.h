@@ -1,6 +1,9 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include<math.h>
+#include <list>
+#include<vector>
 using std::string;
 
 

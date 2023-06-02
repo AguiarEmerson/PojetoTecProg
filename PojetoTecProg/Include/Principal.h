@@ -1,9 +1,11 @@
 #pragma once
 #include "..\Gerenciadores\Grafico.h"
 #include "..\Gerenciadores\Colisao.h"
-#include "..\Entidades\Personagens\Inimigo.h"
+#include "..\cachorro.h"
+#include "..\Sapo.h"
 #include "..\Lista\ListaEntidades.h"
 #include "..\Entidades\Obstaculos\Plataforma.h"
+#include "..\Macaco.h"
 
 using namespace Listas;
 using namespace Entidades;
@@ -21,7 +23,9 @@ private:
 	Jogador jogador;
 	Plataforma plataforma;
 	Plataforma plataforma2;
-	Inimigo inimigo;
+	Cachorro cachorro;
+	Sapo sapo;
+	Macaco macaco;
 
 public:
 	Principal();

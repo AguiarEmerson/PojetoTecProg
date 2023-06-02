@@ -19,6 +19,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="cachorro.cpp" />
+    <ClCompile Include="Macaco.cpp" />
+    <ClCompile Include="Projetil.cpp" />
+    <ClCompile Include="Sapo.cpp" />
     <ClCompile Include="Sorce\Gerenciadores\Colisao.cpp" />
     <ClCompile Include="Sorce\Gerenciadores\Grafico.cpp" />
     <ClCompile Include="Sorce\Principal.cpp" />
@@ -33,6 +37,7 @@
     <ClCompile Include="Sorce\main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="cachorro.h" />
     <ClInclude Include="Include\Gerenciadores\Colisao.h" />
     <ClInclude Include="Include\Ente.h" />
     <ClInclude Include="Include\Entidades\Entidade.h" />
@@ -46,6 +51,9 @@
     <ClInclude Include="Include\Lista\ListaEntidades.h" />
     <ClInclude Include="Include\stdafx.h" />
     <ClInclude Include="Include\Principal.h" />
+    <ClInclude Include="Macaco.h" />
+    <ClInclude Include="Projetil.h" />
+    <ClInclude Include="Sapo.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

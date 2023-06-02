@@ -6,8 +6,10 @@ namespace Entidades
 		Ente(tam),
 		ta_no_chao(false)
 	{
+		podeMover = true;
 		setpos(p);
 		setvel(v);
+		vivo = true;
 	}
 
 	Entidade::Entidade() :
@@ -60,5 +62,15 @@ namespace Entidades
 	void Entidade::setTa_No_Chao(const bool chao)
 	{
 		ta_no_chao = chao;
+	}
+	void Entidade::setPodeMover(const bool mover)
+	{
+		podeMover = mover;
+	}
+	void Entidade::setVivo(const bool vive) {
+		vivo = vive;
+	}
+	const bool Entidade::getVivo() {
+		return vivo;
 	}
 }
