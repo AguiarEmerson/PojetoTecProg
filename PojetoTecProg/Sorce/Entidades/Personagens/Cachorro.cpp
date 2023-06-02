@@ -40,10 +40,10 @@ namespace Entidades
 				setpos(sf::Vector2f(pos.x - vel.x, pos.y));
 			}
 
-			float dt = Pgrafico->getrelogio().getElapsedTime().asSeconds();
+			float dt = relogio.getElapsedTime().asSeconds();
 			if (dt >= 1.0) {
 				direcao = rand() % 2;
-				Pgrafico->getrelogio().restart();
+				relogio.restart();
 			}
 		}
 

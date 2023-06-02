@@ -24,6 +24,8 @@ namespace Entidades
 			void esmagaInimigo(Entidade* inimigo);
 			void pulaTramp(Entidade* ent);
 			void deletaProjetil(Entidade* projetil);
+			void danoEspinho(Entidade* entidade);
+			int getDano();
 			
 		};
 	}

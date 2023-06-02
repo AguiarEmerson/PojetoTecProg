@@ -31,9 +31,12 @@
     <ClCompile Include="Sorce\Entidades\Entidade.cpp" />
     <ClCompile Include="Sorce\Entidades\Obstaculo\Obstaculo.cpp" />
     <ClCompile Include="Sorce\Entidades\Obstaculo\Plataforma.cpp" />
+    <ClCompile Include="Sorce\Entidades\Personagens\Cachorro.cpp" />
     <ClCompile Include="Sorce\Entidades\Personagens\Inimigo.cpp" />
     <ClCompile Include="Sorce\Entidades\Personagens\Jogador.cpp" />
     <ClCompile Include="Sorce\Entidades\Personagens\Personagem.cpp" />
+    <ClCompile Include="Sorce\Gerenciadores\Colisao.cpp" />
+    <ClCompile Include="Sorce\Gerenciadores\Grafico.cpp" />
     <ClCompile Include="Sorce\Lista\ListaEntidades.cpp" />
     <ClCompile Include="Sorce\main.cpp" />
     <ClCompile Include="Sorce\Entidades\Obstaculo\Trampolim.cpp" />
@@ -46,18 +49,44 @@
     <ClInclude Include="Include\Entidades\Entidade.h" />
     <ClInclude Include="Include\Entidades\Obstaculos\Obstaculo.h" />
     <ClInclude Include="Include\Entidades\Obstaculos\Plataforma.h" />
+    <ClInclude Include="Include\Entidades\Personagens\Cachorro.h" />
     <ClInclude Include="Include\Entidades\Personagens\Inimigo.h" />
     <ClInclude Include="Include\Entidades\Personagens\Jogador.h" />
     <ClInclude Include="Include\Entidades\Personagens\Personagem.h" />
+    <ClInclude Include="Include\Entidades\Personagens\Sapo.h" />
+    <ClInclude Include="Include\Gerenciadores\Colisao.h" />
     <ClInclude Include="Include\Gerenciadores\Grafico.h" />
     <ClInclude Include="Include\Lista\Lista.h" />
     <ClInclude Include="Include\Lista\ListaEntidades.h" />
-    <ClInclude Include="Include\stdafx.h" />
     <ClInclude Include="Include\Principal.h" />
     <ClInclude Include="Include\Entidades\Personagens\Macaco.h" />
     <ClInclude Include="Include\Entidades\Projetil.h" />
     <ClInclude Include="Include\Entidades\Personagens\Sapo.h" />
     <ClInclude Include="Include\Entidades\Obstaculos\Trampolim.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Debug\PojetoTecProg.exe.recipe" />
+    <None Include="Debug\PojetoTecProg.tlog\CL.command.1.tlog" />
+    <None Include="Debug\PojetoTecProg.tlog\CL.read.1.tlog" />
+    <None Include="Debug\PojetoTecProg.tlog\CL.write.1.tlog" />
+    <None Include="Debug\PojetoTecProg.tlog\link-cvtres.read.1.tlog" />
+    <None Include="Debug\PojetoTecProg.tlog\link-cvtres.write.1.tlog" />
+    <None Include="Debug\PojetoTecProg.tlog\link-rc.read.1.tlog" />
+    <None Include="Debug\PojetoTecProg.tlog\link-rc.write.1.tlog" />
+    <None Include="Debug\PojetoTecProg.tlog\link.12244-cvtres.read.1.tlog" />
+    <None Include="Debug\PojetoTecProg.tlog\link.12244-cvtres.write.1.tlog" />
+    <None Include="Debug\PojetoTecProg.tlog\link.12244-rc.read.1.tlog" />
+    <None Include="Debug\PojetoTecProg.tlog\link.12244-rc.write.1.tlog" />
+    <None Include="Debug\PojetoTecProg.tlog\link.12244.read.1.tlog" />
+    <None Include="Debug\PojetoTecProg.tlog\link.12244.write.1.tlog" />
+    <None Include="Debug\PojetoTecProg.tlog\link.command.1.tlog" />
+    <None Include="Debug\PojetoTecProg.tlog\link.read.1.tlog" />
+    <None Include="Debug\PojetoTecProg.tlog\link.write.1.tlog" />
+    <None Include="Debug\PojetoTecProg.tlog\PojetoTecProg.lastbuildstate" />
+    <None Include="Debug\PojetoTecProg.tlog\unsuccessfulbuild" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Debug\PojetoTecProg.log" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -117,12 +146,12 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\Usuario\Documents\Faculdade\Projetos\TecProg\SFML-2.5.1\include;C:\SFML-2.5.1\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\SFML-2.5.1\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\Usuario\Documents\Faculdade\Projetos\TecProg\SFML-2.5.1\lib;C:\SFML-2.5.1\lib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\SFML-2.5.1\lib</AdditionalLibraryDirectories>
       <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-audio-d.lib;sfml-network-d.lib;sfml-system-d.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
