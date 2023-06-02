@@ -1,12 +1,16 @@
 #pragma once
 #include "Jogador.h"
 
+using namespace Gerenciadores;
 namespace Entidades
 {
 	namespace Personagens {
 		class Inimigo :public Personagem
 		{
 		protected:
+			float dt;
+			float tempo_total;
+			bool primeiro_ciclo;
 			int direcao;
 		public:
 			Inimigo(sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v = sf::Vector2f(3.0, 0.0), int h = 3);
@@ -23,6 +27,8 @@ namespace Entidades
 			void colide(Entidade* secundaria, sf::Vector2f ds);
 			void esmagado(Entidade* secundaria);
 			void esmagaJogador(Entidade* entidade);
+
+			void primTempoTotal();
 			
 		};
 	}

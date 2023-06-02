@@ -8,6 +8,7 @@ namespace Entidades
 			Inimigo(tam, p, v, h),
 			projetil(sf::Vector2f(15.0,15.0),sf::Vector2f(p.x,p.y+tam.y+0.5),sf::Vector2f(0.0,0.0))
 		{
+			primeiro_ciclo = 1;
 			id = "macaco";
 		}
 		Macaco::Macaco():
@@ -23,22 +24,24 @@ namespace Entidades
 		void Macaco::move() {
 
 	
-			float dt = Pgrafico->getrelogio().getElapsedTime().asSeconds();
-			if (dt >= 2.0&&dt<=4) {
+			dt = Pgrafico->getrelogio().getElapsedTime().asSeconds()-tempo_total;
+			if (dt >= TEMPOMOVEMACACO / 2 &&dt<= TEMPOMOVEMACACO) {
 				direcao = rand() % 2;
 			}
-			else if (dt <= 4.0)
+			else if (dt <= TEMPOMOVEMACACO/2)
 			{
 				if (direcao == 1)
 					setpos(sf::Vector2f(getpos().x + getvel().x, getpos().y));
 				if (direcao == 0)
 					setpos(sf::Vector2f(getpos().x - getvel().x, getpos().y));
 			}
-			else
-				Pgrafico->getrelogio().restart();
+			else {
+				tempo_total += TEMPOMOVEMACACO;
+			}
 		}
 		void Macaco::Executar()
 		{
+			primTempoTotal();
 			controlaProjetil();
 			move();
 			gravidade();

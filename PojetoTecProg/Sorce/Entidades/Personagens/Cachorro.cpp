@@ -40,10 +40,10 @@ namespace Entidades
 				setpos(sf::Vector2f(pos.x - vel.x, pos.y));
 			}
 
-			float dt = relogio.getElapsedTime().asSeconds();
-			if (dt >= 1.0) {
+			dt = Pgrafico->getrelogio().getElapsedTime().asSeconds()-tempo_total;
+			if (dt >= TEMPOCACHORRO) {
 				direcao = rand() % 2;
-				relogio.restart();
+				tempo_total += TEMPOCACHORRO;
 			}
 		}
 
@@ -88,6 +88,7 @@ namespace Entidades
 
 		void Cachorro::Executar()
 		{
+			primTempoTotal();
 			move();
 			gravidade();
 			verificaVida();

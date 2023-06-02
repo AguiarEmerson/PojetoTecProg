@@ -36,5 +36,6 @@ namespace Gerenciadores
 		sf::Clock getrelogio();
 		void setLista(ListaEntidades* listaEnt);
 		void executar();
+		
 	};
 }

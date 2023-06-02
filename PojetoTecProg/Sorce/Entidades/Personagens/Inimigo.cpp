@@ -1,4 +1,5 @@
 #include "..\Entidades\Personagens\Inimigo.h"
+#include "..\Gerenciadores\Grafico.h"
 
 namespace Entidades
 {
@@ -9,6 +10,7 @@ namespace Entidades
 			direcao = 0;
 			box.setFillColor(sf::Color::Red);
 			dano = 1;
+			primeiro_ciclo = 1;
 			
 		}
 
@@ -18,6 +20,7 @@ namespace Entidades
 			direcao = 0;
 			box.setFillColor(sf::Color::Red);
 			dano = 1;
+			primeiro_ciclo = 1;
 		}
 
 		Inimigo::~Inimigo()
@@ -112,6 +115,13 @@ namespace Entidades
 			vel.y=-10.0f;
 			ta_no_chao = false;
 			jogador->setvel(sf::Vector2f(jogador->getvel().x, -jogador->getvel().y));
+		}
+		void Inimigo::primTempoTotal(){
+			if (primeiro_ciclo)
+			{
+				primeiro_ciclo = 0;
+				tempo_total = Pgrafico->getrelogio().getElapsedTime().asSeconds();
+			}
 		}
 		
 
