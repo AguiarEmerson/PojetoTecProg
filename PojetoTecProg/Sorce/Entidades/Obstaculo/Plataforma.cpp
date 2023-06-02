@@ -7,11 +7,14 @@ namespace Entidades
 		Plataforma::Plataforma(sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v) :
 			Obstaculo(tam,p,v)
 		{
-			id = "obstaculo";
+			id = "plataforma";
+			estatico = true;
 		}
 		Plataforma::Plataforma() :
 			Obstaculo()
-		{}
+		{
+			estatico = true;
+		}
 		Plataforma::~Plataforma() {
 
 		}

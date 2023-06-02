@@ -1,10 +1,12 @@
 #pragma once
 #include "Personagem.h"
 #include"..\..\..\Projetil.h"
+#include"..\..\..\Trampolim.h"
 
 
 namespace Entidades
 {
+	using namespace Obstaculos;
 	namespace Personagens {
 		class Jogador :public Personagem
 		{
@@ -20,7 +22,9 @@ namespace Entidades
 			void Executar();
 			void colide(Entidade* secundaria, sf::Vector2f ds);
 			void esmagaInimigo(Entidade* inimigo);
+			void pulaTramp(Entidade* ent);
 			void deletaProjetil(Entidade* projetil);
+			
 		};
 	}
 }

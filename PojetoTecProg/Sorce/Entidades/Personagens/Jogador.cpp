@@ -107,9 +107,13 @@ namespace Entidades
 				{
 					if (pos.y < pos2.y)
 					{
-						if(secundaria->getId()=="obstaculo")
+						if(secundaria->getId()=="plataforma")
 							ta_no_chao = true;
 						pos.y += ds.y;
+						if (secundaria->getId() == "trampolim")
+						{
+							pulaTramp(secundaria);
+						}
 						if (secundaria->getId() == "projetil")
 						{
 							deletaProjetil(secundaria);
@@ -120,7 +124,7 @@ namespace Entidades
 					else 
 					{
 						pos.y -= ds.y;
-						if (secundaria->getId() == "obstaculo")
+						if (secundaria->getId() == "plataforma"||secundaria->getId()=="trampolim")
 							vel.y = 0;
 						if (secundaria->getId() == "projetil")
 						{
@@ -145,6 +149,23 @@ namespace Entidades
 			Projetil* projet = NULL;
 			projet = static_cast<Projetil*>(projetil);
 			projet->setExiste(false);
+		}
+		void Jogador::pulaTramp(Entidade* ent)
+		{
+			Trampolim* trampolim = NULL;
+			trampolim = static_cast<Trampolim*>(ent);
+			Entidade* jogador = NULL;
+			jogador = static_cast<Entidade*>(this);
+			trampolim->jogadorPula(jogador);
+			if (trampolim->getPodePular() == false)
+				setTa_No_Chao(true);
+			else
+			{
+				setvel(sf::Vector2f(vel.x, -15.0f));
+				ta_no_chao = false;
+			}
+			
+
 		}
 
 		

@@ -6,6 +6,7 @@ namespace Entidades
 		Inimigo::Inimigo(sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v, int h) :
 			Personagem(tam, p, v, h)
 		{
+			direcao = 0;
 			box.setFillColor(sf::Color::Red);
 			dano = 0;
 			
@@ -14,7 +15,7 @@ namespace Entidades
 		Inimigo::Inimigo() :
 			Personagem()
 		{
-			
+			direcao = 0;
 			box.setFillColor(sf::Color::Red);
 			dano = 0;
 		}

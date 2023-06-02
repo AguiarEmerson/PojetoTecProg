@@ -26,6 +26,7 @@ private:
 	Cachorro cachorro;
 	Sapo sapo;
 	Macaco macaco;
+	Trampolim trampolim;
 
 public:
 	Principal();

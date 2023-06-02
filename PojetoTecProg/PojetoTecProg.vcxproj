@@ -35,6 +35,7 @@
     <ClCompile Include="Sorce\Entidades\Personagens\Personagem.cpp" />
     <ClCompile Include="Sorce\Lista\ListaEntidades.cpp" />
     <ClCompile Include="Sorce\main.cpp" />
+    <ClCompile Include="Trampolim.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cachorro.h" />
@@ -54,6 +55,7 @@
     <ClInclude Include="Macaco.h" />
     <ClInclude Include="Projetil.h" />
     <ClInclude Include="Sapo.h" />
+    <ClInclude Include="Trampolim.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
