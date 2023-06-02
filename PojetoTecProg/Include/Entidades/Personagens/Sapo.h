@@ -1,6 +1,6 @@
 #pragma once
-#include "..\Personagens\Inimigo.h"
-#include "..\Personagens\Jogador.h"
+#include "..\Entidades\Personagens\Inimigo.h"
+#include "..\Entidades\Personagens\Jogador.h"
 
 namespace Entidades
 {
@@ -8,12 +8,12 @@ namespace Entidades
 		class Sapo :public Inimigo
 		{
 		protected:
-			int direcao;
+		
 			float altura;
 
 		public:
 
-			Sapo(sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v, int h);
+			Sapo(sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v = sf::Vector2f(3.0, 0.0), int h = 3);
 			Sapo();
 
 			~Sapo();

@@ -1,6 +1,6 @@
 #pragma once
-#include "Include/Entidades/Obstaculos/Obstaculo.h"
-#include "Include/Entidades/Entidade.h"
+#include "../Obstaculos/Obstaculo.h"
+#include "../Entidades/Entidade.h"
 
 namespace Entidades
 {

@@ -1,4 +1,5 @@
-#include "Macaco.h"
+#include "..\Entidades\Personagens\Macaco.h"
+
 namespace Entidades
 {
 	namespace Personagens {

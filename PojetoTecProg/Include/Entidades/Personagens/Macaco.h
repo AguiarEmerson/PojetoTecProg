@@ -1,6 +1,7 @@
 #pragma once
-#include "Include/Entidades/Personagens/Inimigo.h"
-#include "Projetil.h"
+#include "../Entidades/Personagens/Inimigo.h"
+#include "../Projetil.h"
+
 namespace Entidades
 {
 	namespace Personagens {

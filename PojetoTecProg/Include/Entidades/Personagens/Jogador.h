@@ -1,7 +1,7 @@
 #pragma once
 #include "Personagem.h"
-#include"..\..\..\Projetil.h"
-#include"..\..\..\Trampolim.h"
+#include"..\Projetil.h"
+#include"..\Obstaculos\Trampolim.h"
 
 
 namespace Entidades

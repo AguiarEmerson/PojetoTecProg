@@ -1,4 +1,4 @@
-#include "Trampolim.h"
+#include "..\Entidades\Obstaculos\Trampolim.h"
 namespace Entidades
 {
 	namespace Obstaculos

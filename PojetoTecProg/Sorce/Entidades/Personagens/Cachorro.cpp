@@ -1,6 +1,4 @@
-#include"..\Entidades\Personagens\cachorro.h"
-#include"..\Gerenciadores\Grafico.h"
-
+#include "..\Entidades\Personagens\Cachorro.h"
 namespace Entidades
 {
 	namespace Personagens {
@@ -8,16 +6,16 @@ namespace Entidades
 			jogador(NULL),
 			Inimigo(tam, p, v, h)
 		{
+			id = "cachorro";
 			direcao = rand() % 2;
 		}
-
-		Cachorro::Cachorro() :
-			jogador(NULL),
-			Inimigo()
+		Cachorro::Cachorro():
+			Inimigo(),
+			jogador(NULL)
 		{
 			direcao = rand() % 2;
+			id = "cachorro";
 		}
-
 		Cachorro::~Cachorro()
 		{
 			jogador = NULL;
@@ -40,10 +38,10 @@ namespace Entidades
 				setpos(sf::Vector2f(pos.x - vel.x, pos.y));
 			}
 
-			float dt = Pgrafico->getrelogio().getElapsedTime().asSeconds();
+			float dt = relogio.getElapsedTime().asSeconds();
 			if (dt >= 1.0) {
 				direcao = rand() % 2;
-				Pgrafico->getrelogio().restart();
+				relogio.restart();
 			}
 		}
 
