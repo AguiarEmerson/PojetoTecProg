@@ -22,6 +22,7 @@ namespace Entidades
 			void jogadorPula(Entidade* joga);
 
 			const bool getPodePular();
+			void setPodePular(const bool pula);
 
 		};
 

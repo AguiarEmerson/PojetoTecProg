@@ -29,12 +29,21 @@ namespace Entidades
 		}
 		void Trampolim::jogadorPula(Entidade* joga) 
 		{
-			if (dt >= 8.0f && podePular == false)
+			if (dt >= 5.0f && podePular == false)
 			{
 				podePular = true;
 				relogio.restart();
 			}
 				
+		}
+
+		const bool Trampolim::getPodePular()
+		{
+			return podePular;
+		}
+		void Trampolim:: setPodePular(const bool pula)
+		{
+			podePular = pula;
 		}
 		
 

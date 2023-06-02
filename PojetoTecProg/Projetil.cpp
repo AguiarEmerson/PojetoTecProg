@@ -4,12 +4,14 @@ namespace Entidades
 	Projetil::Projetil(sf::Vector2f tam, sf::Vector2f p , sf::Vector2f v ):
 		Entidade(tam,p,v)
 	{
+		dano = 1;
 		existe = false;
 		id = "projetil";
 	}
 	Projetil::Projetil():
 		Entidade()
 	{
+		dano = 1;
 		existe = false;
 	}
 	Projetil::~Projetil()
@@ -45,6 +47,10 @@ namespace Entidades
 		pos = novapos;
 		vel = novavel;
 		existe = true;
+	}
+	int Projetil::getDano()
+	{
+		return dano;
 	}
 
 }

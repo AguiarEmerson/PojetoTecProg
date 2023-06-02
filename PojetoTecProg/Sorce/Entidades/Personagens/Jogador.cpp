@@ -11,6 +11,7 @@ namespace Entidades
 			pontos(xp)
 		{
 			id = "jogador";
+			dano = 1;
 			podeMover = true;
 			box.setFillColor(sf::Color::Green);
 		}
@@ -20,6 +21,7 @@ namespace Entidades
 			pontos(0)
 		{
 			box.setFillColor(sf::Color::Green);
+			dano = 1;
 			id = "jogador";
 		}
 
@@ -88,8 +90,12 @@ namespace Entidades
 						if (secundaria->getId() == "projetil")
 						{
 							deletaProjetil(secundaria);
-							tomaDano();
-							setAc(sf::Vector2f(-2*secundaria->getvel().x, 0));
+							setAc(sf::Vector2f(-2*secundaria->getvel().x, 0.0f));
+						}
+						if (secundaria->getId() == "espinho")
+						{
+							setAc(sf::Vector2f(5 * vel.x, 0.0f));
+							danoEspinho(secundaria);
 						}
 					}
 					else
@@ -98,8 +104,12 @@ namespace Entidades
 						if (secundaria->getId() == "projetil")
 						{
 							deletaProjetil(secundaria);
-							tomaDano();
 							setAc(sf::Vector2f(-2*secundaria->getvel().x, 0));
+						}
+						if (secundaria->getId() == "espinho")
+						{
+								setAc(sf::Vector2f(-5 * vel.x, 0.0f));
+								danoEspinho(secundaria);
 						}
 					}
 				}
@@ -113,12 +123,18 @@ namespace Entidades
 						if (secundaria->getId() == "trampolim")
 						{
 							pulaTramp(secundaria);
+
 						}
 						if (secundaria->getId() == "projetil")
 						{
 							deletaProjetil(secundaria);
-							tomaDano();
 							setAc(sf::Vector2f(-2*secundaria->getvel().x, 0));
+						}
+						if (secundaria->getId() == "espinho")
+						{
+							setvel(sf::Vector2f(vel.x, -16.0f));
+							ta_no_chao = false;
+							danoEspinho(secundaria);
 						}
 					}
 					else 
@@ -129,8 +145,12 @@ namespace Entidades
 						if (secundaria->getId() == "projetil")
 						{
 							deletaProjetil(secundaria);
-							tomaDano();
 							setAc(sf::Vector2f(-2*secundaria->getvel().x, 0));
+						}
+						if (secundaria->getId() == "espinho")
+						{
+							vel.y = 0;
+							danoEspinho(secundaria);
 						}
 					}
 				}
@@ -148,6 +168,7 @@ namespace Entidades
 		{
 			Projetil* projet = NULL;
 			projet = static_cast<Projetil*>(projetil);
+			tomaDano(projet->getDano());
 			projet->setExiste(false);
 		}
 		void Jogador::pulaTramp(Entidade* ent)
@@ -163,9 +184,23 @@ namespace Entidades
 			{
 				setvel(sf::Vector2f(vel.x, -15.0f));
 				ta_no_chao = false;
+				trampolim->setPodePular(false);
 			}
 			
 
+		}
+
+
+		void Jogador::danoEspinho(Entidade* entidade)
+		{
+			Espinho* espinho=NULL;
+			espinho = static_cast<Espinho*>(entidade);
+			Personagem* personagem = NULL;
+			personagem = static_cast<Personagem*>(this);
+			espinho->danoPersonagem(personagem);
+		}
+		int Jogador::getDano() {
+			return dano;
 		}
 
 		

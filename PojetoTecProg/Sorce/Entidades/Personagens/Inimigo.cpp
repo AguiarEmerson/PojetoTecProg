@@ -8,7 +8,7 @@ namespace Entidades
 		{
 			direcao = 0;
 			box.setFillColor(sf::Color::Red);
-			dano = 0;
+			dano = 1;
 			
 		}
 
@@ -17,7 +17,7 @@ namespace Entidades
 		{
 			direcao = 0;
 			box.setFillColor(sf::Color::Red);
-			dano = 0;
+			dano = 1;
 		}
 
 		Inimigo::~Inimigo()
@@ -31,7 +31,7 @@ namespace Entidades
 			vel.y = vel.y + sin(angulo) * 7;
 			Jogador* jogador = nullptr;
 			jogador = static_cast<Jogador*>(entidade);
-			jogador->tomaDano();
+			jogador->tomaDano(dano);
 			jogador->setAc(sf::Vector2f(-(jogador->getAc().x + cos(angulo) * 7), jogador->getAc().y));
 			jogador->setvel(sf::Vector2f(jogador->getvel().x, jogador->getvel().y - sin(angulo) * 7));
 			
@@ -96,9 +96,10 @@ namespace Entidades
 
 		void Inimigo::esmagado(Entidade* secundaria)
 		{
-			tomaDano();
+			
 			Jogador* jogador = nullptr;
 			jogador = static_cast<Jogador*>(secundaria);
+			tomaDano(jogador->getDano());
 			jogador->esmagaInimigo(this);
 			
 		}
@@ -107,11 +108,10 @@ namespace Entidades
 		{
 			Jogador* jogador = nullptr;
 			jogador = static_cast<Jogador*>(entidade);
-			jogador->tomaDano();
+			jogador->tomaDano(dano);
 			vel.y=-10.0f;
 			ta_no_chao = false;
 			jogador->setvel(sf::Vector2f(jogador->getvel().x, -jogador->getvel().y));
-
 		}
 		
 
