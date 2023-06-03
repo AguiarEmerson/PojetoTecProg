@@ -19,8 +19,8 @@ namespace Entidades
 			Jogador();
 			~Jogador();
 			void pula();
-			void move();
-			void Executar();
+			virtual void move()=0;
+			virtual void Executar()=0;
 			void colide(Entidade* secundaria, sf::Vector2f ds);
 			void esmagaInimigo(Entidade* inimigo);
 			void pulaTramp(Entidade* ent);

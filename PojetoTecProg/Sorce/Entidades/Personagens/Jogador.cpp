@@ -15,7 +15,6 @@ namespace Entidades
 			id = "jogador";
 			dano = 1;
 			podeMover = true;
-			box.setFillColor(sf::Color::Green);
 			textura=Pgrafico->carregarTextura("Imagens/jogador1.png");
 			box.setTexture(&textura);
 		}
@@ -40,44 +39,12 @@ namespace Entidades
 		void Jogador::pula()
 		{
 			if (ta_no_chao) {
-				setvel(sf::Vector2f(vel.x, vel.y - VELOCIDADEPULO)); 
+				setvel(sf::Vector2f(vel.x, vel.y - VELOCIDADEPULO));
 				setpos(sf::Vector2f(pos.x, pos.y + vel.y));
 			}
 			ta_no_chao = false;
-			
+
 			setpos(sf::Vector2f(pos.x, pos.y + vel.y));
-		}
-
-		void Jogador::move()
-		{
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
-				pula();
-			}
-			
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
-				setpos(sf::Vector2f(pos.x - vel.x, pos.y));
-			}
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
-				setpos(sf::Vector2f(pos.x + vel.x, pos.y));
-			}
-			Pgrafico->atualizacam(sf::Vector2f(pos.x, TAMW_Y / 2.0));
-			if (!(ac.x >= -0.5 && ac.x <= 0.5))
-			{
-				pos = pos - ac;
-
-				if (ac.x < 0)
-					ac.x += 0.5;
-				else
-					ac.x -= 0.5;
-			}
-			
-			
-		}
-		void Jogador::Executar()
-		{
-			move();
-			gravidade();
-			verificaVida();
 		}
 
 		void Jogador::colide(Entidade* secundaria, sf::Vector2f ds)

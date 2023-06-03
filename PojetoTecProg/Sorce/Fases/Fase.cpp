@@ -15,11 +15,44 @@ namespace Fases
 	{
 	}
 
-	void Fase::criaJogador(sf::Vector2f pos)
+	void Fase::criaJogador1(sf::Vector2f pos)
 	{
 		Entidades::Personagens::Jogador* jogador = 
-			new Entidades::Personagens::Jogador(sf::Vector2f(50.0,50.0),pos,sf::Vector2f(3.0, 0.0));
+			new Entidades::Personagens::Jogador1(sf::Vector2f(50.0,50.0),pos,sf::Vector2f(3.0, 0.0));
 		if (jogador) {
+			int i, tam;
+			tam = lista.getTam();
+			for (i = 0; i < tam; i++) {
+				if (lista.getEnt(i)->getId() == "jogador") {
+					std::cout << "nao foi possivel gerar a fase pois o jogador 2 esta depois do 1" << std::endl;
+					exit(1);
+				}
+			}
+			lista.incluir(static_cast<Entidade*>(jogador));
+		}
+		else {
+			std::cout << "ERROR::nao foi possivel criar um jogador" << std::endl;
+			exit(1);
+		}
+	}
+	void Fase::criaJogador2(sf::Vector2f pos)
+	{
+		Entidades::Personagens::Jogador2* jogador =
+			new Entidades::Personagens::Jogador2(sf::Vector2f(50.0, 50.0), pos, sf::Vector2f(3.0, 0.0));
+		if (jogador) {
+			int i, tam;
+			bool achoJogador = false;
+			tam = lista.getTam();
+			for (i = 0; i < tam; i++) {
+				if (lista.getEnt(i)->getId() == "jogador") {
+					achoJogador = 1;
+					jogador->setJogador(static_cast<Jogador1*>(lista.getEnt(i)));
+				}
+			}
+			if (achoJogador == false)
+			{
+				jogador->setJogador(NULL);
+			}
 			lista.incluir(static_cast<Entidade*>(jogador));
 		}
 		else {
@@ -121,7 +154,13 @@ namespace Fases
 		{
 			case('J'):
 			{
-				criaJogador(posAux);
+				criaJogador1(posAux);
+			}
+			break;
+			
+			case('P'):
+			{
+				criaJogador2(posAux);
 			}
 			break;
 

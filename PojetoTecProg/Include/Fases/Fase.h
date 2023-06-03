@@ -5,6 +5,8 @@
 #include "..\Entidades\Personagens\Sapo.h"
 #include "..\Lista\ListaEntidades.h"
 #include "..\Entidades\Obstaculos\Plataforma.h"
+#include "..\Entidades\Personagens\Jogador1.h"
+#include "..\Entidades\Personagens\Jogador2.h"
 
 namespace Fases
 {
@@ -17,7 +19,8 @@ namespace Fases
 	public:
 		Fase();
 		~Fase();
-		void criaJogador(sf::Vector2f pos);
+		void criaJogador1(sf::Vector2f pos);
+		void criaJogador2(sf::Vector2f pos);
 		void criaPlataforma(sf::Vector2f pos);
 		void criaEspinho(sf::Vector2f pos);
 		void criaTrampolim(sf::Vector2f pos);
