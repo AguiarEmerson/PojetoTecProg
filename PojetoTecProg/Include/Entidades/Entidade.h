@@ -36,6 +36,7 @@ namespace Entidades
 		virtual void Executar() = 0;
 		virtual void colide(Entidade* secundaria, sf::Vector2f ds) = 0;
 
+
 		void setTa_No_Chao(const bool chao);
 		void setPodeMover(const bool mover);
 	};

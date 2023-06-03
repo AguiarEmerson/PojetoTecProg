@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Sorce\Fases\Fase1.cpp" />
     <ClCompile Include="Sorce\Entidades\Obstaculo\Espinho.cpp" />
     <ClCompile Include="Sorce\Entidades\Personagens\Macaco.cpp" />
     <ClCompile Include="Sorce\Entidades\Projetil.cpp" />
@@ -50,6 +51,7 @@
     <ClInclude Include="Include\Entidades\Personagens\Inimigo.h" />
     <ClInclude Include="Include\Entidades\Personagens\Jogador.h" />
     <ClInclude Include="Include\Entidades\Personagens\Personagem.h" />
+    <ClInclude Include="Include\Fases\Fase1.h" />
     <ClInclude Include="Include\Gerenciadores\Colisao.h" />
     <ClInclude Include="Include\Gerenciadores\Grafico.h" />
     <ClInclude Include="Include\Lista\Lista.h" />
@@ -83,6 +85,7 @@
     <None Include="Debug\PojetoTecProg.tlog\unsuccessfulbuild" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="Arquivos\Mapa_fase1.txt" />
     <Text Include="Debug\PojetoTecProg.log" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -143,12 +146,12 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\SFML-2.5.1\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Usuario\Documents\Faculdade\Projetos\TecProg\SFML-2.5.1\include;C:\SFML-2.5.1\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\SFML-2.5.1\lib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\Usuario\Documents\Faculdade\Projetos\TecProg\SFML-2.5.1\lib;C:\SFML-2.5.1\lib</AdditionalLibraryDirectories>
       <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-audio-d.lib;sfml-network-d.lib;sfml-system-d.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>

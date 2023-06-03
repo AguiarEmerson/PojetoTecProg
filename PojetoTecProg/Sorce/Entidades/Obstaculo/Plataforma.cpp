@@ -13,6 +13,7 @@ namespace Entidades
 		Plataforma::Plataforma() :
 			Obstaculo()
 		{
+			id = "plataforma";
 			estatico = true;
 		}
 		Plataforma::~Plataforma() {

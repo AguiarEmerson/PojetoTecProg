@@ -15,7 +15,7 @@ namespace Entidades
 		Trampolim::Trampolim():
 			Obstaculo()
 		{
-
+			velocidade = 20.0;
 			id = "trampolim";
 		}
 

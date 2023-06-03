@@ -69,7 +69,13 @@
     <ClCompile Include="Sorce\Fases\Fase.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Espinho.cpp">
+    <ClCompile Include="Sorce\Entidades\Obstaculo\Espinho.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="Sorce\Principal.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="Sorce\Fases\Fase1.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
   </ItemGroup>
@@ -137,7 +143,10 @@
     <ClInclude Include="Include\Fases\Fase.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Espinho.h">
+    <ClInclude Include="Include\Entidades\Obstaculos\Espinho.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Fases\Fase1.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
   </ItemGroup>
@@ -168,5 +177,6 @@
     <Text Include="Debug\PojetoTecProg.log">
       <Filter>Arquivos de Recurso</Filter>
     </Text>
+    <Text Include="Arquivos\Mapa_fase1.txt" />
   </ItemGroup>
 </Project>

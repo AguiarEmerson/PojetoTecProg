@@ -13,6 +13,7 @@ namespace Entidades
 	{
 		dano = 1;
 		existe = false;
+		id = "projetil";
 	}
 	Projetil::~Projetil()
 	{

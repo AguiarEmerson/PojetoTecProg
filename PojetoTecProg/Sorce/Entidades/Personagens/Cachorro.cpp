@@ -17,6 +17,7 @@ namespace Entidades
 		{
 			direcao = rand() % 2;
 			id = "cachorro";
+
 		}
 		Cachorro::~Cachorro()
 		{
