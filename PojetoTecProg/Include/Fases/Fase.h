@@ -17,11 +17,15 @@ namespace Fases
 	public:
 		Fase();
 		~Fase();
-		void criarPlataforma(sf::Vector2f pos);
-		void criarJogador(sf::Vector2f pos);
-		void criarCachorro(sf::Vector2f pos);
-		void criarSapo(sf::Vector2f pos);
-		void criarEntidade(char id, sf::Vector2f pos);
-		virtual void executar() = 0;
+		void criaJogador(sf::Vector2f pos);
+		void criaPlataforma(sf::Vector2f pos);
+		void criaEspinho(sf::Vector2f pos);
+		void criaTrampolim(sf::Vector2f pos);
+		void criaCachorro(sf::Vector2f pos);
+		void criaSapo(sf::Vector2f pos);
+		void criaMacaco(sf::Vector2f pos);
+		void criaEntidade(char id, sf::Vector2i pos);
+		virtual void criaMapa() = 0;
+		void Executar();
 	};
 }

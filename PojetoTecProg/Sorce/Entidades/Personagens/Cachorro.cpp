@@ -21,6 +21,7 @@ namespace Entidades
 			box.setTexture(&textura);
 			direcao = rand() % 2;
 			id = "cachorro";
+
 		}
 		Cachorro::~Cachorro()
 		{

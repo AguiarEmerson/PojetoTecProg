@@ -1,4 +1,5 @@
 #include "..\Principal.h"
+#include "..\Fases\Fase1.h"
 /*int main()
 {
     sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
@@ -23,8 +24,8 @@
 }*/
 int main()
 {
-    
-    Principal objPricipal;
+    Fases::Fase* fase = static_cast<Fases::Fase*>(new Fases::Fase1());
+    Principal objPricipal(fase);
     objPricipal.executar();
     
     return 0;

@@ -18,6 +18,7 @@ namespace Entidades
 		box.setTexture(&textura);
 		dano = 1;
 		existe = false;
+		id = "projetil";
 	}
 	Projetil::~Projetil()
 	{

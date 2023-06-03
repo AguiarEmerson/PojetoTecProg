@@ -1,4 +1,18 @@
 #pragma once
+#include "..\Fases\Fase.h"
+
+
+class Principal
+{
+private:
+	static Gerenciadores::Grafico* Pgrafico;
+	Fases::Fase* fase;
+public:
+	Principal(Fases::Fase* f);
+	~Principal();
+	void executar();
+};
+/*
 #include "..\Gerenciadores\Grafico.h"
 #include "..\Gerenciadores\Colisao.h"
 #include "..\Entidades\Personagens\Cachorro.h"
@@ -14,25 +28,4 @@ using namespace Entidades;
 using namespace Personagens;
 using namespace Gerenciadores;
 using namespace Obstaculos;
-
-class Principal
-{
-private:
-	static Grafico* Pgrafico;
-	Colisao colisoes;
-	ListaEntidades lista;
-
-	Jogador jogador;
-	Plataforma plataforma;
-	Plataforma plataforma2;
-	Cachorro cachorro;
-	Sapo sapo;
-	Macaco macaco;
-	Trampolim trampolim;
-	Espinho espinho;
-
-public:
-	Principal();
-	~Principal();
-	void executar();
-};
+*/
