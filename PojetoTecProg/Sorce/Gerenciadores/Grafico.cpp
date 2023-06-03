@@ -113,6 +113,31 @@ namespace Gerenciadores {
 			window->setFramerateLimit(60);
 		}
 	}
+	//essa função retorn
+	
+	sf::Texture Grafico::carregarTextura(const char* caminhoTextura) {
+
+		sf::Texture textura;
+		if (!textura.loadFromFile(caminhoTextura)) {
+			std::cout << "ERRO::Jungle::Gerenciador::GerenciadorGrafico::nao foi possivel encontrar o caminho da textura - " << caminhoTextura << std::endl;
+			exit(1);
+		}
+		return textura;
+	}
+	sf::Texture Grafico::mandaTextura(const char* caminhoTextura)
+	{
+		sf::Texture textura;
+		std::map<const char*, sf::Texture>::iterator it = mapatexturas.begin();
+		while (it != mapatexturas.end())
+		{
+			if (it->first == caminhoTextura)
+			{
+				return it->second;
+			}
+			it++;
+		}
+		return carregarTextura(caminhoTextura);
+	}
 }	
 
 

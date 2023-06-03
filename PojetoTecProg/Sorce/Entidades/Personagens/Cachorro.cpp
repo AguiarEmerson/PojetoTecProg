@@ -8,6 +8,8 @@ namespace Entidades
 			jogador(NULL),
 			Inimigo(tam, p, v, h)
 		{
+			textura = Pgrafico->mandaTextura("Imagens/cachorro.png");
+			box.setTexture(&textura);
 			id = "cachorro";
 			direcao = rand() % 2;
 		}
@@ -15,6 +17,8 @@ namespace Entidades
 			Inimigo(),
 			jogador(NULL)
 		{
+			textura = Pgrafico->mandaTextura("Imagens/cachorro.png");
+			box.setTexture(&textura);
 			direcao = rand() % 2;
 			id = "cachorro";
 

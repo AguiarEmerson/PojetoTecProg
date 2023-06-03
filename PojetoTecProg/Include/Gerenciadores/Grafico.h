@@ -13,6 +13,7 @@ namespace Gerenciadores
 		sf::RenderWindow* window;
 		sf::View camera;
 		sf::Clock relogio;
+		std::map<const char*, sf::Texture> mapatexturas;
 
 		ListaEntidades* lista;
 
@@ -36,6 +37,8 @@ namespace Gerenciadores
 		sf::Clock getrelogio();
 		void setLista(ListaEntidades* listaEnt);
 		void executar();
+		sf::Texture carregarTextura(const char* caminhoTextura);
+		sf::Texture mandaTextura(const char* caminhoTextura);
 		
 	};
 }

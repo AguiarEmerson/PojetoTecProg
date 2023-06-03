@@ -1,5 +1,6 @@
 #pragma once
 #include "Obstaculo.H"
+#include "..\..\Gerenciadores\Grafico.h"
 
 namespace Entidades
 {

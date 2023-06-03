@@ -8,6 +8,8 @@ namespace Entidades
 			Inimigo(tam, p, v, h),
 			projetil(sf::Vector2f(15.0,15.0),sf::Vector2f(p.x,p.y+tam.y+0.5),sf::Vector2f(0.0,0.0))
 		{
+			textura = Pgrafico->mandaTextura("Imagens/macaco.png");
+			box.setTexture(&textura);
 			primeiro_ciclo = 1;
 			id = "macaco";
 		}
@@ -15,6 +17,8 @@ namespace Entidades
 			Inimigo(),
 			projetil()
 		{
+			textura = Pgrafico->mandaTextura("Imagens/macaco.png");
+			box.setTexture(&textura);
 			id = "macaco";
 		}
 		Macaco::~Macaco()

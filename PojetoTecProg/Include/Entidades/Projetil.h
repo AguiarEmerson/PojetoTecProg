@@ -1,5 +1,7 @@
 #pragma once
 #include "Entidade.h"
+#include"..\Gerenciadores\Grafico.h"
+using namespace Gerenciadores;
 namespace Entidades
 {
 	class Projetil : public Entidade

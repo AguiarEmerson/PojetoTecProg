@@ -88,6 +88,18 @@
     <Text Include="Arquivos\Mapa_fase1.txt" />
     <Text Include="Debug\PojetoTecProg.log" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="Imagens\cachorro.png" />
+    <Image Include="Imagens\espinho.png" />
+    <Image Include="Imagens\jogador1.png" />
+    <Image Include="Imagens\macaco.png" />
+    <Image Include="Imagens\plataforma.png" />
+    <Image Include="Imagens\plataformal.png" />
+    <Image Include="Imagens\projetil.png" />
+    <Image Include="Imagens\sapo.png" />
+    <Image Include="Imagens\WhatsApp_Image_2023-06-03_at_11.48.40-removebg-preview.png" />
+    <Image Include="Sorce\Entidades\Personagens\download.jpeg" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
