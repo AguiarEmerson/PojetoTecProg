@@ -2,6 +2,7 @@
 #include "Personagem.h"
 #include"..\Projetil.h"
 #include"..\Obstaculos\Trampolim.h"
+#include"..\Obstaculos\Espinho.h"
 
 
 namespace Entidades
@@ -24,6 +25,8 @@ namespace Entidades
 			void esmagaInimigo(Entidade* inimigo);
 			void pulaTramp(Entidade* ent);
 			void deletaProjetil(Entidade* projetil);
+			void danoEspinho(Entidade* entidade);
+			int getDano();
 			
 		};
 	}

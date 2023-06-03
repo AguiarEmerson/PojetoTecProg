@@ -23,10 +23,10 @@ namespace Entidades
 		}
 		void Sapo::move() {
 			if (ta_no_chao) {
-				float dt = Pgrafico->getrelogio().getElapsedTime().asSeconds();
-				if (dt >= 2.0) {
+				dt = Pgrafico->getrelogio().getElapsedTime().asSeconds()-tempo_total;
+				if (dt >= TEMPOSAPO) {
 					pula();
-					Pgrafico->getrelogio().restart();
+					tempo_total += TEMPOSAPO;
 					direcao = rand() % 2;
 				}
 				
@@ -42,6 +42,8 @@ namespace Entidades
 
 
 		void Sapo::Executar() {
+
+			primTempoTotal();
 			move();
 			gravidade();
 			verificaVida();	
@@ -49,7 +51,7 @@ namespace Entidades
 
 		void Sapo::pula() {
 			if (ta_no_chao) {
-				altura = float(rand() % 10)+6.5;
+				altura = float(rand() % 10)+6.5f;
 				setvel(sf::Vector2f(vel.x, vel.y - altura));
 				setpos(sf::Vector2f(pos.x, pos.y + vel.y));
 			}

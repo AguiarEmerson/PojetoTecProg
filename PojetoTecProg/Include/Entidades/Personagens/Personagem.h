@@ -8,6 +8,7 @@ namespace Entidades
 		{
 		protected:	//private pra usar a sobrecarga de operadores e farmar requisito
 			int num_vidas;
+			int dano;
 			sf::Vector2f ac;
 		public:
 			Personagem(sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v, int h);
@@ -22,7 +23,7 @@ namespace Entidades
 			sf::Vector2f getAc();
 
 			void verificaVida();
-			void tomaDano();
+			void tomaDano(int dano);
 			
 		};
 	}

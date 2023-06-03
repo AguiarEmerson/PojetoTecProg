@@ -33,6 +33,7 @@ namespace Gerenciadores {
 	void Grafico::desenha(sf::RectangleShape box)
 	{
 		window->draw(box);
+		
 	}
 
 	const bool Grafico::verificaJanelaAberta() {
@@ -104,11 +105,14 @@ namespace Gerenciadores {
 			}
 			limpa();
 			for (i = 0; i < tam; i++) {
-				if(lista->getEnt(i)->getVivo()==true)
+				if (lista->getEnt(i)->getVivo() == true) {
 					desenha(lista->getEnt(i)->getbox());
+				}
 			}
 			mostra();
 			window->setFramerateLimit(60);
 		}
 	}
 }	
+
+

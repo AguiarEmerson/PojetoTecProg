@@ -10,6 +10,8 @@ namespace Entidades
 		{
 		protected:
 			float dt;
+			float tempo_total;
+			bool primeiro_ciclo;
 			bool podePular;
 			float velocidade;
 		public:
@@ -21,7 +23,10 @@ namespace Entidades
 			void Executar();
 			void jogadorPula(Entidade* joga);
 
-			//const bool getPodePular();
+			const bool getPodePular();
+			void setPodePular(const bool pula);
+
+			void primTempoTotal();
 
 		};
 
