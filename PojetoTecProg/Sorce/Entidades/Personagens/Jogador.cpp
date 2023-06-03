@@ -14,6 +14,8 @@ namespace Entidades
 			dano = 1;
 			podeMover = true;
 			box.setFillColor(sf::Color::Green);
+			textura.loadFromFile("..\..\..\png.png");
+			box.setTexture(&textura);
 		}
 
 		Jogador::Jogador() :
