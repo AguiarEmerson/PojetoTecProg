@@ -106,6 +106,7 @@ namespace Fases
 			new Entidades::Personagens::Macaco(sf::Vector2f(50.0,50.0),pos);
 		if (macaco) {
 			lista.incluir(static_cast<Entidade*>(macaco));
+			lista.incluir(static_cast<Entidade*>(macaco->getProjetil()));
 		}
 		else {
 			std::cout << "ERROR::nao foi possivel criar um macaco" << std::endl;
