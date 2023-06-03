@@ -7,6 +7,8 @@ namespace Entidades
 		Sapo::Sapo(sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v, int h) :
 			Inimigo(tam, p, v, h)
 		{
+			textura = Pgrafico->mandaTextura("Imagens/sapo.png");
+			box.setTexture(&textura);
 			id = "sapo";
 			direcao = rand() % 2;
 			altura = 0;
@@ -14,6 +16,8 @@ namespace Entidades
 		Sapo::Sapo() :
 			Inimigo()
 		{
+			textura = Pgrafico->mandaTextura("Imagens/sapo.png");
+			box.setTexture(&textura);
 			id = "sapo";
 			altura = 0;
 			direcao = rand() % 2;

@@ -69,7 +69,10 @@
     <ClCompile Include="Sorce\Fases\Fase.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Espinho.cpp">
+    <ClCompile Include="Sorce\Entidades\Obstaculo\Espinho.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="Sorce\Principal.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
   </ItemGroup>
@@ -137,7 +140,7 @@
     <ClInclude Include="Include\Fases\Fase.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Espinho.h">
+    <ClInclude Include="Include\Entidades\Obstaculos\Espinho.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
   </ItemGroup>
@@ -168,5 +171,37 @@
     <Text Include="Debug\PojetoTecProg.log">
       <Filter>Arquivos de Recurso</Filter>
     </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Sorce\Entidades\Personagens\download.jpeg">
+      <Filter>Arquivos de Recurso</Filter>
+    </Image>
+    <Image Include="Imagens\cachorro.png">
+      <Filter>Arquivos de Recurso</Filter>
+    </Image>
+    <Image Include="Imagens\espinho.png">
+      <Filter>Arquivos de Recurso</Filter>
+    </Image>
+    <Image Include="Imagens\jogador1.png">
+      <Filter>Arquivos de Recurso</Filter>
+    </Image>
+    <Image Include="Imagens\macaco.png">
+      <Filter>Arquivos de Recurso</Filter>
+    </Image>
+    <Image Include="Imagens\plataforma.png">
+      <Filter>Arquivos de Recurso</Filter>
+    </Image>
+    <Image Include="Imagens\plataformal.png">
+      <Filter>Arquivos de Recurso</Filter>
+    </Image>
+    <Image Include="Imagens\projetil.png">
+      <Filter>Arquivos de Recurso</Filter>
+    </Image>
+    <Image Include="Imagens\sapo.png">
+      <Filter>Arquivos de Recurso</Filter>
+    </Image>
+    <Image Include="Imagens\WhatsApp_Image_2023-06-03_at_11.48.40-removebg-preview.png">
+      <Filter>Arquivos de Recurso</Filter>
+    </Image>
   </ItemGroup>
 </Project>

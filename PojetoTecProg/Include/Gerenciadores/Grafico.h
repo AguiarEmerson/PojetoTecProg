@@ -38,6 +38,7 @@ namespace Gerenciadores
 		void setLista(ListaEntidades* listaEnt);
 		void executar();
 		sf::Texture carregarTextura(const char* caminhoTextura);
+		sf::Texture mandaTextura(const char* caminhoTextura);
 		
 	};
 }

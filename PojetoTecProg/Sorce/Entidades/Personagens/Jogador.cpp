@@ -2,6 +2,8 @@
 #include"..\Gerenciadores\Grafico.h"
 
 
+
+
 namespace Entidades
 {
 	namespace Personagens
@@ -14,7 +16,7 @@ namespace Entidades
 			dano = 1;
 			podeMover = true;
 			box.setFillColor(sf::Color::Green);
-			textura.loadFromFile("..\..\..\png.png");
+			textura=Pgrafico->carregarTextura("Imagens/jogador1.png");
 			box.setTexture(&textura);
 		}
 
@@ -22,9 +24,12 @@ namespace Entidades
 			Personagem(),
 			pontos(0)
 		{
-			box.setFillColor(sf::Color::Green);
 			dano = 1;
 			id = "jogador";
+			textura=Pgrafico->mandaTextura("Imagens/jogador1.png");
+			box.setTexture(&textura);
+			
+			//box.setTexture(&textura);
 		}
 
 		Jogador::~Jogador()

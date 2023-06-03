@@ -7,12 +7,16 @@ namespace Entidades
 		Plataforma::Plataforma(sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v) :
 			Obstaculo(tam,p,v)
 		{
+			textura = Pgrafico->mandaTextura("Imagens/plataformal.png");
+			box.setTexture(&textura);
 			id = "plataforma";
 			estatico = true;
 		}
 		Plataforma::Plataforma() :
 			Obstaculo()
 		{
+			textura = Pgrafico->mandaTextura("Imagens/plataformal.png");
+			box.setTexture(&textura);
 			estatico = true;
 		}
 		Plataforma::~Plataforma() {
