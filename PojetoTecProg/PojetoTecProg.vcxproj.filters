@@ -76,7 +76,6 @@
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
     <ClCompile Include="Sorce\Fases\Fase1.cpp">
-
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
   </ItemGroup>
@@ -148,8 +147,6 @@
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
     <ClInclude Include="Include\Fases\Fase1.h">
-
-      
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
   </ItemGroup>
@@ -208,9 +205,6 @@
       <Filter>Arquivos de Recurso</Filter>
     </Image>
     <Image Include="Imagens\sapo.png">
-      <Filter>Arquivos de Recurso</Filter>
-    </Image>
-    <Image Include="Imagens\WhatsApp_Image_2023-06-03_at_11.48.40-removebg-preview.png">
       <Filter>Arquivos de Recurso</Filter>
     </Image>
   </ItemGroup>
