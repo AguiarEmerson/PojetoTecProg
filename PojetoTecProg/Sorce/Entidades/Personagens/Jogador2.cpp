@@ -6,12 +6,13 @@ namespace Entidades
 		Jogador2::Jogador2(sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v, int h, int xp) :
 			Jogador(tam, p, v, h, xp)
 		{
+			jogador = NULL;
 			box.setFillColor(sf::Color::Red);
 		}
 		Jogador2::Jogador2() :
 			Jogador()
 		{
-
+			jogador = NULL;
 		}
 		void Jogador2::move() {
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {

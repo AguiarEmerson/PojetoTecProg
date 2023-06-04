@@ -76,7 +76,8 @@ namespace Gerenciadores
 
 						if (ds.x < 0.0f && ds.y < 0.0f) {
 							auxprincipal->colide(auxsecundaria, ds);
-							colidiu = true;
+							if(ds.y>ds.x)
+								colidiu = true;
 						}
 					}
 
@@ -100,7 +101,8 @@ namespace Gerenciadores
 
 					if (ds.x < 0.0f && ds.y < 0.0f) {
 						auxprincipal->colide(auxsecundaria, ds);
-						colidiu = true;
+						if(ds.y>ds.x)
+							colidiu = true;
 					}
 				}
 				if (colidiu == false)

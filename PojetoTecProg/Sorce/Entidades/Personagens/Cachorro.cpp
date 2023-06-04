@@ -5,7 +5,6 @@ namespace Entidades
 {
 	namespace Personagens {
 		Cachorro::Cachorro(sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v , int h) :
-			jogador(NULL),
 			Inimigo(tam, p, v, h)
 		{
 			textura = Pgrafico->mandaTextura("Imagens/cachorro.png");
@@ -14,8 +13,7 @@ namespace Entidades
 			direcao = rand() % 2;
 		}
 		Cachorro::Cachorro():
-			Inimigo(),
-			jogador(NULL)
+			Inimigo()
 		{
 			textura = Pgrafico->mandaTextura("Imagens/cachorro.png");
 			box.setTexture(&textura);
@@ -25,13 +23,13 @@ namespace Entidades
 		}
 		Cachorro::~Cachorro()
 		{
-			jogador = NULL;
+			listaJogador.clear();
 		}
 
 
 		void Cachorro::setjogador(Jogador* j)
 		{
-			jogador = j;
+			listaJogador.push_back (j);
 		}
 
 		void Cachorro::moveraleatorio()
@@ -67,7 +65,7 @@ namespace Entidades
 				else
 					ac.y -= 0.5;
 			}
-			sf::Vector2f posjogador = jogador->getpos();
+			sf::Vector2f posjogador = decideJogador()->getpos();
 			if (fabs(posjogador.x - pos.x) < RAIO_VISAO && fabs(posjogador.y - pos.y) < RAIO_VISAO)
 			{
 				Perseguir();
@@ -79,11 +77,11 @@ namespace Entidades
 		void Cachorro::Perseguir()
 		{
 			if (podeMover) {
-				if (jogador->getpos().x > pos.x)
+				if (decideJogador()->getpos().x > pos.x)
 				{
 					setpos(sf::Vector2f(pos.x + vel.x, pos.y));
 				}
-				if (jogador->getpos().x < pos.x)
+				if (decideJogador()->getpos().x < pos.x)
 				{
 					setpos(sf::Vector2f(pos.x - vel.x, pos.y));
 				}
@@ -97,6 +95,13 @@ namespace Entidades
 			move();
 			gravidade();
 			verificaVida();
+		}
+		Jogador* Cachorro::decideJogador()
+		{
+			if (listaJogador.front()->getVivo() == true)
+				return listaJogador.front();
+			else
+				return listaJogador.back();
 		}
 	}
 }

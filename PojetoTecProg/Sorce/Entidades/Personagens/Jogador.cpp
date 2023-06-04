@@ -39,7 +39,7 @@ namespace Entidades
 		void Jogador::pula()
 		{
 			if (ta_no_chao) {
-				setvel(sf::Vector2f(vel.x, vel.y - VELOCIDADEPULO));
+				setvel(sf::Vector2f(vel.x, - VELOCIDADEPULO));
 				setpos(sf::Vector2f(pos.x, pos.y + vel.y));
 			}
 			ta_no_chao = false;
