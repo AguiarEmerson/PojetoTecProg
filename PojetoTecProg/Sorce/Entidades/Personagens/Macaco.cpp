@@ -55,7 +55,7 @@ namespace Entidades
 		void Macaco::controlaProjetil()
 		{
 			projetil.atualizaExiste();
-			if (projetil.verificaExiste() == false)
+			if (projetil.verificaExiste() == false&&vivo==1)
 			{
 				sf::Vector2f novapos;
 				sf::Vector2f novavel;
