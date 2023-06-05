@@ -35,16 +35,16 @@ namespace Gerenciadores
 		{
 			if (lista->getEnt(i)->getId() == "plataforma"|| lista->getEnt(i)->getId() == "trampolim"|| lista->getEnt(i)->getId() == "espinho")
 				listaObstaculo.push_back(lista->getEnt(i));
-			else if (lista->getEnt(i)->getId() == "cachorro"|| lista->getEnt(i)->getId() == "sapo")
+			else if (lista->getEnt(i)->getId() == "RoboAnda"|| lista->getEnt(i)->getId() == "RoboPula")
 				listaInimigo.push_back(lista->getEnt(i));
 			else if (lista->getEnt(i)->getId() == "jogador")
 				listaJogador.push_back(lista->getEnt(i));	
-			else if (lista->getEnt(i)->getId() == "macaco")
+			else if (lista->getEnt(i)->getId() == "Canhao")
 			{
 				listaInimigo.push_back(lista->getEnt(i));
-				Macaco* macaco = NULL;
-				macaco = static_cast<Macaco*>(lista->getEnt(i));
-				listaObstaculo.push_back(static_cast<Entidade*>(macaco->getProjetil()));
+				Canhao* Canhao = NULL;
+				Canhao = static_cast<Personagens::Canhao*>(lista->getEnt(i));
+				listaObstaculo.push_back(static_cast<Entidade*>(Canhao->getProjetil()));
 				
 			}
 		

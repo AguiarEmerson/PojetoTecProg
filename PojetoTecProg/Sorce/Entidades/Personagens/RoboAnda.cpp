@@ -1,38 +1,38 @@
-#include "..\Entidades\Personagens\Cachorro.h"
+#include "..\Entidades\Personagens\RoboAnda.h"
 #include "..\Gerenciadores\Grafico.h"
 
 namespace Entidades
 {
 	namespace Personagens {
-		Cachorro::Cachorro(sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v , int h) :
+		RoboAnda::RoboAnda(sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v , int h) :
 			Inimigo(tam, p, v, h)
 		{
-			textura = Pgrafico->mandaTextura("Imagens/cachorro.png");
+			textura = Pgrafico->mandaTextura("Imagens/RoboAnda.png");
 			box.setTexture(&textura);
-			id = "cachorro";
+			id = "RoboAnda";
 			direcao = rand() % 2;
 		}
-		Cachorro::Cachorro():
+		RoboAnda::RoboAnda():
 			Inimigo()
 		{
-			textura = Pgrafico->mandaTextura("Imagens/cachorro.png");
+			textura = Pgrafico->mandaTextura("Imagens/RoboAnda.png");
 			box.setTexture(&textura);
 			direcao = rand() % 2;
-			id = "cachorro";
+			id = "RoboAnda";
 
 		}
-		Cachorro::~Cachorro()
+		RoboAnda::~RoboAnda()
 		{
 			listaJogador.clear();
 		}
 
 
-		void Cachorro::setjogador(Jogador* j)
+		void RoboAnda::setjogador(Jogador* j)
 		{
 			listaJogador.push_back (j);
 		}
 
-		void Cachorro::moveraleatorio()
+		void RoboAnda::moveraleatorio()
 		{
 			if (direcao == 0)
 			{
@@ -44,13 +44,13 @@ namespace Entidades
 			}
 
 			dt = Pgrafico->getrelogio().getElapsedTime().asSeconds()-tempo_total;
-			if (dt >= TEMPOCACHORRO) {
+			if (dt >= TEMPORoboAnda) {
 				direcao = rand() % 2;
-				tempo_total += TEMPOCACHORRO;
+				tempo_total += TEMPORoboAnda;
 			}
 		}
 
-		void Cachorro:: move()
+		void RoboAnda:: move()
 		{
 			if (!(ac.x >= -0.5 && ac.x <= 0.5 && ac.y >= -0.5 && ac.y <= 0.5))
 			{
@@ -74,7 +74,7 @@ namespace Entidades
 				moveraleatorio();
 		}
 
-		void Cachorro::Perseguir()
+		void RoboAnda::Perseguir()
 		{
 			if (podeMover) {
 				if (decideJogador()->getpos().x > pos.x)
@@ -89,14 +89,14 @@ namespace Entidades
 
 		}
 
-		void Cachorro::Executar()
+		void RoboAnda::Executar()
 		{
 			primTempoTotal();
 			move();
 			gravidade();
 			verificaVida();
 		}
-		Jogador* Cachorro::decideJogador()
+		Jogador* RoboAnda::decideJogador()
 		{
 			if (listaJogador.front()->getVivo() == true)
 				return listaJogador.front();

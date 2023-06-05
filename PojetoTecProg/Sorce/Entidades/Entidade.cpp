@@ -31,7 +31,7 @@ namespace Entidades
 		box = sf::RectangleShape(tam);
 	}
 
-	sf::RectangleShape Entidade::getbox()
+	const sf::RectangleShape Entidade::getbox()
 	{
 		return box;
 	}
@@ -43,17 +43,17 @@ namespace Entidades
 		box.setPosition(p.x, p.y);
 	}
 
-	sf::Vector2f Entidade::getpos()
+	const sf::Vector2f Entidade::getpos()
 	{
 		return pos;
 	}
 
-	void Entidade::setvel(sf::Vector2f v)
+	void Entidade::setvel(const sf::Vector2f v)
 	{
 		vel = v;
 	}
 
-	sf::Vector2f Entidade::getvel()
+	const sf::Vector2f Entidade::getvel()
 	{
 		return vel;
 	}
@@ -68,7 +68,7 @@ namespace Entidades
 		}
 		setpos(sf::Vector2f(pos.x, pos.y + vel.y));
 	}
-	sf::Vector2f Entidade::getTam()
+	const sf::Vector2f Entidade::getTam()
 	{
 		return box.getSize();
 	}

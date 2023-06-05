@@ -1,36 +1,36 @@
-#include "..\Entidades\Personagens\Sapo.h"
+#include "..\Entidades\Personagens\RoboPula.h"
 #include "..\Gerenciadores\Grafico.h"
 
 namespace Entidades
 {
 	namespace Personagens {
-		Sapo::Sapo(sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v, int h) :
+		RoboPula::RoboPula(sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v, int h) :
 			Inimigo(tam, p, v, h)
 		{
-			textura = Pgrafico->mandaTextura("Imagens/sapo.png");
+			textura = Pgrafico->mandaTextura("Imagens/RoboPula.png");
 			box.setTexture(&textura);
-			id = "sapo";
+			id = "RoboPula";
 			direcao = rand() % 2;
 			altura = 0;
 		}
-		Sapo::Sapo() :
+		RoboPula::RoboPula() :
 			Inimigo()
 		{
-			textura = Pgrafico->mandaTextura("Imagens/sapo.png");
+			textura = Pgrafico->mandaTextura("Imagens/RoboPula.png");
 			box.setTexture(&textura);
-			id = "sapo";
+			id = "RoboPula";
 			altura = 0;
 			direcao = rand() % 2;
 		}
-		Sapo::~Sapo()
+		RoboPula::~RoboPula()
 		{
 		}
-		void Sapo::move() {
+		void RoboPula::move() {
 			if (ta_no_chao) {
 				dt = Pgrafico->getrelogio().getElapsedTime().asSeconds()-tempo_total;
-				if (dt >= TEMPOSAPO) {
+				if (dt >= TEMPORoboPula) {
 					pula();
-					tempo_total += TEMPOSAPO;
+					tempo_total += TEMPORoboPula;
 					direcao = rand() % 2;
 				}
 				
@@ -45,7 +45,7 @@ namespace Entidades
 		}
 
 
-		void Sapo::Executar() {
+		void RoboPula::Executar() {
 
 			primTempoTotal();
 			move();
@@ -53,7 +53,7 @@ namespace Entidades
 			verificaVida();	
 		}
 
-		void Sapo::pula() {
+		void RoboPula::pula() {
 			if (ta_no_chao) {
 				altura = float(rand() % 10)+6.5f;
 				setvel(sf::Vector2f(vel.x, vel.y - altura));

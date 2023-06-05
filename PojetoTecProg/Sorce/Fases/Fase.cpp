@@ -101,48 +101,48 @@ namespace Fases
 	}
 
 
-	void Fase::criaCachorro(sf::Vector2f pos)
+	void Fase::criaRoboAnda(sf::Vector2f pos)
 	{
-		Entidades::Personagens::Cachorro* cachorro = 
-			new Entidades::Personagens::Cachorro(sf::Vector2f (50.0,50.0),pos);
-		if (cachorro) {
+		Entidades::Personagens::RoboAnda* RoboAnda = 
+			new Entidades::Personagens::RoboAnda(sf::Vector2f (50.0,50.0),pos);
+		if (RoboAnda) {
 			int i, tam;
 			tam = lista.getTam();
 			for (i = 0; i < tam; i++) {
 				if (lista.getEnt(i)->getId() == "jogador") { 
-					cachorro->setjogador(static_cast<Jogador*>(lista.getEnt(i))); }
+					RoboAnda->setjogador(static_cast<Jogador*>(lista.getEnt(i))); }
 			}
-			lista.incluir(static_cast<Entidade*>(cachorro));
+			lista.incluir(static_cast<Entidade*>(RoboAnda));
 		}
 		else {
-			std::cout << "ERROR::nao foi possivel criar um cachorro" << std::endl;
+			std::cout << "ERROR::nao foi possivel criar um RoboAnda" << std::endl;
 			exit(1);
 		}
 	}
 
-	void Fase::criaSapo(sf::Vector2f pos)
+	void Fase::criaRoboPula(sf::Vector2f pos)
 	{
-		Entidades::Personagens::Sapo* sapo = 
-			new Entidades::Personagens::Sapo(sf::Vector2f (50.0,50.0),pos);
-		if (sapo) {
-			lista.incluir(static_cast<Entidade*>(sapo));
+		Entidades::Personagens::RoboPula* RoboPula = 
+			new Entidades::Personagens::RoboPula(sf::Vector2f (50.0,50.0),pos);
+		if (RoboPula) {
+			lista.incluir(static_cast<Entidade*>(RoboPula));
 		}
 		else {
-			std::cout << "ERROR::nao foi possivel criar um sapo" << std::endl;
+			std::cout << "ERROR::nao foi possivel criar um RoboPula" << std::endl;
 			exit(1);
 		}
 	}
 	
-	void Fase::criaMacaco(sf::Vector2f pos)
+	void Fase::criaCanhao(sf::Vector2f pos)
 	{
-		Entidades::Personagens::Macaco* macaco = 
-			new Entidades::Personagens::Macaco(sf::Vector2f(50.0,50.0),pos);
-		if (macaco) {
-			lista.incluir(static_cast<Entidade*>(macaco));
-			lista.incluir(static_cast<Entidade*>(macaco->getProjetil()));
+		Entidades::Personagens::Canhao* Canhao = 
+			new Entidades::Personagens::Canhao(sf::Vector2f(50.0,50.0),pos);
+		if (Canhao) {
+			lista.incluir(static_cast<Entidade*>(Canhao));
+			lista.incluir(static_cast<Entidade*>(Canhao->getProjetil()));
 		}
 		else {
-			std::cout << "ERROR::nao foi possivel criar um macaco" << std::endl;
+			std::cout << "ERROR::nao foi possivel criar um Canhao" << std::endl;
 			exit(1);
 		}
 	}
@@ -184,19 +184,19 @@ namespace Fases
 
 			case('C'):
 			{
-				criaCachorro(posAux);
+				criaRoboAnda(posAux);
 			}
 			break;
 
 			case('S'):
 			{
-				criaSapo(posAux);
+				criaRoboPula(posAux);
 			}
 			break;
 
 			case('M'):
 			{
-				criaMacaco(posAux);
+				criaCanhao(posAux);
 			}
 			break;
 		

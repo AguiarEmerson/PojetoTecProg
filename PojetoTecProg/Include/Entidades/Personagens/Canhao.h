@@ -5,15 +5,15 @@
 namespace Entidades
 {
 	namespace Personagens {
-		class Macaco:public Inimigo
+		class Canhao:public Inimigo
 		{
 		protected:
 			Projetil projetil;
 			
 		public:
-			Macaco(sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v = sf::Vector2f(3.0, 0.0), int h = 3);
-			Macaco();
-			~Macaco();
+			Canhao(sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v = sf::Vector2f(3.0, 0.0), int h = 3);
+			Canhao();
+			~Canhao();
 
 			void move();
 			void Executar();
