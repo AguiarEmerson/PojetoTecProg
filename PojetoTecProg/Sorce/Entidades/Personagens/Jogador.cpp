@@ -13,7 +13,6 @@ namespace Entidades
 			pontos(xp)
 		{
 			id = "jogador";
-			dano = 1;
 			podeMover = true;
 			textura=Pgrafico->carregarTextura("Imagens/jogador1.png");
 			box.setTexture(&textura);
@@ -23,7 +22,6 @@ namespace Entidades
 			Personagem(),
 			pontos(0)
 		{
-			dano = 1;
 			id = "jogador";
 			textura=Pgrafico->mandaTextura("Imagens/jogador1.png");
 			box.setTexture(&textura);
@@ -173,7 +171,7 @@ namespace Entidades
 			personagem = static_cast<Personagem*>(this);
 			espinho->danoPersonagem(personagem);
 		}
-		int Jogador::getDano() {
+		const int Jogador::getDano() {
 			return dano;
 		}
 

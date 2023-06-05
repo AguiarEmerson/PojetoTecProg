@@ -48,13 +48,13 @@ namespace Entidades
 			existe = false;
 		}
 	}
-	void Projetil::reiniciaProjetil(sf::Vector2f novapos, sf::Vector2f novavel)
+	void Projetil::reiniciaProjetil(const sf::Vector2f novapos, const sf::Vector2f novavel)
 	{
 		pos = novapos;
 		vel = novavel;
 		existe = true;
 	}
-	int Projetil::getDano()
+	const int Projetil::getDano()
 	{
 		return dano;
 	}

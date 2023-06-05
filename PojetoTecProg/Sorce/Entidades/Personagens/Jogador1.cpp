@@ -6,13 +6,15 @@ namespace Entidades
 		Jogador1::Jogador1(sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v , int h , int xp ) :
 		Jogador(tam,p,v,h,xp)
 		{
-			
+			cura = false;
 		}
 		Jogador1::Jogador1():
 		Jogador()
 		{
-
+			cura = false;
 		}
+		Jogador1::~Jogador1()
+		{}
 		void Jogador1::move() {
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
 				pula();

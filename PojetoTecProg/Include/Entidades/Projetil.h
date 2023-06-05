@@ -20,8 +20,8 @@ namespace Entidades
 		const bool verificaExiste();
 		void setExiste(const bool existindo);
 		void atualizaExiste();
-		void reiniciaProjetil(sf::Vector2f novapos,sf::Vector2f novavel);
-		int getDano();
+		void reiniciaProjetil(const sf::Vector2f novapos, const sf::Vector2f novavel);
+		const int getDano();
 
 
 	};
