@@ -13,7 +13,9 @@ namespace Listas {
 		int i,tam = LEs.getTam();
 		for (i = 0; i < tam; i++)
 		{
-			if(LEs.getElem(i)->getVivo()==true)
+			if(LEs.getElem(i)->getVivo()==true&&LEs.getElem(i)->getId()!="jogador")
+				LEs.getElem(i)->Executar();
+			else
 				LEs.getElem(i)->Executar();
 		}
 	}

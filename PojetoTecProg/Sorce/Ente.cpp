@@ -16,7 +16,7 @@ Ente::~Ente()
 {
 }
 
-string Ente::getId()
+const string Ente::getId()
 {
 	return id;
 }

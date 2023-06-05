@@ -1,7 +1,6 @@
 #pragma once
 #include "..\stdafx.h"
 #include "..\Entidades\Personagens\Jogador.h"
-
 #include "..\Lista\ListaEntidades.h"
 using namespace Listas;
 

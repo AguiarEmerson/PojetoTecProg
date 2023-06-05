@@ -14,22 +14,23 @@ namespace Entidades
 		bool podeMover;
 		bool vivo;
 		sf::Texture textura;
+
 	public:
 		Entidade(sf::Vector2f tam, sf::Vector2f p = sf::Vector2f(0.0, 0.0), sf::Vector2f v = sf::Vector2f(8.0, 0.0));
 		Entidade();
 		~Entidade();
 
-		void setbox(sf::Vector2f tam);
-		sf::RectangleShape getbox();
+		void setbox(const sf::Vector2f tam);
+		const sf::RectangleShape getbox();
 
-		void setpos(sf::Vector2f p);
-		sf::Vector2f getpos();
+		void setpos(const sf::Vector2f p);
+		const sf::Vector2f getpos();
 
-		void setvel(sf::Vector2f v);
-		sf::Vector2f getvel();
+		void setvel(const sf::Vector2f v);
+		const sf::Vector2f getvel();
 
 		void gravidade();
-		sf::Vector2f getTam();
+		const sf::Vector2f getTam();
 
 		void setVivo(const bool vive);
 		const bool getVivo();

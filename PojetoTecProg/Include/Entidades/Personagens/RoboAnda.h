@@ -5,20 +5,21 @@
 namespace Entidades
 {
 	namespace Personagens {
-		class Cachorro :public Inimigo {
+		class RoboAnda :public Inimigo {
 		protected:
-			Jogador* jogador;
+			std::list<Jogador*> listaJogador;
 		public:
-			Cachorro(sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v = sf::Vector2f(3.0, 0.0), int h = 3);
-			Cachorro();
+			RoboAnda(sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v = sf::Vector2f(3.0, 0.0), int h = 3);
+			RoboAnda();
 
-			~Cachorro();
+			~RoboAnda();
 
 			void setjogador(Jogador* j);
 			void moveraleatorio();
 			void Perseguir();
 			void move();
 			void Executar();
+			Jogador* decideJogador();
 		};
 	}
 }

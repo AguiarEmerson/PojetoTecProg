@@ -1,38 +1,38 @@
-#include "..\Entidades\Personagens\Macaco.h"
+#include "..\Entidades\Personagens\Canhao.h"
 #include "..\Gerenciadores\Grafico.h"
 
 namespace Entidades
 {
 	namespace Personagens {
-		Macaco::Macaco(sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v, int h) :
+		Canhao::Canhao(sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v, int h) :
 			Inimigo(tam, p, v, h),
 			projetil(sf::Vector2f(15.0,15.0),sf::Vector2f(p.x,p.y+tam.y+0.5),sf::Vector2f(0.0,0.0))
 		{
-			textura = Pgrafico->mandaTextura("Imagens/macaco.png");
+			textura = Pgrafico->mandaTextura("Imagens/Canhao.png");
 			box.setTexture(&textura);
 			primeiro_ciclo = 1;
-			id = "macaco";
+			id = "Canhao";
 		}
-		Macaco::Macaco():
+		Canhao::Canhao():
 			Inimigo(),
 			projetil()
 		{
-			textura = Pgrafico->mandaTextura("Imagens/macaco.png");
+			textura = Pgrafico->mandaTextura("Imagens/Canhao.png");
 			box.setTexture(&textura);
-			id = "macaco";
+			id = "Canhao";
 		}
-		Macaco::~Macaco()
+		Canhao::~Canhao()
 		{
 		}
 
-		void Macaco::move() {
+		void Canhao::move() {
 
 	
 			dt = Pgrafico->getrelogio().getElapsedTime().asSeconds()-tempo_total;
-			if (dt >= TEMPOMOVEMACACO / 2 &&dt<= TEMPOMOVEMACACO) {
+			if (dt >= TEMPOMOVECanhao / 2 &&dt<= TEMPOMOVECanhao) {
 				direcao = rand() % 2;
 			}
-			else if (dt <= TEMPOMOVEMACACO/2)
+			else if (dt <= TEMPOMOVECanhao/2)
 			{
 				if (direcao == 1)
 					setpos(sf::Vector2f(getpos().x + getvel().x, getpos().y));
@@ -40,10 +40,10 @@ namespace Entidades
 					setpos(sf::Vector2f(getpos().x - getvel().x, getpos().y));
 			}
 			else {
-				tempo_total += TEMPOMOVEMACACO;
+				tempo_total += TEMPOMOVECanhao;
 			}
 		}
-		void Macaco::Executar()
+		void Canhao::Executar()
 		{
 			primTempoTotal();
 			controlaProjetil();
@@ -52,10 +52,10 @@ namespace Entidades
 			verificaVida();
 		}
 
-		void Macaco::controlaProjetil()
+		void Canhao::controlaProjetil()
 		{
 			projetil.atualizaExiste();
-			if (projetil.verificaExiste() == false)
+			if (projetil.verificaExiste() == false&&vivo==1)
 			{
 				sf::Vector2f novapos;
 				sf::Vector2f novavel;
@@ -73,7 +73,7 @@ namespace Entidades
 				projetil.reiniciaProjetil(novapos, novavel);
 			}
 		}
-		Projetil* Macaco::getProjetil()
+		const Projetil* Canhao::getProjetil()
 		{
 			return &projetil;
 		}

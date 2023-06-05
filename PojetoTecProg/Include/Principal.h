@@ -15,9 +15,9 @@ public:
 /*
 #include "..\Gerenciadores\Grafico.h"
 #include "..\Gerenciadores\Colisao.h"
-#include "..\Entidades\Personagens\Cachorro.h"
-#include "..\Entidades\Personagens\Sapo.h"
-#include "..\Entidades\Personagens\Macaco.h"
+#include "..\Entidades\Personagens\RoboAnda.h"
+#include "..\Entidades\Personagens\RoboPula.h"
+#include "..\Entidades\Personagens\Canhao.h"
 #include "..\Lista\ListaEntidades.h"
 #include "..\Entidades\Obstaculos\Plataforma.h"
 #include "..\Entidades\Obstaculos\Espinho.h"

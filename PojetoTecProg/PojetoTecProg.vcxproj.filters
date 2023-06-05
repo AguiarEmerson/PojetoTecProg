@@ -27,7 +27,7 @@
     <ClCompile Include="Sorce\Entidades\Obstaculo\Plataforma.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Sorce\Entidades\Personagens\Cachorro.cpp">
+    <ClCompile Include="Sorce\Entidades\Personagens\RoboAnda.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
     <ClCompile Include="Sorce\Entidades\Personagens\Inimigo.cpp">
@@ -54,13 +54,13 @@
     <ClCompile Include="Sorce\Entidades\Personagens\Cachorro.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Sorce\Entidades\Personagens\Sapo.cpp">
+    <ClCompile Include="Sorce\Entidades\Personagens\RoboPula.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
     <ClCompile Include="Sorce\Entidades\Projetil.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Sorce\Entidades\Personagens\Macaco.cpp">
+    <ClCompile Include="Sorce\Entidades\Personagens\Canhao.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
     <ClCompile Include="Sorce\Entidades\Obstaculo\Trampolim.cpp">
@@ -76,7 +76,12 @@
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
     <ClCompile Include="Sorce\Fases\Fase1.cpp">
-
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="Sorce\Entidades\Personagens\Jogador1.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="Sorce\Entidades\Personagens\Jogador2.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
   </ItemGroup>
@@ -99,7 +104,7 @@
     <ClInclude Include="Include\Entidades\Obstaculos\Plataforma.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Entidades\Personagens\Cachorro.h">
+    <ClInclude Include="Include\Entidades\Personagens\RoboAnda.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
     <ClInclude Include="Include\Entidades\Personagens\Inimigo.h">
@@ -111,7 +116,7 @@
     <ClInclude Include="Include\Entidades\Personagens\Personagem.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Entidades\Personagens\Sapo.h">
+    <ClInclude Include="Include\Entidades\Personagens\RoboPula.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
     <ClInclude Include="Include\Gerenciadores\Colisao.h">
@@ -135,7 +140,7 @@
     <ClInclude Include="Include\Entidades\Projetil.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Entidades\Personagens\Macaco.h">
+    <ClInclude Include="Include\Entidades\Personagens\Canhao.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
     <ClInclude Include="Include\Entidades\Obstaculos\Trampolim.h">
@@ -148,8 +153,12 @@
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
     <ClInclude Include="Include\Fases\Fase1.h">
-
-      
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Entidades\Personagens\Jogador1.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Entidades\Personagens\Jogador2.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
   </ItemGroup>
@@ -186,7 +195,7 @@
     <Image Include="Sorce\Entidades\Personagens\download.jpeg">
       <Filter>Arquivos de Recurso</Filter>
     </Image>
-    <Image Include="Imagens\cachorro.png">
+    <Image Include="Imagens\RoboAnda.png">
       <Filter>Arquivos de Recurso</Filter>
     </Image>
     <Image Include="Imagens\espinho.png">
@@ -195,7 +204,7 @@
     <Image Include="Imagens\jogador1.png">
       <Filter>Arquivos de Recurso</Filter>
     </Image>
-    <Image Include="Imagens\macaco.png">
+    <Image Include="Imagens\Canhao.png">
       <Filter>Arquivos de Recurso</Filter>
     </Image>
     <Image Include="Imagens\plataforma.png">
@@ -207,10 +216,7 @@
     <Image Include="Imagens\projetil.png">
       <Filter>Arquivos de Recurso</Filter>
     </Image>
-    <Image Include="Imagens\sapo.png">
-      <Filter>Arquivos de Recurso</Filter>
-    </Image>
-    <Image Include="Imagens\WhatsApp_Image_2023-06-03_at_11.48.40-removebg-preview.png">
+    <Image Include="Imagens\RoboPula.png">
       <Filter>Arquivos de Recurso</Filter>
     </Image>
   </ItemGroup>

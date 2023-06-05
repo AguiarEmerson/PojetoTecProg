@@ -21,11 +21,11 @@ namespace Entidades
 		{
 		}
 
-		void Personagem::setAc(sf::Vector2f aceleracao)
+		void Personagem::setAc(const sf::Vector2f aceleracao)
 		{
 			ac = aceleracao;
 		}
-		sf::Vector2f Personagem::getAc()
+		const sf::Vector2f Personagem::getAc()
 		{
 			return ac;
 		}
@@ -36,7 +36,7 @@ namespace Entidades
 				vivo = false;
 		}
 
-		void Personagem::tomaDano(int dano)
+		void Personagem::tomaDano(const int dano)
 		{
 			num_vidas-= dano;
 		}

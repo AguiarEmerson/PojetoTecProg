@@ -8,7 +8,6 @@ namespace Entidades
 			Personagem(tam, p, v, h)
 		{
 			direcao = 0;
-			dano = 1;
 			primeiro_ciclo = 1;
 			
 		}
@@ -17,7 +16,6 @@ namespace Entidades
 			Personagem()
 		{
 			direcao = 0;
-			dano = 1;
 			primeiro_ciclo = 1;
 		}
 

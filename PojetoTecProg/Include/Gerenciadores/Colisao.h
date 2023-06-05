@@ -1,7 +1,7 @@
 #pragma once
 #include "..\Lista\ListaEntidades.h"
 #include"..\Lista\Lista.h"
-#include"..\Entidades\Personagens\Macaco.h"
+#include"..\Entidades\Personagens\Canhao.h"
 using namespace Listas;
 using namespace Entidades;
 using namespace Personagens;
