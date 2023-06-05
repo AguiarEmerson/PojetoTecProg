@@ -21,12 +21,15 @@
   <ItemGroup>
     <ClCompile Include="Sorce\Entidades\Personagens\Jogador1.cpp" />
     <ClCompile Include="Sorce\Entidades\Personagens\Jogador2.cpp" />
+    <ClCompile Include="Sorce\Estados\Estado.cpp" />
+    <ClCompile Include="Sorce\Estados\EstadoJogar.cpp" />
     <ClCompile Include="Sorce\Fases\Fase1.cpp" />
     <ClCompile Include="Sorce\Entidades\Obstaculo\Espinho.cpp" />
     <ClCompile Include="Sorce\Entidades\Personagens\Canhao.cpp" />
     <ClCompile Include="Sorce\Entidades\Projetil.cpp" />
     <ClCompile Include="Sorce\Entidades\Personagens\RoboPula.cpp" />
     <ClCompile Include="Sorce\Fases\Fase.cpp" />
+    <ClCompile Include="Sorce\Fases\Fase2.cpp" />
     <ClCompile Include="Sorce\Gerenciadores\Colisao.cpp" />
     <ClCompile Include="Sorce\Gerenciadores\Grafico.cpp" />
     <ClCompile Include="Sorce\Principal.cpp" />
@@ -44,6 +47,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Include\Entidades\Obstaculos\Espinho.h" />
+    <ClInclude Include="Include\Estados\Estado.h" />
+    <ClInclude Include="Include\Estados\EstadoJogar.h" />
     <ClInclude Include="Include\Fases\Fase.h" />
     <ClInclude Include="Include\Ente.h" />
     <ClInclude Include="Include\Entidades\Entidade.h" />
@@ -54,6 +59,7 @@
     <ClInclude Include="Include\Entidades\Personagens\Jogador.h" />
     <ClInclude Include="Include\Entidades\Personagens\Personagem.h" />
     <ClInclude Include="Include\Fases\Fase1.h" />
+    <ClInclude Include="Include\Fases\Fase2.h" />
     <ClInclude Include="Include\Gerenciadores\Colisao.h" />
     <ClInclude Include="Include\Gerenciadores\Grafico.h" />
     <ClInclude Include="Include\Lista\Lista.h" />
@@ -90,6 +96,7 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="Arquivos\Mapa_fase1.txt" />
+    <Text Include="Arquivos\Mapa_fase2.txt" />
     <Text Include="Debug\PojetoTecProg.log" />
   </ItemGroup>
   <ItemGroup>
