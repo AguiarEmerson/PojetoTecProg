@@ -22,7 +22,7 @@ namespace Listas {
 	void ListaEntidades::retirar(Entidade* pE) {
 		LEs.pop(pE);
 	}
-	int ListaEntidades::getTam()
+	const int ListaEntidades::getTam()
 	{
 		return LEs.getTam();
 	}
