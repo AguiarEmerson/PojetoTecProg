@@ -73,7 +73,7 @@ namespace Entidades
 				projetil.reiniciaProjetil(novapos, novavel);
 			}
 		}
-		Projetil* Canhao::getProjetil()
+		const Projetil* Canhao::getProjetil()
 		{
 			return &projetil;
 		}
