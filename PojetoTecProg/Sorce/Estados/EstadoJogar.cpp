@@ -5,6 +5,7 @@ namespace Estados
 	EstadoJogar::EstadoJogar(Fases::Fase* fase) :
 		fase(fase)
 	{
+		grafo = Grafico::getgrafico();
 	}
 	EstadoJogar::~EstadoJogar()
 	{
@@ -18,7 +19,7 @@ namespace Estados
 		return fase;
 	}
 	void EstadoJogar::Executar()
-	{
-		fase->Executar();
+	{				
+		fase->Executar();                                                                                                                                                                       
 	}
 }

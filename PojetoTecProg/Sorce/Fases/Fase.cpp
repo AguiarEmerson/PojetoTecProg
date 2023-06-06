@@ -10,6 +10,9 @@ namespace Fases
 			std::cout << "ERROR nao foi possivel criar o GerenciadorGrafico" << std::endl;
 			exit(1);
 		}
+		fundo = sf::RectangleShape(sf::Vector2f(1000.0f, 600.0f));
+		primeiroCiclo = true;
+		
 	}
 	Fase::~Fase()
 	{
@@ -224,11 +227,25 @@ namespace Fases
 	}
 	void Fase::Executar()
 	{
+		if (primeiroCiclo)
+		{
+			primeiroCiclo = false;
+			Grafico::getgrafico()->setFundo(fundo);
+		}
 		//executa todas as entidades
+
 		lista.percorrer();
 		
 		//verifica as colisoes
 		colisoes.executar();
+	}
+	void Fase::setFundo(sf::Vector2f posicao)
+	{
+		fundo.setPosition(posicao);
+	}
+	sf::RectangleShape Fase::getFundo()
+	{
+		return fundo;
 	}
 
 }

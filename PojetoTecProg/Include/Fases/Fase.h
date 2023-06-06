@@ -15,6 +15,9 @@ namespace Fases
 	protected:
 		Listas::ListaEntidades lista;
 		Gerenciadores::Colisao colisoes;
+		sf::RectangleShape fundo;
+		sf::Texture textura;
+		bool primeiroCiclo;
 
 	public:
 		Fase();
@@ -31,5 +34,7 @@ namespace Fases
 		void criaEsteira(sf::Vector2f pos);
 		virtual void criaMapa() = 0;
 		void Executar();
+		void setFundo(sf::Vector2f posicao);
+		sf::RectangleShape getFundo();
 	};
 }

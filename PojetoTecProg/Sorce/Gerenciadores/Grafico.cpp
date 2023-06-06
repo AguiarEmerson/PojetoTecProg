@@ -30,10 +30,10 @@ namespace Gerenciadores {
 			window = nullptr;
 		}
 	}
-	void Grafico::desenha(sf::RectangleShape box)
+	void Grafico:: desenha(sf::RectangleShape box)
 	{
 		window->draw(box);
-		
+		 
 	}
 
 	const bool Grafico::verificaJanelaAberta() {
@@ -96,6 +96,7 @@ namespace Gerenciadores {
 	void Grafico::executar() {
 		int i, tam;
 		tam = lista->getTam();
+		atualizaFundo();
 		if (verificaJanelaAberta()) {
 			sf::Event evento;
 			if (window->pollEvent(evento)) {
@@ -104,6 +105,7 @@ namespace Gerenciadores {
 				}
 			}
 			limpa();
+			desenha(fundo);
 			for (i = 0; i < tam; i++) {
 				if (lista->getEnt(i)->getVivo() == true) {
 					desenha(lista->getEnt(i)->getbox());
@@ -137,6 +139,13 @@ namespace Gerenciadores {
 			it++;
 		}
 		return carregarTextura(caminhoTextura);
+	}
+	void Grafico::setFundo(sf::RectangleShape box) {
+		fundo = box;
+	}
+	void Grafico::atualizaFundo()
+	{
+		fundo.setPosition(camera.getCenter() - sf::Vector2f((camera.getSize().x / 2), (camera.getSize().y / 2)));
 	}
 }	
 
