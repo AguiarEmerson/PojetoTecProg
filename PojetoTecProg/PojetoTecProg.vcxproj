@@ -31,6 +31,7 @@
     <ClCompile Include="Sorce\Fases\Fase.cpp" />
     <ClCompile Include="Sorce\Fases\Fase2.cpp" />
     <ClCompile Include="Sorce\Gerenciadores\Colisao.cpp" />
+    <ClCompile Include="Sorce\Gerenciadores\MaquinadeEstados.cpp" />
     <ClCompile Include="Sorce\Gerenciadores\Grafico.cpp" />
     <ClCompile Include="Sorce\Principal.cpp" />
     <ClCompile Include="Sorce\Ente.cpp" />
@@ -61,6 +62,7 @@
     <ClInclude Include="Include\Fases\Fase1.h" />
     <ClInclude Include="Include\Fases\Fase2.h" />
     <ClInclude Include="Include\Gerenciadores\Colisao.h" />
+    <ClInclude Include="Include\Gerenciadores\MaquinadeEstados.h" />
     <ClInclude Include="Include\Gerenciadores\Grafico.h" />
     <ClInclude Include="Include\Lista\Lista.h" />
     <ClInclude Include="Include\Lista\ListaEntidades.h" />

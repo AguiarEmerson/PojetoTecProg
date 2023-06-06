@@ -1,6 +1,4 @@
 #pragma once
-#include "..\Fases\Fase1.h"
-#include "..\Fases\Fase2.h"
 #include "..\Estados\Estado.h"
 
 namespace Estados
@@ -10,9 +8,8 @@ namespace Estados
 	private:
 		Fases::Fase* fase;
 	public:
-		EstadoJogar(string i);
+		EstadoJogar(Fases::Fase* fase);
 		~EstadoJogar();
-		void criafase(string i);
 		Fases::Fase* getfase();
 		void Executar();
 	};

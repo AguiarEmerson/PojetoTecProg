@@ -5,6 +5,7 @@ namespace Fases
 	Fase1::Fase1() :
 		Fase()
 	{
+        criaMapa();
 	}
 	Fase1::~Fase1()
 	{

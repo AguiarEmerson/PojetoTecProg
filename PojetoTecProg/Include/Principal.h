@@ -1,15 +1,16 @@
 #pragma once
-#include "..\Fases\Fase.h"
-
+#include "..\Gerenciadores\Grafico.h"
+#include "..\Gerenciadores\MaquinadeEstados.h"
 
 class Principal
 {
 private:
 	static Gerenciadores::Grafico* Pgrafico;
-	Fases::Fase* fase;
+	static Gerenciadores::MaquinadeEstados* pMaquinadeEstados;
 public:
-	Principal(Fases::Fase* f);
+	Principal();
 	~Principal();
+	void inicializa();
 	void executar();
 };
 /*
