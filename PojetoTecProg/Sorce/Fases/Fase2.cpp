@@ -24,7 +24,6 @@ namespace Fases
             for (int i = 0; i < linha.size(); i++) {
                 if (linha[i] != ' ') {
                     criaEntidade(linha[i], sf::Vector2i(i, j));
-                    printf("%c", linha[i]);
                 }
             }
             j++;
