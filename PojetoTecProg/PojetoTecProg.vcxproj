@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Sorce\Entidades\Obstaculo\Esteira.cpp" />
     <ClCompile Include="Sorce\Entidades\Personagens\Jogador1.cpp" />
     <ClCompile Include="Sorce\Entidades\Personagens\Jogador2.cpp" />
     <ClCompile Include="Sorce\Estados\Estado.cpp" />
@@ -74,6 +75,7 @@
     <ClInclude Include="Include\stdafx.h" />
     <ClInclude Include="Include\Entidades\Personagens\Jogador1.h" />
     <ClInclude Include="Include\Entidades\Personagens\Jogador2.h" />
+    <ClInclude Include="Include\Entidades\Obstaculos\Esteira.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Debug\PojetoTecProg.exe.recipe" />

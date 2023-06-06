@@ -33,7 +33,7 @@ namespace Gerenciadores
 		
 		for (i = 0; i < tam; i++)
 		{
-			if (lista->getEnt(i)->getId() == "plataforma"|| lista->getEnt(i)->getId() == "trampolim"|| lista->getEnt(i)->getId() == "espinho")
+			if (lista->getEnt(i)->getId() == "plataforma"|| lista->getEnt(i)->getId() == "trampolim"|| lista->getEnt(i)->getId() == "espinho"|| lista->getEnt(i)->getId() == "Esteira")
 				listaObstaculo.push_back(lista->getEnt(i));
 			else if (lista->getEnt(i)->getId() == "RoboAnda"|| lista->getEnt(i)->getId() == "RoboPula")
 				listaInimigo.push_back(lista->getEnt(i));

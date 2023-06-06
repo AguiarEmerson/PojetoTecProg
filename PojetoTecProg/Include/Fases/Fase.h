@@ -28,6 +28,7 @@ namespace Fases
 		void criaRoboPula(sf::Vector2f pos);
 		void criaCanhao(sf::Vector2f pos);
 		void criaEntidade(char id, sf::Vector2i pos);
+		void criaEsteira(sf::Vector2f pos);
 		virtual void criaMapa() = 0;
 		void Executar();
 	};

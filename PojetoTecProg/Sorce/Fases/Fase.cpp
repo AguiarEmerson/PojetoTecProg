@@ -15,6 +15,8 @@ namespace Fases
 	{
 	}
 
+	
+
 	void Fase::criaJogador1(sf::Vector2f pos)
 	{
 		Entidades::Personagens::Jogador* jogador = 
@@ -70,6 +72,18 @@ namespace Fases
 		}
 		else {
 			std::cout << "ERROR::nao foi possivel criar uma plataforma" << std::endl;
+			exit(1);
+		}
+	}
+	void Fase::criaEsteira(sf::Vector2f pos)
+	{
+		Entidades::Obstaculos::Esteira* Esteira =
+			new Entidades::Obstaculos::Esteira(sf::Vector2f(50.0, 50.0), pos, sf::Vector2f(0.0, 0.0));
+		if (Esteira) {
+			lista.incluir(static_cast<Entidade*>(Esteira));
+		}
+		else {
+			std::cout << "ERROR::nao foi possivel criar uma Esteira" << std::endl;
 			exit(1);
 		}
 	}
@@ -197,6 +211,12 @@ namespace Fases
 			case('M'):
 			{
 				criaCanhao(posAux);
+			}
+			break;
+
+			case('%'):
+			{
+				criaEsteira(posAux);
 			}
 			break;
 		

@@ -14,8 +14,6 @@ namespace Entidades
 		{
 			id = "jogador";
 			podeMover = true;
-			textura=Pgrafico->carregarTextura("Imagens/jogador1.png");
-			box.setTexture(&textura);
 		}
 
 		Jogador::Jogador() :
@@ -23,8 +21,6 @@ namespace Entidades
 			pontos(0)
 		{
 			id = "jogador";
-			textura=Pgrafico->mandaTextura("Imagens/jogador1.png");
-			box.setTexture(&textura);
 			
 			//box.setTexture(&textura);
 		}
@@ -69,6 +65,8 @@ namespace Entidades
 							setAc(sf::Vector2f(IMPULSOESPINHOL * vel.x, 0.0f));
 							danoEspinho(secundaria);
 						}
+						if (secundaria->getId() == "plataforma" || secundaria->getId() == "mola" || secundaria->getId() == "esteira")
+							setAc(sf::Vector2f(0.0f, 0.0f));
 					}
 					else
 					{
@@ -83,6 +81,8 @@ namespace Entidades
 								setAc(sf::Vector2f(-IMPULSOESPINHOL * vel.x, 0.0f));
 								danoEspinho(secundaria);
 						}
+						if (secundaria->getId() == "plataforma" || secundaria->getId() == "mola" || secundaria->getId() == "esteira")
+							setAc(sf::Vector2f(0.0f, 0.0f));
 					}
 				}
 				else
@@ -92,6 +92,10 @@ namespace Entidades
 						if(secundaria->getId()=="plataforma")
 							ta_no_chao = true;
 						pos.y += ds.y;
+						if (secundaria->getId() == "Esteira")
+						{
+							acimaEsteira(secundaria);
+						}
 						if (secundaria->getId() == "trampolim")
 						{
 							pulaTramp(secundaria);
@@ -173,6 +177,14 @@ namespace Entidades
 		}
 		const int Jogador::getDano() {
 			return dano;
+		}
+		void Jogador::acimaEsteira(Entidade* ent)
+		{
+			Esteira* Esteira = NULL;
+			Esteira = static_cast<Obstaculos::Esteira*>(ent);
+			Personagem* personagem=NULL;
+			personagem = static_cast<Personagem*>(this);
+			Esteira->colideJogador(personagem);
 		}
 
 		
