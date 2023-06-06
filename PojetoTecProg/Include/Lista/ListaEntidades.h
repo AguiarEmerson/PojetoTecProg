@@ -15,7 +15,7 @@ namespace Listas
 		void incluir(Entidade* pE);
 		void percorrer();
 		void retirar(Entidade* pE);
-		int getTam();
+		const int getTam();
 		Entidade* getEnt(int pos);
 	};
 }
