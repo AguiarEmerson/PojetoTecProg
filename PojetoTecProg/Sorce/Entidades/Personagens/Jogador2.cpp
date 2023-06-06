@@ -7,12 +7,15 @@ namespace Entidades
 			Jogador(tam, p, v, h, xp)
 		{
 			jogador = NULL;
-			box.setFillColor(sf::Color::Red);
+			textura = Pgrafico->carregarTextura("Imagens/jogador2.png");
+			box.setTexture(&textura);
 		}
 		Jogador2::Jogador2() :
 			Jogador()
 		{
 			jogador = NULL;
+			textura = Pgrafico->carregarTextura("Imagens/jogador2.png");
+			box.setTexture(&textura);
 		}
 		void Jogador2::move() {
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {

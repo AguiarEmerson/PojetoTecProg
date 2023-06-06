@@ -7,11 +7,16 @@ namespace Entidades
 		Jogador(tam,p,v,h,xp)
 		{
 			cura = false;
+			textura = Pgrafico->carregarTextura("Imagens/jogador1.png");
+			box.setTexture(&textura);
+		
 		}
 		Jogador1::Jogador1():
 		Jogador()
 		{
 			cura = false;
+			textura = Pgrafico->carregarTextura("Imagens/jogador1.png");
+			box.setTexture(&textura);
 		}
 		Jogador1::~Jogador1()
 		{}

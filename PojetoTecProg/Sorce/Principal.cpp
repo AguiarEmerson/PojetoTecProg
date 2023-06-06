@@ -1,26 +1,35 @@
 #include "..\principal.h"
 
 Gerenciadores::Grafico* Principal::Pgrafico = Gerenciadores::Grafico::getgrafico();
+Gerenciadores::MaquinadeEstados* Principal::pMaquinadeEstados = Gerenciadores::MaquinadeEstados::getMaquinadeEstados();
 
-Principal::Principal(Fases::Fase* f):
-    fase(f)
+Principal::Principal()
 {
     if (Pgrafico == nullptr) {
         std::cout << "ERROR nao foi possivel criar o GerenciadorGrafico" << std::endl;
         exit(1);
     }
+    if (pMaquinadeEstados == nullptr) {
+        std::cout << "ERROR nao foi possivel criar a Maquina de estados" << std::endl;
+        exit(1);
+    }
+    inicializa();
 }
 
 Principal::~Principal()
 {
 }
 
+void Principal::inicializa() 
+{
+    pMaquinadeEstados->incluir("jogar_fase1");
+}
+
 void Principal::executar()
 {
-    fase->criaMapa();
     while (Pgrafico->verificaJanelaAberta()) {
         //atualiza a fase
-        fase->Executar();
+        pMaquinadeEstados->Executar();
 
         //deseha na tela
         Pgrafico->executar();

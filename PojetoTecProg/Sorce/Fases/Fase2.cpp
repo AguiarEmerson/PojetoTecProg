@@ -1,25 +1,23 @@
-#include "..\Fases\Fase1.h"
+#include "..\Fases\Fase2.h"
 
 namespace Fases
 {
-	Fase1::Fase1() :
-		Fase()
-	{
-        textura = Grafico::getgrafico()->carregarTextura("Imagens/fundo1.png");
+    Fase2::Fase2() :
+        Fase()
+    {
         criaMapa();
-        fundo.setTexture(&textura);
-	}
-	Fase1::~Fase1()
-	{
-	}
+    }
+    Fase2::~Fase2()
+    {
+    }
 
-	void Fase1::criaMapa()
-	{
+    void Fase2::criaMapa()
+    {
         std::ifstream arquivo;
         std::string linha;
-        arquivo.open("Arquivos/Mapa_fase1.txt");
+        arquivo.open("Arquivos/Mapa_fase2.txt");
         if (!arquivo.is_open()) {
-            std::cout << "nao foi possivel abrir o arquivo: Mapa_fase1" << std::endl;
+            std::cout << "nao foi possivel abrir o arquivo: Mapa_fase2" << std::endl;
             exit(1);
         }
         int j = 0;
@@ -34,5 +32,5 @@ namespace Fases
         arquivo.close();
         colisoes.setLista(&lista);
         Pgrafico->setLista(&lista);
-	}
+    }
 }

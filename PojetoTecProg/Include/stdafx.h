@@ -4,6 +4,7 @@
 #include <string>
 #include<math.h>
 #include <list>
+#include <stack>
 #include<vector>
 using std::string;
 
@@ -21,10 +22,10 @@ using std::string;
 #define TEMPOTRAMPOLIM 5.0
 #define TEMPOESPINHO 4.0
 #define VELOCIDADECOICE 7.0
-#define VELOCIDADEPULO 10.0
+#define VELOCIDADEPULO 7.0
 //L é lateral
 #define IMPULSOESPINHOL 5.0
-#define PULOALTO 15.0
+#define PULOALTO 10.0
 #define FORCAPROJETIL 2.0
 #define VELMINPROJETILX 5.0
 #define VELMINPROJETILY 10

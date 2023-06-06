@@ -10,10 +10,15 @@ namespace Fases
 			std::cout << "ERROR nao foi possivel criar o GerenciadorGrafico" << std::endl;
 			exit(1);
 		}
+		fundo = sf::RectangleShape(sf::Vector2f(1000.0f, 600.0f));
+		primeiroCiclo = true;
+		
 	}
 	Fase::~Fase()
 	{
 	}
+
+	
 
 	void Fase::criaJogador1(sf::Vector2f pos)
 	{
@@ -70,6 +75,18 @@ namespace Fases
 		}
 		else {
 			std::cout << "ERROR::nao foi possivel criar uma plataforma" << std::endl;
+			exit(1);
+		}
+	}
+	void Fase::criaEsteira(sf::Vector2f pos)
+	{
+		Entidades::Obstaculos::Esteira* Esteira =
+			new Entidades::Obstaculos::Esteira(sf::Vector2f(50.0, 50.0), pos, sf::Vector2f(0.0, 0.0));
+		if (Esteira) {
+			lista.incluir(static_cast<Entidade*>(Esteira));
+		}
+		else {
+			std::cout << "ERROR::nao foi possivel criar uma Esteira" << std::endl;
 			exit(1);
 		}
 	}
@@ -199,16 +216,36 @@ namespace Fases
 				criaCanhao(posAux);
 			}
 			break;
+
+			case('%'):
+			{
+				criaEsteira(posAux);
+			}
+			break;
 		
 		}
 	}
 	void Fase::Executar()
 	{
+		if (primeiroCiclo)
+		{
+			primeiroCiclo = false;
+			Grafico::getgrafico()->setFundo(fundo);
+		}
 		//executa todas as entidades
+
 		lista.percorrer();
 		
 		//verifica as colisoes
 		colisoes.executar();
+	}
+	void Fase::setFundo(sf::Vector2f posicao)
+	{
+		fundo.setPosition(posicao);
+	}
+	sf::RectangleShape Fase::getFundo()
+	{
+		return fundo;
 	}
 
 }

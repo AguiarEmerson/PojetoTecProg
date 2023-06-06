@@ -19,7 +19,7 @@ namespace Entidades
 			void Executar();
 
 			void controlaProjetil();
-			const Projetil* getProjetil();
+			Projetil* getProjetil();
 
 			
 

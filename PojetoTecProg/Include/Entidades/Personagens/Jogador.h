@@ -3,6 +3,7 @@
 #include"..\Projetil.h"
 #include"..\Obstaculos\Trampolim.h"
 #include"..\Obstaculos\Espinho.h"
+#include "..\Obstaculos\Esteira.h"
 
 
 namespace Entidades
@@ -27,6 +28,7 @@ namespace Entidades
 			void deletaProjetil(Entidade* projetil);
 			void danoEspinho(Entidade* entidade);
 			const int getDano();
+			void acimaEsteira(Entidade* ent);
 			
 		};
 	}

@@ -24,8 +24,7 @@
 }*/
 int main()
 {
-    Fases::Fase* fase = static_cast<Fases::Fase*>(new Fases::Fase1());
-    Principal objPricipal(fase);
+    Principal objPricipal;
     objPricipal.executar();
     
     return 0;

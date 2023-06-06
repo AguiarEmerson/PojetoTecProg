@@ -11,12 +11,16 @@ namespace Entidades
 			id = "trampolim";
 			podePular = true;
 			velocidade = velocidades;
+			textura = Pgrafico->carregarTextura("Imagens/trampolim.png");
+			box.setTexture(&textura);
 		}
 		Trampolim::Trampolim():
 			Obstaculo()
 		{
 			velocidade = 20.0;
 			id = "trampolim";
+			textura = Pgrafico->carregarTextura("Imagens/trampolim.png");
+			box.setTexture(&textura);
 		}
 
 		Trampolim::~Trampolim()
