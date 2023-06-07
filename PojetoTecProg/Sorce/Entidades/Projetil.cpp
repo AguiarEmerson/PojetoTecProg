@@ -69,6 +69,6 @@ namespace Entidades
 	}
 	Entidade* Projetil::carregarEnt(char* arquivo)
 	{
-
+		
 	}
 }

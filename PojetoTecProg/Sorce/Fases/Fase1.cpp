@@ -35,4 +35,84 @@ namespace Fases
         colisoes.setLista(&lista);
         Pgrafico->setLista(&lista);
 	}
+    void Fase1::criaEsteira(sf::Vector2f pos)
+    {
+        Entidades::Obstaculos::Esteira* Esteira =
+            new Entidades::Obstaculos::Esteira(sf::Vector2f(50.0, 50.0), pos, sf::Vector2f(0.0, 0.0));
+        if (Esteira) {
+            lista.incluir(static_cast<Entidade*>(Esteira));
+        }
+        else {
+            std::cout << "ERROR::nao foi possivel criar uma Esteira" << std::endl;
+            exit(1);
+        }
+    }
+    void Fase1::criaRoboAnda(sf::Vector2f pos)
+    {
+        Entidades::Personagens::RoboAnda* RoboAnda =
+            new Entidades::Personagens::RoboAnda(sf::Vector2f(50.0, 50.0), pos);
+        if (RoboAnda) {
+            int i, tam;
+            tam = lista.getTam();
+            for (i = 0; i < tam; i++) {
+                if (lista.getEnt(i)->getId() == "jogador") {
+                    RoboAnda->setjogador(static_cast<Jogador*>(lista.getEnt(i)));
+                }
+            }
+            lista.incluir(static_cast<Entidade*>(RoboAnda));
+        }
+        else {
+            std::cout << "ERROR::nao foi possivel criar um RoboAnda" << std::endl;
+            exit(1);
+        }
+    }
+	void Fase1::criaEntidade(char id, sf::Vector2i pos)
+	{
+		sf::Vector2f posAux = sf::Vector2f(pos.x * 50.0f, pos.y * 50.0f);
+		switch (id)
+		{
+		case('J'):
+		{
+			criaJogador1(posAux);
+		}
+		break;
+
+		case('P'):
+		{
+			criaJogador2(posAux);
+		}
+		break;
+
+		case('#'):
+		{
+			criaPlataforma(posAux);
+		}
+		break;
+
+		case('@'):
+		{
+			criaTrampolim(posAux);
+		}
+		break;
+
+		case('C'):
+		{
+			criaRoboAnda(posAux);
+		}
+		break;
+
+		case('S'):
+		{
+			criaRoboPula(posAux);
+		}
+		break;
+
+		case('%'):
+		{
+			criaEsteira(posAux);
+		}
+		break;
+
+		}
+	}
 }

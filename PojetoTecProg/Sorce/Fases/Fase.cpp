@@ -78,31 +78,6 @@ namespace Fases
 			exit(1);
 		}
 	}
-	void Fase::criaEsteira(sf::Vector2f pos)
-	{
-		Entidades::Obstaculos::Esteira* Esteira =
-			new Entidades::Obstaculos::Esteira(sf::Vector2f(50.0, 50.0), pos, sf::Vector2f(0.0, 0.0));
-		if (Esteira) {
-			lista.incluir(static_cast<Entidade*>(Esteira));
-		}
-		else {
-			std::cout << "ERROR::nao foi possivel criar uma Esteira" << std::endl;
-			exit(1);
-		}
-	}
-
-	void Fase::criaEspinho(sf::Vector2f pos)
-	{
-		Entidades::Obstaculos::Espinho* espinho = 
-			new Entidades::Obstaculos::Espinho(sf::Vector2f(50.0,50.0),pos);
-		if (espinho) {
-			lista.incluir(static_cast<Entidade*>(espinho));
-		}
-		else {
-			std::cout << "ERROR::nao foi possivel criar uma espinho" << std::endl;
-			exit(1);
-		}
-	}
 
 	void Fase::criaTrampolim(sf::Vector2f pos)
 	{
@@ -117,26 +92,6 @@ namespace Fases
 		}
 	}
 
-
-	void Fase::criaRoboAnda(sf::Vector2f pos)
-	{
-		Entidades::Personagens::RoboAnda* RoboAnda = 
-			new Entidades::Personagens::RoboAnda(sf::Vector2f (50.0,50.0),pos);
-		if (RoboAnda) {
-			int i, tam;
-			tam = lista.getTam();
-			for (i = 0; i < tam; i++) {
-				if (lista.getEnt(i)->getId() == "jogador") { 
-					RoboAnda->setjogador(static_cast<Jogador*>(lista.getEnt(i))); }
-			}
-			lista.incluir(static_cast<Entidade*>(RoboAnda));
-		}
-		else {
-			std::cout << "ERROR::nao foi possivel criar um RoboAnda" << std::endl;
-			exit(1);
-		}
-	}
-
 	void Fase::criaRoboPula(sf::Vector2f pos)
 	{
 		Entidades::Personagens::RoboPula* RoboPula = 
@@ -147,82 +102,6 @@ namespace Fases
 		else {
 			std::cout << "ERROR::nao foi possivel criar um RoboPula" << std::endl;
 			exit(1);
-		}
-	}
-	
-	void Fase::criaCanhao(sf::Vector2f pos)
-	{
-		Entidades::Personagens::Canhao* Canhao = 
-			new Entidades::Personagens::Canhao(sf::Vector2f(50.0,50.0),pos);
-		if (Canhao) {
-			lista.incluir(static_cast<Entidade*>(Canhao));
-			lista.incluir(static_cast<Entidade*>(Canhao->getProjetil()));
-		}
-		else {
-			std::cout << "ERROR::nao foi possivel criar um Canhao" << std::endl;
-			exit(1);
-		}
-	}
-
-	void Fase::criaEntidade(char id, sf::Vector2i pos)
-	{
-		sf::Vector2f posAux = sf::Vector2f(pos.x * 50.0f, pos.y * 50.0f);
-		switch (id)
-		{
-			case('J'):
-			{
-				criaJogador1(posAux);
-			}
-			break;
-			
-			case('P'):
-			{
-				criaJogador2(posAux);
-			}
-			break;
-
-			case('#'):
-			{
-				criaPlataforma(posAux);
-			}
-			break;
-
-			case('*'):
-			{
-				criaEspinho(posAux);
-			}
-			break;
-
-			case('@'):
-			{
-				criaTrampolim(posAux);
-			}
-			break;
-
-			case('C'):
-			{
-				criaRoboAnda(posAux);
-			}
-			break;
-
-			case('S'):
-			{
-				criaRoboPula(posAux);
-			}
-			break;
-
-			case('M'):
-			{
-				criaCanhao(posAux);
-			}
-			break;
-
-			case('%'):
-			{
-				criaEsteira(posAux);
-			}
-			break;
-		
 		}
 	}
 	void Fase::Executar()
