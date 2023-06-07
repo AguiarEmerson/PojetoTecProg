@@ -51,7 +51,6 @@ namespace Listas
 	template<class TL>
 	Lista<TL>::~Lista()
 	{
-
 	}
 
 	template<class TL>
