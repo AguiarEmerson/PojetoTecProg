@@ -26,7 +26,6 @@ namespace Entidades
 			void tomaDano(const int dano);
 
 			virtual char* salvaEnt() = 0;
-			virtual Entidade* carregarEnt(char* arquivo) = 0;
 			
 		};
 	}

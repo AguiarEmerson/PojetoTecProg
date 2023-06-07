@@ -30,7 +30,6 @@ namespace Entidades
 			const int getDano();
 			void acimaEsteira(Entidade* ent);
 			virtual char* salvaEnt() = 0;
-			virtual Entidade* carregarEnt(char* arquivo) = 0;
 			
 		};
 	}

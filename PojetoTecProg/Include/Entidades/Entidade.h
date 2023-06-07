@@ -46,6 +46,5 @@ namespace Entidades
 
 		string criaNomeArquivo(int num);
 		string criaNomeArquivo();
-		virtual Entidade* carregarEnt(char* arquivo)=0;
 	};
 }
