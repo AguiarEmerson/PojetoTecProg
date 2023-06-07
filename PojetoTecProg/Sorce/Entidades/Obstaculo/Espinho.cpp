@@ -54,9 +54,10 @@ namespace Entidades
 		}
 		char* Espinho::salvaEnt()
 		{
+			string nomeArq = id + std::to_string(num);
 			char* nomeArquivo;
 			nomeArquivo = &id[0];
-			std::cout << nomeArquivo << std::endl;
+
 
 			
 			return nomeArquivo;
