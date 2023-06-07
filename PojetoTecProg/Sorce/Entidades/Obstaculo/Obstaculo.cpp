@@ -16,6 +16,10 @@ namespace Entidades
 		}
 		Obstaculo::~Obstaculo()
 		{}
+		void Obstaculo::setDanoso(bool danos)
+		{
+			danoso = danos;
+		}
 
 	}
 }

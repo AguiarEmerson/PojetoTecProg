@@ -29,6 +29,8 @@ namespace Entidades
 			char* salvaEnt();
 
 			static Entidade* carregarEnt(char* arquivo);
+
+			void setDano(int dan);
 		};
 	}
 }
