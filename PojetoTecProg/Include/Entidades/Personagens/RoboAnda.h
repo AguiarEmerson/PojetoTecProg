@@ -24,7 +24,7 @@ namespace Entidades
 			Jogador* decideJogador();
 
 			char* salvaEnt();
-			Entidade* carregarEnt(char* arquivo);
+			static Entidade* carregarEnt(char* arquivo);
 		};
 	}
 }

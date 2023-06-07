@@ -24,7 +24,7 @@ namespace Entidades
 		const int getDano();
 
 		char* salvaEnt();
-		Entidade* carregarEnt(char* arquivo);
+		static Entidade* carregarEnt(char* arquivo);
 
 
 	};
