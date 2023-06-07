@@ -48,6 +48,10 @@ namespace Entidades
 
 			return nomeArquivo;
 		}
+		Entidade* Plataforma::carregarEnt(char* arquivo)
+		{
+
+		}
 
 		
 

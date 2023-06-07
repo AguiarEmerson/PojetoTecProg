@@ -77,6 +77,10 @@ namespace Entidades
 
 			return nomeArquivo;
 		}
+		Entidade* Trampolim::carregarEnt(char* arquivo)
+		{
+
+		}
 
 		
 

@@ -96,7 +96,10 @@ namespace Entidades
 
 			return nomeArquivo;
 		}
+		Entidade* Canhao::carregarEnt(char* arquivo)
+		{
 
+		}
 
 
 	}

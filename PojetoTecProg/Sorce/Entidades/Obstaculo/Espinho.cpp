@@ -68,6 +68,10 @@ namespace Entidades
 
 			return nomeArquivo;
 		}
+		Entidade* Espinho::carregarEnt(char* arquivo)
+		{
+
+		}
 
 	}
 }

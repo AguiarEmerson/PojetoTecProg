@@ -85,5 +85,9 @@ namespace Entidades
 		}
 
 	}
+	Entidade* RoboPula:: carregarEnt(char* arquivo)
+	{
+
+	}
 }
 int Entidades::Personagens::RoboPula::num_RoboPula = 0;

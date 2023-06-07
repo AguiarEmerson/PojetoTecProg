@@ -62,6 +62,10 @@ namespace Entidades
 
 			return nomeArquivo;
 		}
+		Entidade* Esteira::carregarEnt(char* arquivo)
+		{
+
+		}
 	}
 }
 int Entidades::Obstaculos::Esteira::num_Esteira = 0;

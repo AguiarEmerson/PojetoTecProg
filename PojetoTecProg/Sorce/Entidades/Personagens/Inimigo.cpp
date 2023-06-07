@@ -119,6 +119,7 @@ namespace Entidades
 				tempo_total = Pgrafico->getrelogio().getElapsedTime().asSeconds();
 			}
 		}
+
 		
 
 		

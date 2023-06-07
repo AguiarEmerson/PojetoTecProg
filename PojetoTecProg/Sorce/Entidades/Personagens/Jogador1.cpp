@@ -63,5 +63,9 @@ namespace Entidades
 
 			return nomeArquivo;
 		}
+		Entidade* Jogador1::carregarEnt(char* arquivo)
+		{
+
+		}
 	}
 }

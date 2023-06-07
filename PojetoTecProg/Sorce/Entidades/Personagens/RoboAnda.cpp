@@ -121,6 +121,10 @@ namespace Entidades
 
 			return nomeArquivo;
 		}
+		Entidade* RoboAnda::carregarEnt(char* arquivo)
+		{
+
+		}
 	}
 }
 int Entidades::Personagens::RoboAnda::num_RoboAnda = 0;
