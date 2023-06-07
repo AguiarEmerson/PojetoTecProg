@@ -91,7 +91,14 @@ namespace Entidades
 	{
 		string nomeArq = id + std::to_string(num);
 		char* nomeArquivo;
+		nomeArquivo = &nomeArq[0];
+		return nomeArquivo;
+	}
+	char* Entidade::criaNomeArquivo()
+	{
+		char* nomeArquivo;
 		nomeArquivo = &id[0];
 		return nomeArquivo;
+
 	}
 }

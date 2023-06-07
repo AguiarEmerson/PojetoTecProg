@@ -68,8 +68,10 @@ namespace Entidades
 
 		char* RoboPula::salvaEnt()
 		{
-			char* oi = 0;
-			return oi;
+			char* nomeArquivo = criaNomeArquivo(num);
+
+
+			return nomeArquivo;
 		}
 
 	}

@@ -107,8 +107,10 @@ namespace Entidades
 		}
 		char* RoboAnda::salvaEnt()
 		{
-			char* oi = 0;
-			return oi;
+			char* nomeArquivo = criaNomeArquivo(num);
+
+
+			return nomeArquivo;
 		}
 	}
 }

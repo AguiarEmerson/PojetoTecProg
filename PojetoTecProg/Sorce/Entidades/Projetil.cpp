@@ -61,7 +61,9 @@ namespace Entidades
 
 	char* Projetil::salvaEnt()
 	{
-		char* oi = 0;
-		return oi;
+		char* nomeArquivo = criaNomeArquivo();
+
+
+		return nomeArquivo;
 	}
 }

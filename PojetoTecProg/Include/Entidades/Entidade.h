@@ -45,5 +45,6 @@ namespace Entidades
 		virtual char* salvaEnt() = 0;
 
 		char* criaNomeArquivo(int num);
+		char* criaNomeArquivo();
 	};
 }
