@@ -36,6 +36,11 @@ namespace Gerenciadores {
 		 
 	}
 
+	void Grafico::desenha(sf::Text tex)
+	{
+		window->draw(tex);
+	}
+
 	const bool Grafico::verificaJanelaAberta() {
 		return window->isOpen();
 	}
@@ -116,6 +121,16 @@ namespace Gerenciadores {
 		}
 	}
 	//essa função retorn
+
+	sf::Font Grafico::carregarFonte(const char* caminhoFonte) {
+
+		sf::Font fonte;
+		if (!fonte.loadFromFile(caminhoFonte)) {
+			std::cout << "ERRO nao foi possivel encontrar o caminho da Fonte - " << caminhoFonte << std::endl;
+			exit(1);
+		}
+		return fonte;
+	}
 	
 	sf::Texture Grafico::carregarTextura(const char* caminhoTextura) {
 

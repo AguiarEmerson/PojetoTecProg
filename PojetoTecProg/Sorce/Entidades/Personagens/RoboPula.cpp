@@ -7,7 +7,7 @@ namespace Entidades
 		RoboPula::RoboPula(sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v, int h) :
 			Inimigo(tam, p, v, h)
 		{
-			textura = Pgrafico->mandaTextura("Imagens/RoboPula.png");
+			textura = Pgrafico->mandaTextura("Arquivos/Imagens/RoboPula.png");
 			box.setTexture(&textura);
 			id = "RoboPula";
 			direcao = rand() % 2;
@@ -16,7 +16,7 @@ namespace Entidades
 		RoboPula::RoboPula() :
 			Inimigo()
 		{
-			textura = Pgrafico->mandaTextura("Imagens/RoboPula.png");
+			textura = Pgrafico->mandaTextura("Arquivos/Imagens/RoboPula.png");
 			box.setTexture(&textura);
 			id = "RoboPula";
 			altura = 0;

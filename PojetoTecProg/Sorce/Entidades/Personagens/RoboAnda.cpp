@@ -7,7 +7,7 @@ namespace Entidades
 		RoboAnda::RoboAnda(sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v , int h) :
 			Inimigo(tam, p, v, h)
 		{
-			textura = Pgrafico->mandaTextura("Imagens/RoboAnda.png");
+			textura = Pgrafico->mandaTextura("Arquivos/Imagens/RoboAnda.png");
 			box.setTexture(&textura);
 			id = "RoboAnda";
 			direcao = rand() % 2;
@@ -15,7 +15,7 @@ namespace Entidades
 		RoboAnda::RoboAnda():
 			Inimigo()
 		{
-			textura = Pgrafico->mandaTextura("Imagens/RoboAnda.png");
+			textura = Pgrafico->mandaTextura("Arquivos/Imagens/RoboAnda.png");
 			box.setTexture(&textura);
 			direcao = rand() % 2;
 			id = "RoboAnda";

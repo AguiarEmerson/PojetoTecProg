@@ -7,7 +7,7 @@ namespace Entidades
 		Espinho::Espinho(sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v) :
 			Obstaculo(tam,p,v)
 		{
-			textura = Pgrafico->mandaTextura("Imagens/espinho.png");
+			textura = Pgrafico->mandaTextura("Arquivos/Imagens/espinho.png");
 			box.setTexture(&textura);
 			dt = 0.0f;
 			danoso = true;
@@ -17,7 +17,7 @@ namespace Entidades
 		Espinho::Espinho() :
 			Obstaculo()
 		{
-			textura = Pgrafico->mandaTextura("Imagens/espinho.png");
+			textura = Pgrafico->mandaTextura("Arquivos/Imagens/espinho.png");
 			box.setTexture(&textura);
 			dt = 0.0f;
 			danoso = true;

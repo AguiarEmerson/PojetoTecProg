@@ -5,7 +5,7 @@ namespace Entidades
 	Projetil::Projetil(sf::Vector2f tam, sf::Vector2f p , sf::Vector2f v ):
 		Entidade(tam,p,v)
 	{
-		textura = Pgrafico->mandaTextura("Imagens/projetil.png");
+		textura = Pgrafico->mandaTextura("Arquivos/Imagens/projetil.png");
 		box.setTexture(&textura);
 		dano = 1;
 		existe = false;
@@ -14,7 +14,7 @@ namespace Entidades
 	Projetil::Projetil():
 		Entidade()
 	{
-		textura = Pgrafico->mandaTextura("Imagens/projetil.png");
+		textura = Pgrafico->mandaTextura("Arquivos/Imagens/projetil.png");
 		box.setTexture(&textura);
 		dano = 1;
 		existe = false;
