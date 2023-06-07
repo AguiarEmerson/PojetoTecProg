@@ -22,17 +22,17 @@ Principal::~Principal()
 
 void Principal::inicializa() 
 {
-    pMaquinadeEstados->incluir("jogar_fase1");
+    pMaquinadeEstados->incluir("Menu_principal");
 }
 
 void Principal::executar()
 {
     while (Pgrafico->verificaJanelaAberta()) {
-        //atualiza a fase
+        Pgrafico->limpa();
+
         pMaquinadeEstados->Executar();
 
-        //deseha na tela
-        Pgrafico->executar();
+        Pgrafico->mostra();
     }
 }
 

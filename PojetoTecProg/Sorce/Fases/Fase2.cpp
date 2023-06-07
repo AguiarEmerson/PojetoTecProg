@@ -15,7 +15,7 @@ namespace Fases
     {
         std::ifstream arquivo;
         std::string linha;
-        arquivo.open("Arquivos/Mapa_fase2.txt");
+        arquivo.open("Arquivos/Fases/Mapa_fase2.txt");
         if (!arquivo.is_open()) {
             std::cout << "nao foi possivel abrir o arquivo: Mapa_fase2" << std::endl;
             exit(1);

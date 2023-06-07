@@ -96,6 +96,18 @@
     <ClCompile Include="Sorce\Entidades\Obstaculo\Esteira.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
+    <ClCompile Include="Sorce\Menus\Menu.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="Sorce\Menus\Botao.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="Sorce\Menus\Texto.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="Sorce\Menus\MenuPrincipal.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Include\Ente.h">
@@ -182,6 +194,18 @@
     <ClInclude Include="Include\Entidades\Obstaculos\Esteira.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
+    <ClInclude Include="Include\Menus\Menu.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Menus\Botao.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Menus\Texto.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Menus\MenuPrincipal.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Debug\PojetoTecProg.exe.recipe">
@@ -210,35 +234,53 @@
     <Text Include="Debug\PojetoTecProg.log">
       <Filter>Arquivos de Recurso</Filter>
     </Text>
-    <Text Include="Arquivos\Mapa_fase1.txt" />
-    <Text Include="Arquivos\Mapa_fase2.txt" />
+    <Text Include="Arquivos\Fases\Mapa_fase1.txt" />
+    <Text Include="Arquivos\Fases\Mapa_fase2.txt" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Sorce\Entidades\Personagens\download.jpeg">
       <Filter>Arquivos de Recurso</Filter>
     </Image>
-    <Image Include="Imagens\RoboAnda.png">
+    <Image Include="Arquivos\Imagens\RoboAnda.png">
       <Filter>Arquivos de Recurso</Filter>
     </Image>
-    <Image Include="Imagens\espinho.png">
+    <Image Include="Arquivos\Imagens\espinho.png">
       <Filter>Arquivos de Recurso</Filter>
     </Image>
-    <Image Include="Imagens\jogador1.png">
+    <Image Include="Arquivos\Imagens\jogador1.png">
       <Filter>Arquivos de Recurso</Filter>
     </Image>
-    <Image Include="Imagens\Canhao.png">
+    <Image Include="Arquivos\Imagens\Canhao.png">
       <Filter>Arquivos de Recurso</Filter>
     </Image>
-    <Image Include="Imagens\plataforma.png">
+    <Image Include="Arquivos\Imagens\plataforma.png">
       <Filter>Arquivos de Recurso</Filter>
     </Image>
     <Image Include="Imagens\plataformal.png">
       <Filter>Arquivos de Recurso</Filter>
     </Image>
-    <Image Include="Imagens\projetil.png">
+    <Image Include="Arquivos\Imagens\projetil.png">
       <Filter>Arquivos de Recurso</Filter>
     </Image>
-    <Image Include="Imagens\RoboPula.png">
+    <Image Include="Arquivos\Imagens\RoboPula.png">
+      <Filter>Arquivos de Recurso</Filter>
+    </Image>
+    <Image Include="Arquivos\Imagens\esteirad.png">
+      <Filter>Arquivos de Recurso</Filter>
+    </Image>
+    <Image Include="Arquivos\Imagens\esteirae.png">
+      <Filter>Arquivos de Recurso</Filter>
+    </Image>
+    <Image Include="Arquivos\Imagens\fundo1.png">
+      <Filter>Arquivos de Recurso</Filter>
+    </Image>
+    <Image Include="Arquivos\Imagens\jogador2.png">
+      <Filter>Arquivos de Recurso</Filter>
+    </Image>
+    <Image Include="Arquivos\Imagens\lama.png">
+      <Filter>Arquivos de Recurso</Filter>
+    </Image>
+    <Image Include="Arquivos\Imagens\trampolim.png">
       <Filter>Arquivos de Recurso</Filter>
     </Image>
     <Image Include="Imagens\fundo1.png">
@@ -259,5 +301,8 @@
     <Image Include="Imagens\esteirad.png">
       <Filter>Arquivos de Recurso</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="Arquivos\Fonte.ttf" />
   </ItemGroup>
 </Project>

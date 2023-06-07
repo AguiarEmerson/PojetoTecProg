@@ -8,7 +8,7 @@ namespace Entidades
 			Inimigo(tam, p, v, h),num(num_Canhao),
 			projetil(sf::Vector2f(15.0,15.0),sf::Vector2f(p.x,p.y+tam.y+0.5),sf::Vector2f(0.0,0.0))
 		{
-			textura = Pgrafico->mandaTextura("Imagens/Canhao.png");
+			textura = Pgrafico->mandaTextura("Arquivos/Imagens/Canhao.png");
 			box.setTexture(&textura);
 			primeiro_ciclo = 1;
 			id = "Canhao";
@@ -18,7 +18,7 @@ namespace Entidades
 			Inimigo(),
 			projetil(), num(num_Canhao)
 		{
-			textura = Pgrafico->mandaTextura("Imagens/Canhao.png");
+			textura = Pgrafico->mandaTextura("Arquivos/Imagens/Canhao.png");
 			box.setTexture(&textura);
 			id = "Canhao";
 			num_Canhao++;

@@ -29,3 +29,5 @@ using std::string;
 #define FORCAPROJETIL 2.0
 #define VELMINPROJETILX 5.0
 #define VELMINPROJETILY 10
+#define TAMANHO_BOTAO_X 350.0
+#define TAMANHO_BOTAO_Y 50.0

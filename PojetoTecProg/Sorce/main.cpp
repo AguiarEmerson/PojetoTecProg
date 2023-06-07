@@ -1,5 +1,15 @@
 #include "..\Principal.h"
 #include "..\Fases\Fase1.h"
+
+int main()
+{
+    Principal objPricipal;
+    objPricipal.executar();
+    
+    return 0;
+}
+
+
 /*int main()
 {
     sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
@@ -22,16 +32,6 @@
 
     return 0;
 }*/
-int main()
-{
-    Principal objPricipal;
-    objPricipal.executar();
-    
-    return 0;
-}
-
-
-
 
 
 /*#include "..\Gerenciadores\Colisao.h"

@@ -7,14 +7,14 @@ namespace Entidades
 			Jogador(tam, p, v, h, xp)
 		{
 			jogador = NULL;
-			textura = Pgrafico->carregarTextura("Imagens/jogador2.png");
+			textura = Pgrafico->carregarTextura("Arquivos/Imagens/jogador2.png");
 			box.setTexture(&textura);
 		}
 		Jogador2::Jogador2() :
 			Jogador()
 		{
 			jogador = NULL;
-			textura = Pgrafico->carregarTextura("Imagens/jogador2.png");
+			textura = Pgrafico->carregarTextura("Arquivos/Imagens/jogador2.png");
 			box.setTexture(&textura);
 		}
 		void Jogador2::move() {

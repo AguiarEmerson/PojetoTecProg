@@ -1,10 +1,10 @@
 #include "..\Estados\Estado.h"
+#include "..\Menus\MenuPrincipal.h"
 #include "..\Estados\EstadoJogar.h"
 
 namespace Estados
 {
-	Estado::Estado():
-		Ente()
+	Estado::Estado()
 	{
 	}
 	Estado::~Estado()
@@ -37,6 +37,12 @@ namespace Estados
 		}
 	}
 
+	Estado* Estado::criaestadoMenuPrincipal()
+	{
+		Menus::MenuPrincipal* menuprincipal=new Menus::MenuPrincipal();
+		return static_cast <Estados::Estado*>(menuprincipal);
+	}
+
 	Estado* Estado::criaestado(string i) {
 		Estado* estado = NULL;
 		if      (i == "jogar_fase1") {
@@ -44,6 +50,9 @@ namespace Estados
 		} 
 		else if (i == "jogar_fase2") {
 			estado = estado->criaestadojogar_fase2();
+		}
+		else if (i == "Menu_principal") {
+			estado = estado->criaestadoMenuPrincipal();
 		}
 		return estado;
 	}

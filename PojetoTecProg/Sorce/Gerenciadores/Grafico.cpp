@@ -21,6 +21,7 @@ namespace Gerenciadores {
 			std::cout << "ERROR nao foi possivel criar uma janela grafica" << std::endl;
 			exit(1);
 		}
+		window->setFramerateLimit(60);
 	}
 
 	Grafico::~Grafico()
@@ -36,7 +37,18 @@ namespace Gerenciadores {
 		 
 	}
 
+	void Grafico::desenha(sf::Text tex)
+	{
+		window->draw(tex);
+	}
+
 	const bool Grafico::verificaJanelaAberta() {
+		sf::Event evento;
+		if (window->pollEvent(evento)) {
+			if (evento.type == sf::Event::Closed) {
+				fecha();
+			}
+		}
 		return window->isOpen();
 	}
 
@@ -93,35 +105,23 @@ namespace Gerenciadores {
 		lista = listaEnt;
 	}
 
-	void Grafico::executar() {
-		int i, tam;
-		tam = lista->getTam();
-		atualizaFundo();
-		if (verificaJanelaAberta()) {
-			sf::Event evento;
-			if (window->pollEvent(evento)) {
-				if (evento.type == sf::Event::Closed) {
-					fecha();
-				}
-			}
-			limpa();
-			desenha(fundo);
-			for (i = 0; i < tam; i++) {
-				if (lista->getEnt(i)->getVivo() == true) {
-					desenha(lista->getEnt(i)->getbox());
-				}
-			}
-			mostra();
-			window->setFramerateLimit(60);
-		}
-	}
 	//essa função retorn
+
+	sf::Font Grafico::carregarFonte(const char* caminhoFonte) {
+
+		sf::Font fonte;
+		if (!fonte.loadFromFile(caminhoFonte)) {
+			std::cout << "ERRO nao foi possivel encontrar o caminho da Fonte - " << caminhoFonte << std::endl;
+			exit(1);
+		}
+		return fonte;
+	}
 	
 	sf::Texture Grafico::carregarTextura(const char* caminhoTextura) {
 
 		sf::Texture textura;
 		if (!textura.loadFromFile(caminhoTextura)) {
-			std::cout << "ERRO::Jungle::Gerenciador::GerenciadorGrafico::nao foi possivel encontrar o caminho da textura - " << caminhoTextura << std::endl;
+			std::cout << "ERRO nao foi possivel encontrar o caminho da textura - " << caminhoTextura << std::endl;
 			exit(1);
 		}
 		return textura;
@@ -146,6 +146,7 @@ namespace Gerenciadores {
 	void Grafico::atualizaFundo()
 	{
 		fundo.setPosition(camera.getCenter() - sf::Vector2f((camera.getSize().x / 2), (camera.getSize().y / 2)));
+		desenha(fundo);
 	}
 }	
 

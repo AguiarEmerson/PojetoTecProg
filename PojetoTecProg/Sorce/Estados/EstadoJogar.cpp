@@ -5,7 +5,6 @@ namespace Estados
 	EstadoJogar::EstadoJogar(Fases::Fase* fase) :
 		fase(fase)
 	{
-		grafo = Grafico::getgrafico();
 	}
 	EstadoJogar::~EstadoJogar()
 	{

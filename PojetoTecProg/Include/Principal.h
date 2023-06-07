@@ -7,10 +7,10 @@ class Principal
 private:
 	static Gerenciadores::Grafico* Pgrafico;
 	static Gerenciadores::MaquinadeEstados* pMaquinadeEstados;
+	void inicializa();
 public:
 	Principal();
 	~Principal();
-	void inicializa();
 	void executar();
 };
 /*

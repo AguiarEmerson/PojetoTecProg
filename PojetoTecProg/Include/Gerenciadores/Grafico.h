@@ -25,6 +25,7 @@ namespace Gerenciadores
 		~Grafico();
 		static Grafico* getgrafico();
 		void desenha(sf::RectangleShape box);
+		void desenha(sf::Text tex);
 		const bool verificaJanelaAberta();
 		void mostra();
 		void limpa();
@@ -36,7 +37,7 @@ namespace Gerenciadores
 		sf::RenderWindow* getjanela();
 		sf::Clock getrelogio();
 		void setLista(ListaEntidades* listaEnt);
-		void executar();
+		sf::Font carregarFonte(const char* caminhoFonte);
 		sf::Texture carregarTextura(const char* caminhoTextura);
 		sf::Texture mandaTextura(const char* caminhoTextura);
 		void setFundo(sf::RectangleShape box);

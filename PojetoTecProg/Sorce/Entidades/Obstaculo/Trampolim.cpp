@@ -11,7 +11,7 @@ namespace Entidades
 			id = "trampolim";
 			podePular = true;
 			velocidade = velocidades;
-			textura = Pgrafico->carregarTextura("Imagens/trampolim.png");
+			textura = Pgrafico->carregarTextura("Arquivos/Imagens/trampolim.png");
 			box.setTexture(&textura);
 			num_Trampolim++;
 		}
@@ -20,7 +20,7 @@ namespace Entidades
 		{
 			velocidade = 20.0;
 			id = "trampolim";
-			textura = Pgrafico->carregarTextura("Imagens/trampolim.png");
+			textura = Pgrafico->carregarTextura("Arquivos/Imagens/trampolim.png");
 			box.setTexture(&textura);
 			num_Trampolim++;
 		}

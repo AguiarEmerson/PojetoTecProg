@@ -8,9 +8,9 @@ namespace Entidades
 		{
 			direcao = rand() % 2;
 			if(direcao)
-				textura = Pgrafico->mandaTextura("Imagens/esteirad.png");
+				textura = Pgrafico->mandaTextura("Arquivos/Imagens/esteirad.png");
 			else
-				textura = Pgrafico->mandaTextura("Imagens/esteirae.png");
+				textura = Pgrafico->mandaTextura("Arquivos/Imagens/esteirae.png");
 			box.setTexture(&textura);
 			id = "Esteira";
 			desaceleracao = 2.0f;
