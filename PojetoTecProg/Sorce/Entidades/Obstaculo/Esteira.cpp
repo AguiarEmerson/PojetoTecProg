@@ -44,5 +44,8 @@ namespace Entidades
 				personagem->setAc(sf::Vector2f(personagem->getAc().x - desaceleracao, personagem->getAc().y));
 
 		}
+		char* Esteira::salvaEnt()
+		{
+		}
 	}
 }

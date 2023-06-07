@@ -64,5 +64,9 @@ namespace Entidades
 			setpos(sf::Vector2f(pos.x, pos.y + vel.y));
 		}
 
+		char* RoboPula::salvaEnt()
+		{
+		}
+
 	}
 }

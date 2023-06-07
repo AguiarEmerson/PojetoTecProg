@@ -78,6 +78,10 @@ namespace Entidades
 			return &projetil;
 		}
 
+		char* Canhao::salvaEnt()
+		{
+		}
+
 
 
 	}

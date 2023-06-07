@@ -48,5 +48,8 @@ namespace Entidades
 				verificaVida();
 			}
 		}
+		char* Jogador1::salvaEnt()
+		{
+		}
 	}
 }

@@ -103,5 +103,8 @@ namespace Entidades
 			else
 				return listaJogador.back();
 		}
+		char* RoboAnda::salvaEnt()
+		{
+		}
 	}
 }

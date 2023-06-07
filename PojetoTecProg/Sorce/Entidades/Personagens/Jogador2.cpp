@@ -66,5 +66,8 @@ namespace Entidades
 			}
 			controlaCamera();
 		}
+		char* Jogador2::salvaEnt()
+		{
+		}
 	}
 }
