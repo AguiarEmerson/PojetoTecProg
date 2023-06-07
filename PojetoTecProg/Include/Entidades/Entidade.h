@@ -43,5 +43,7 @@ namespace Entidades
 		void setPodeMover(const bool mover);
 
 		virtual char* salvaEnt() = 0;
+
+		char* criaNomeArquivo(int num);
 	};
 }

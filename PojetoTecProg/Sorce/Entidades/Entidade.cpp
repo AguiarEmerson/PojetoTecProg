@@ -86,4 +86,12 @@ namespace Entidades
 	const bool Entidade::getVivo() {
 		return vivo;
 	}
+
+	char* Entidade::criaNomeArquivo(int num)
+	{
+		string nomeArq = id + std::to_string(num);
+		char* nomeArquivo;
+		nomeArquivo = &id[0];
+		return nomeArquivo;
+	}
 }
