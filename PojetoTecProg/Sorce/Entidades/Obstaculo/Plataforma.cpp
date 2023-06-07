@@ -30,8 +30,10 @@ namespace Entidades
 		void Plataforma::Executar()
 		{
 		}
-		char* Esteira::salvaEnt()
+		char* Plataforma::salvaEnt()
 		{
+			char* oi = 0;
+			return oi;
 		}
 
 		

@@ -46,6 +46,8 @@ namespace Entidades
 		}
 		char* Esteira::salvaEnt()
 		{
+			char* oi = 0;
+			return oi;
 		}
 	}
 }

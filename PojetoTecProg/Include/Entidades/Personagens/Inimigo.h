@@ -30,7 +30,7 @@ namespace Entidades
 
 			void primTempoTotal();
 
-			char* salvaEnt() ;
+			virtual char* salvaEnt()=0 ;
 			
 		};
 	}

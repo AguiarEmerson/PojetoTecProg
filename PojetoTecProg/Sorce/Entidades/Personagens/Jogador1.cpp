@@ -50,6 +50,8 @@ namespace Entidades
 		}
 		char* Jogador1::salvaEnt()
 		{
+			char* oi = 0;
+			return oi;
 		}
 	}
 }

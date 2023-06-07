@@ -5,7 +5,7 @@ namespace Entidades
 	namespace Obstaculos
 	{
 		Espinho::Espinho(sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v) :
-			Obstaculo(tam,p,v)
+			Obstaculo(tam,p,v),num(num_Espinhos)
 		{
 			textura = Pgrafico->mandaTextura("Imagens/espinho.png");
 			box.setTexture(&textura);
@@ -13,9 +13,10 @@ namespace Entidades
 			danoso = true;
 			dano = 1;
 			id = "espinho";
+			num_Espinhos++;
 		}
 		Espinho::Espinho() :
-			Obstaculo()
+			Obstaculo(),num(num_Espinhos)
 		{
 			textura = Pgrafico->mandaTextura("Imagens/espinho.png");
 			box.setTexture(&textura);
@@ -23,12 +24,14 @@ namespace Entidades
 			danoso = true;
 			dano = 1;
 			id = "espinho";
+			num_Espinhos++;
 		}
 		Espinho::~Espinho()
 		{
 		}
 		void Espinho::Executar()
 		{	
+			printf("%d", num);
 			dt = Pgrafico->getrelogio().getElapsedTime().asSeconds()-tempo_total;
 		}
 		void Espinho::colide(Entidade* secundaria, sf::Vector2f ds) {
@@ -52,6 +55,14 @@ namespace Entidades
 		}
 		char* Espinho::salvaEnt()
 		{
+			char* nomeArquivo;
+			nomeArquivo = &id[0];
+			std::cout << nomeArquivo << std::endl;
+
+			
+			return p;
 		}
+
 	}
 }
+int Entidades::Obstaculos::Espinho::num_Espinhos = 0;

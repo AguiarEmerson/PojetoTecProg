@@ -105,6 +105,8 @@ namespace Entidades
 		}
 		char* RoboAnda::salvaEnt()
 		{
+			char* oi = 0;
+			return oi;
 		}
 	}
 }

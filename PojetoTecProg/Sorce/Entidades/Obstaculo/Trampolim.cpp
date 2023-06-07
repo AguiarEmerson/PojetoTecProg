@@ -61,6 +61,8 @@ namespace Entidades
 		}
 		char* Trampolim::salvaEnt()
 		{
+			char* oi = 0;
+			return oi;
 		}
 
 		
