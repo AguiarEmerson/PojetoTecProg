@@ -49,13 +49,19 @@ namespace Menus
 		return caixa.getPosition();
 	}
 
-	const Texto Botao::gettexto() const
+	const sf::Text Botao::gettexto() const
 	{
-		return texto;
+		return texto.getTexto();
+	}
+
+	const std::string Botao::getinfo() const
+	{
+		return texto.getinfo();
 	}
 
 	void Botao::desenha()
 	{
+		Pgrafico->desenha(caixa);
 		Pgrafico->desenha(texto.getTexto());
 	}
 }

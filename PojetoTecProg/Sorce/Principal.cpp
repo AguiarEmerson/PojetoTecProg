@@ -22,7 +22,7 @@ Principal::~Principal()
 
 void Principal::inicializa() 
 {
-    pMaquinadeEstados->incluir("jogar_fase1");
+    pMaquinadeEstados->incluir("Menu_principal");
 }
 
 void Principal::executar()

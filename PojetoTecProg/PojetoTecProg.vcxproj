@@ -36,6 +36,7 @@
     <ClCompile Include="Sorce\Gerenciadores\Grafico.cpp" />
     <ClCompile Include="Sorce\Menus\Botao.cpp" />
     <ClCompile Include="Sorce\Menus\Menu.cpp" />
+    <ClCompile Include="Sorce\Menus\MenuPrincipal.cpp" />
     <ClCompile Include="Sorce\Menus\Texto.cpp" />
     <ClCompile Include="Sorce\Principal.cpp" />
     <ClCompile Include="Sorce\Ente.cpp" />
@@ -72,6 +73,7 @@
     <ClInclude Include="Include\Lista\ListaEntidades.h" />
     <ClInclude Include="Include\Menus\Botao.h" />
     <ClInclude Include="Include\Menus\Menu.h" />
+    <ClInclude Include="Include\Menus\MenuPrincipal.h" />
     <ClInclude Include="Include\Menus\Texto.h" />
     <ClInclude Include="Include\Principal.h" />
     <ClInclude Include="Include\Entidades\Personagens\Canhao.h" />

@@ -21,7 +21,8 @@ namespace Menus
 		const bool getselecionado() const;
 		void atualizapos(sf::Vector2f pos);
 		const sf::Vector2f getpos() const;
-		const Texto gettexto() const;
+		const sf::Text gettexto() const;
+		const std::string getinfo() const;
 		void desenha();
 	};
 }

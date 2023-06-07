@@ -18,6 +18,7 @@ namespace Menus
 		Texto(const sf::Font fonte, const std::string info, const unsigned int tamFonte = 50);
 		~Texto();
 		const sf::Text getTexto() const;
+		const std::string getinfo() const;
 		void setPos(const sf::Vector2f pos);
 		sf::Vector2f getTam();
 	};

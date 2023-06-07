@@ -26,6 +26,10 @@ namespace Menus
 	{
 		return texto;
 	}
+	const std::string Texto::getinfo() const
+	{
+		return info;
+	}
 	void Texto::setPos(const sf::Vector2f pos)
 	{
 		texto.setPosition(pos);
