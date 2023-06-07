@@ -22,6 +22,8 @@ namespace Entidades
 			void colideJogador(Personagem* personagem);
 
 			char* salvaEnt();
+
+			Entidade* carregarEnt(char* arquivo);
 		};
 	}
 }

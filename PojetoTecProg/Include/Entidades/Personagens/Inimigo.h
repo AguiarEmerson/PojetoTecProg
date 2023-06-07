@@ -31,6 +31,8 @@ namespace Entidades
 			void primTempoTotal();
 
 			virtual char* salvaEnt()=0 ;
+			virtual Entidade* carregarEnt(char* arquivo) = 0;
+
 			
 		};
 	}

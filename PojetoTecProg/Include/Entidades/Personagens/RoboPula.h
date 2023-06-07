@@ -23,6 +23,7 @@ namespace Entidades
 			void Executar();
 
 			char* salvaEnt();
+			Entidade* carregarEnt(char* arquivo);
 
 
 		};

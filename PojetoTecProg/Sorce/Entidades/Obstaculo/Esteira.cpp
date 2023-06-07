@@ -51,6 +51,14 @@ namespace Entidades
 			string aux = criaNomeArquivo(num);
 			char* nomeArquivo = &aux[0];
 
+			std::ofstream GravadorEnt(nomeArquivo, std::ios::out);
+			if (!GravadorEnt)
+			{
+
+				std::cout << "nao foi possível salvar" << std::endl;
+				exit(1);
+			}
+
 
 			return nomeArquivo;
 		}

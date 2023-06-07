@@ -17,6 +17,7 @@ namespace Entidades
 			virtual void Executar() = 0;
 
 			virtual char* salvaEnt() = 0;
+			virtual Entidade* carregarEnt(char* arquivo) = 0;
 
 		};
 	}
