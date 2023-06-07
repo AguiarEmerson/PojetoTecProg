@@ -23,6 +23,8 @@ namespace Entidades
 		void reiniciaProjetil(const sf::Vector2f novapos, const sf::Vector2f novavel);
 		const int getDano();
 
+		char* salvaEnt();
+
 
 	};
 }

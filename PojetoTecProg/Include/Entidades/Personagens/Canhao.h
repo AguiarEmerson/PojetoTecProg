@@ -21,6 +21,8 @@ namespace Entidades
 			void controlaProjetil();
 			Projetil* getProjetil();
 
+			char* salvaEnt();
+
 			
 
 		};

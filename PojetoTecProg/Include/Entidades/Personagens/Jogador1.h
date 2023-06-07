@@ -14,6 +14,8 @@ namespace Entidades
 			~Jogador1();
 			void move();
 			void Executar();
+
+			char* salvaEnt();
 		};
 	}
 }

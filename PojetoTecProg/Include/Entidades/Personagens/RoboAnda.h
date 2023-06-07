@@ -20,6 +20,8 @@ namespace Entidades
 			void move();
 			void Executar();
 			Jogador* decideJogador();
+
+			char* salvaEnt();
 		};
 	}
 }

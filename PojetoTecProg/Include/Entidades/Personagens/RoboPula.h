@@ -22,6 +22,8 @@ namespace Entidades
 			void move();
 			void Executar();
 
+			char* salvaEnt();
+
 
 		};
 	}

@@ -23,6 +23,8 @@ namespace Entidades
 			void danoPersonagem(Personagem* personagem);
 
 			void primTempoTotal();
+
+			char* salvaEnt();
 		};
 	}
 }

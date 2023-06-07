@@ -17,6 +17,8 @@ namespace Entidades
 			~Plataforma();
 			void colide(Entidade* secundaria, sf::Vector2f ds);
 			void Executar();
+
+			 char* salvaEnt();
 		};
 	}
 }

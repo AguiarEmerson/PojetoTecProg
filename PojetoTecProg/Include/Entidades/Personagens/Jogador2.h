@@ -16,6 +16,8 @@ namespace Entidades
 			void setJogador(Jogador1* joga);
 			void controlaCamera();
 			void Executar();
+
+			char* salvaEnt();
 		};
 	}
 }

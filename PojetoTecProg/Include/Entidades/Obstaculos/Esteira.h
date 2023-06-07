@@ -18,6 +18,8 @@ namespace Entidades
 			void colide(Entidade* secundaria, sf::Vector2f ds);
 			void Executar();
 			void colideJogador(Personagem* personagem);
+
+			char* salvaEnt();
 		};
 	}
 }

@@ -28,6 +28,8 @@ namespace Entidades
 
 			void primTempoTotal();
 
+			char* salvaEnt();
+
 		};
 
 	}
