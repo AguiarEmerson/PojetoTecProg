@@ -98,7 +98,18 @@ namespace Entidades
 		}
 		Entidade* Canhao::carregarEnt(char* arquivo)
 		{
+			Canhao* canhao = new Canhao;
 
+			std::ifstream RecuperadorEnt(arquivo, std::ios::in);
+			if (!RecuperadorEnt)
+			{
+				std::cout << "nao foi possivel abrir o arquivo" << std::endl;
+				exit(1);
+			}
+
+
+
+			return static_cast<Entidade*>(canhao);
 		}
 
 

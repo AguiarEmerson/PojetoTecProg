@@ -87,7 +87,18 @@ namespace Entidades
 	}
 	Entidade* RoboPula:: carregarEnt(char* arquivo)
 	{
+		RoboPula* roboPula = new RoboPula;
 
+		std::ifstream RecuperadorEnt(arquivo, std::ios::in);
+		if (!RecuperadorEnt)
+		{
+			std::cout << "nao foi possivel abrir o arquivo" << std::endl;
+			exit(1);
+		}
+
+
+
+		return static_cast<Entidade*>(roboPula);
 	}
 }
 int Entidades::Personagens::RoboPula::num_RoboPula = 0;

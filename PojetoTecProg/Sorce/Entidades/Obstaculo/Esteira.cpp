@@ -64,7 +64,18 @@ namespace Entidades
 		}
 		Entidade* Esteira::carregarEnt(char* arquivo)
 		{
+			Esteira* esteira = new Esteira;
 
+			std::ifstream RecuperadorEnt(arquivo, std::ios::in);
+			if (!RecuperadorEnt)
+			{
+				std::cout << "nao foi possivel abrir o arquivo" << std::endl;
+				exit(1);
+			}
+
+
+
+			return static_cast<Entidade*>(esteira);
 		}
 	}
 }

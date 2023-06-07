@@ -69,6 +69,17 @@ namespace Entidades
 	}
 	Entidade* Projetil::carregarEnt(char* arquivo)
 	{
-		
+		Projetil* projetil = new Projetil;
+
+		std::ifstream RecuperadorEnt(arquivo, std::ios::in);
+		if (!RecuperadorEnt)
+		{
+			std::cout << "nao foi possivel abrir o arquivo" << std::endl;
+			exit(1);
+		}
+
+
+
+		return static_cast<Entidade*>(projetil);
 	}
 }

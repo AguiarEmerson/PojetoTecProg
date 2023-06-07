@@ -65,6 +65,18 @@ namespace Entidades
 		}
 		Entidade* Jogador1::carregarEnt(char* arquivo)
 		{
+			Jogador1* jogador = new Jogador1;
+
+			std::ifstream RecuperadorEnt(arquivo, std::ios::in);
+			if (!RecuperadorEnt)
+			{
+				std::cout << "nao foi possivel abrir o arquivo" << std::endl;
+				exit(1);
+			}
+
+
+
+			return static_cast<Entidade*>(jogador);
 
 		}
 	}
