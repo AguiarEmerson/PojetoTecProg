@@ -60,7 +60,7 @@ namespace Entidades
 			std::cout << nomeArquivo << std::endl;
 
 			
-			return p;
+			return nomeArquivo;
 		}
 
 	}
