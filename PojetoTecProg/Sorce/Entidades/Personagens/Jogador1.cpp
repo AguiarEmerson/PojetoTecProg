@@ -50,7 +50,15 @@ namespace Entidades
 		}
 		char* Jogador1::salvaEnt()
 		{
-			char* nomeArquivo = criaNomeArquivo();
+			string aux = criaNomeArquivo();
+			char* nomeArquivo = &aux[0];
+			std::ofstream GravadorEnt(nomeArquivo, std::ios::out);
+			if (!GravadorEnt)
+			{
+
+				std::cout << "nao foi possível salvar" << std::endl;
+				exit(1);
+			}
 
 
 			return nomeArquivo;

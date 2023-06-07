@@ -61,7 +61,8 @@ namespace Entidades
 
 	char* Projetil::salvaEnt()
 	{
-		char* nomeArquivo = criaNomeArquivo();
+		string aux = criaNomeArquivo();
+		char* nomeArquivo = &aux[0];
 
 
 		return nomeArquivo;

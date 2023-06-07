@@ -34,7 +34,8 @@ namespace Entidades
 		}
 		char* Plataforma::salvaEnt()
 		{
-			char* nomeArquivo = criaNomeArquivo(num);
+			string aux = criaNomeArquivo(num);
+			char* nomeArquivo = &aux[0];
 
 
 			return nomeArquivo;

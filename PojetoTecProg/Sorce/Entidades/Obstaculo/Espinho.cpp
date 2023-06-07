@@ -54,7 +54,8 @@ namespace Entidades
 		}
 		char* Espinho::salvaEnt()
 		{
-			char* nomeArquivo=criaNomeArquivo(num);
+			string aux = criaNomeArquivo(num);
+			char* nomeArquivo=&aux[0];
 
 
 			return nomeArquivo;

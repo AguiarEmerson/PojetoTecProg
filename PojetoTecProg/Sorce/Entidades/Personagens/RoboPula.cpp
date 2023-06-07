@@ -48,7 +48,6 @@ namespace Entidades
 
 
 		void RoboPula::Executar() {
-
 			primTempoTotal();
 			move();
 			gravidade();
@@ -68,8 +67,19 @@ namespace Entidades
 
 		char* RoboPula::salvaEnt()
 		{
-			char* nomeArquivo = criaNomeArquivo(num);
 
+			string aux = criaNomeArquivo(num);
+			char* nomeArquivo = &aux[0];
+			
+			std::ofstream GravadorEnt(nomeArquivo, std::ios::out);
+			if (!GravadorEnt)
+			{
+				
+				std::cout << "nao foi possível salvar" << std::endl;
+				exit(1);
+			}
+			//escolher oq quer salvar e salvar
+			
 
 			return nomeArquivo;
 		}

@@ -87,18 +87,14 @@ namespace Entidades
 		return vivo;
 	}
 
-	char* Entidade::criaNomeArquivo(int num)
+	string Entidade::criaNomeArquivo(int num)
 	{
-		string nomeArq = id + std::to_string(num);
-		char* nomeArquivo;
-		nomeArquivo = &nomeArq[0];
-		return nomeArquivo;
+		return id + std::to_string(num) + ".dat";
 	}
-	char* Entidade::criaNomeArquivo()
+	string Entidade::criaNomeArquivo()
 	{
-		char* nomeArquivo;
-		nomeArquivo = &id[0];
-		return nomeArquivo;
+		
+		return id+".dat";
 
 	}
 }
