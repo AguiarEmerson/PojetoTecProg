@@ -5,22 +5,24 @@ namespace Entidades
 {
 	namespace Personagens {
 		RoboPula::RoboPula(sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v, int h) :
-			Inimigo(tam, p, v, h)
+			Inimigo(tam, p, v, h),num(num_RoboPula)
 		{
 			textura = Pgrafico->mandaTextura("Arquivos/Imagens/RoboPula.png");
 			box.setTexture(&textura);
 			id = "RoboPula";
 			direcao = rand() % 2;
 			altura = 0;
+			num_RoboPula++;
 		}
 		RoboPula::RoboPula() :
-			Inimigo()
+			Inimigo(), num(num_RoboPula)
 		{
 			textura = Pgrafico->mandaTextura("Arquivos/Imagens/RoboPula.png");
 			box.setTexture(&textura);
 			id = "RoboPula";
 			altura = 0;
 			direcao = rand() % 2;
+			num_RoboPula++;
 		}
 		RoboPula::~RoboPula()
 		{
@@ -46,7 +48,6 @@ namespace Entidades
 
 
 		void RoboPula::Executar() {
-
 			primTempoTotal();
 			move();
 			gravidade();
@@ -64,5 +65,40 @@ namespace Entidades
 			setpos(sf::Vector2f(pos.x, pos.y + vel.y));
 		}
 
+		char* RoboPula::salvaEnt()
+		{
+
+			string aux = criaNomeArquivo(num);
+			char* nomeArquivo = &aux[0];
+			
+			std::ofstream GravadorEnt(nomeArquivo, std::ios::out);
+			if (!GravadorEnt)
+			{
+				
+				std::cout << "nao foi possível salvar" << std::endl;
+				exit(1);
+			}
+			//escolher oq quer salvar e salvar
+			
+
+			return nomeArquivo;
+		}
+
+	}
+	Entidade* RoboPula:: carregarEnt(char* arquivo)
+	{
+		RoboPula* roboPula = new RoboPula;
+
+		std::ifstream RecuperadorEnt(arquivo, std::ios::in);
+		if (!RecuperadorEnt)
+		{
+			std::cout << "nao foi possivel abrir o arquivo" << std::endl;
+			exit(1);
+		}
+
+
+
+		return static_cast<Entidade*>(roboPula);
 	}
 }
+int Entidades::Personagens::RoboPula::num_RoboPula = 0;

@@ -6,21 +6,23 @@ namespace Entidades
 	namespace Obstaculos
 	{
 		Trampolim::Trampolim(float velocidades,sf::Vector2f tam, sf::Vector2f p , sf::Vector2f v ):
-			Obstaculo(tam,p,v)
+			Obstaculo(tam,p,v),num(num_Trampolim)
 		{
 			id = "trampolim";
 			podePular = true;
 			velocidade = velocidades;
 			textura = Pgrafico->carregarTextura("Arquivos/Imagens/trampolim.png");
 			box.setTexture(&textura);
+			num_Trampolim++;
 		}
 		Trampolim::Trampolim():
-			Obstaculo()
+			Obstaculo(), num(num_Trampolim)
 		{
 			velocidade = 20.0;
 			id = "trampolim";
 			textura = Pgrafico->carregarTextura("Arquivos/Imagens/trampolim.png");
 			box.setTexture(&textura);
+			num_Trampolim++;
 		}
 
 		Trampolim::~Trampolim()
@@ -59,8 +61,40 @@ namespace Entidades
 				tempo_total = Pgrafico->getrelogio().getElapsedTime().asSeconds();
 			}
 		}
+		char* Trampolim::salvaEnt()
+		{
+			string aux = criaNomeArquivo(num);
+			char* nomeArquivo = &aux[0];
+
+			std::ofstream GravadorEnt(nomeArquivo, std::ios::out);
+			if (!GravadorEnt)
+			{
+
+				std::cout << "nao foi possível salvar" << std::endl;
+				exit(1);
+			}
+
+
+			return nomeArquivo;
+		}
+		Entidade* Trampolim::carregarEnt(char* arquivo)
+		{
+			Trampolim* trampolim = new Trampolim;
+
+			std::ifstream RecuperadorEnt(arquivo, std::ios::in);
+			if (!RecuperadorEnt)
+			{
+				std::cout << "nao foi possivel abrir o arquivo" << std::endl;
+				exit(1);
+			}
+
+
+
+			return static_cast<Entidade*>(trampolim);
+		}
 
 		
 
 	}
 }
+int Entidades::Obstaculos::Trampolim::num_Trampolim = 0;

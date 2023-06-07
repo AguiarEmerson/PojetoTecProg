@@ -10,6 +10,8 @@ namespace Entidades
 		{
 		protected:
 			bool estatico;
+			static int num_Plataforma;
+			const int num;
 
 		public:
 			Plataforma(sf::Vector2f tam, sf::Vector2f p = sf::Vector2f(0.0, 0.0), sf::Vector2f v = sf::Vector2f(0.0, 0.0));
@@ -17,6 +19,10 @@ namespace Entidades
 			~Plataforma();
 			void colide(Entidade* secundaria, sf::Vector2f ds);
 			void Executar();
+			void setEstatico(const bool estatic);
+
+			 char* salvaEnt();
+			 static Entidade* carregarEnt(char* arquivo);
 		};
 	}
 }

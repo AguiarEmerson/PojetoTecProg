@@ -29,6 +29,7 @@ namespace Entidades
 			void danoEspinho(Entidade* entidade);
 			const int getDano();
 			void acimaEsteira(Entidade* ent);
+			virtual char* salvaEnt() = 0;
 			
 		};
 	}

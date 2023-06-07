@@ -33,4 +33,78 @@ namespace Fases
         colisoes.setLista(&lista);
         Pgrafico->setLista(&lista);
     }
+    void Fase2::criaEspinho(sf::Vector2f pos)
+    {
+        Entidades::Obstaculos::Espinho* espinho =
+            new Entidades::Obstaculos::Espinho(sf::Vector2f(50.0, 50.0), pos);
+        if (espinho) {
+            lista.incluir(static_cast<Entidade*>(espinho));
+        }
+        else {
+            std::cout << "ERROR::nao foi possivel criar uma espinho" << std::endl;
+            exit(1);
+        }
+    }
+    void Fase2::criaCanhao(sf::Vector2f pos)
+    {
+        Entidades::Personagens::Canhao* Canhao =
+            new Entidades::Personagens::Canhao(sf::Vector2f(50.0, 50.0), pos);
+        if (Canhao) {
+            lista.incluir(static_cast<Entidade*>(Canhao));
+            lista.incluir(static_cast<Entidade*>(Canhao->getProjetil()));
+        }
+        else {
+            std::cout << "ERROR::nao foi possivel criar um Canhao" << std::endl;
+            exit(1);
+        }
+    }
+    void Fase2::criaEntidade(char id, sf::Vector2i pos)
+    {
+        sf::Vector2f posAux = sf::Vector2f(pos.x * 50.0f, pos.y * 50.0f);
+        switch (id)
+        {
+        case('J'):
+        {
+            criaJogador1(posAux);
+        }
+        break;
+
+        case('P'):
+        {
+            criaJogador2(posAux);
+        }
+        break;
+
+        case('#'):
+        {
+            criaPlataforma(posAux);
+        }
+        break;
+
+        case('*'):
+        {
+            criaEspinho(posAux);
+        }
+        break;
+
+        case('@'):
+        {
+            criaTrampolim(posAux);
+        }
+        break;
+
+        case('S'):
+        {
+            criaRoboPula(posAux);
+        }
+        break;
+
+        case('M'):
+        {
+            criaCanhao(posAux);
+        }
+        break;
+
+        }
+    }
 }

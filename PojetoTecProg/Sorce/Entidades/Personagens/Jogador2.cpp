@@ -66,5 +66,36 @@ namespace Entidades
 			}
 			controlaCamera();
 		}
+		char* Jogador2::salvaEnt()
+		{
+			string aux = criaNomeArquivo();
+			char* nomeArquivo = &aux[0];
+
+			std::ofstream GravadorEnt(nomeArquivo, std::ios::out);
+			if (!GravadorEnt)
+			{
+
+				std::cout << "nao foi possível salvar" << std::endl;
+				exit(1);
+			}
+
+
+			return nomeArquivo;
+		}
+		Entidade* Jogador2::carregarEnt(char* arquivo)
+		{
+			Jogador2* jogador = new Jogador2;
+
+			std::ifstream RecuperadorEnt(arquivo, std::ios::in);
+			if (!RecuperadorEnt)
+			{
+				std::cout << "nao foi possivel abrir o arquivo" << std::endl;
+				exit(1);
+			}
+
+
+
+			return static_cast<Entidade*>(jogador);
+		}
 	}
 }

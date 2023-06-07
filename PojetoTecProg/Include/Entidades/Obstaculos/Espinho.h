@@ -14,6 +14,8 @@ namespace Entidades
 			float tempo_total;
 			bool primeiro_ciclo;
 			int dano;
+			static int num_Espinhos;
+			const int num;
 		public:
 			Espinho(sf::Vector2f tam, sf::Vector2f p = sf::Vector2f(0.0, 0.0), sf::Vector2f v = sf::Vector2f(0.0, 0.0));
 			Espinho();
@@ -23,6 +25,12 @@ namespace Entidades
 			void danoPersonagem(Personagem* personagem);
 
 			void primTempoTotal();
+
+			char* salvaEnt();
+
+			static Entidade* carregarEnt(char* arquivo);
+
+			void setDano(int dan);
 		};
 	}
 }

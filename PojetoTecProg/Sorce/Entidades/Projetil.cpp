@@ -59,4 +59,27 @@ namespace Entidades
 		return dano;
 	}
 
+	char* Projetil::salvaEnt()
+	{
+		string aux = criaNomeArquivo();
+		char* nomeArquivo = &aux[0];
+
+
+		return nomeArquivo;
+	}
+	Entidade* Projetil::carregarEnt(char* arquivo)
+	{
+		Projetil* projetil = new Projetil;
+
+		std::ifstream RecuperadorEnt(arquivo, std::ios::in);
+		if (!RecuperadorEnt)
+		{
+			std::cout << "nao foi possivel abrir o arquivo" << std::endl;
+			exit(1);
+		}
+
+
+
+		return static_cast<Entidade*>(projetil);
+	}
 }

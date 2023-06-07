@@ -24,6 +24,8 @@ namespace Entidades
 
 			void verificaVida();
 			void tomaDano(const int dano);
+
+			virtual char* salvaEnt() = 0;
 			
 		};
 	}

@@ -5,20 +5,22 @@ namespace Entidades
 {
 	namespace Personagens {
 		RoboAnda::RoboAnda(sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v , int h) :
-			Inimigo(tam, p, v, h)
+			Inimigo(tam, p, v, h),num(num_RoboAnda)
 		{
 			textura = Pgrafico->mandaTextura("Arquivos/Imagens/RoboAnda.png");
 			box.setTexture(&textura);
 			id = "RoboAnda";
 			direcao = rand() % 2;
+			num_RoboAnda++;
 		}
 		RoboAnda::RoboAnda():
-			Inimigo()
+			Inimigo(), num(num_RoboAnda)
 		{
 			textura = Pgrafico->mandaTextura("Arquivos/Imagens/RoboAnda.png");
 			box.setTexture(&textura);
 			direcao = rand() % 2;
 			id = "RoboAnda";
+			num_RoboAnda++;
 
 		}
 		RoboAnda::~RoboAnda()
@@ -103,5 +105,38 @@ namespace Entidades
 			else
 				return listaJogador.back();
 		}
+		char* RoboAnda::salvaEnt()
+		{
+			string aux = criaNomeArquivo(num);
+			char* nomeArquivo = &aux[0];
+
+			std::ofstream GravadorEnt(nomeArquivo, std::ios::out);
+			if (!GravadorEnt)
+			{
+
+				std::cout << "nao foi possível salvar" << std::endl;
+				exit(1);
+			}
+
+
+			return nomeArquivo;
+		}
+		Entidade* RoboAnda::carregarEnt(char* arquivo)
+		{
+			RoboAnda* roboAnda = new RoboAnda;
+
+			std::ifstream RecuperadorEnt(arquivo, std::ios::in);
+			if (!RecuperadorEnt)
+			{
+				std::cout << "nao foi possivel abrir o arquivo" << std::endl;
+				exit(1);
+			}
+
+
+
+			return static_cast<Entidade*>(roboAnda);
+
+		}
 	}
 }
+int Entidades::Personagens::RoboAnda::num_RoboAnda = 0;

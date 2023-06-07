@@ -48,5 +48,36 @@ namespace Entidades
 				verificaVida();
 			}
 		}
+		char* Jogador1::salvaEnt()
+		{
+			string aux = criaNomeArquivo();
+			char* nomeArquivo = &aux[0];
+			std::ofstream GravadorEnt(nomeArquivo, std::ios::out);
+			if (!GravadorEnt)
+			{
+
+				std::cout << "nao foi possível salvar" << std::endl;
+				exit(1);
+			}
+
+
+			return nomeArquivo;
+		}
+		Entidade* Jogador1::carregarEnt(char* arquivo)
+		{
+			Jogador1* jogador = new Jogador1;
+
+			std::ifstream RecuperadorEnt(arquivo, std::ios::in);
+			if (!RecuperadorEnt)
+			{
+				std::cout << "nao foi possivel abrir o arquivo" << std::endl;
+				exit(1);
+			}
+
+
+
+			return static_cast<Entidade*>(jogador);
+
+		}
 	}
 }

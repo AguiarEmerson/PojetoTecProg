@@ -14,6 +14,8 @@ namespace Entidades
 			bool primeiro_ciclo;
 			bool podePular;
 			float velocidade;
+			static int num_Trampolim;
+			const int num;
 		public:
 			Trampolim(float velocidades,sf::Vector2f tam, sf::Vector2f p = sf::Vector2f(0.0, 0.0), sf::Vector2f v = sf::Vector2f(0.0, 0.0));
 			Trampolim();
@@ -27,6 +29,9 @@ namespace Entidades
 			void setPodePular(const bool pula);
 
 			void primTempoTotal();
+
+			char* salvaEnt();
+			static Entidade* carregarEnt(char* arquivo);
 
 		};
 

@@ -25,13 +25,9 @@ namespace Fases
 		void criaJogador1(sf::Vector2f pos);
 		void criaJogador2(sf::Vector2f pos);
 		void criaPlataforma(sf::Vector2f pos);
-		void criaEspinho(sf::Vector2f pos);
 		void criaTrampolim(sf::Vector2f pos);
-		void criaRoboAnda(sf::Vector2f pos);
 		void criaRoboPula(sf::Vector2f pos);
-		void criaCanhao(sf::Vector2f pos);
-		void criaEntidade(char id, sf::Vector2i pos);
-		void criaEsteira(sf::Vector2f pos);
+		virtual void criaEntidade(char id, sf::Vector2i pos)=0;
 		virtual void criaMapa() = 0;
 		void Executar();
 		void setFundo(sf::Vector2f posicao);

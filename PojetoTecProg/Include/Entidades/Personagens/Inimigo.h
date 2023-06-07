@@ -29,6 +29,9 @@ namespace Entidades
 			void esmagaJogador(Entidade* entidade);
 
 			void primTempoTotal();
+
+			virtual char* salvaEnt()=0 ;
+
 			
 		};
 	}

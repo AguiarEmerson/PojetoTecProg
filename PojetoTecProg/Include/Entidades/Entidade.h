@@ -41,5 +41,10 @@ namespace Entidades
 
 		void setTa_No_Chao(const bool chao);
 		void setPodeMover(const bool mover);
+
+		virtual char* salvaEnt() = 0;
+
+		string criaNomeArquivo(int num);
+		string criaNomeArquivo();
 	};
 }

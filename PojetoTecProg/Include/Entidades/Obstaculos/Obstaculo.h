@@ -15,7 +15,9 @@ namespace Entidades
 			~Obstaculo();
 			virtual void colide(Entidade* secundaria, sf::Vector2f ds) = 0;
 			virtual void Executar() = 0;
+			void setDanoso(bool danos);
 
+			virtual char* salvaEnt() = 0;
 
 		};
 	}
