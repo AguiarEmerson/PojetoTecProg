@@ -60,6 +60,8 @@ namespace Entidades
 			}
 
 
+
+			GravadorEnt.close();
 			return nomeArquivo;
 		}
 		Entidade* Esteira::carregarEnt(char* arquivo)
@@ -74,7 +76,7 @@ namespace Entidades
 			}
 
 
-
+			RecuperadorEnt.close();
 			return static_cast<Entidade*>(esteira);
 		}
 	}

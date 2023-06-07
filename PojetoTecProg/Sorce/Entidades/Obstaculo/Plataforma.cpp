@@ -44,13 +44,13 @@ namespace Entidades
 				std::cout << "nao foi possível salvar" << std::endl;
 				exit(1);
 			}
+			GravadorEnt << pos.x << ' ' << pos.y << ' ' << vel.x << ' ' << vel.y << ' ' << ta_no_chao << ' ' << podeMover << ' ' << vivo << ' ' << danoso << ' ' << estatico << ' ' << std::endl;
 
 
 			return nomeArquivo;
 		}
 		Entidade* Plataforma::carregarEnt(char* arquivo)
 		{
-			Plataforma* plataforma = new Plataforma;
 
 			std::ifstream RecuperadorEnt(arquivo, std::ios::in);
 			if (!RecuperadorEnt)
@@ -58,11 +58,26 @@ namespace Entidades
 				std::cout << "nao foi possivel abrir o arquivo" << std::endl;
 				exit(1);
 			}
+			float posx = 0, posy = 0, velx = 0, vely = 0;
+			bool chao = false, move = false, danos = false, viv = false,estatic=false;
+				
+			RecuperadorEnt >> posx >> posy >> velx >> vely >> chao >> move >> viv >> danos >> estatic;
+			Plataforma* plataforma = new Plataforma(sf::Vector2f(50.0, 50.0), sf::Vector2f(posx, posy), sf::Vector2f(velx, vely));
+			plataforma->setTa_No_Chao(chao);
+			plataforma->setVivo(viv);
+			plataforma->setPodeMover(move);
+			plataforma->setDanoso(danos);
+			plataforma->setEstatico(estatic);
+
 
 
 
 			return static_cast<Entidade*>(plataforma);
 
+		}
+		void Plataforma::setEstatico(const bool estatic)
+		{
+			estatico = estatic;
 		}
 
 		
