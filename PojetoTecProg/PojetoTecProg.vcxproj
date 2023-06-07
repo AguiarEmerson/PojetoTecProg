@@ -104,6 +104,11 @@
     <Text Include="Debug\PojetoTecProg.log" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="Imagens\esteirad.png" />
+    <Image Include="Imagens\esteirae.png" />
+    <Image Include="Imagens\fundo1.png" />
+    <Image Include="Imagens\jogador2.png" />
+    <Image Include="Imagens\lama.png" />
     <Image Include="Imagens\RoboAnda.png" />
     <Image Include="Imagens\espinho.png" />
     <Image Include="Imagens\jogador1.png" />
@@ -112,6 +117,7 @@
     <Image Include="Imagens\plataformal.png" />
     <Image Include="Imagens\projetil.png" />
     <Image Include="Imagens\RoboPula.png" />
+    <Image Include="Imagens\trampolim.png" />
     <Image Include="Sorce\Entidades\Personagens\download.jpeg" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
