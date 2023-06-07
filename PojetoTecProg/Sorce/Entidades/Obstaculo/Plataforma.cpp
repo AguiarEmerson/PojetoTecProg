@@ -5,20 +5,22 @@ namespace Entidades
 	namespace Obstaculos
 	{
 		Plataforma::Plataforma(sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v) :
-			Obstaculo(tam,p,v)
+			Obstaculo(tam,p,v),num(num_Plataforma)
 		{
 			textura = Pgrafico->mandaTextura("Imagens/plataforma.png");
 			box.setTexture(&textura);
 			id = "plataforma";
 			estatico = true;
+			num_Plataforma++;
 		}
 		Plataforma::Plataforma() :
-			Obstaculo()
+			Obstaculo(), num(num_Plataforma)
 		{
 			textura = Pgrafico->mandaTextura("Imagens/plataforma.png");
 			box.setTexture(&textura);
-      id = "plataforma";
+			id = "plataforma";
 			estatico = true;
+			num_Plataforma++;
 		}
 		Plataforma::~Plataforma() {
 
@@ -40,3 +42,4 @@ namespace Entidades
 
 	}
 }
+int Entidades::Obstaculos::Plataforma::num_Plataforma = 0;

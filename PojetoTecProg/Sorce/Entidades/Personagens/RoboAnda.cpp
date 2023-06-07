@@ -5,20 +5,22 @@ namespace Entidades
 {
 	namespace Personagens {
 		RoboAnda::RoboAnda(sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v , int h) :
-			Inimigo(tam, p, v, h)
+			Inimigo(tam, p, v, h),num(num_RoboAnda)
 		{
 			textura = Pgrafico->mandaTextura("Imagens/RoboAnda.png");
 			box.setTexture(&textura);
 			id = "RoboAnda";
 			direcao = rand() % 2;
+			num_RoboAnda++;
 		}
 		RoboAnda::RoboAnda():
-			Inimigo()
+			Inimigo(), num(num_RoboAnda)
 		{
 			textura = Pgrafico->mandaTextura("Imagens/RoboAnda.png");
 			box.setTexture(&textura);
 			direcao = rand() % 2;
 			id = "RoboAnda";
+			num_RoboAnda++;
 
 		}
 		RoboAnda::~RoboAnda()
@@ -110,3 +112,4 @@ namespace Entidades
 		}
 	}
 }
+int Entidades::Personagens::RoboAnda::num_RoboAnda = 0;

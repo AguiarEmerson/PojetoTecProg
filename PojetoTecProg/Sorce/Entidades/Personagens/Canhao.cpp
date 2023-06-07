@@ -5,21 +5,23 @@ namespace Entidades
 {
 	namespace Personagens {
 		Canhao::Canhao(sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v, int h) :
-			Inimigo(tam, p, v, h),
+			Inimigo(tam, p, v, h),num(num_Canhao),
 			projetil(sf::Vector2f(15.0,15.0),sf::Vector2f(p.x,p.y+tam.y+0.5),sf::Vector2f(0.0,0.0))
 		{
 			textura = Pgrafico->mandaTextura("Imagens/Canhao.png");
 			box.setTexture(&textura);
 			primeiro_ciclo = 1;
 			id = "Canhao";
+			num_Canhao++;
 		}
 		Canhao::Canhao():
 			Inimigo(),
-			projetil()
+			projetil(), num(num_Canhao)
 		{
 			textura = Pgrafico->mandaTextura("Imagens/Canhao.png");
 			box.setTexture(&textura);
 			id = "Canhao";
+			num_Canhao++;
 		}
 		Canhao::~Canhao()
 		{
@@ -88,3 +90,4 @@ namespace Entidades
 
 	}
 }
+int Entidades::Personagens::Canhao::num_Canhao = 0;

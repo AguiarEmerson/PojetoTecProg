@@ -6,21 +6,23 @@ namespace Entidades
 	namespace Obstaculos
 	{
 		Trampolim::Trampolim(float velocidades,sf::Vector2f tam, sf::Vector2f p , sf::Vector2f v ):
-			Obstaculo(tam,p,v)
+			Obstaculo(tam,p,v),num(num_Trampolim)
 		{
 			id = "trampolim";
 			podePular = true;
 			velocidade = velocidades;
 			textura = Pgrafico->carregarTextura("Imagens/trampolim.png");
 			box.setTexture(&textura);
+			num_Trampolim++;
 		}
 		Trampolim::Trampolim():
-			Obstaculo()
+			Obstaculo(), num(num_Trampolim)
 		{
 			velocidade = 20.0;
 			id = "trampolim";
 			textura = Pgrafico->carregarTextura("Imagens/trampolim.png");
 			box.setTexture(&textura);
+			num_Trampolim++;
 		}
 
 		Trampolim::~Trampolim()
@@ -69,3 +71,4 @@ namespace Entidades
 
 	}
 }
+int Entidades::Obstaculos::Trampolim::num_Trampolim = 0;

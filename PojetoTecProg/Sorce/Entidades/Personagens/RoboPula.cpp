@@ -5,22 +5,24 @@ namespace Entidades
 {
 	namespace Personagens {
 		RoboPula::RoboPula(sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v, int h) :
-			Inimigo(tam, p, v, h)
+			Inimigo(tam, p, v, h),num(num_RoboPula)
 		{
 			textura = Pgrafico->mandaTextura("Imagens/RoboPula.png");
 			box.setTexture(&textura);
 			id = "RoboPula";
 			direcao = rand() % 2;
 			altura = 0;
+			num_RoboPula++;
 		}
 		RoboPula::RoboPula() :
-			Inimigo()
+			Inimigo(), num(num_RoboPula)
 		{
 			textura = Pgrafico->mandaTextura("Imagens/RoboPula.png");
 			box.setTexture(&textura);
 			id = "RoboPula";
 			altura = 0;
 			direcao = rand() % 2;
+			num_RoboPula++;
 		}
 		RoboPula::~RoboPula()
 		{
@@ -72,3 +74,4 @@ namespace Entidades
 
 	}
 }
+int Entidades::Personagens::RoboPula::num_RoboPula = 0;

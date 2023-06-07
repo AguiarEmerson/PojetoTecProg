@@ -4,7 +4,7 @@ namespace Entidades
 	namespace Obstaculos
 	{
 		Esteira::Esteira(sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v) :
-			Obstaculo(tam, p, v)
+			Obstaculo(tam, p, v),num(num_Esteira)
 		{
 			direcao = rand() % 2;
 			if(direcao)
@@ -14,9 +14,10 @@ namespace Entidades
 			box.setTexture(&textura);
 			id = "Esteira";
 			desaceleracao = 2.0f;
+			num_Esteira++;
 		}
 		Esteira::Esteira() :
-			Obstaculo()
+			Obstaculo(), num(num_Esteira)
 		{
 			direcao = rand()%2;
 			if (direcao)
@@ -26,6 +27,7 @@ namespace Entidades
 			box.setTexture(&textura);
 			id = "Esteira";
 			desaceleracao = 2.0f;
+			num_Esteira++;
 		}
 		Esteira::~Esteira() {
 		}
@@ -51,3 +53,4 @@ namespace Entidades
 		}
 	}
 }
+int Entidades::Obstaculos::Esteira::num_Esteira = 0;
