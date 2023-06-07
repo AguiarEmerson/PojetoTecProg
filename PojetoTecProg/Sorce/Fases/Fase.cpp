@@ -232,9 +232,12 @@ namespace Fases
 			primeiroCiclo = false;
 			Grafico::getgrafico()->setFundo(fundo);
 		}
+		//desenha o fundo
+		Pgrafico->atualizaFundo();
 		//executa todas as entidades
-
 		lista.percorrer();
+		//desenha todas as entidades
+		lista.desenhar();
 		
 		//verifica as colisoes
 		colisoes.executar();

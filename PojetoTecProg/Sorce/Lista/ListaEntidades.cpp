@@ -1,6 +1,10 @@
 #include "..\Lista\ListaEntidades.h"
+#include "..\Gerenciadores\Grafico.h"
 
 namespace Listas {
+
+	Gerenciadores::Grafico* ListaEntidades::Pgrafico = Gerenciadores::Grafico::getgrafico();
+
 	ListaEntidades::ListaEntidades() {
 	}
 	ListaEntidades::~ListaEntidades()
@@ -19,6 +23,17 @@ namespace Listas {
 				LEs.getElem(i)->Executar();
 		}
 	}
+
+	void ListaEntidades::desenhar() {
+		int i, tam = LEs.getTam();
+		for (i = 0; i < tam; i++)
+		{
+			if (LEs.getElem(i)->getVivo() == true) {
+				Pgrafico->desenha(LEs.getElem(i)->getbox());
+			}
+		}
+	}
+
 	void ListaEntidades::retirar(Entidade* pE) {
 		LEs.pop(pE);
 	}

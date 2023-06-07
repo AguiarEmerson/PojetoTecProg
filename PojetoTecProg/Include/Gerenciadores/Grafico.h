@@ -37,7 +37,6 @@ namespace Gerenciadores
 		sf::RenderWindow* getjanela();
 		sf::Clock getrelogio();
 		void setLista(ListaEntidades* listaEnt);
-		void executar();
 		sf::Font carregarFonte(const char* caminhoFonte);
 		sf::Texture carregarTextura(const char* caminhoTextura);
 		sf::Texture mandaTextura(const char* caminhoTextura);

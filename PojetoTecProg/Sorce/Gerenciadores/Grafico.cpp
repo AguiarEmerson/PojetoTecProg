@@ -21,6 +21,7 @@ namespace Gerenciadores {
 			std::cout << "ERROR nao foi possivel criar uma janela grafica" << std::endl;
 			exit(1);
 		}
+		window->setFramerateLimit(60);
 	}
 
 	Grafico::~Grafico()
@@ -42,6 +43,12 @@ namespace Gerenciadores {
 	}
 
 	const bool Grafico::verificaJanelaAberta() {
+		sf::Event evento;
+		if (window->pollEvent(evento)) {
+			if (evento.type == sf::Event::Closed) {
+				fecha();
+			}
+		}
 		return window->isOpen();
 	}
 
@@ -98,28 +105,6 @@ namespace Gerenciadores {
 		lista = listaEnt;
 	}
 
-	void Grafico::executar() {
-		int i, tam;
-		tam = lista->getTam();
-		atualizaFundo();
-		if (verificaJanelaAberta()) {
-			sf::Event evento;
-			if (window->pollEvent(evento)) {
-				if (evento.type == sf::Event::Closed) {
-					fecha();
-				}
-			}
-			limpa();
-			desenha(fundo);
-			for (i = 0; i < tam; i++) {
-				if (lista->getEnt(i)->getVivo() == true) {
-					desenha(lista->getEnt(i)->getbox());
-				}
-			}
-			mostra();
-			window->setFramerateLimit(60);
-		}
-	}
 	//essa função retorn
 
 	sf::Font Grafico::carregarFonte(const char* caminhoFonte) {
@@ -161,6 +146,7 @@ namespace Gerenciadores {
 	void Grafico::atualizaFundo()
 	{
 		fundo.setPosition(camera.getCenter() - sf::Vector2f((camera.getSize().x / 2), (camera.getSize().y / 2)));
+		desenha(fundo);
 	}
 }	
 

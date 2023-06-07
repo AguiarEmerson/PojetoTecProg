@@ -28,11 +28,11 @@ void Principal::inicializa()
 void Principal::executar()
 {
     while (Pgrafico->verificaJanelaAberta()) {
-        //atualiza a fase
+        Pgrafico->limpa();
+
         pMaquinadeEstados->Executar();
 
-        //deseha na tela
-        Pgrafico->executar();
+        Pgrafico->mostra();
     }
 }
 
