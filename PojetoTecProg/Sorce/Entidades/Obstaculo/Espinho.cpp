@@ -31,7 +31,6 @@ namespace Entidades
 		}
 		void Espinho::Executar()
 		{	
-			printf("%d", num);
 			dt = Pgrafico->getrelogio().getElapsedTime().asSeconds()-tempo_total;
 		}
 		void Espinho::colide(Entidade* secundaria, sf::Vector2f ds) {
