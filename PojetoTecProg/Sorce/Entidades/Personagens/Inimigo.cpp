@@ -9,6 +9,8 @@ namespace Entidades
 		{
 			direcao = 0;
 			primeiro_ciclo = 1;
+			tempo_total = 0;
+			dt = 0;
 			
 		}
 
@@ -17,6 +19,8 @@ namespace Entidades
 		{
 			direcao = 0;
 			primeiro_ciclo = 1;
+			tempo_total = 0;
+			dt = 0;
 		}
 
 		Inimigo::~Inimigo()
