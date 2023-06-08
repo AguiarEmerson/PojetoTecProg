@@ -20,6 +20,7 @@ namespace Estados
 	Estado* Estado::criaestadojogar_fase1() 
 	{
 		Fases::Fase* fase = static_cast<Fases::Fase*>(new Fases::Fase1());
+		fase->criaMapa();
 		if (fase) {
 			Estados::EstadoJogar* estado = new EstadoJogar(fase);
 			return static_cast<Estados::Estado*> (estado);
@@ -33,6 +34,7 @@ namespace Estados
 	Estado* Estado::criaestadojogar_fase2()
 	{
 		Fases::Fase* fase = static_cast<Fases::Fase*>(new Fases::Fase2());
+		fase->criaMapa();
 		if (fase) {
 			Estados::EstadoJogar* estado = new EstadoJogar(fase);
 			return static_cast<Estados::Estado*> (estado);
