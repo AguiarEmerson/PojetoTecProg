@@ -17,10 +17,10 @@ namespace Estados
 	{
 	}
 
-	Estado* Estado::criaestadojogar_fase1() 
+	Estado* Estado::criaestadojogar_fase1(bool p) 
 	{
 		Fases::Fase* fase = static_cast<Fases::Fase*>(new Fases::Fase1());
-		fase->criaMapa();
+		fase->criaMapa(p);
 		if (fase) {
 			Estados::EstadoJogar* estado = new EstadoJogar(fase);
 			return static_cast<Estados::Estado*> (estado);
@@ -31,10 +31,10 @@ namespace Estados
 		}
 	}
 
-	Estado* Estado::criaestadojogar_fase2()
+	Estado* Estado::criaestadojogar_fase2(bool p)
 	{
 		Fases::Fase* fase = static_cast<Fases::Fase*>(new Fases::Fase2());
-		fase->criaMapa();
+		fase->criaMapa(p);
 		if (fase) {
 			Estados::EstadoJogar* estado = new EstadoJogar(fase);
 			return static_cast<Estados::Estado*> (estado);
@@ -59,16 +59,25 @@ namespace Estados
 
 	Estado* Estado::criaestado(string i) {
 		Estado* estado = NULL;
-		if      (i == "jogar_fase1") {
-			estado = estado->criaestadojogar_fase1();
-		} 
-		else if (i == "jogar_fase2") {
-			estado = estado->criaestadojogar_fase2();
+		if      (i == "jogar_fase1_1p") {
+			estado = estado->criaestadojogar_fase1(false);
+		}
+		else if (i == "jogar_fase1_2p") {
+			estado = estado->criaestadojogar_fase1(true);
+		}
+		else if (i == "jogar_fase2_1p") {
+			estado = estado->criaestadojogar_fase2(false);
+		}
+		else if (i == "jogar_fase2_2p") {
+			estado = estado->criaestadojogar_fase2(true);
 		}
 		else if (i == "Menu_principal") {
 			estado = estado->criaestadoMenuPrincipal();
 		}
 		else if (i == "Menu_pausa") {
+			estado = estado->criaestadoMenuPausa();
+		}
+		else if (i == "Game_over") {
 			estado = estado->criaestadoMenuPausa();
 		}
 		return estado;

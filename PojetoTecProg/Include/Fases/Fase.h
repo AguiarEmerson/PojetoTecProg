@@ -33,7 +33,7 @@ namespace Fases
 		void criaTrampolim(sf::Vector2f pos);
 		void criaRoboPula(sf::Vector2f pos);
 		virtual void criaEntidade(char id, sf::Vector2i pos)=0;
-		virtual void criaMapa() = 0;
+		virtual void criaMapa(bool p ) = 0;
 		void Executar();
 		void setFundo(sf::Vector2f posicao);
 		sf::RectangleShape getFundo();

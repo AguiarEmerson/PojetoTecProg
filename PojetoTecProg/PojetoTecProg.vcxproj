@@ -19,38 +19,39 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Sorce\Entidades\Obstaculo\Esteira.cpp" />
-    <ClCompile Include="Sorce\Entidades\Personagens\Jogador1.cpp" />
-    <ClCompile Include="Sorce\Entidades\Personagens\Jogador2.cpp" />
-    <ClCompile Include="Sorce\Estados\Estado.cpp" />
-    <ClCompile Include="Sorce\Estados\EstadoJogar.cpp" />
-    <ClCompile Include="Sorce\Fases\Fase1.cpp" />
-    <ClCompile Include="Sorce\Entidades\Obstaculo\Espinho.cpp" />
-    <ClCompile Include="Sorce\Entidades\Personagens\Canhao.cpp" />
-    <ClCompile Include="Sorce\Entidades\Projetil.cpp" />
-    <ClCompile Include="Sorce\Entidades\Personagens\RoboPula.cpp" />
-    <ClCompile Include="Sorce\Fases\Fase.cpp" />
-    <ClCompile Include="Sorce\Fases\Fase2.cpp" />
-    <ClCompile Include="Sorce\Gerenciadores\Colisao.cpp" />
-    <ClCompile Include="Sorce\Gerenciadores\MaquinadeEstados.cpp" />
-    <ClCompile Include="Sorce\Gerenciadores\Grafico.cpp" />
-    <ClCompile Include="Sorce\Menus\Botao.cpp" />
-    <ClCompile Include="Sorce\Menus\Menu.cpp" />
-    <ClCompile Include="Sorce\Menus\MenuPausa.cpp" />
-    <ClCompile Include="Sorce\Menus\MenuPrincipal.cpp" />
-    <ClCompile Include="Sorce\Menus\Texto.cpp" />
-    <ClCompile Include="Sorce\Principal.cpp" />
-    <ClCompile Include="Sorce\Ente.cpp" />
-    <ClCompile Include="Sorce\Entidades\Entidade.cpp" />
-    <ClCompile Include="Sorce\Entidades\Obstaculo\Obstaculo.cpp" />
-    <ClCompile Include="Sorce\Entidades\Obstaculo\Plataforma.cpp" />
-    <ClCompile Include="Sorce\Entidades\Personagens\RoboAnda.cpp" />
-    <ClCompile Include="Sorce\Entidades\Personagens\Inimigo.cpp" />
-    <ClCompile Include="Sorce\Entidades\Personagens\Jogador.cpp" />
-    <ClCompile Include="Sorce\Entidades\Personagens\Personagem.cpp" />
-    <ClCompile Include="Sorce\Lista\ListaEntidades.cpp" />
-    <ClCompile Include="Sorce\main.cpp" />
-    <ClCompile Include="Sorce\Entidades\Obstaculo\Trampolim.cpp" />
+    <ClCompile Include="Source\Entidades\Obstaculo\Esteira.cpp" />
+    <ClCompile Include="Source\Entidades\Personagens\Jogador1.cpp" />
+    <ClCompile Include="Source\Entidades\Personagens\Jogador2.cpp" />
+    <ClCompile Include="Source\Estados\Estado.cpp" />
+    <ClCompile Include="Source\Estados\EstadoJogar.cpp" />
+    <ClCompile Include="Source\Fases\Fase1.cpp" />
+    <ClCompile Include="Source\Entidades\Obstaculo\Espinho.cpp" />
+    <ClCompile Include="Source\Entidades\Personagens\Canhao.cpp" />
+    <ClCompile Include="Source\Entidades\Projetil.cpp" />
+    <ClCompile Include="Source\Entidades\Personagens\RoboPula.cpp" />
+    <ClCompile Include="Source\Fases\Fase.cpp" />
+    <ClCompile Include="Source\Fases\Fase2.cpp" />
+    <ClCompile Include="Source\Gerenciadores\Colisao.cpp" />
+    <ClCompile Include="Source\Gerenciadores\MaquinadeEstados.cpp" />
+    <ClCompile Include="Source\Gerenciadores\Grafico.cpp" />
+    <ClCompile Include="Source\Menus\Botao.cpp" />
+    <ClCompile Include="Source\Menus\GameOver.cpp" />
+    <ClCompile Include="Source\Menus\Menu.cpp" />
+    <ClCompile Include="Source\Menus\MenuPausa.cpp" />
+    <ClCompile Include="Source\Menus\MenuPrincipal.cpp" />
+    <ClCompile Include="Source\Menus\Texto.cpp" />
+    <ClCompile Include="Source\Principal.cpp" />
+    <ClCompile Include="Source\Ente.cpp" />
+    <ClCompile Include="Source\Entidades\Entidade.cpp" />
+    <ClCompile Include="Source\Entidades\Obstaculo\Obstaculo.cpp" />
+    <ClCompile Include="Source\Entidades\Obstaculo\Plataforma.cpp" />
+    <ClCompile Include="Source\Entidades\Personagens\RoboAnda.cpp" />
+    <ClCompile Include="Source\Entidades\Personagens\Inimigo.cpp" />
+    <ClCompile Include="Source\Entidades\Personagens\Jogador.cpp" />
+    <ClCompile Include="Source\Entidades\Personagens\Personagem.cpp" />
+    <ClCompile Include="Source\Lista\ListaEntidades.cpp" />
+    <ClCompile Include="Source\main.cpp" />
+    <ClCompile Include="Source\Entidades\Obstaculo\Trampolim.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Include\Entidades\Obstaculos\Espinho.h" />
@@ -73,6 +74,7 @@
     <ClInclude Include="Include\Lista\Lista.h" />
     <ClInclude Include="Include\Lista\ListaEntidades.h" />
     <ClInclude Include="Include\Menus\Botao.h" />
+    <ClInclude Include="Include\Menus\GameOver.h" />
     <ClInclude Include="Include\Menus\Menu.h" />
     <ClInclude Include="Include\Menus\MenuPausa.h" />
     <ClInclude Include="Include\Menus\MenuPrincipal.h" />
@@ -109,8 +111,10 @@
     <None Include="Debug\PojetoTecProg.tlog\unsuccessfulbuild" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="Arquivos\Fases\Mapa_fase1.txt" />
-    <Text Include="Arquivos\Fases\Mapa_fase2.txt" />
+    <Text Include="Arquivos\Fases\Mapa_fase1_1p.txt" />
+    <Text Include="Arquivos\Fases\Mapa_fase1_2p.txt" />
+    <Text Include="Arquivos\Fases\Mapa_fase2_1p.txt" />
+    <Text Include="Arquivos\Fases\Mapa_fase2_2p.txt" />
     <Text Include="Debug\PojetoTecProg.log" />
   </ItemGroup>
   <ItemGroup>

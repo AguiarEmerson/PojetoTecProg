@@ -13,11 +13,16 @@ namespace Fases
 	{
 	}
 
-	void Fase1::criaMapa()
+	void Fase1::criaMapa(bool p)
 	{
         std::ifstream arquivo;
         std::string linha;
-        arquivo.open("Arquivos/Fases/Mapa_fase1.txt");
+        if (p) {
+            arquivo.open("Arquivos/Fases/Mapa_fase1_2p.txt");
+        }
+        else {
+            arquivo.open("Arquivos/Fases/Mapa_fase1_1p.txt");
+        }
         if (!arquivo.is_open()) {
             std::cout << "nao foi possivel abrir o arquivo: Mapa_fase1" << std::endl;
             exit(1);
