@@ -31,7 +31,6 @@ namespace Entidades
 		}
 		void Espinho::Executar()
 		{	
-			salvaEnt();
 			dt = Pgrafico->getrelogio().getElapsedTime().asSeconds()-tempo_total;
 		}
 		void Espinho::colide(Entidade* secundaria, sf::Vector2f ds) {
@@ -53,7 +52,7 @@ namespace Entidades
 				tempo_total = Pgrafico->getrelogio().getElapsedTime().asSeconds();
 			}
 		}
-		char* Espinho::salvaEnt()
+		string Espinho::salvaEnt()
 		{
 			string aux = criaNomeArquivo(num);
 			char* nomeArquivo=&aux[0];
@@ -67,9 +66,9 @@ namespace Entidades
 			}
 			GravadorEnt << pos.x << ' ' << pos.y << ' ' << vel.x << ' ' << vel.y << ' ' << ta_no_chao << ' ' << podeMover << ' ' << vivo << ' ' << danoso << ' ' << dano << ' ' << std::endl;
 			GravadorEnt.close();
+			std::cout << nomeArquivo << std::endl;
 
-
-			return nomeArquivo;
+			return aux;
 		}
 		Entidade* Espinho::carregarEnt(char* arquivo)
 		{

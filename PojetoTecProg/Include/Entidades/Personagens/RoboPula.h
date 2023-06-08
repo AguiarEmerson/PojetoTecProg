@@ -22,8 +22,10 @@ namespace Entidades
 			void move();
 			void Executar();
 
-			char* salvaEnt();
+			string salvaEnt();
 			static Entidade* carregarEnt(char* arquivo);
+
+			void setAltura(float alt);
 
 
 		};

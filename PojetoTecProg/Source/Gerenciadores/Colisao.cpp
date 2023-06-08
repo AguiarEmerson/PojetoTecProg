@@ -37,7 +37,7 @@ namespace Gerenciadores
 				listaObstaculo.push_back(lista->getEnt(i));
 			else if (lista->getEnt(i)->getId() == "RoboAnda"|| lista->getEnt(i)->getId() == "RoboPula")
 				listaInimigo.push_back(lista->getEnt(i));
-			else if (lista->getEnt(i)->getId() == "jogador")
+			else if (lista->getEnt(i)->getId() == "jogador1"|| lista->getEnt(i)->getId() == "jogador2")
 				listaJogador.push_back(lista->getEnt(i));	
 			else if (lista->getEnt(i)->getId() == "Canhao")
 			{

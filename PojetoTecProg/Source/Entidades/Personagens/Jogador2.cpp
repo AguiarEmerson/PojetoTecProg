@@ -6,6 +6,7 @@ namespace Entidades
 		Jogador2::Jogador2(sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v, int h, int xp) :
 			Jogador(tam, p, v, h, xp)
 		{
+			id = "jogador2";
 			jogador = NULL;
 			textura = Pgrafico->carregarTextura("Arquivos/Imagens/jogador2.png");
 			box.setTexture(&textura);
@@ -13,6 +14,7 @@ namespace Entidades
 		Jogador2::Jogador2() :
 			Jogador()
 		{
+			id = "jogador2";
 			jogador = NULL;
 			textura = Pgrafico->carregarTextura("Arquivos/Imagens/jogador2.png");
 			box.setTexture(&textura);
@@ -66,7 +68,7 @@ namespace Entidades
 			}
 			controlaCamera();
 		}
-		char* Jogador2::salvaEnt()
+		string Jogador2::salvaEnt()
 		{
 			string aux = criaNomeArquivo();
 			char* nomeArquivo = &aux[0];
@@ -78,13 +80,13 @@ namespace Entidades
 				std::cout << "nao foi possível salvar" << std::endl;
 				exit(1);
 			}
+			GravadorEnt << pos.x << ' ' << pos.y << ' ' << vel.x << ' ' << vel.y << ' ' << ta_no_chao << ' ' << podeMover << ' ' << vivo << ' ' << num_vidas << ' ' << dano << ' ' << ac.x << ' ' << ac.y << ' ' << pontos << ' ' << std::endl;
+			GravadorEnt.close();
 
-
-			return nomeArquivo;
+			return aux;
 		}
 		Entidade* Jogador2::carregarEnt(char* arquivo)
 		{
-			Jogador2* jogador = new Jogador2;
 
 			std::ifstream RecuperadorEnt(arquivo, std::ios::in);
 			if (!RecuperadorEnt)
@@ -92,8 +94,20 @@ namespace Entidades
 				std::cout << "nao foi possivel abrir o arquivo" << std::endl;
 				exit(1);
 			}
+			float posx = 0, posy = 0, velx = 0, vely = 0, acx = 0, acy = 0;
+			bool chao = false, move = false, viv = false;
+			int dan = 0, num_vida = 0, pont = 0;
+			RecuperadorEnt >> posx >> posy >> velx >> vely >> chao >> move >> viv >> num_vida >> dan >> acx >> acy >> pont;
+			Jogador2* jogador = new Jogador2(sf::Vector2f(50.0, 50.0), sf::Vector2f(posx, posy), sf::Vector2f(velx, vely), num_vida);
+			jogador->setTa_No_Chao(chao);
+			jogador->setVivo(viv);
+			jogador->setPodeMover(move);
+			jogador->setAc(sf::Vector2f(acx, acy));
+			jogador->setDano(dan);
+			jogador->setPontos(pont);
 
 
+			RecuperadorEnt.close();
 
 			return static_cast<Entidade*>(jogador);
 		}

@@ -17,7 +17,7 @@ namespace Entidades
 			void controlaCamera();
 			void Executar();
 
-			char* salvaEnt();
+			string salvaEnt();
 			static Entidade* carregarEnt(char* arquivo);
 		};
 	}
