@@ -4,7 +4,9 @@ namespace Menus
 {
 	MenuPausa::MenuPausa() :
 		Menu("Pausado", sf::Vector2f(TAMANHO_BOTAO_X, TAMANHO_BOTAO_Y)),
-		Estado()
+		Estado(),
+		fase(NULL)
+
 	{
 		criabotoes();
 	}
@@ -23,7 +25,6 @@ namespace Menus
 	void MenuPausa::selecionar(Botao* botao)
 	{
 		if (botao->getinfo() == "Salvar") {
-			printf("SALVANDO..");
 		}
 		else if (botao->getinfo() == "Voltar") {
 			pMaquinadeEstados->remove();
@@ -36,4 +37,5 @@ namespace Menus
 		Pgrafico->desenha(nomeMenu.getTexto());
 		controlar();
 	}
+	
 }

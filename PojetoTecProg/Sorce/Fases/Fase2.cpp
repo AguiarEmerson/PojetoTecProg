@@ -107,4 +107,23 @@ namespace Fases
 
         }
     }
+    void Fase2::salva()
+    {
+        std::ofstream GravadorFase("fase.dat", std::ios::out);
+
+        if (!GravadorFase)
+        {
+            std::cout << " nao pode salvar fase" << std::endl;
+            exit(1);
+        }
+        GravadorFase << "Fase2" << std::endl;
+
+        int i = 0;
+        int tam = lista.getTam();
+        for (i = 0; i < tam; i++)
+        {
+            GravadorFase << lista.getEnt(i)->getId() << ' ' << lista.getEnt(i)->salvaEnt() << ' ' << std::endl;
+        }
+        GravadorFase.close();
+    }
 }

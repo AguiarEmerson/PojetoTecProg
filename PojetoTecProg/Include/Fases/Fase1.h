@@ -13,5 +13,6 @@ namespace Fases
 		void criaEsteira(sf::Vector2f pos);
 		void criaEntidade(char id, sf::Vector2i pos);
 		void criaMapa();
+		void salva();
 	};
 }

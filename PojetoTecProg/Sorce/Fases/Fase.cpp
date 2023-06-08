@@ -134,5 +134,17 @@ namespace Fases
 	{
 		return fundo;
 	}
+	int Fase::getTam()
+	{
+		return lista.getTam();
+	}
+	char* Fase:: salvaEnt(int i)
+	{
+		return lista.getEnt(i)->salvaEnt();
+	}
+	string Fase::getId(int i)
+	{
+		return lista.getEnt(i)->getId();
+	}
 
 }
