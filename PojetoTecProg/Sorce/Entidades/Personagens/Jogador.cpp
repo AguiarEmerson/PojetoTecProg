@@ -12,7 +12,6 @@ namespace Entidades
 			Personagem(tam, p, v, h),
 			pontos(xp)
 		{
-			id = "jogador";
 			podeMover = true;
 		}
 
@@ -20,7 +19,6 @@ namespace Entidades
 			Personagem(),
 			pontos(0)
 		{
-			id = "jogador";
 			
 			//box.setTexture(&textura);
 		}
@@ -185,6 +183,10 @@ namespace Entidades
 			Personagem* personagem=NULL;
 			personagem = static_cast<Personagem*>(this);
 			Esteira->colideJogador(personagem);
+		}
+		void Jogador::setPontos(int pont)
+		{
+			pontos = pont;
 		}
 
 		

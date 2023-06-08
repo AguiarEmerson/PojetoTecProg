@@ -8,6 +8,7 @@ namespace Fases
 	{
         textura = Grafico::getgrafico()->carregarTextura("Arquivos/Imagens/fundo1.png");
         criaMapa();
+        deletaSave();
         fundo.setTexture(&textura);
 	}
 	Fase1::~Fase1()
@@ -132,6 +133,7 @@ namespace Fases
             int tam = getTam();
             for (i = 0; i < tam; i++)
             {
+                std::cout << salvaEnt(i) << std::endl;
                 GravadorFase <<getId(i)<< ' '<<salvaEnt(i)<< ' ' << std::endl;
             }
             GravadorFase.close();

@@ -29,7 +29,8 @@ namespace Entidades
 			void danoEspinho(Entidade* entidade);
 			const int getDano();
 			void acimaEsteira(Entidade* ent);
-			virtual char* salvaEnt() = 0;
+			virtual string salvaEnt() = 0;
+			void setPontos(int pont);
 			
 		};
 	}

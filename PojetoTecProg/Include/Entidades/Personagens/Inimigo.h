@@ -30,7 +30,8 @@ namespace Entidades
 
 			void primTempoTotal();
 
-			virtual char* salvaEnt()=0 ;
+			virtual string salvaEnt()=0 ;
+			void setDirecao(int dir);
 
 			
 		};

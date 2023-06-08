@@ -21,9 +21,12 @@ namespace Entidades
 			void Executar();
 			void colideJogador(Personagem* personagem);
 
-			char* salvaEnt();
+			string salvaEnt();
 
 			static Entidade* carregarEnt(char* arquivo);
+
+			void setDirecao(int dir);
+			void setDesaceleracao(float desac);
 		};
 	}
 }

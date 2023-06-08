@@ -46,7 +46,7 @@ namespace Entidades
 				personagem->setAc(sf::Vector2f(personagem->getAc().x - desaceleracao, personagem->getAc().y));
 
 		}
-		char* Esteira::salvaEnt()
+		string Esteira::salvaEnt()
 		{
 			string aux = criaNomeArquivo(num);
 			char* nomeArquivo = &aux[0];
@@ -58,17 +58,16 @@ namespace Entidades
 				std::cout << "nao foi possível salvar" << std::endl;
 				exit(1);
 			}
-			GravadorEnt << pos.x << ' ' << pos.y << ' ' << vel.x << ' ' << vel.y << ' ' << ta_no_chao << ' ' << podeMover << ' ' << vivo << ' ' << danoso << ' '  << ' ' << std::endl;
+			GravadorEnt << pos.x << ' ' << pos.y << ' ' << vel.x << ' ' << vel.y << ' ' << ta_no_chao << ' ' << podeMover << ' ' << vivo << ' ' << danoso << ' '  <<direcao<<' '<<desaceleracao << ' ' << std::endl;
 			
 
 
 
 			GravadorEnt.close();
-			return nomeArquivo;
+			return aux;
 		}
 		Entidade* Esteira::carregarEnt(char* arquivo)
 		{
-			Esteira* esteira = new Esteira;
 
 			std::ifstream RecuperadorEnt(arquivo, std::ios::in);
 			if (!RecuperadorEnt)
@@ -76,10 +75,27 @@ namespace Entidades
 				std::cout << "nao foi possivel abrir o arquivo" << std::endl;
 				exit(1);
 			}
-
+			float posx = 0, posy = 0, velx = 0, vely = 0, desac = 0;;
+			bool chao = false, move = false, danos = false, viv = false;
+			int dir = 0;
+			RecuperadorEnt >> posx >> posy >> velx >> vely >> chao >> move >> viv >> danos >> dir>> desac;
+			Esteira* esteira = new Esteira(sf::Vector2f(50.0, 50.0), sf::Vector2f(posx, posy), sf::Vector2f(velx, vely));
+			esteira->setTa_No_Chao(chao);
+			esteira->setVivo(viv);
+			esteira->setPodeMover(move);
+			esteira->setDesaceleracao(desac);
+			esteira->setDirecao(dir);
 
 			RecuperadorEnt.close();
 			return static_cast<Entidade*>(esteira);
+		}
+		void Esteira::setDirecao(int dir)
+		{
+			direcao = dir;
+		}
+		void Esteira:: setDesaceleracao(float desac)
+		{
+			desaceleracao = desac;
 		}
 	}
 }

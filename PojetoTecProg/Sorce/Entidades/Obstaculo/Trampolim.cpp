@@ -61,7 +61,7 @@ namespace Entidades
 				tempo_total = Pgrafico->getrelogio().getElapsedTime().asSeconds();
 			}
 		}
-		char* Trampolim::salvaEnt()
+		string Trampolim::salvaEnt()
 		{
 			string aux = criaNomeArquivo(num);
 			char* nomeArquivo = &aux[0];
@@ -73,13 +73,14 @@ namespace Entidades
 				std::cout << "nao foi possível salvar" << std::endl;
 				exit(1);
 			}
+			GravadorEnt << pos.x << ' ' << pos.y << ' ' << vel.x << ' ' << vel.y << ' ' << ta_no_chao << ' ' << podeMover << ' ' << vivo << ' ' << danoso << ' ' << velocidade << std::endl;
 
+			GravadorEnt.close();
 
-			return nomeArquivo;
+			return aux;
 		}
 		Entidade* Trampolim::carregarEnt(char* arquivo)
 		{
-			Trampolim* trampolim = new Trampolim;
 
 			std::ifstream RecuperadorEnt(arquivo, std::ios::in);
 			if (!RecuperadorEnt)
@@ -88,10 +89,20 @@ namespace Entidades
 				exit(1);
 			}
 
+			float posx = 0, posy = 0, velx = 0, vely = 0,veloci=0;
+			bool chao = false, move = false, danos = false, viv = false;
+			RecuperadorEnt >> posx >> posy >> velx >> vely >> chao >> move >> viv >> danos >>veloci;
+			Trampolim* trampolim = new Trampolim(veloci,sf::Vector2f(50.0, 50.0), sf::Vector2f(posx, posy), sf::Vector2f(velx, vely));
+			trampolim->setTa_No_Chao(chao);
+			trampolim->setVivo(viv);
+			trampolim->setPodeMover(move);
+			
 
 
+			RecuperadorEnt.close();
 			return static_cast<Entidade*>(trampolim);
 		}
+		
 
 		
 

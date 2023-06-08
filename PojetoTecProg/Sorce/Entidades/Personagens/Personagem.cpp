@@ -40,5 +40,11 @@ namespace Entidades
 		{
 			num_vidas-= dano;
 		}
+
+		void Personagem::setDano(const int dan)
+			
+		{
+			dano = dan;
+		}
 	}
 }

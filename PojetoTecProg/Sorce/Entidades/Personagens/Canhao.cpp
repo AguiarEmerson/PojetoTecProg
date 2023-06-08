@@ -80,7 +80,7 @@ namespace Entidades
 			return &projetil;
 		}
 
-		char* Canhao::salvaEnt()
+		string Canhao::salvaEnt()
 		{
 			string aux = criaNomeArquivo(num);
 			char* nomeArquivo = &aux[0];
@@ -92,13 +92,15 @@ namespace Entidades
 				std::cout << "nao foi possível salvar" << std::endl;
 				exit(1);
 			}
+			GravadorEnt << pos.x << ' ' << pos.y << ' ' << vel.x << ' ' << vel.y << ' ' << ta_no_chao << ' ' << podeMover << ' ' << vivo <<' '<< num_vidas <<' '<< dano <<' '<< ac.x <<' '<< ac.y << ' ' << direcao << std::endl;
+
+			GravadorEnt.close();
 
 
-			return nomeArquivo;
+			return aux;
 		}
 		Entidade* Canhao::carregarEnt(char* arquivo)
 		{
-			Canhao* canhao = new Canhao;
 
 			std::ifstream RecuperadorEnt(arquivo, std::ios::in);
 			if (!RecuperadorEnt)
@@ -106,9 +108,20 @@ namespace Entidades
 				std::cout << "nao foi possivel abrir o arquivo" << std::endl;
 				exit(1);
 			}
+			float posx = 0, posy = 0, velx = 0, vely = 0,acx=0,acy=0;
+			bool chao = false, move = false, viv = false;
+			int dan = 0, num_vida = 0, direca = 0;
+			RecuperadorEnt >> posx >> posy >> velx >> vely >> chao >> move >> viv >> num_vida>>dan>>acx>>acy>>direca;
+			Canhao* canhao = new Canhao(sf::Vector2f(50.0, 50.0), sf::Vector2f(posx, posy), sf::Vector2f(velx, vely),num_vida);
+			canhao->setTa_No_Chao(chao);
+			canhao->setVivo(viv);
+			canhao->setPodeMover(move);
+			canhao->setAc(sf::Vector2f(acx, acy));
+			canhao->setDirecao(direca);
+			canhao->setDano(dan);
 
 
-
+			RecuperadorEnt.close();
 			return static_cast<Entidade*>(canhao);
 		}
 

@@ -21,7 +21,7 @@ namespace Entidades
 			void Executar();
 			void setEstatico(const bool estatic);
 
-			 char* salvaEnt();
+			string salvaEnt();
 			 static Entidade* carregarEnt(char* arquivo);
 		};
 	}
