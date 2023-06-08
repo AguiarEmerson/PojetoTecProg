@@ -35,6 +35,7 @@
     <ClCompile Include="Source\Gerenciadores\MaquinadeEstados.cpp" />
     <ClCompile Include="Source\Gerenciadores\Grafico.cpp" />
     <ClCompile Include="Source\Menus\Botao.cpp" />
+    <ClCompile Include="Source\Menus\GameOver.cpp" />
     <ClCompile Include="Source\Menus\Menu.cpp" />
     <ClCompile Include="Source\Menus\MenuPausa.cpp" />
     <ClCompile Include="Source\Menus\MenuPrincipal.cpp" />
@@ -73,6 +74,7 @@
     <ClInclude Include="Include\Lista\Lista.h" />
     <ClInclude Include="Include\Lista\ListaEntidades.h" />
     <ClInclude Include="Include\Menus\Botao.h" />
+    <ClInclude Include="Include\Menus\GameOver.h" />
     <ClInclude Include="Include\Menus\Menu.h" />
     <ClInclude Include="Include\Menus\MenuPausa.h" />
     <ClInclude Include="Include\Menus\MenuPrincipal.h" />
@@ -109,8 +111,10 @@
     <None Include="Debug\PojetoTecProg.tlog\unsuccessfulbuild" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="Arquivos\Fases\Mapa_fase1.txt" />
-    <Text Include="Arquivos\Fases\Mapa_fase2.txt" />
+    <Text Include="Arquivos\Fases\Mapa_fase1_1p.txt" />
+    <Text Include="Arquivos\Fases\Mapa_fase1_2p.txt" />
+    <Text Include="Arquivos\Fases\Mapa_fase2_1p.txt" />
+    <Text Include="Arquivos\Fases\Mapa_fase2_2p.txt" />
     <Text Include="Debug\PojetoTecProg.log" />
   </ItemGroup>
   <ItemGroup>

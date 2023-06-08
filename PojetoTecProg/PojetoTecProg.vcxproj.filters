@@ -111,6 +111,9 @@
     <ClCompile Include="Source\Menus\MenuPausa.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Menus\GameOver.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Include\Ente.h">
@@ -212,6 +215,9 @@
     <ClInclude Include="Include\Menus\MenuPausa.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
+    <ClInclude Include="Include\Menus\GameOver.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Debug\PojetoTecProg.exe.recipe">
@@ -240,8 +246,10 @@
     <Text Include="Debug\PojetoTecProg.log">
       <Filter>Arquivos de Recurso</Filter>
     </Text>
-    <Text Include="Arquivos\Fases\Mapa_fase1.txt" />
-    <Text Include="Arquivos\Fases\Mapa_fase2.txt" />
+    <Text Include="Arquivos\Fases\Mapa_fase1_1p.txt" />
+    <Text Include="Arquivos\Fases\Mapa_fase1_2p.txt" />
+    <Text Include="Arquivos\Fases\Mapa_fase2_1p.txt" />
+    <Text Include="Arquivos\Fases\Mapa_fase2_2p.txt" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Sorce\Entidades\Personagens\download.jpeg">

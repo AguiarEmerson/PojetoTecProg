@@ -10,12 +10,17 @@ namespace Fases
     {
     }
 
-    void Fase2::criaMapa()
+    void Fase2::criaMapa(bool p)
     {
         std::ifstream arquivo;
         std::string linha;
         deletaSave();
-        arquivo.open("Arquivos/Fases/Mapa_fase2.txt");
+        if (p) {
+            arquivo.open("Arquivos/Fases/Mapa_fase2_2p.txt");
+        }
+        else {
+            arquivo.open("Arquivos/Fases/Mapa_fase2_1p.txt");
+        }
         if (!arquivo.is_open()) {
             std::cout << "nao foi possivel abrir o arquivo: Mapa_fase2" << std::endl;
             exit(1);
