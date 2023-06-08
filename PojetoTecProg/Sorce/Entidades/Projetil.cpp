@@ -69,8 +69,9 @@ namespace Entidades
 
 			std::cout << "nao foi possível salvar" << std::endl;
 			exit(1);
+			
 		}
-		GravadorEnt << pos.x << ' ' << pos.y << ' ' << vel.x << ' ' << vel.y << ' ' << ta_no_chao << ' ' << podeMover << ' ' << vivo << ' ' << existe << ' ' << dano << std::endl;
+		GravadorEnt<< box.getSize().x <<' '<<box.getSize().y<<' ' << pos.x << ' ' << pos.y << ' ' << vel.x << ' ' << vel.y << ' ' << ta_no_chao << ' ' << podeMover << ' ' << vivo << ' ' << existe << ' ' << dano << std::endl;
 
 		GravadorEnt.close();
 		return aux;
@@ -84,11 +85,11 @@ namespace Entidades
 			std::cout << "nao foi possivel abrir o arquivo" << std::endl;
 			exit(1);
 		}
-		float posx = 0, posy = 0, velx = 0, vely = 0;
+		float posx = 0, posy = 0, velx = 0, vely = 0,tamx=0,tamy=0;
 		bool chao = false, move = false,viv = false,exis=false;
 		int dan = 0;
-		RecuperadorEnt >> posx >> posy >> velx >> vely >> chao >> move >> viv >> exis>>dan;
-		Projetil* projetil = new Projetil(sf::Vector2f(50.0, 50.0), sf::Vector2f(posx, posy), sf::Vector2f(velx, vely));
+		RecuperadorEnt >> tamx>> tamy>>posx >> posy >> velx >> vely >> chao >> move >> viv >> exis>>dan;
+		Projetil* projetil = new Projetil(sf::Vector2f(tamx,tamy), sf::Vector2f(posx, posy), sf::Vector2f(velx, vely));
 		projetil->setTa_No_Chao(chao);
 		projetil->setVivo(viv);
 		projetil->setPodeMover(move);
@@ -102,6 +103,26 @@ namespace Entidades
 	void Projetil::setDano(int dan)
 	{
 		dano = dan;
+	}
+
+	const bool Projetil::getExiste()
+	{
+		return existe;
+	}
+
+	const bool Projetil::getTanoChao()
+	{
+		return ta_no_chao;
+	}
+
+	const bool Projetil::getMove()
+	{
+		return podeMover;
+	}
+	void Projetil::setTextura()
+	{
+		textura = Pgrafico->mandaTextura("Arquivos/Imagens/projetil.png");
+		box.setTexture(&textura);
 	}
 	
 }

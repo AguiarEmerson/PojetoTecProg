@@ -27,6 +27,11 @@ namespace Entidades
 		string salvaEnt();
 		static Entidade* carregarEnt(string arquivo);
 
+		const bool getExiste();
+		const bool getTanoChao();
+		const bool getMove();
+		void setTextura();
+
 
 	};
 }

@@ -27,6 +27,9 @@ namespace Entidades
 
 			static Entidade* carregarEnt(string arquivo);
 
+			void setProjetil(Projetil* projeti);
+
+
 			
 
 		};

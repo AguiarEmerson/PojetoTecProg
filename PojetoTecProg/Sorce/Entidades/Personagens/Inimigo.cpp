@@ -57,7 +57,7 @@ namespace Entidades
 					if (pos.x < pos2.x)
 					{
 						pos.x += ds.x;
-						if (secundaria->getId() == "jogador") {
+						if (secundaria->getId() == "jogador1"|| secundaria->getId() == "jogador2") {
 							angulo = atan2f((pos2.y + tam2.y - pos.y - tam1.y), (pos2.x + tam2.x - pos.x - tam1.x));
 							coice(secundaria, angulo);
 						}
@@ -65,7 +65,7 @@ namespace Entidades
 					else
 					{
 						pos.x -= ds.x;
-						if (secundaria->getId() == "jogador") {
+						if (secundaria->getId() == "jogador1" || secundaria->getId() == "jogador2") {
 							angulo = atan2f((pos2.y + tam2.y - pos.y - tam1.y), (pos2.x + tam2.x - pos.x - tam1.x));
 							coice(secundaria, angulo);
 						}
@@ -78,7 +78,7 @@ namespace Entidades
 					{
 						pos.y += ds.y;
 						ta_no_chao = true;
-						if (secundaria->getId() == "jogador")
+						if (secundaria->getId() == "jogador1" || secundaria->getId() == "jogador2")
 						{
 							esmagaJogador(secundaria);
 						}
@@ -87,7 +87,7 @@ namespace Entidades
 					{
 						pos.y -= ds.y;
 						vel.y = 0;
-						if (secundaria->getId() == "jogador")
+						if (secundaria->getId() == "jogador1" || secundaria->getId() == "jogador2")
 							esmagado(secundaria);
 	
 					}

@@ -57,14 +57,14 @@ namespace Estados
 		Fases::Fase* fase1 = static_cast<Fases::Fase*>(new Fases::Fase1());
 		Fases::Fase* fase2 = static_cast<Fases::Fase*>(new Fases::Fase2());
 		if (fas == "Fase2") {
-			fase2->criaMapa();
+			fase2->carregaSave();
 			if (fase2) {
 				Estados::EstadoJogar* estado = new EstadoJogar(fase2);
 				return static_cast<Estados::Estado*> (estado);
 			}
 		}
 		else if (fas == "Fase1") {
-			fase1->criaMapa();
+			fase1->carregaSave();
 			if (fase1) {
 				Estados::EstadoJogar* estado = new EstadoJogar(fase1);
 				return static_cast<Estados::Estado*> (estado);

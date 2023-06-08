@@ -78,6 +78,7 @@ namespace Entidades
 		Projetil* Canhao::getProjetil()
 		{
 			return &projetil;
+			printf("oi");
 		}
 
 		string Canhao::salvaEnt()
@@ -123,6 +124,19 @@ namespace Entidades
 
 			RecuperadorEnt.close();
 			return static_cast<Entidade*>(canhao);
+		}
+		void Canhao::setProjetil(Projetil* projeti)
+		{
+			
+			projetil.setbox(projeti->getbox().getSize());
+			projetil.setTextura();
+			projetil.setDano(projeti->getDano());
+			projetil.setpos(projeti->getpos());
+			projetil.setvel(projeti->getvel());
+			projetil.setExiste(projeti->getExiste());
+			projetil.setTa_No_Chao(projeti->getTanoChao());
+			projetil.setVivo(projeti->getVivo());
+			projetil.setPodeMover(projeti->getMove());
 		}
 
 
