@@ -7,6 +7,7 @@
 #include "..\Entidades\Obstaculos\Plataforma.h"
 #include "..\Entidades\Personagens\Jogador1.h"
 #include "..\Entidades\Personagens\Jogador2.h"
+#include "..\Gerenciadores\MaquinadeEstados.h"
 
 namespace Fases
 {
@@ -18,7 +19,7 @@ namespace Fases
 		sf::RectangleShape fundo;
 		sf::Texture textura;
 		bool primeiroCiclo;
-
+		static Gerenciadores::MaquinadeEstados* pMaquinadeEstados;
 	public:
 		Fase();
 		~Fase();

@@ -2,8 +2,6 @@
 
 namespace Menus
 {
-	Gerenciadores::MaquinadeEstados* MenuPrincipal::pMaquinadeEstados = Gerenciadores::MaquinadeEstados::getMaquinadeEstados();
-
 	MenuPrincipal::MenuPrincipal():
 		Menu("Menu Principal", sf::Vector2f(TAMANHO_BOTAO_X, TAMANHO_BOTAO_Y)),
 		Estado()
@@ -13,19 +11,6 @@ namespace Menus
 	MenuPrincipal::~MenuPrincipal()
 	{
 
-	}
-
-	void MenuPrincipal::controlar()
-	{
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
-			selecionacima();
-		}
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
-			selecionabaixo();
-		}
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter)) {
-			selecionar(getbotaoselecionado());
-		}
 	}
 	
 	void MenuPrincipal::selecionar(Botao* botao)
@@ -44,7 +29,7 @@ namespace Menus
 		}
 		else if (botao->getinfo() == "sair") {
 			//pMaquinadeEstados->remove();
-			printf("SAIR");
+			Pgrafico->fecha();
 		}
 	}
 

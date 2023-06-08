@@ -3,6 +3,8 @@
 
 namespace Fases
 {
+	Gerenciadores::MaquinadeEstados* Fase::pMaquinadeEstados = Gerenciadores::MaquinadeEstados::getMaquinadeEstados();
+
 	Fase::Fase() :
 		Ente(), lista()
 	{
@@ -106,6 +108,9 @@ namespace Fases
 	}
 	void Fase::Executar()
 	{
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
+			pMaquinadeEstados->incluir("Menu_pausa");
+		}
 		if (primeiroCiclo)
 		{
 			primeiroCiclo = false;

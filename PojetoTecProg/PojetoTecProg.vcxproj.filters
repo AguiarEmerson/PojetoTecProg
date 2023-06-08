@@ -108,6 +108,9 @@
     <ClCompile Include="Sorce\Menus\MenuPrincipal.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
+    <ClCompile Include="Sorce\Menus\MenuPausa.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Include\Ente.h">
@@ -206,6 +209,9 @@
     <ClInclude Include="Include\Menus\MenuPrincipal.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
+    <ClInclude Include="Include\Menus\MenuPausa.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Debug\PojetoTecProg.exe.recipe">
@@ -281,24 +287,6 @@
       <Filter>Arquivos de Recurso</Filter>
     </Image>
     <Image Include="Arquivos\Imagens\trampolim.png">
-      <Filter>Arquivos de Recurso</Filter>
-    </Image>
-    <Image Include="Imagens\fundo1.png">
-      <Filter>Arquivos de Recurso</Filter>
-    </Image>
-    <Image Include="Imagens\lama.png">
-      <Filter>Arquivos de Recurso</Filter>
-    </Image>
-    <Image Include="Imagens\jogador2.png">
-      <Filter>Arquivos de Recurso</Filter>
-    </Image>
-    <Image Include="Imagens\trampolim.png">
-      <Filter>Arquivos de Recurso</Filter>
-    </Image>
-    <Image Include="Imagens\esteirae.png">
-      <Filter>Arquivos de Recurso</Filter>
-    </Image>
-    <Image Include="Imagens\esteirad.png">
       <Filter>Arquivos de Recurso</Filter>
     </Image>
   </ItemGroup>

@@ -1,6 +1,5 @@
 #pragma once
 #include "..\Estados\Estado.h"
-#include "..\stdafx.h"
 
 namespace Gerenciadores
 {
