@@ -7,8 +7,6 @@ namespace Fases
 		Fase()
 	{
         textura = Grafico::getgrafico()->carregarTextura("Arquivos/Imagens/fundo1.png");
-        criaMapa();
-        deletaSave();
         fundo.setTexture(&textura);
 	}
 	Fase1::~Fase1()

@@ -5,8 +5,6 @@ namespace Fases
     Fase2::Fase2() :
         Fase()
     {
-        criaMapa();
-        deletaSave();
     }
     Fase2::~Fase2()
     {
