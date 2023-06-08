@@ -167,9 +167,7 @@ namespace Fases
 			while (!Deletasave.eof())
 			{
 				Deletasave >> i >> nomeArq;
-				
 				nomeArquivo = &nomeArq[0];
-				std::cout << nomeArquivo << std::endl;
 				remove(nomeArquivo);
 			}
 			Deletasave.close();
