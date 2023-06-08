@@ -40,10 +40,11 @@ namespace Fases
     {
         Entidades::Obstaculos::Esteira* Esteira =
             new Entidades::Obstaculos::Esteira(sf::Vector2f(50.0, 50.0), pos, sf::Vector2f(0.0, 0.0));
-        if (Esteira) {
+        if (Esteira&&j<num_Obstaculo) {
             lista.incluir(static_cast<Entidade*>(Esteira));
+            j++;
         }
-        else {
+        else if(!Esteira) {
             std::cout << "ERROR::nao foi possivel criar uma Esteira" << std::endl;
             exit(1);
         }

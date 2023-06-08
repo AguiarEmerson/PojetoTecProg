@@ -20,6 +20,10 @@ namespace Fases
 		sf::Texture textura;
 		bool primeiroCiclo;
 		static Gerenciadores::MaquinadeEstados* pMaquinadeEstados;
+		int i;
+		int num_RoboPula;
+		int j;
+		int num_Obstaculo;
 	public:
 		Fase();
 		~Fase();
