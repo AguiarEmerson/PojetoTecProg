@@ -15,100 +15,100 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Sorce\Ente.cpp">
+    <ClCompile Include="Source\Ente.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Sorce\main.cpp">
+    <ClCompile Include="Source\main.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Sorce\Entidades\Obstaculo\Obstaculo.cpp">
+    <ClCompile Include="Source\Entidades\Obstaculo\Obstaculo.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Sorce\Entidades\Obstaculo\Plataforma.cpp">
+    <ClCompile Include="Source\Entidades\Obstaculo\Plataforma.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Sorce\Entidades\Personagens\RoboAnda.cpp">
+    <ClCompile Include="Source\Entidades\Personagens\RoboAnda.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Sorce\Entidades\Personagens\Inimigo.cpp">
+    <ClCompile Include="Source\Entidades\Personagens\Inimigo.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Sorce\Entidades\Personagens\Jogador.cpp">
+    <ClCompile Include="Source\Entidades\Personagens\Jogador.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Sorce\Entidades\Personagens\Personagem.cpp">
+    <ClCompile Include="Source\Entidades\Personagens\Personagem.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Sorce\Entidades\Entidade.cpp">
+    <ClCompile Include="Source\Entidades\Entidade.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Sorce\Gerenciadores\Colisao.cpp">
+    <ClCompile Include="Source\Gerenciadores\Colisao.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Sorce\Gerenciadores\Grafico.cpp">
+    <ClCompile Include="Source\Gerenciadores\Grafico.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Sorce\Lista\ListaEntidades.cpp">
+    <ClCompile Include="Source\Lista\ListaEntidades.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Sorce\Entidades\Personagens\RoboPula.cpp">
+    <ClCompile Include="Source\Entidades\Personagens\RoboPula.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Sorce\Entidades\Projetil.cpp">
+    <ClCompile Include="Source\Entidades\Projetil.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Sorce\Entidades\Personagens\Canhao.cpp">
+    <ClCompile Include="Source\Entidades\Personagens\Canhao.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Sorce\Entidades\Obstaculo\Trampolim.cpp">
+    <ClCompile Include="Source\Entidades\Obstaculo\Trampolim.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Sorce\Fases\Fase.cpp">
+    <ClCompile Include="Source\Fases\Fase.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Sorce\Entidades\Obstaculo\Espinho.cpp">
+    <ClCompile Include="Source\Entidades\Obstaculo\Espinho.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Sorce\Principal.cpp">
+    <ClCompile Include="Source\Principal.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Sorce\Fases\Fase1.cpp">
+    <ClCompile Include="Source\Fases\Fase1.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Sorce\Entidades\Personagens\Jogador1.cpp">
+    <ClCompile Include="Source\Entidades\Personagens\Jogador1.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Sorce\Entidades\Personagens\Jogador2.cpp">
+    <ClCompile Include="Source\Entidades\Personagens\Jogador2.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Sorce\Estados\Estado.cpp">
+    <ClCompile Include="Source\Estados\Estado.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Sorce\Fases\Fase2.cpp">
+    <ClCompile Include="Source\Fases\Fase2.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Sorce\Estados\EstadoJogar.cpp">
+    <ClCompile Include="Source\Estados\EstadoJogar.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Sorce\Gerenciadores\MaquinadeEstados.cpp">
+    <ClCompile Include="Source\Gerenciadores\MaquinadeEstados.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Sorce\Entidades\Obstaculo\Esteira.cpp">
+    <ClCompile Include="Source\Entidades\Obstaculo\Esteira.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Sorce\Menus\Menu.cpp">
+    <ClCompile Include="Source\Menus\Menu.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Sorce\Menus\Botao.cpp">
+    <ClCompile Include="Source\Menus\Botao.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Sorce\Menus\Texto.cpp">
+    <ClCompile Include="Source\Menus\Texto.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Sorce\Menus\MenuPrincipal.cpp">
+    <ClCompile Include="Source\Menus\MenuPrincipal.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Sorce\Menus\MenuPausa.cpp">
+    <ClCompile Include="Source\Menus\MenuPausa.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
   </ItemGroup>
