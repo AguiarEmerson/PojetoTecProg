@@ -1,4 +1,5 @@
 #include "..\Fases\Fase1.h"
+using namespace Listas;
 
 namespace Fases
 {
@@ -115,4 +116,23 @@ namespace Fases
 
 		}
 	}
+    void Fase1::salva()
+    {
+        std::ofstream GravadorFase("fase.dat", std::ios::out);
+        
+            if (!GravadorFase)
+            {
+                std::cout <<" nao pode salvar fase" << std::endl;
+                exit(1);
+            }
+            GravadorFase << "Fase1" << std::endl;
+
+            int i = 0;
+            int tam = getTam();
+            for (i = 0; i < tam; i++)
+            {
+                GravadorFase <<getId(i)<< ' '<<salvaEnt(i)<< ' ' << std::endl;
+            }
+            GravadorFase.close();
+    }
 }

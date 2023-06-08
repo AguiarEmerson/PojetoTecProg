@@ -33,5 +33,9 @@ namespace Fases
 		void Executar();
 		void setFundo(sf::Vector2f posicao);
 		sf::RectangleShape getFundo();
+		int getTam();
+		char* salvaEnt(int i);
+		string getId(int i);
+		virtual void salva()=0;
 	};
 }

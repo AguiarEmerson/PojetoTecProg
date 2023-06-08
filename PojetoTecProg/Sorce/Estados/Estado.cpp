@@ -49,7 +49,7 @@ namespace Estados
 	Estado* Estado::criaestadoMenuPausa()
 	{
 		Menus::MenuPausa* menupausa = new Menus::MenuPausa();
-		return static_cast <Estados::Estado*>(menupausa);
+			return static_cast <Estados::Estado*>(menupausa);
 	}
 
 	Estado* Estado::criaestado(string i) {
@@ -68,4 +68,5 @@ namespace Estados
 		}
 		return estado;
 	}
+	
 }
