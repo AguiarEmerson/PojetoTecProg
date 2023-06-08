@@ -144,13 +144,35 @@ namespace Fases
 		return lista.getTam();
 	}
 	
-	char* Fase:: salvaEnt(int i)
+	string Fase:: salvaEnt(int i)
 	{
 		return lista.getEnt(i)->salvaEnt();
 	}
 	string Fase::getId(int i)
 	{
 		return lista.getEnt(i)->getId();
+	}
+	void Fase::deletaSave()
+	{
+		std::ifstream Deletasave("fase.dat", std::ios::in);
+		if (!Deletasave)
+		{
+			std::cout << "nao existe save" << std::endl;
+		}
+		else
+		{
+			string i, nomeArq;
+			char* nomeArquivo;
+			Deletasave >> i;
+			while (!Deletasave.eof())
+			{
+				Deletasave >> i >> nomeArq;
+				nomeArquivo = &nomeArq[0];
+				remove(nomeArquivo);
+			}
+			Deletasave.close();
+			remove("fase.dat");
+		}
 	}
 
 }

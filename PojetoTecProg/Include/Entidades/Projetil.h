@@ -22,8 +22,9 @@ namespace Entidades
 		void atualizaExiste();
 		void reiniciaProjetil(const sf::Vector2f novapos, const sf::Vector2f novavel);
 		const int getDano();
+		void setDano(int dan);
 
-		char* salvaEnt();
+		string salvaEnt();
 		static Entidade* carregarEnt(char* arquivo);
 
 

@@ -131,6 +131,7 @@ namespace Fases
             int tam = getTam();
             for (i = 0; i < tam; i++)
             {
+                std::cout << salvaEnt(i) << std::endl;
                 GravadorFase <<getId(i)<< ' '<<salvaEnt(i)<< ' ' << std::endl;
             }
             GravadorFase.close();

@@ -32,7 +32,7 @@ namespace Entidades
 		void Plataforma::Executar()
 		{
 		}
-		char* Plataforma::salvaEnt()
+		string Plataforma::salvaEnt()
 		{
 			string aux = criaNomeArquivo(num);
 			char* nomeArquivo = &aux[0];
@@ -47,7 +47,7 @@ namespace Entidades
 			GravadorEnt << pos.x << ' ' << pos.y << ' ' << vel.x << ' ' << vel.y << ' ' << ta_no_chao << ' ' << podeMover << ' ' << vivo << ' ' << danoso << ' ' << estatico << ' ' << std::endl;
 
 
-			return nomeArquivo;
+			return aux;
 		}
 		Entidade* Plataforma::carregarEnt(char* arquivo)
 		{

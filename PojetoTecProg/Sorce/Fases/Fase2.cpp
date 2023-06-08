@@ -5,7 +5,6 @@ namespace Fases
     Fase2::Fase2() :
         Fase()
     {
-      
     }
     Fase2::~Fase2()
     {
@@ -122,6 +121,7 @@ namespace Fases
 
         int i = 0;
         int tam = lista.getTam();
+        
         for (i = 0; i < tam; i++)
         {
             GravadorFase << lista.getEnt(i)->getId() << ' ' << lista.getEnt(i)->salvaEnt() << ' ' << std::endl;

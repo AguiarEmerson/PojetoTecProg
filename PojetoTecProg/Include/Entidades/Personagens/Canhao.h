@@ -23,7 +23,7 @@ namespace Entidades
 			void controlaProjetil();
 			Projetil* getProjetil();
 
-			char* salvaEnt();
+			string salvaEnt();
 
 			static Entidade* carregarEnt(char* arquivo);
 

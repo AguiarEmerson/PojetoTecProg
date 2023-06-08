@@ -38,8 +38,9 @@ namespace Fases
 		void setFundo(sf::Vector2f posicao);
 		sf::RectangleShape getFundo();
 		int getTam();
-		char* salvaEnt(int i);
+		string salvaEnt(int i);
 		string getId(int i);
 		virtual void salva()=0;
+		void deletaSave();
 	};
 }

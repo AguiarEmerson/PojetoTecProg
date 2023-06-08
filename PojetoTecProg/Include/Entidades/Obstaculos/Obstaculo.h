@@ -17,7 +17,7 @@ namespace Entidades
 			virtual void Executar() = 0;
 			void setDanoso(bool danos);
 
-			virtual char* salvaEnt() = 0;
+			virtual string salvaEnt() = 0;
 
 		};
 	}

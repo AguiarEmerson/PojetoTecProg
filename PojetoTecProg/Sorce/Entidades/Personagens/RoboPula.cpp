@@ -65,7 +65,7 @@ namespace Entidades
 			setpos(sf::Vector2f(pos.x, pos.y + vel.y));
 		}
 
-		char* RoboPula::salvaEnt()
+		string RoboPula::salvaEnt()
 		{
 
 			string aux = criaNomeArquivo(num);
@@ -79,15 +79,15 @@ namespace Entidades
 				exit(1);
 			}
 			//escolher oq quer salvar e salvar
-			
+			GravadorEnt << pos.x << ' ' << pos.y << ' ' << vel.x << ' ' << vel.y << ' ' << ta_no_chao << ' ' << podeMover << ' ' << vivo << ' ' << num_vidas << ' ' << dano << ' ' << ac.x << ' ' << ac.y << ' ' << direcao <<' '<<altura<< std::endl;
 
-			return nomeArquivo;
+			GravadorEnt.close();
+			return aux;
 		}
 
 	}
 	Entidade* RoboPula:: carregarEnt(char* arquivo)
 	{
-		RoboPula* roboPula = new RoboPula;
 
 		std::ifstream RecuperadorEnt(arquivo, std::ios::in);
 		if (!RecuperadorEnt)
@@ -95,10 +95,28 @@ namespace Entidades
 			std::cout << "nao foi possivel abrir o arquivo" << std::endl;
 			exit(1);
 		}
+		float posx = 0, posy = 0, velx = 0, vely = 0, acx = 0, acy = 0,altura=0;
+		bool chao = false, move = false, viv = false;
+		int dan = 0, num_vida = 0, direca = 0;
+		RecuperadorEnt >> posx >> posy >> velx >> vely >> chao >> move >> viv >> num_vida >> dan >> acx >> acy >> direca>>altura;
+		RoboPula* roboPula = new RoboPula(sf::Vector2f(50.0, 50.0), sf::Vector2f(posx, posy), sf::Vector2f(velx, vely), num_vida);
+		roboPula->setTa_No_Chao(chao);
+		roboPula->setVivo(viv);
+		roboPula->setPodeMover(move);
+		roboPula->setAc(sf::Vector2f(acx, acy));
+		roboPula->setDirecao(direca);
+		roboPula->setDano(dan);
+		roboPula->setAltura(altura);
+
+		RecuperadorEnt.close();
 
 
 
 		return static_cast<Entidade*>(roboPula);
+	}
+	void RoboPula::setAltura(float alt)
+	{
+		altura = alt;
 	}
 }
 int Entidades::Personagens::RoboPula::num_RoboPula = 0;

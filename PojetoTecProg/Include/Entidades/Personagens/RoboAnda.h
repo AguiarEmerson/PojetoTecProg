@@ -23,7 +23,7 @@ namespace Entidades
 			void Executar();
 			Jogador* decideJogador();
 
-			char* salvaEnt();
+			string salvaEnt();
 			static Entidade* carregarEnt(char* arquivo);
 		};
 	}

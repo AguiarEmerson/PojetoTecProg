@@ -24,7 +24,7 @@ namespace Menus
 	{
 		if (botao->getinfo() == "Salvar") 
 		{
-			printf("paussasadasds");
+			fase->salva();
 		}
 		else if (botao->getinfo() == "Voltar") {
 			pMaquinadeEstados->remove();

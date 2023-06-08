@@ -123,6 +123,10 @@ namespace Entidades
 				tempo_total = Pgrafico->getrelogio().getElapsedTime().asSeconds();
 			}
 		}
+		void Inimigo::setDirecao(int dir)
+		{
+			direcao = dir;
+		}
 
 		
 
