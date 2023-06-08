@@ -37,10 +37,12 @@ namespace Fases
     {
         Entidades::Obstaculos::Espinho* espinho =
             new Entidades::Obstaculos::Espinho(sf::Vector2f(50.0, 50.0), pos);
-        if (espinho) {
+        printf("%d,%d\n",j,num_Obstaculo);
+        if (espinho&&j<num_Obstaculo) {
             lista.incluir(static_cast<Entidade*>(espinho));
+            j++;
         }
-        else {
+        else if(!espinho){
             std::cout << "ERROR::nao foi possivel criar uma espinho" << std::endl;
             exit(1);
         }
