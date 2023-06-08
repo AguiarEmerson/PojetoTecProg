@@ -47,6 +47,7 @@ namespace Menus
 
 	void MenuPrincipal::Executar()
 	{
+		Pgrafico->resetarJanela();
 		desenha();
 		Pgrafico->desenha(nomeMenu.getTexto());
 		controlar();

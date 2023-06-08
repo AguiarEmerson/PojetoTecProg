@@ -14,7 +14,7 @@ namespace Menus
 	void MenuPausa::criabotoes()
 	{
 		float botaoposx = tamjanela.x / 2.0f - tambotao.x / 2.0f;
-		incluibotao("Salvar", sf::Vector2f(botaoposx, tamjanela.y / 2.0f));
+		incluibotao("Salvar", sf::Vector2f( botaoposx, tamjanela.y / 2.0f));
 		incluibotao("Voltar", sf::Vector2f(botaoposx, tamjanela.y / 2.0f + tambotao.y * 1.2));
 		it = listabotao.begin();
 		(*it)->seleciona(true);
@@ -33,6 +33,7 @@ namespace Menus
 
 	void MenuPausa::Executar()
 	{
+		Pgrafico->resetarJanela();
 		desenha();
 		Pgrafico->desenha(nomeMenu.getTexto());
 		controlar();
