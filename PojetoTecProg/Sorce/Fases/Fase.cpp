@@ -55,7 +55,7 @@ namespace Fases
 			bool achoJogador = false;
 			tam = lista.getTam();
 			for (i = 0; i < tam; i++) {
-				if (lista.getEnt(i)->getId() == "jogador") {
+				if (lista.getEnt(i)->getId() == "jogador1") {
 					achoJogador = 1;
 					jogador->setJogador(static_cast<Jogador1*>(lista.getEnt(i)));
 				}
