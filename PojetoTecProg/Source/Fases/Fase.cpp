@@ -55,7 +55,7 @@ namespace Fases
 			bool achoJogador = false;
 			tam = lista.getTam();
 			for (i = 0; i < tam; i++) {
-				if (lista.getEnt(i)->getId() == "jogador") {
+				if (lista.getEnt(i)->getId() == "jogador1") {
 					achoJogador = 1;
 					jogador->setJogador(static_cast<Jogador1*>(lista.getEnt(i)));
 				}
@@ -127,7 +127,6 @@ namespace Fases
 		lista.percorrer();
 		//desenha todas as entidades
 		lista.desenhar();
-		
 		//verifica as colisoes
 		colisoes.executar();
 	}
@@ -172,6 +171,97 @@ namespace Fases
 			}
 			Deletasave.close();
 			remove("fase.dat");
+		}
+	}
+	void Fase::carregaSave()
+	{
+		std::ifstream carregasave("fase.dat", std::ios::in);
+		if (!carregasave)
+		{
+			std::cout << "nao existe save" << std::endl;
+		}
+		else
+		{
+			string id;
+			string nomeArquivo;
+			carregasave >> id;
+			while (!carregasave.eof())
+			{
+				carregasave >> id >> nomeArquivo;
+				if (id == "espinho")
+					lista.incluir(Espinho::carregarEnt(nomeArquivo));
+				else if (id == "Esteira")
+					lista.incluir(Esteira::carregarEnt(nomeArquivo));
+				else if (id == "plataforma")
+					lista.incluir(Plataforma::carregarEnt(nomeArquivo));
+				else if (id == "trampolim")
+					lista.incluir(Trampolim::carregarEnt(nomeArquivo));
+				else if (id == "Canhao") {
+					Entidade* entidade = NULL;
+					entidade=Canhao::carregarEnt(nomeArquivo);
+					Canhao* canhao = NULL;
+					canhao = static_cast<Canhao*>(entidade);
+					int i;
+					bool achoProjetil = false;
+					for (i = lista.getTam()-1; i >= 0 && achoProjetil == false; i--)
+					{
+						if (lista.getEnt(i)->getId() == "projetil") {
+							achoProjetil= 1;
+							canhao->setProjetil(static_cast<Projetil*>(lista.getEnt(i)));
+							lista.retirar(lista.getEnt(i));
+						}
+					}
+					lista.incluir(static_cast<Entidade*>(canhao->getProjetil()));
+					lista.incluir(entidade);
+				}
+				else if (id == "jogador1")
+					lista.incluir(Jogador1::carregarEnt(nomeArquivo));
+				else if (id == "jogador2") {
+					Entidade* entidade = NULL;
+					entidade=Jogador2::carregarEnt(nomeArquivo);
+					Jogador2* jogador = NULL;
+					jogador = static_cast<Jogador2*>(entidade);
+					int i, tam;
+					bool achoJogador = false;
+					tam = lista.getTam();
+					for (i = 0; i < tam; i++) {
+						if (lista.getEnt(i)->getId() == "jogador1") {
+							achoJogador = 1;
+							jogador->setJogador(static_cast<Jogador1*>(lista.getEnt(i)));
+						}
+					}
+					if (achoJogador == false)
+					{
+						jogador->setJogador(NULL);
+					}
+					lista.incluir(entidade);
+					
+				}
+				else if (id == "RoboAnda") {
+					Entidade* entidade = NULL;
+					entidade=RoboAnda::carregarEnt(nomeArquivo);
+					RoboAnda* roboAnda=NULL;
+					roboAnda = static_cast<RoboAnda*>(entidade);
+					int i, tam;
+					bool achoJogador = false;
+					tam = lista.getTam();
+					for (i = 0; i < tam&&!achoJogador; i++) {
+						if (lista.getEnt(i)->getId() == "jogador1"||lista.getEnt(i)->getId()=="Jogador2") {
+							achoJogador = 1;
+							roboAnda->setjogador(static_cast<Jogador*>(lista.getEnt(i)));
+						}
+					}
+					lista.incluir(entidade);
+				}
+				else if (id == "RoboPula")
+					lista.incluir(RoboPula::carregarEnt(nomeArquivo));
+				else if (id == "projetil")
+					lista.incluir(Projetil::carregarEnt(nomeArquivo));
+				
+			}
+			Pgrafico->setLista(&lista);
+			colisoes.setLista(&lista);
+			carregasave.close();
 		}
 	}
 

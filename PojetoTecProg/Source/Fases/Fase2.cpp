@@ -14,6 +14,7 @@ namespace Fases
     {
         std::ifstream arquivo;
         std::string linha;
+        deletaSave();
         if (p) {
             arquivo.open("Arquivos/Fases/Mapa_fase2_2p.txt");
         }
@@ -56,8 +57,8 @@ namespace Fases
         Entidades::Personagens::Canhao* Canhao =
             new Entidades::Personagens::Canhao(sf::Vector2f(50.0, 50.0), pos);
         if (Canhao) {
-            lista.incluir(static_cast<Entidade*>(Canhao));
             lista.incluir(static_cast<Entidade*>(Canhao->getProjetil()));
+            lista.incluir(static_cast<Entidade*>(Canhao));
         }
         else {
             std::cout << "ERROR::nao foi possivel criar um Canhao" << std::endl;

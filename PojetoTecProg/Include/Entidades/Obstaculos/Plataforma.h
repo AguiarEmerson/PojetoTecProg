@@ -22,7 +22,7 @@ namespace Entidades
 			void setEstatico(const bool estatic);
 
 			string salvaEnt();
-			 static Entidade* carregarEnt(char* arquivo);
+			 static Entidade* carregarEnt(string arquivo);
 		};
 	}
 }

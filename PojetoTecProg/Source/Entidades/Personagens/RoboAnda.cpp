@@ -122,7 +122,7 @@ namespace Entidades
 			GravadorEnt.close();
 			return aux;
 		}
-		Entidade* RoboAnda::carregarEnt(char* arquivo)
+		Entidade* RoboAnda::carregarEnt(string arquivo)
 		{
 
 			std::ifstream RecuperadorEnt(arquivo, std::ios::in);

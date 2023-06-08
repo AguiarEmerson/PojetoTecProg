@@ -66,7 +66,7 @@ namespace Entidades
 			GravadorEnt.close();
 			return aux;
 		}
-		Entidade* Esteira::carregarEnt(char* arquivo)
+		Entidade* Esteira::carregarEnt(string arquivo)
 		{
 
 			std::ifstream RecuperadorEnt(arquivo, std::ios::in);

@@ -79,7 +79,7 @@ namespace Entidades
 
 			return aux;
 		}
-		Entidade* Trampolim::carregarEnt(char* arquivo)
+		Entidade* Trampolim::carregarEnt(string arquivo)
 		{
 
 			std::ifstream RecuperadorEnt(arquivo, std::ios::in);

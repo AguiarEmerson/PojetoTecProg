@@ -86,7 +86,7 @@ namespace Entidades
 		}
 
 	}
-	Entidade* RoboPula:: carregarEnt(char* arquivo)
+	Entidade* RoboPula:: carregarEnt(string arquivo)
 	{
 
 		std::ifstream RecuperadorEnt(arquivo, std::ios::in);

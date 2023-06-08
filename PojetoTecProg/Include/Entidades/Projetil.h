@@ -25,7 +25,12 @@ namespace Entidades
 		void setDano(int dan);
 
 		string salvaEnt();
-		static Entidade* carregarEnt(char* arquivo);
+		static Entidade* carregarEnt(string arquivo);
+
+		const bool getExiste();
+		const bool getTanoChao();
+		const bool getMove();
+		void setTextura();
 
 
 	};

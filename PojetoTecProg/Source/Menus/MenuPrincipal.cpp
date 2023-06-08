@@ -28,7 +28,7 @@ namespace Menus
 			pMaquinadeEstados->incluir("jogar_fase2_2p");
 		}
 		else if (botao->getinfo() == "Continuar") {
-			printf("TA CARRGANDO........");
+			pMaquinadeEstados->incluir("carregar_fase");
 		}
 		else if (botao->getinfo() == "Placar") {
 			printf("TA MOSTRANDO O PLACAR.......");

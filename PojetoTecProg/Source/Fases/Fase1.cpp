@@ -17,6 +17,7 @@ namespace Fases
 	{
         std::ifstream arquivo;
         std::string linha;
+        deletaSave();
         if (p) {
             arquivo.open("Arquivos/Fases/Mapa_fase1_2p.txt");
         }

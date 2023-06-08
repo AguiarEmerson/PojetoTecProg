@@ -25,7 +25,10 @@ namespace Entidades
 
 			string salvaEnt();
 
-			static Entidade* carregarEnt(char* arquivo);
+			static Entidade* carregarEnt(string arquivo);
+
+			void setProjetil(Projetil* projeti);
+
 
 			
 
