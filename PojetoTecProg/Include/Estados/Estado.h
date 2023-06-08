@@ -1,6 +1,4 @@
 #pragma once
-#include "..\Fases\Fase1.h"
-#include "..\Fases\Fase2.h"
 #include "..\stdafx.h"
 
 namespace Estados
@@ -13,6 +11,7 @@ namespace Estados
 		Estado* criaestadojogar_fase1();
 		Estado* criaestadojogar_fase2();
 		Estado* criaestadoMenuPrincipal();
+		Estado* criaestadoMenuPausa();
 		static Estado* criaestado(string i);
 		virtual void Executar() = 0;
 	};

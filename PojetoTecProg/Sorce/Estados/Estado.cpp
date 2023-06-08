@@ -1,6 +1,9 @@
 #include "..\Estados\Estado.h"
 #include "..\Menus\MenuPrincipal.h"
+#include "..\Menus\MenuPausa.h"
 #include "..\Estados\EstadoJogar.h"
+#include "..\Fases\Fase1.h"
+#include "..\Fases\Fase2.h"
 
 namespace Estados
 {
@@ -43,6 +46,12 @@ namespace Estados
 		return static_cast <Estados::Estado*>(menuprincipal);
 	}
 
+	Estado* Estado::criaestadoMenuPausa()
+	{
+		Menus::MenuPausa* menupausa = new Menus::MenuPausa();
+		return static_cast <Estados::Estado*>(menupausa);
+	}
+
 	Estado* Estado::criaestado(string i) {
 		Estado* estado = NULL;
 		if      (i == "jogar_fase1") {
@@ -53,6 +62,9 @@ namespace Estados
 		}
 		else if (i == "Menu_principal") {
 			estado = estado->criaestadoMenuPrincipal();
+		}
+		else if (i == "Menu_pausa") {
+			estado = estado->criaestadoMenuPausa();
 		}
 		return estado;
 	}

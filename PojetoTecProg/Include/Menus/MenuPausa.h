@@ -5,13 +5,13 @@
 
 namespace Menus
 {
-	class MenuPrincipal: public Menu,public Estados::Estado
+	class MenuPausa : public Menu, public Estados::Estado
 	{
 	private:
 		void criabotoes();
 	public:
-		MenuPrincipal();
-		~MenuPrincipal();
+		MenuPausa();
+		~MenuPausa();
 		void selecionar(Botao* botao);
 		void Executar();
 	};

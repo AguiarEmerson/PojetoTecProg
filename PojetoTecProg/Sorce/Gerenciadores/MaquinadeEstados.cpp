@@ -38,13 +38,7 @@ namespace Gerenciadores
 	void MaquinadeEstados::remove()
 	{
 		if (PilhadeEstados.top() != nullptr) {
-			delete(PilhadeEstados.top());
-			PilhadeEstados.top() = nullptr;
 			PilhadeEstados.pop();
-		}
-		else {
-			Grafico* Pgrafico = Pgrafico->getgrafico();
-			Pgrafico->fecha();
 		}
 	}
 	Estados::Estado* MaquinadeEstados::getestadoAT()
