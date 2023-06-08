@@ -1,10 +1,17 @@
 #pragma once
 #include "..\stdafx.h"
 
+namespace Gerenciadores
+{
+	class MaquinadeEstados;
+}
+
 namespace Estados
 {
 	class Estado
 	{
+	protected:
+		static Gerenciadores::MaquinadeEstados* pMaquinadeEstados;
 	public:
 		Estado();
 		~Estado();

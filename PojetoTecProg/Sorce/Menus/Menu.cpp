@@ -3,7 +3,6 @@
 namespace Menus
 {
 	Gerenciadores::Grafico* Menu::Pgrafico = Gerenciadores::Grafico::getgrafico();
-	Gerenciadores::MaquinadeEstados* Menu::pMaquinadeEstados = Gerenciadores::MaquinadeEstados::getMaquinadeEstados();
 
 	Menu::Menu(const string nome, sf::Vector2f tambotao, const int tamfonte):
 		nomeMenu(Pgrafico->carregarFonte("Arquivos/Fonte.ttf"),nome,tamfonte),

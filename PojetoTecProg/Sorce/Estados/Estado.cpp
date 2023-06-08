@@ -1,4 +1,5 @@
 #include "..\Estados\Estado.h"
+#include "..\Gerenciadores\MaquinadeEstados.h"
 #include "..\Menus\MenuPrincipal.h"
 #include "..\Menus\MenuPausa.h"
 #include "..\Estados\EstadoJogar.h"
@@ -7,6 +8,8 @@
 
 namespace Estados
 {
+	Gerenciadores::MaquinadeEstados* Estado::pMaquinadeEstados = Gerenciadores::MaquinadeEstados::getMaquinadeEstados();
+
 	Estado::Estado()
 	{
 	}
@@ -48,7 +51,7 @@ namespace Estados
 
 	Estado* Estado::criaestadoMenuPausa()
 	{
-		Menus::MenuPausa* menupausa = new Menus::MenuPausa();
+		Menus::MenuPausa* menupausa = new Menus::MenuPausa(static_cast<Estados::EstadoJogar*>(pMaquinadeEstados->getestadoAT())->getfase());
 			return static_cast <Estados::Estado*>(menupausa);
 	}
 
