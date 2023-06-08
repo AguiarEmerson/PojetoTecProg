@@ -138,6 +138,7 @@ namespace Fases
 	{
 		return lista.getTam();
 	}
+	
 	char* Fase:: salvaEnt(int i)
 	{
 		return lista.getEnt(i)->salvaEnt();

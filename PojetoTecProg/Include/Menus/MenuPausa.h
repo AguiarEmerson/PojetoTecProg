@@ -12,7 +12,7 @@ namespace Menus
 		Fases::Fase* fase;
 		void criabotoes();
 	public:
-		MenuPausa();
+		MenuPausa(Fases::Fase* fase);
 		~MenuPausa();
 		void selecionar(Botao* botao);
 		void Executar();
