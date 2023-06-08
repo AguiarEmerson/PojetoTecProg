@@ -14,6 +14,10 @@ namespace Fases
 		}
 		fundo = sf::RectangleShape(sf::Vector2f(1000.0f, 600.0f));
 		primeiroCiclo = true;
+		i = 0;
+		num_RoboPula = 2+rand()%6;
+		num_Obstaculo = 2+rand()%6;
+		j = 0;
 		
 	}
 	Fase::~Fase()
@@ -98,10 +102,11 @@ namespace Fases
 	{
 		Entidades::Personagens::RoboPula* RoboPula = 
 			new Entidades::Personagens::RoboPula(sf::Vector2f (50.0,50.0),pos);
-		if (RoboPula) {
+		if (RoboPula&&i<num_RoboPula) {
 			lista.incluir(static_cast<Entidade*>(RoboPula));
+			i++;
 		}
-		else {
+		else if(!RoboPula){
 			std::cout << "ERROR::nao foi possivel criar um RoboPula" << std::endl;
 			exit(1);
 		}
