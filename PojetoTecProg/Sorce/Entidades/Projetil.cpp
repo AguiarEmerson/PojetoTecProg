@@ -75,7 +75,7 @@ namespace Entidades
 		GravadorEnt.close();
 		return aux;
 	}
-	Entidade* Projetil::carregarEnt(char* arquivo)
+	Entidade* Projetil::carregarEnt(string arquivo)
 	{
 
 		std::ifstream RecuperadorEnt(arquivo, std::ios::in);

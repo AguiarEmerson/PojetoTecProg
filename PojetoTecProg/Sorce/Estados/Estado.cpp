@@ -44,6 +44,39 @@ namespace Estados
 			exit(1);
 		}
 	}
+	Estado* Estado::criarestadoCarregarFase()
+	{
+		std::ifstream qualFase("fase.dat", std::ios::in);
+		if (!qualFase)
+		{
+			std::cout << "nao foi possivel carregar fase" << std::endl;
+			exit(1);
+		}
+		string fas;
+		qualFase >> fas;
+		Fases::Fase* fase1 = static_cast<Fases::Fase*>(new Fases::Fase1());
+		Fases::Fase* fase2 = static_cast<Fases::Fase*>(new Fases::Fase2());
+		if (fas == "Fase2") {
+			fase2->criaMapa();
+			if (fase2) {
+				Estados::EstadoJogar* estado = new EstadoJogar(fase2);
+				return static_cast<Estados::Estado*> (estado);
+			}
+		}
+		else if (fas == "Fase1") {
+			fase1->criaMapa();
+			if (fase1) {
+				Estados::EstadoJogar* estado = new EstadoJogar(fase1);
+				return static_cast<Estados::Estado*> (estado);
+			}
+		}
+		else
+		{
+			std::cout << "nao foi possivel carregar fase" << std::endl;
+			exit(1);
+		}
+		qualFase.close();
+	}
 
 	Estado* Estado::criaestadoMenuPrincipal()
 	{
@@ -59,9 +92,9 @@ namespace Estados
 
 	Estado* Estado::criaestado(string i) {
 		Estado* estado = NULL;
-		if      (i == "jogar_fase1") {
+		if (i == "jogar_fase1") {
 			estado = estado->criaestadojogar_fase1();
-		} 
+		}
 		else if (i == "jogar_fase2") {
 			estado = estado->criaestadojogar_fase2();
 		}
@@ -71,6 +104,8 @@ namespace Estados
 		else if (i == "Menu_pausa") {
 			estado = estado->criaestadoMenuPausa();
 		}
+		else if (i == "carregar_fase")
+			estado = estado->criarestadoCarregarFase();
 		return estado;
 	}
 	

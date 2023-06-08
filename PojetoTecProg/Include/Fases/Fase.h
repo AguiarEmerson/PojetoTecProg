@@ -42,5 +42,6 @@ namespace Fases
 		string getId(int i);
 		virtual void salva()=0;
 		void deletaSave();
+		void carregaSave();
 	};
 }

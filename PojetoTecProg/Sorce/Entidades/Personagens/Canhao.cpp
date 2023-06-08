@@ -99,7 +99,7 @@ namespace Entidades
 
 			return aux;
 		}
-		Entidade* Canhao::carregarEnt(char* arquivo)
+		Entidade* Canhao::carregarEnt(string arquivo)
 		{
 
 			std::ifstream RecuperadorEnt(arquivo, std::ios::in);

@@ -49,7 +49,7 @@ namespace Entidades
 
 			return aux;
 		}
-		Entidade* Plataforma::carregarEnt(char* arquivo)
+		Entidade* Plataforma::carregarEnt(string arquivo)
 		{
 
 			std::ifstream RecuperadorEnt(arquivo, std::ios::in);

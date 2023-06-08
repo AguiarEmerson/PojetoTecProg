@@ -70,7 +70,7 @@ namespace Entidades
 
 			return aux;
 		}
-		Entidade* Espinho::carregarEnt(char* arquivo)
+		Entidade* Espinho::carregarEnt(string arquivo)
 		{
 			
 

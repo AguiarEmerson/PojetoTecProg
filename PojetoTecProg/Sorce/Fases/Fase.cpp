@@ -174,5 +174,9 @@ namespace Fases
 			remove("fase.dat");
 		}
 	}
+	void Fase::carregaSave()
+	{
+
+	}
 
 }

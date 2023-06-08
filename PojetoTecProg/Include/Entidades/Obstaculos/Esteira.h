@@ -23,7 +23,7 @@ namespace Entidades
 
 			string salvaEnt();
 
-			static Entidade* carregarEnt(char* arquivo);
+			static Entidade* carregarEnt(string arquivo);
 
 			void setDirecao(int dir);
 			void setDesaceleracao(float desac);

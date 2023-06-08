@@ -67,7 +67,7 @@ namespace Entidades
 
 			return aux;
 		}
-		Entidade* Jogador1::carregarEnt(char* arquivo)
+		Entidade* Jogador1::carregarEnt(string arquivo)
 		{
 
 			std::ifstream RecuperadorEnt(arquivo, std::ios::in);
