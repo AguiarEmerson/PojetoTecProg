@@ -155,7 +155,6 @@ namespace Fases
 		std::ifstream Deletasave("fase.dat", std::ios::in);
 		if (!Deletasave)
 		{
-			std::cout << "nao existe save" << std::endl;
 		}
 		else
 		{
