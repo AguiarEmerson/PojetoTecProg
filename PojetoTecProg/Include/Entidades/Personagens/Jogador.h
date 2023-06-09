@@ -31,6 +31,7 @@ namespace Entidades
 			void acimaEsteira(Entidade* ent);
 			virtual string salvaEnt() = 0;
 			void setPontos(int pont);
+			void GanhaPonto(int pont);
 			
 		};
 	}

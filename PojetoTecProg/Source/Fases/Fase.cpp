@@ -34,7 +34,7 @@ namespace Fases
 			int i, tam;
 			tam = lista.getTam();
 			for (i = 0; i < tam; i++) {
-				if (lista.getEnt(i)->getId() == "jogador") {
+				if (lista.getEnt(i)->getId() == "jogador1") {
 					std::cout << "nao foi possivel gerar a fase pois o jogador 2 esta depois do 1" << std::endl;
 					exit(1);
 				}

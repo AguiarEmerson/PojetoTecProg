@@ -13,6 +13,7 @@ namespace Entidades
 			primeiro_ciclo = 1;
 			id = "Canhao";
 			num_Canhao++;
+			ponto = 300;
 		}
 		Canhao::Canhao():
 			Inimigo(),

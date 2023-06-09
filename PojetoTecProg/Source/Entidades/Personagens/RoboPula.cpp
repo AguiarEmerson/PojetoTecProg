@@ -13,6 +13,7 @@ namespace Entidades
 			direcao = rand() % 2;
 			altura = 0;
 			num_RoboPula++;
+			ponto = 200;
 		}
 		RoboPula::RoboPula() :
 			Inimigo(), num(num_RoboPula)
