@@ -51,6 +51,18 @@ namespace Listas
 	template<class TL>
 	Lista<TL>::~Lista()
 	{
+		Elemento<TL>* aux=NULL;
+		aux = pPrimeiro;
+		Elemento<TL>* auxAnt=NULL;
+		while (aux->getProx() != NULL)
+		{
+			delete(aux->getData());
+			auxAnt = aux;
+			aux = aux->getProx();
+			delete(auxAnt);
+
+		}
+
 	}
 
 	template<class TL>

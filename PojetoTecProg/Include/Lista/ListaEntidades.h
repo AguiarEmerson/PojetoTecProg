@@ -19,5 +19,6 @@ namespace Listas
 		void retirar(Entidade* pE);
 		const int getTam();
 		Entidade* getEnt(int pos);
+		void LimpaLista();
 	};
 }

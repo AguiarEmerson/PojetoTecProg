@@ -16,8 +16,7 @@ namespace Fases
 		primeiroCiclo = true;
 		i = 0;
 		num_RoboPula = 2+rand()%6;
-		num_Obstaculo = 2+rand()%6;
-		j = 0;
+		
 		
 	}
 	Fase::~Fase()

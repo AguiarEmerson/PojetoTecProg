@@ -22,8 +22,7 @@ namespace Fases
 		static Gerenciadores::MaquinadeEstados* pMaquinadeEstados;
 		int i;
 		int num_RoboPula;
-		int j;
-		int num_Obstaculo;
+		
 	public:
 		Fase();
 		~Fase();
