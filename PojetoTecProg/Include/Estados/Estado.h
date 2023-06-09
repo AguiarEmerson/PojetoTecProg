@@ -19,6 +19,7 @@ namespace Estados
 		Estado* criaestadojogar_fase2(bool p);
 		Estado* criaestadoMenuPrincipal();
 		Estado* criaestadoMenuPausa();
+		Estado* criaestadoRanking();
 		static Estado* criaestado(string i);
 		virtual void Executar() = 0;
 		Estado* criarestadoCarregarFase();

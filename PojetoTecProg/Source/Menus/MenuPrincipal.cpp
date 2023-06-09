@@ -31,7 +31,7 @@ namespace Menus
 			pMaquinadeEstados->incluir("carregar_fase");
 		}
 		else if (botao->getinfo() == "Placar") {
-			printf("TA MOSTRANDO O PLACAR.......");
+			pMaquinadeEstados->incluir("ranking");
 		}
 		else if (botao->getinfo() == "sair") {
 			Pgrafico->fecha();
