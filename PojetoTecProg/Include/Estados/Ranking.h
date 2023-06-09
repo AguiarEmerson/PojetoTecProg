@@ -1,21 +1,22 @@
 #pragma once
 #include "..\Estados\Estado.h"
-#include "Botao.h"
+#include "..\Menus\Botao.h"
 #include "..\Gerenciadores\MaquinadeEstados.h"
 #include"..\Gerenciadores\Grafico.h"
+#include "..\Menus\Menu.h"
 
-namespace Menus
+namespace Estados
 {
 	class Ranking:public Estados::Estado
 	{
 	protected:
 		static Gerenciadores::Grafico* Pgrafico;
-		Botao botao;
-		std::list<Texto*>textos;
+		Menus::Botao botao;
+		std::list<Menus::Texto*>textos;
 	public:
 		Ranking();
 		~Ranking();
-		void selecionar(Botao* botao);
+		void selecionar(Menus::Botao* botao);
 		void controlar();
 		void Executar();
 		void desenha();

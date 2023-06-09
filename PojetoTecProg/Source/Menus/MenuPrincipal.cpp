@@ -6,6 +6,7 @@ namespace Menus
 		Menu("Menu Principal", sf::Vector2f(TAMANHO_BOTAO_X, TAMANHO_BOTAO_Y)),
 		Estado()
 	{
+		nomeMenu.setPos(sf::Vector2f(tamjanela.x / 2.0f - tambotao.x / 2.0f, tamjanela.y / 2.0f - tambotao.y * 6.0));
 		criabotoes();
 	}
 	MenuPrincipal::~MenuPrincipal()
@@ -33,7 +34,7 @@ namespace Menus
 		else if (botao->getinfo() == "Placar") {
 			pMaquinadeEstados->incluir("ranking");
 		}
-		else if (botao->getinfo() == "sair") {
+		else if (botao->getinfo() == "Sair") {
 			Pgrafico->fecha();
 		}
 	}
@@ -41,7 +42,6 @@ namespace Menus
 	void MenuPrincipal::criabotoes()
 	{
 		float botaoposx = tamjanela.x / 2.0f - tambotao.x / 2.0f;
-		nomeMenu.setPos(sf::Vector2f(botaoposx, tamjanela.y / 2.0f - tambotao.y * 6.0));
 		incluibotao("Jogar Fase 1: 1 player", sf::Vector2f(botaoposx, tamjanela.y / 2.0f - tambotao.y * 3.6));
 		incluibotao("Jogar Fase 1: 2 player", sf::Vector2f(botaoposx, tamjanela.y / 2.0f - tambotao.y * 2.4));
 		incluibotao("Jogar Fase 2: 1 player", sf::Vector2f(botaoposx, tamjanela.y / 2.0f - tambotao.y * 1.2));
