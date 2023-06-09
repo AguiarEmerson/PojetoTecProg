@@ -16,6 +16,7 @@ namespace Fases
 		primeiroCiclo = true;
 		i = 0;
 		num_RoboPula = 2+rand()%6;
+		ganhoFase1 = false;
 		
 		
 	}
@@ -112,6 +113,8 @@ namespace Fases
 	}
 	void Fase::Executar()
 	{
+		//verifica se a fase foi vencida
+		verificaGanho();
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
 			pMaquinadeEstados->incluir("Menu_pausa");
 		}
@@ -261,6 +264,50 @@ namespace Fases
 			colisoes.setLista(&lista);
 			carregasave.close();
 		}
+	}
+	void Fase::verificaGanho() {
+		Lista<Entidade>::Elemento<Entidade>* aux;
+		aux = lista.getPrim();
+		int i, tam = lista.getTam();
+		ganhoFase1 = true;
+		for (i = 0; i < tam; i++)
+		{
+			if (aux->getData()->getId() == "jogador1" || aux->getData()->getId() == "jogador2")
+			{
+				Jogador* joga = NULL;
+				joga = static_cast<Jogador*>(aux->getData());
+				if (joga->getGanhou() == false)
+					ganhoFase1 = false;
+
+			}
+			aux = aux->getProx();
+		}
+	}
+	const bool Fase::getGanho()
+	{
+		return ganhoFase1;
+	}
+	void Fase::salvaPonto()
+	{
+		std::ofstream gravaPonto("ponto.dat", std::ios::out);
+		if (!gravaPonto)
+			exit(1);
+		Lista<Entidade>::Elemento<Entidade>* aux;
+		aux = lista.getPrim();
+		int i, tam = lista.getTam();
+		for (i = 0; i < tam; i++)
+		{
+			if (aux->getData()->getId() == "jogador1" || aux->getData()->getId() == "jogador2")
+			{
+				
+				Jogador* joga = NULL;
+				joga = static_cast<Jogador*>(aux->getData());
+
+				gravaPonto << joga->getId() << ' ' << joga->getPonto() << std::endl;
+			}
+			aux = aux->getProx();
+		}
+		gravaPonto.close();
 	}
 
 }

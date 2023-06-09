@@ -23,5 +23,6 @@ namespace Estados
 		static Estado* criaestado(string i);
 		virtual void Executar() = 0;
 		Estado* criarestadoCarregarFase();
+		void passaFase1();
 	};
 }

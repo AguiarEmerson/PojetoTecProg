@@ -61,7 +61,8 @@ namespace Entidades
 		}
 		void Jogador2::Executar()
 		{
-			if (vivo == true) {
+			if (vivo == true&&!ganhouFase) {
+				verificaGanhou();
 				move();
 				gravidade();
 				verificaVida();

@@ -44,7 +44,8 @@ namespace Entidades
 		}
 		void Jogador1::Executar()
 		{
-			if (vivo == true) {
+			if (vivo == true&&!ganhouFase) {
+				verificaGanhou();
 				move();
 				gravidade();
 				verificaVida();
@@ -61,7 +62,7 @@ namespace Entidades
 				std::cout << "nao foi possível salvar" << std::endl;
 				exit(1);
 			}
-			GravadorEnt << pos.x << ' ' << pos.y << ' ' << vel.x << ' ' << vel.y << ' ' << ta_no_chao << ' ' << podeMover << ' ' << vivo << ' ' << num_vidas << ' ' << dano << ' ' << ac.x << ' ' << ac.y << ' ' << pontos <<' ' << std::endl;
+			GravadorEnt << pos.x << ' ' << pos.y << ' ' << vel.x << ' ' << vel.y << ' ' << ta_no_chao << ' ' << podeMover << ' ' << vivo << ' ' << num_vidas << ' ' << dano << ' ' << ac.x << ' ' << ac.y << ' ' << pontos <<' ' << ganhouFase<<' '<<std::endl;
 			GravadorEnt.close();
 
 
@@ -77,9 +78,9 @@ namespace Entidades
 				exit(1);
 			}
 			float posx = 0, posy = 0, velx = 0, vely = 0, acx = 0, acy = 0;
-			bool chao = false, move = false, viv = false;
+			bool chao = false, move = false, viv = false,ganhou=false;
 			int dan = 0, num_vida = 0,pont=0;
-			RecuperadorEnt >> posx >> posy >> velx >> vely >> chao >> move >> viv >> num_vida >> dan >> acx >> acy>>pont;
+			RecuperadorEnt >> posx >> posy >> velx >> vely >> chao >> move >> viv >> num_vida >> dan >> acx >> acy>>pont>>ganhou;
 			Jogador1* jogador = new Jogador1(sf::Vector2f(50.0, 50.0), sf::Vector2f(posx, posy), sf::Vector2f(velx, vely), num_vida);
 			jogador->setTa_No_Chao(chao);
 			jogador->setVivo(viv);
@@ -87,6 +88,7 @@ namespace Entidades
 			jogador->setAc(sf::Vector2f(acx, acy));
 			jogador->setDano(dan);
 			jogador->setPontos(pont);
+			jogador->setGanhou(ganhou);
 
 
 			RecuperadorEnt.close();

@@ -1,5 +1,6 @@
 #pragma once
 #include "..\Fases\Fase.h"
+#include "..\Lista\Lista.h"
 
 namespace Fases
 {
@@ -17,5 +18,6 @@ namespace Fases
 		void criaEntidade(char id, sf::Vector2i pos);
 		void criaMapa(bool p);
 		void salva();
+		void verificaGanho();
 	};
 }

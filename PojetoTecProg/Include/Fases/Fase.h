@@ -22,6 +22,7 @@ namespace Fases
 		static Gerenciadores::MaquinadeEstados* pMaquinadeEstados;
 		int i;
 		int num_RoboPula;
+		bool ganhoFase1;
 		
 	public:
 		Fase();
@@ -42,5 +43,8 @@ namespace Fases
 		virtual void salva()=0;
 		void deletaSave();
 		void carregaSave();
+		void verificaGanho();
+		const bool getGanho();
+		void salvaPonto();
 	};
 }
