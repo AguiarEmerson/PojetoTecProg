@@ -155,7 +155,7 @@ namespace Estados
 	}
 	Estado* Estado::criaestadoGameOver(const bool venceu)
 	{
-		Menus::GameOver* gameover = new Menus::GameOver(false);
+		Menus::GameOver* gameover = new Menus::GameOver(venceu);
 		return static_cast <Estados::Estado*>(gameover);
 	}
 	

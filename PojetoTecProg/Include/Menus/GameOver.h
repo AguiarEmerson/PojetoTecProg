@@ -8,6 +8,7 @@ namespace Menus
 	{
 	private:
 		void criabotoes();
+		Texto* texto;
 	public:
 		GameOver(bool Ganhou);
 		~GameOver();

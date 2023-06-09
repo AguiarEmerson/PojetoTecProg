@@ -8,12 +8,12 @@ namespace Menus
 	{
 		nomeMenu.setPos(sf::Vector2f(tamjanela.x / 2.0f - tambotao.x / 2.0f, tamjanela.y / 2.0f - tambotao.y * 6.0));
 		if (ganhou) {
-			Texto situacao(Pgrafico->carregarFonte("Arquivos/Fonte.ttf"), "Voce venceu", 75);
-			situacao.setPos(sf::Vector2f(tamjanela.x / 2.0f - tambotao.x / 2.0f, tamjanela.y / 2.0f - tambotao.y * 5.0));
+			texto = new Texto(Pgrafico->carregarFonte("Arquivos/Fonte.ttf"), "Voce venceu", 75);
+			texto->setPos(sf::Vector2f(tamjanela.x / 2.0f - tambotao.x / 2.0f, tamjanela.y / 2.0f - tambotao.y * 5.0));
 		}
 		else {
-			Texto situacao(Pgrafico->carregarFonte("Arquivos/Fonte.ttf"), "Voce Perdeu", 75);
-			situacao.setPos(sf::Vector2f(tamjanela.x / 2.0f - tambotao.x / 2.0f, tamjanela.y / 2.0f - tambotao.y * 5.0));
+			texto=new Texto(Pgrafico->carregarFonte("Arquivos/Fonte.ttf"), "Voce Perdeu", 75);
+			texto->setPos(sf::Vector2f(tamjanela.x / 2.0f - tambotao.x / 2.0f, tamjanela.y / 2.0f - tambotao.y * 5.0));
 		}
 		criabotoes();
 	}
@@ -46,6 +46,7 @@ namespace Menus
 		Pgrafico->resetarJanela();
 		desenha();
 		Pgrafico->desenha(nomeMenu.getTexto());
+		Pgrafico->desenha(texto->getTexto());
 		controlar();
 	}
 }
