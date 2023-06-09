@@ -62,7 +62,7 @@ namespace Fases
             int i, tam;
             tam = lista.getTam();
             for (i = 0; i < tam; i++) {
-                if (lista.getEnt(i)->getId() == "jogador") {
+                if (lista.getEnt(i)->getId() == "jogador1"|| lista.getEnt(i)->getId() == "jogador2") {
                     RoboAnda->setjogador(static_cast<Jogador*>(lista.getEnt(i)));
                 }
             }
