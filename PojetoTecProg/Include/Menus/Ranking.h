@@ -20,6 +20,7 @@ namespace Menus
 		void Executar();
 		void desenha();
 		void criaNumero();
+		void criaNomes();
 
 
 

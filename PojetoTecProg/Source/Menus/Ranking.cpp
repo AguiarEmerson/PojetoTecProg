@@ -7,6 +7,7 @@ namespace Menus
 	botao("voltar", sf::Vector2f(TAMANHO_BOTAO_X, TAMANHO_BOTAO_Y),sf::Vector2f(100.0,100.0))
 	{
 		criaNumero();
+		criaNomes();
 	}
 	Ranking::~Ranking()
 	{
@@ -45,9 +46,32 @@ namespace Menus
 		for (i = 1; i < 6; i++)
 		{
 			Texto* aux = new Texto(Pgrafico->carregarFonte("Arquivos/Fonte.ttf"), std::to_string(i));
-			aux->setPos(sf::Vector2f(30.0f, (100.0f + 75.0f * i)));
+			aux->setPos(sf::Vector2f(60.0f, (100.0f + 75.0f * i)));
 			textos.push_back(aux);
 		}
+	}
+	void Ranking::criaNomes()
+	{
+		std::ifstream pegaRanking("ranking.dat", std::ios::in);
+		if (!pegaRanking)
+		{
+			std::cout << "nao foi possivel abrir o ranking" << std::endl;
+			exit(1);
+		}
+		int i;
+		string nome;
+		string ponto;
+		for (i = 1; i < 6; i++)
+		{
+			pegaRanking >> nome >> ponto;
+			Texto* aux = new Texto(Pgrafico->carregarFonte("Arquivos/Fonte.ttf"), nome);
+			aux->setPos(sf::Vector2f(90.0f, (100.0f + 75.0f * i)));
+			Texto* aux2 = new Texto(Pgrafico->carregarFonte("Arquivos/Fonte.ttf"), ponto);
+			aux2->setPos(sf::Vector2f(700.0f, (100.0f + 75.0f * i)));
+			textos.push_back(aux);
+			textos.push_back(aux2);
+		}
+		pegaRanking.close();
 	}
 
 }
