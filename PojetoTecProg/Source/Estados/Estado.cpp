@@ -126,6 +126,7 @@ namespace Estados
 		}
 		return estado;
 	}
+
 	void Estado::passaFase1()
 	{
 		pMaquinadeEstados->remove();
@@ -139,6 +140,7 @@ namespace Estados
 			pMaquinadeEstados->incluir("jogar_fase2_1p");
 		else
 			pMaquinadeEstados->incluir("jogar_fase2_2p");
+		recuperaPonto.close();
 	}
 	
 }
