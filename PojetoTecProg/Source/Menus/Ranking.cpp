@@ -45,7 +45,6 @@ namespace Menus
 		for (i = 1; i < 6; i++)
 		{
 			Texto* aux = new Texto(Pgrafico->carregarFonte("Arquivos/Fonte.ttf"), std::to_string(i));
-			printf("oi");
 			aux->setPos(sf::Vector2f(30.0f, (100.0f + 75.0f * i)));
 			textos.push_back(aux);
 		}
