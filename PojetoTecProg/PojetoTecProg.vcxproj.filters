@@ -114,7 +114,7 @@
     <ClCompile Include="Source\Menus\GameOver.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Menus\Ranking.cpp">
+    <ClCompile Include="Source\Estados\Ranking.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
   </ItemGroup>
@@ -221,7 +221,7 @@
     <ClInclude Include="Include\Menus\GameOver.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Menus\Ranking.h">
+    <ClInclude Include="Include\Estados\Ranking.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
   </ItemGroup>
@@ -247,6 +247,7 @@
     <None Include="Debug\PojetoTecProg.tlog\link-rc.write.1.tlog" />
     <None Include="Debug\PojetoTecProg.tlog\PojetoTecProg.lastbuildstate" />
     <None Include="Debug\PojetoTecProg.tlog\unsuccessfulbuild" />
+    <None Include="Arquivos\ranking.dat" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Debug\PojetoTecProg.log">

@@ -1,4 +1,5 @@
 #include "..\Menus\MenuPausa.h"
+#include "..\Menus\MenuPrincipal.h"
 
 namespace Menus
 {
@@ -6,6 +7,7 @@ namespace Menus
 		Estado(), fase(fase),
 		Menu("Pausado", sf::Vector2f(TAMANHO_BOTAO_X, TAMANHO_BOTAO_Y))
 	{
+		nomeMenu.setPos(sf::Vector2f(tamjanela.x / 2.0f - tambotao.x / 2.0f, tamjanela.y / 2.0f - tambotao.y * 6.0));
 		criabotoes();
 	}
 	MenuPausa::~MenuPausa()
@@ -22,11 +24,12 @@ namespace Menus
 
 	void MenuPausa::selecionar(Botao* botao)
 	{
-		if (botao->getinfo() == "Salvar") 
+		if (botao->getinfo() == "Salvar")
 		{
 			fase->salva();
 		}
-		else if (botao->getinfo() == "Voltar") {
+		else if (botao->getinfo() == "Voltar")
+		{
 			pMaquinadeEstados->remove();
 		}
 	}

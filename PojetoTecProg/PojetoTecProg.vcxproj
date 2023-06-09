@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source\Menus\Ranking.cpp" />
+    <ClCompile Include="Source\Estados\Ranking.cpp" />
     <ClCompile Include="Source\Entidades\Obstaculo\Esteira.cpp" />
     <ClCompile Include="Source\Entidades\Personagens\Jogador1.cpp" />
     <ClCompile Include="Source\Entidades\Personagens\Jogador2.cpp" />
@@ -89,7 +89,7 @@
     <ClInclude Include="Include\Entidades\Personagens\Jogador1.h" />
     <ClInclude Include="Include\Entidades\Personagens\Jogador2.h" />
     <ClInclude Include="Include\Entidades\Obstaculos\Esteira.h" />
-    <ClInclude Include="Include\Menus\Ranking.h" />
+    <ClInclude Include="Include\Estados\Ranking.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Debug\PojetoTecProg.exe.recipe" />
@@ -111,6 +111,7 @@
     <None Include="Debug\PojetoTecProg.tlog\link.write.1.tlog" />
     <None Include="Debug\PojetoTecProg.tlog\PojetoTecProg.lastbuildstate" />
     <None Include="Debug\PojetoTecProg.tlog\unsuccessfulbuild" />
+    <None Include="Arquivos\ranking.dat" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Arquivos\Fases\Mapa_fase1_1p.txt" />

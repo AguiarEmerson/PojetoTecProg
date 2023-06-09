@@ -5,7 +5,7 @@
 #include "..\Estados\EstadoJogar.h"
 #include "..\Fases\Fase1.h"
 #include "..\Fases\Fase2.h"
-#include "..\Menus\Ranking.h"
+#include "..\Estados\Ranking.h"
 
 namespace Estados
 {
@@ -92,7 +92,7 @@ namespace Estados
 	}
 	Estado* Estado::criaestadoRanking()
 	{
-		Menus::Ranking* ranking = new Menus::Ranking();
+		Ranking* ranking = new Ranking();
 		return static_cast<Estados::Estado*>(ranking);
 	}
 

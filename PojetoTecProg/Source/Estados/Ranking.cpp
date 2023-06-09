@@ -1,5 +1,6 @@
-#include "..\..\Include\Menus\Ranking.h"
-namespace Menus
+#include "..\..\Include\Estados\Ranking.h"
+
+namespace Estados
 {
 	Gerenciadores::Grafico* Ranking::Pgrafico = Gerenciadores::Grafico::getgrafico();
 	Ranking::Ranking() :
@@ -13,11 +14,12 @@ namespace Menus
 	{
 		textos.clear();
 	}
-	void Ranking::selecionar(Botao* botao)
+	void Ranking::selecionar(Menus::Botao* botao)
 	{
 		if (botao->getinfo() == "voltar")
 			pMaquinadeEstados->remove();
 	}
+
 	void Ranking::controlar()
 	{
 		botao.seleciona(true);
@@ -33,9 +35,9 @@ namespace Menus
 	}
 	void Ranking::desenha() {
 		botao.desenha();
-		std::list<Texto*>::iterator it;
+		std::list<Menus::Texto*>::iterator it;
 		for (it = textos.begin(); it != textos.end(); it++) {
-			Texto* aux;
+			Menus::Texto* aux;
 			aux = *it;
 			Pgrafico->desenha(aux->getTexto());
 		}
@@ -45,14 +47,14 @@ namespace Menus
 		int i;
 		for (i = 1; i < 6; i++)
 		{
-			Texto* aux = new Texto(Pgrafico->carregarFonte("Arquivos/Fonte.ttf"), std::to_string(i));
+			Menus::Texto* aux = new Menus::Texto(Pgrafico->carregarFonte("Arquivos/Fonte.ttf"), std::to_string(i));
 			aux->setPos(sf::Vector2f(60.0f, (100.0f + 75.0f * i)));
 			textos.push_back(aux);
 		}
 	}
 	void Ranking::criaNomes()
 	{
-		std::ifstream pegaRanking("ranking.dat", std::ios::in);
+		std::ifstream pegaRanking("Arquivos/ranking.dat", std::ios::in);
 		if (!pegaRanking)
 		{
 			std::cout << "nao foi possivel abrir o ranking" << std::endl;
@@ -64,9 +66,9 @@ namespace Menus
 		for (i = 1; i < 6; i++)
 		{
 			pegaRanking >> nome >> ponto;
-			Texto* aux = new Texto(Pgrafico->carregarFonte("Arquivos/Fonte.ttf"), nome);
+			Menus::Texto* aux = new Menus::Texto(Pgrafico->carregarFonte("Arquivos/Fonte.ttf"), nome);
 			aux->setPos(sf::Vector2f(90.0f, (100.0f + 75.0f * i)));
-			Texto* aux2 = new Texto(Pgrafico->carregarFonte("Arquivos/Fonte.ttf"), ponto);
+			Menus::Texto* aux2 = new Menus::Texto(Pgrafico->carregarFonte("Arquivos/Fonte.ttf"), ponto);
 			aux2->setPos(sf::Vector2f(700.0f, (100.0f + 75.0f * i)));
 			textos.push_back(aux);
 			textos.push_back(aux2);
