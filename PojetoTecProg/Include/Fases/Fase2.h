@@ -16,5 +16,9 @@ namespace Fases
 		void criaEntidade(char id, sf::Vector2i pos);
 		void criaMapa(bool p);
 		void salva();
+		void verificaGanho();
+		int getGanho();
+		void Executar();
+
 	};
 }

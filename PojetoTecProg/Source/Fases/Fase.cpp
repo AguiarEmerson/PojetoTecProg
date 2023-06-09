@@ -16,7 +16,8 @@ namespace Fases
 		primeiroCiclo = true;
 		i = 0;
 		num_RoboPula = 2+rand()%6;
-		ganhoFase1 = false;
+		ganhoFase = 0;
+		perdeu = false;
 		
 		
 	}
@@ -110,27 +111,6 @@ namespace Fases
 			std::cout << "ERROR::nao foi possivel criar um RoboPula" << std::endl;
 			exit(1);
 		}
-	}
-	void Fase::Executar()
-	{
-		//verifica se a fase foi vencida
-		verificaGanho();
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
-			pMaquinadeEstados->incluir("Menu_pausa");
-		}
-		if (primeiroCiclo)
-		{
-			primeiroCiclo = false;
-			Grafico::getgrafico()->setFundo(fundo);
-		}
-		//desenha o fundo
-		Pgrafico->atualizaFundo();
-		//executa todas as entidades
-		lista.percorrer();
-		//desenha todas as entidades
-		lista.desenhar();
-		//verifica as colisoes
-		colisoes.executar();
 	}
 	void Fase::setFundo(sf::Vector2f posicao)
 	{
@@ -265,49 +245,27 @@ namespace Fases
 			carregasave.close();
 		}
 	}
-	void Fase::verificaGanho() {
+	void Fase::verificaPerdeu()
+	{
 		Lista<Entidade>::Elemento<Entidade>* aux;
 		aux = lista.getPrim();
 		int i, tam = lista.getTam();
-		ganhoFase1 = true;
+		perdeu=1;
 		for (i = 0; i < tam; i++)
 		{
 			if (aux->getData()->getId() == "jogador1" || aux->getData()->getId() == "jogador2")
 			{
-				Jogador* joga = NULL;
-				joga = static_cast<Jogador*>(aux->getData());
-				if (joga->getGanhou() == false)
-					ganhoFase1 = false;
+				if (aux->getData()->getVivo() == true)
+					perdeu= 0;
 
 			}
 			aux = aux->getProx();
 		}
 	}
-	const bool Fase::getGanho()
+	const bool Fase::getPerdeu()
 	{
-		return ganhoFase1;
+		return perdeu;
 	}
-	void Fase::salvaPonto()
-	{
-		std::ofstream gravaPonto("ponto.dat", std::ios::out);
-		if (!gravaPonto)
-			exit(1);
-		Lista<Entidade>::Elemento<Entidade>* aux;
-		aux = lista.getPrim();
-		int i, tam = lista.getTam();
-		for (i = 0; i < tam; i++)
-		{
-			if (aux->getData()->getId() == "jogador1" || aux->getData()->getId() == "jogador2")
-			{
-				
-				Jogador* joga = NULL;
-				joga = static_cast<Jogador*>(aux->getData());
-
-				gravaPonto << joga->getId() << ' ' << joga->getPonto() << std::endl;
-			}
-			aux = aux->getProx();
-		}
-		gravaPonto.close();
-	}
+	
 
 }

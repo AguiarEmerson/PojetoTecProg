@@ -143,5 +143,71 @@ namespace Fases
             }
             GravadorFase.close();
     }
+    void Fase1::Executar()
+    {
+        //verifica se a fase foi vencida
+        verificaGanho();
+        verificaPerdeu();
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
+            pMaquinadeEstados->incluir("Menu_pausa");
+        }
+        if (primeiroCiclo)
+        {
+            primeiroCiclo = false;
+            Grafico::getgrafico()->setFundo(fundo);
+        }
+        //desenha o fundo
+        Pgrafico->atualizaFundo();
+        //executa todas as entidades
+        lista.percorrer();
+        //desenha todas as entidades
+        lista.desenhar();
+        //verifica as colisoes
+        colisoes.executar();
+    }
+    void Fase1::verificaGanho() {
+        Lista<Entidade>::Elemento<Entidade>* aux;
+        aux = lista.getPrim();
+        int i, tam = lista.getTam();
+        ganhoFase = 1;
+        for (i = 0; i < tam; i++)
+        {
+            if (aux->getData()->getId() == "jogador1" || aux->getData()->getId() == "jogador2")
+            {
+                Jogador* joga = NULL;
+                joga = static_cast<Jogador*>(aux->getData());
+                if (joga->getGanhou() == false)
+                    ganhoFase = 0;
+
+            }
+            aux = aux->getProx();
+        }
+    }
+    int Fase1::getGanho()
+    {
+        return ganhoFase;
+    }
+    void Fase::salvaPonto()
+    {
+        std::ofstream gravaPonto("ponto.dat", std::ios::out);
+        if (!gravaPonto)
+            exit(1);
+        Lista<Entidade>::Elemento<Entidade>* aux;
+        aux = lista.getPrim();
+        int i, tam = lista.getTam();
+        for (i = 0; i < tam; i++)
+        {
+            if (aux->getData()->getId() == "jogador1" || aux->getData()->getId() == "jogador2")
+            {
+
+                Jogador* joga = NULL;
+                joga = static_cast<Jogador*>(aux->getData());
+
+                gravaPonto << joga->getId() << ' ' << joga->getPonto() << std::endl;
+            }
+            aux = aux->getProx();
+        }
+        gravaPonto.close();
+    }
     
 }

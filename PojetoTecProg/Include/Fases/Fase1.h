@@ -19,5 +19,7 @@ namespace Fases
 		void criaMapa(bool p);
 		void salva();
 		void verificaGanho();
+		void Executar();
+		int getGanho();
 	};
 }

@@ -24,5 +24,7 @@ namespace Estados
 		virtual void Executar() = 0;
 		Estado* criarestadoCarregarFase();
 		void passaFase1();
+		void gameOver(const bool vitoria);
+		Estado* criaestadoGameOver(const bool venceu);
 	};
 }

@@ -2,6 +2,7 @@
 #include "..\Gerenciadores\MaquinadeEstados.h"
 #include "..\Menus\MenuPrincipal.h"
 #include "..\Menus\MenuPausa.h"
+#include "..\Menus\GameOver.h"
 #include "..\Estados\EstadoJogar.h"
 #include "..\Fases\Fase1.h"
 #include "..\Fases\Fase2.h"
@@ -118,8 +119,11 @@ namespace Estados
 		}
 		else if (i == "carregar_fase")
 			estado = estado->criarestadoCarregarFase();
-		else if (i == "Game_over") {
-			estado = estado->criaestadoMenuPausa();
+		else if (i == "Game_overVenceu") {
+			estado = estado->criaestadoGameOver(true);
+		}
+		else if (i == "Game_overPerdeu") {
+			estado = estado->criaestadoGameOver(false);
 		}
 		else if (i == "ranking") {
 			estado = estado->criaestadoRanking();
@@ -141,6 +145,18 @@ namespace Estados
 		else
 			pMaquinadeEstados->incluir("jogar_fase2_2p");
 		recuperaPonto.close();
+	}
+	void Estado::gameOver(const bool vitoria)
+	{
+		if (vitoria)
+			pMaquinadeEstados->incluir("Game_overVenceu");
+		else
+			pMaquinadeEstados->incluir("Game_overPerdeu");
+	}
+	Estado* Estado::criaestadoGameOver(const bool venceu)
+	{
+		Menus::GameOver* gameover = new Menus::GameOver(false);
+		return static_cast <Estados::Estado*>(gameover);
 	}
 	
 }

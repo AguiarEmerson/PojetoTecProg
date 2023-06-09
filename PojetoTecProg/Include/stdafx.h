@@ -31,4 +31,4 @@ using std::string;
 #define VELMINPROJETILY 10
 #define TAMANHO_BOTAO_X 350.0
 #define TAMANHO_BOTAO_Y 50.0
-#define TAMANHOFASE 600.0f
+#define TAMANHOFASE 3000.0f

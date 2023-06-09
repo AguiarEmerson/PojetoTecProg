@@ -22,8 +22,8 @@ namespace Fases
 		static Gerenciadores::MaquinadeEstados* pMaquinadeEstados;
 		int i;
 		int num_RoboPula;
-		bool ganhoFase1;
-		
+		int ganhoFase;
+		bool perdeu;
 	public:
 		Fase();
 		~Fase();
@@ -34,7 +34,7 @@ namespace Fases
 		void criaRoboPula(sf::Vector2f pos);
 		virtual void criaEntidade(char id, sf::Vector2i pos)=0;
 		virtual void criaMapa(bool p ) = 0;
-		void Executar();
+		virtual void Executar()=0;
 		void setFundo(sf::Vector2f posicao);
 		sf::RectangleShape getFundo();
 		int getTam();
@@ -43,8 +43,10 @@ namespace Fases
 		virtual void salva()=0;
 		void deletaSave();
 		void carregaSave();
-		void verificaGanho();
-		const bool getGanho();
+		virtual void verificaGanho()=0;
+		virtual int getGanho()=0;
 		void salvaPonto();
+		void verificaPerdeu();
+		const bool getPerdeu();
 	};
 }
