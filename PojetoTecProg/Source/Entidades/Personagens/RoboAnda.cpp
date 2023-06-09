@@ -12,6 +12,7 @@ namespace Entidades
 			id = "RoboAnda";
 			direcao = rand() % 2;
 			num_RoboAnda++;
+			ponto = 100;
 		}
 		RoboAnda::RoboAnda():
 			Inimigo(), num(num_RoboAnda)

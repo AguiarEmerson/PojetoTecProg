@@ -45,6 +45,13 @@ namespace Listas {
 	{
 		return LEs.getElem(pos);
 	}
+	void ListaEntidades::LimpaLista()
+	{
+		int i = 0, tam = 0;
+		tam = LEs.getTam();
+		for (i = 0; i < tam; i++)
+			LEs.pop(LEs.getElem(i));
+	}
 	
 }
 

@@ -137,6 +137,7 @@ namespace Entidades
 		{
 			setvel(sf::Vector2f(vel.x, - VELOCIDADEPULO));
 			ta_no_chao = false;
+			
 		}
 		void Jogador::deletaProjetil(Entidade* projetil)
 		{
@@ -187,6 +188,11 @@ namespace Entidades
 		void Jogador::setPontos(int pont)
 		{
 			pontos = pont;
+		}
+
+		void Jogador::GanhaPonto(int pont)
+		{
+			pontos += pont;
 		}
 
 		

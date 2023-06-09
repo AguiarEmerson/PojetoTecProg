@@ -5,6 +5,9 @@ namespace Fases
 {
 	class Fase2 : public Fase
 	{
+	protected:
+		int j;
+		int num_Espinho;
 	public:
 		Fase2();
 		~Fase2();

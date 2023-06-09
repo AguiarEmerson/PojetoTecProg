@@ -66,7 +66,6 @@ namespace Entidades
 			}
 			GravadorEnt << pos.x << ' ' << pos.y << ' ' << vel.x << ' ' << vel.y << ' ' << ta_no_chao << ' ' << podeMover << ' ' << vivo << ' ' << danoso << ' ' << dano << ' ' << std::endl;
 			GravadorEnt.close();
-			std::cout << nomeArquivo << std::endl;
 
 			return aux;
 		}

@@ -8,6 +8,8 @@ namespace Fases
 	{
         textura = Grafico::getgrafico()->carregarTextura("Arquivos/Imagens/fundo1.png");
         fundo.setTexture(&textura);
+        num_Esteira = 2 + rand() % 6;
+        j = 0;
 	}
 	Fase1::~Fase1()
 	{
@@ -45,7 +47,7 @@ namespace Fases
     {
         Entidades::Obstaculos::Esteira* Esteira =
             new Entidades::Obstaculos::Esteira(sf::Vector2f(50.0, 50.0), pos, sf::Vector2f(0.0, 0.0));
-        if (Esteira&&j<num_Obstaculo) {
+        if (Esteira&&j<num_Esteira) {
             lista.incluir(static_cast<Entidade*>(Esteira));
             j++;
         }
@@ -62,7 +64,7 @@ namespace Fases
             int i, tam;
             tam = lista.getTam();
             for (i = 0; i < tam; i++) {
-                if (lista.getEnt(i)->getId() == "jogador") {
+                if (lista.getEnt(i)->getId() == "jogador1"|| lista.getEnt(i)->getId() == "jogador2") {
                     RoboAnda->setjogador(static_cast<Jogador*>(lista.getEnt(i)));
                 }
             }
@@ -137,7 +139,6 @@ namespace Fases
             int tam = getTam();
             for (i = 0; i < tam; i++)
             {
-                std::cout << salvaEnt(i) << std::endl;
                 GravadorFase <<getId(i)<< ' '<<salvaEnt(i)<< ' ' << std::endl;
             }
             GravadorFase.close();

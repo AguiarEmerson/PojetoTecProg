@@ -104,6 +104,8 @@ namespace Entidades
 			jogador = static_cast<Jogador*>(secundaria);
 			tomaDano(jogador->getDano());
 			jogador->esmagaInimigo(this);
+			if (num_vidas == 0)
+				jogador->GanhaPonto(ponto);
 			
 		}
 

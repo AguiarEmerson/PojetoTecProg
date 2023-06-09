@@ -5,6 +5,8 @@ namespace Fases
     Fase2::Fase2() :
         Fase()
     {
+        num_Espinho = 2 + rand() % 6;
+        j = 0;
     }
     Fase2::~Fase2()
     {
@@ -42,8 +44,7 @@ namespace Fases
     {
         Entidades::Obstaculos::Espinho* espinho =
             new Entidades::Obstaculos::Espinho(sf::Vector2f(50.0, 50.0), pos);
-        printf("%d,%d\n",j,num_Obstaculo);
-        if (espinho&&j<num_Obstaculo) {
+        if (espinho&&j<num_Espinho) {
             lista.incluir(static_cast<Entidade*>(espinho));
             j++;
         }

@@ -5,6 +5,7 @@
 #include "..\Estados\EstadoJogar.h"
 #include "..\Fases\Fase1.h"
 #include "..\Fases\Fase2.h"
+#include "..\Menus\Ranking.h"
 
 namespace Estados
 {
@@ -89,6 +90,11 @@ namespace Estados
 		Menus::MenuPausa* menupausa = new Menus::MenuPausa(static_cast<Estados::EstadoJogar*>(pMaquinadeEstados->getestadoAT())->getfase());
 			return static_cast <Estados::Estado*>(menupausa);
 	}
+	Estado* Estado::criaestadoRanking()
+	{
+		Menus::Ranking* ranking = new Menus::Ranking();
+		return static_cast<Estados::Estado*>(ranking);
+	}
 
 	Estado* Estado::criaestado(string i) {
 		Estado* estado = NULL;
@@ -114,6 +120,9 @@ namespace Estados
 			estado = estado->criarestadoCarregarFase();
 		else if (i == "Game_over") {
 			estado = estado->criaestadoMenuPausa();
+		}
+		else if (i == "ranking") {
+			estado = estado->criaestadoRanking();
 		}
 		return estado;
 	}
