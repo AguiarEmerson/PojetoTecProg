@@ -2,6 +2,7 @@
 #include "..\Gerenciadores\MaquinadeEstados.h"
 #include "..\Menus\MenuPrincipal.h"
 #include "..\Menus\MenuPausa.h"
+#include "..\Menus\GameOver.h"
 #include "..\Estados\EstadoJogar.h"
 #include "..\Fases\Fase1.h"
 #include "..\Fases\Fase2.h"
@@ -88,7 +89,13 @@ namespace Estados
 	Estado* Estado::criaestadoMenuPausa()
 	{
 		Menus::MenuPausa* menupausa = new Menus::MenuPausa(static_cast<Estados::EstadoJogar*>(pMaquinadeEstados->getestadoAT())->getfase());
-			return static_cast <Estados::Estado*>(menupausa);
+		return static_cast <Estados::Estado*>(menupausa);
+	}
+
+	Estado* Estado::CriaestadoGameOver(bool ganhou)
+	{
+		Menus::GameOver* gameover = new Menus::GameOver(ganhou);
+		return static_cast<Estados::Estado*>(gameover);
 	}
 	Estado* Estado::criaestadoRanking()
 	{
@@ -116,10 +123,14 @@ namespace Estados
 		else if (i == "Menu_pausa") {
 			estado = estado->criaestadoMenuPausa();
 		}
-		else if (i == "carregar_fase")
+		else if (i == "carregar_fase") {
 			estado = estado->criarestadoCarregarFase();
-		else if (i == "Game_over") {
-			estado = estado->criaestadoMenuPausa();
+		}
+		else if (i == "Game_over_win") {
+			estado = estado->CriaestadoGameOver(true);
+		}
+		else if (i == "Game_over_lose") {
+			estado = estado->CriaestadoGameOver(false);
 		}
 		else if (i == "ranking") {
 			estado = estado->criaestadoRanking();
