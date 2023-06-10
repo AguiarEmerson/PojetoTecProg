@@ -30,10 +30,30 @@ namespace Menus
 	{
 		return info;
 	}
+
+	void Texto::setinfo(std::string i)
+	{
+		info = i;
+		inicializa();
+	}
 	void Texto::setPos(const sf::Vector2f pos)
 	{
 		texto.setPosition(pos);
 	}
+
+	void Texto::operator+(char l)
+	{
+		info = info + l;
+		inicializa();
+	}
+
+	void Texto::pop()
+	{
+		if (!info.empty()) {
+			info.pop_back();
+		}
+	}
+
 	sf::Vector2f Texto::getTam()
 	{
 		return tam;
