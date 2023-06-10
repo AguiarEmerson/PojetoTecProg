@@ -140,6 +140,5 @@ namespace Listas
 		tam--;
 		pAtual = nullptr;
 	}
-	//template<class TL>
-	//Lista<TL>::Elemento<TL>* Lista<TL>::getPrim() 
+	
 }

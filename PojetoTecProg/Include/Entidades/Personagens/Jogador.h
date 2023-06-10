@@ -14,6 +14,7 @@ namespace Entidades
 		{
 		protected:
 			int pontos;
+			bool ganhouFase;
 			
 		public:
 			Jogador(sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v = sf::Vector2f(3.0, 0.0), int h = 3, int xp = 0);
@@ -31,7 +32,12 @@ namespace Entidades
 			void acimaEsteira(Entidade* ent);
 			virtual string salvaEnt() = 0;
 			void setPontos(int pont);
+			const int getPonto();
 			void GanhaPonto(int pont);
+
+			void setGanhou(const bool fas);
+			const bool getGanhou();
+			void verificaGanhou();
 			
 		};
 	}

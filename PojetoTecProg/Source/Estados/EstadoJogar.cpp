@@ -19,6 +19,20 @@ namespace Estados
 	}
 	void EstadoJogar::Executar()
 	{				
-		fase->Executar();                                                                                                                                                                       
+		fase->Executar();
+		if (fase->getGanho() == 1) {
+			fase->salvaPonto();
+			passaFase1();
+		}
+		else if (fase->getGanho() == 2)
+		{
+			fase->salvaPonto();
+			gameOver(true);
+		}
+		else if (fase->getPerdeu() == true)
+		{
+			fase->salvaPonto();
+			gameOver(false);
+		}
 	}
 }

@@ -5,7 +5,9 @@ namespace Fases
     Fase2::Fase2() :
         Fase()
     {
-        num_Espinho = 2 + rand() % 6;
+        textura = Grafico::getgrafico()->carregarTextura("Arquivos/Imagens/fundo2.png");
+        fundo.setTexture(&textura);
+        num_Espinho = 3 + rand() % 10;
         j = 0;
     }
     Fase2::~Fase2()
@@ -134,5 +136,48 @@ namespace Fases
             GravadorFase << lista.getEnt(i)->getId() << ' ' << lista.getEnt(i)->salvaEnt() << ' ' << std::endl;
         }
         GravadorFase.close();
+    }
+    void Fase2::Executar()
+    {
+        verificaGanho();
+        verificaPerdeu();
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
+            pMaquinadeEstados->incluir("Menu_pausa");
+        }
+        if (primeiroCiclo)
+        {
+            primeiroCiclo = false;
+            Grafico::getgrafico()->setFundo(fundo);
+        }
+        //desenha o fundo
+        Pgrafico->atualizaFundo();
+        //executa todas as entidades
+        lista.percorrer();
+        //desenha todas as entidades
+        lista.desenhar();
+        //verifica as colisoes
+        colisoes.executar();
+    }
+    void Fase2::verificaGanho()
+    {
+        Lista<Entidade>::Elemento<Entidade>* aux;
+        aux = lista.getPrim();
+        int i, tam = lista.getTam();
+        ganhoFase = 2;
+        for (i = 0; i < tam; i++)
+        {
+            if (aux->getData()->getId() == "Canhao")
+            {
+                if (aux->getData()->getVivo() == true) {
+                    ganhoFase = 0;
+                    
+                }
+            }
+            aux = aux->getProx();
+        }
+    }
+    int Fase2::getGanho()
+    {
+        return ganhoFase;
     }
 }

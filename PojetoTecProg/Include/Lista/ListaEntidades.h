@@ -20,5 +20,6 @@ namespace Listas
 		const int getTam();
 		Entidade* getEnt(int pos);
 		void LimpaLista();
+		Lista<Entidade>::Elemento<Entidade>* getPrim();
 	};
 }

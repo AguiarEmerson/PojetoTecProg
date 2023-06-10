@@ -13,14 +13,14 @@ namespace Entidades
 			pontos(xp)
 		{
 			podeMover = true;
+			ganhouFase = false;
 		}
 
 		Jogador::Jogador() :
 			Personagem(),
 			pontos(0)
 		{
-			
-			//box.setTexture(&textura);
+			ganhouFase = false;
 		}
 
 		Jogador::~Jogador()
@@ -193,6 +193,20 @@ namespace Entidades
 		void Jogador::GanhaPonto(int pont)
 		{
 			pontos += pont;
+		}
+		void Jogador::setGanhou(const bool fas){
+			ganhouFase = fas;
+		}
+		const bool Jogador::getGanhou(){
+			return ganhouFase;
+		}
+		void Jogador::verificaGanhou(){
+			if (pos.x > TAMANHOFASE)
+				ganhouFase = 1;
+		}
+		const int Jogador::getPonto()
+		{
+			return pontos;
 		}
 
 		

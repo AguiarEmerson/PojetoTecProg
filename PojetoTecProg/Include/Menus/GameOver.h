@@ -11,6 +11,7 @@ namespace Menus
 		Texto nome;
 		Texto situacao;
 		void criabotoes();
+		Texto* texto;
 	public:
 		GameOver(bool Ganhou);
 		~GameOver();

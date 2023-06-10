@@ -137,5 +137,33 @@ namespace Estados
 		}
 		return estado;
 	}
+
+	void Estado::passaFase1()
+	{
+		pMaquinadeEstados->remove();
+		std::ifstream recuperaPonto("ponto.dat", std::ios::in);
+		if (!recuperaPonto)
+			exit(1);
+		string i,j;
+		recuperaPonto >> i >> j;
+		Estado* estado = NULL;
+		if (i=="jogador2") 
+			pMaquinadeEstados->incluir("jogar_fase2_1p");
+		else
+			pMaquinadeEstados->incluir("jogar_fase2_2p");
+		recuperaPonto.close();
+	}
+	void Estado::gameOver(const bool vitoria)
+	{
+		if (vitoria)
+			pMaquinadeEstados->incluir("Game_overVenceu");
+		else
+			pMaquinadeEstados->incluir("Game_overPerdeu");
+	}
+	Estado* Estado::criaestadoGameOver(const bool venceu)
+	{
+		Menus::GameOver* gameover = new Menus::GameOver(venceu);
+		return static_cast <Estados::Estado*>(gameover);
+	}
 	
 }

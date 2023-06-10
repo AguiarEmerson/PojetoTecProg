@@ -52,6 +52,10 @@ namespace Listas {
 		for (i = 0; i < tam; i++)
 			LEs.pop(LEs.getElem(i));
 	}
+	Lista<Entidade>::Elemento<Entidade>* ListaEntidades::getPrim()
+	{
+		return LEs.getPrim();
+	}
 	
 }
 
