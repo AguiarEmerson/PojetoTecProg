@@ -22,6 +22,7 @@ namespace Estados
 		Estado* criarestadoCarregarFase();
 		Estado* criaestadoMenuPrincipal();
 		Estado* criaestadoMenuPausa();
+		Estado* CriaestadoGameOver(bool ganhou);
 		Estado* criaestadoRanking();
 		Estado* criaestadoGameOver(const bool venceu);
 

@@ -75,6 +75,8 @@ namespace Menus
 
 	void Menu::controlar()
 	{
+		
+		
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
 			selecionacima();
 		}
@@ -85,4 +87,5 @@ namespace Menus
 			selecionar(getbotaoselecionado());
 		}
 	}
+	
 }

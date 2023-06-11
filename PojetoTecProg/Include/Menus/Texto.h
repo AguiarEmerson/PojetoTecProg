@@ -15,11 +15,14 @@ namespace Menus
 		sf::Color corborda;
 		void inicializa();
 	public:
-		Texto(const sf::Font fonte, const std::string info, const unsigned int tamFonte = 50);
+		Texto(const sf::Font fonte, const std::string info="", const unsigned int tamFonte = 50);
 		~Texto();
 		const sf::Text getTexto() const;
 		const std::string getinfo() const;
+		void setinfo(std::string i);
 		void setPos(const sf::Vector2f pos);
+		void operator+(char l);
+		void pop();
 		sf::Vector2f getTam();
 	};
 }
