@@ -240,45 +240,38 @@ namespace Menus
 		int i;
 		string nomeAux;
 		int pontoAux;
-		std::map<string, int>ranking;
+		std::multimap<int,string>ranking;
 		for (i = 0; i < 5; i++)
 		{
 			pegaRanking >> nomeAux >> pontoAux;
-			ranking[nomeAux] = pontoAux;
+			ranking.insert(std::pair<int,string>(pontoAux , nomeAux));
 		}
+		pegaRanking.clear();
 		pegaRanking.close();
-		remove("ranking.dat");
-		ranking[nomeJ] = ponto;
-		std::map<string, int> ::iterator it2;
-		std::map<string, int>aux;
 		
-		for (i = 0; i < 5; i++)
-		{
-			pontoAux = 0;
-			for (it2 = ranking.begin(); it2 != ranking.end(); it2++)
-			{
-				if (it2->second >= pontoAux)
-				{
-					std::cout << pontoAux << std::endl;
-					nomeAux = it2->first;
-					pontoAux = it2->second;
-				}
-			}
-			aux[nomeAux] = pontoAux;
-			ranking.erase(nomeAux);
-		}
-		
-		
+		ranking.insert(std::pair<int, string>(ponto, nomeJ));
 		std::ofstream geraRanking("ranking.dat", std::ios::out);
-		std::map<string, int>::iterator it;
-		for (it = aux.begin(); it != aux.end(); it++)
+		std::multimap<int, string> aux;
+		std::multimap<int, string>::iterator it;
+		int j;
+		for(i=0;i<5;i++)
 		{
-			geraRanking << it->first << ' ' << it->second << std::endl;
+			it = ranking.begin();
+			for (j=0;j<ranking.size()-i-1;j++)
+			{
+				it++;
+			}
+			aux.insert(std::pair<int, string>(it->first, it->second));
+			
 		}
+		for (it = aux.begin(); it != aux.end(); it++)
+			geraRanking << it->second << ' ' << it->first << std::endl;
 		geraRanking.close();
+		
 
 	}
 	void GameOver::cadastraPontuacao() {
+		
 		std::ifstream pegaPonto("ponto2.dat", std::ios::in);
 		if (!pegaPonto)
 		{
@@ -292,27 +285,25 @@ namespace Menus
 		{
 			pegaPonto.close();
 			salvaPonto(nome.getinfo(), pont);
-			pMaquinadeEstados->remove();
-			
-				
+			Pgrafico->fecha();
+
 		}
 		else if(nomeJ=="jogador1")
 		{
 			salvaPonto(nome.getinfo(), pont);
 			nome.setinfo("");
 			primeiroCadastro = 0;
+			pegaPonto.close();
 		}
 		else
 		{
 			std::cout << "houve um erro no cadastro" << std::endl;
 			exit(1);
 		}
-		pegaPonto.close();
-		printf("oi");
-
 	}
 	void GameOver::cadastrasegundaPontuacao()
 	{
+		printf("oi");
 		std::ifstream pegaPonto("ponto2.dat", std::ios::in);
 		if (!pegaPonto)
 		{
@@ -326,7 +317,7 @@ namespace Menus
 		
 		salvaPonto(nome.getinfo(), pont);
 		pegaPonto.close();
-		pMaquinadeEstados->remove();
+		Pgrafico->fecha();
 		
 	}
 }
