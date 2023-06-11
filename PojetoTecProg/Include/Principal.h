@@ -13,20 +13,3 @@ public:
 	~Principal();
 	void executar();
 };
-/*
-#include "..\Gerenciadores\Grafico.h"
-#include "..\Gerenciadores\Colisao.h"
-#include "..\Entidades\Personagens\andomelo.h"
-#include "..\Entidades\Personagens\saltitos.h"
-#include "..\Entidades\Personagens\Canhao.h"
-#include "..\Lista\ListaEntidades.h"
-#include "..\Entidades\Obstaculos\Plataforma.h"
-#include "..\Entidades\Obstaculos\Espinho.h"
-
-
-using namespace Listas;
-using namespace Entidades;
-using namespace Personagens;
-using namespace Gerenciadores;
-using namespace Obstaculos;
-*/

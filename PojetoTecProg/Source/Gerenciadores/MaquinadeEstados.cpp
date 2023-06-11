@@ -11,10 +11,12 @@ namespace Gerenciadores
 		}
 		return pMaquinadeEstados;
 	}
+
 	MaquinadeEstados::MaquinadeEstados() :
 		PilhadeEstados()
 	{
 	}
+
 	MaquinadeEstados::~MaquinadeEstados() 
 	{
 		while (!PilhadeEstados.empty()) {
@@ -41,10 +43,12 @@ namespace Gerenciadores
 			PilhadeEstados.pop();
 		}
 	}
+
 	Estados::Estado* MaquinadeEstados::getestadoAT()
 	{
 		return PilhadeEstados.top();
 	}
+
 	void MaquinadeEstados::Executar()
 	{
 		if (!PilhadeEstados.empty()) {

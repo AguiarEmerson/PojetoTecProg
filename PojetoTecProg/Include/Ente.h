@@ -1,7 +1,6 @@
 #pragma once
 #include"stdafx.h"
 
-//#include"..\Gerenciadores\Grafico.h"
 namespace Gerenciadores {
 	class Grafico;
 }

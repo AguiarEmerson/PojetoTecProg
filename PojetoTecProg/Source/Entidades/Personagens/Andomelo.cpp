@@ -39,11 +39,11 @@ namespace Entidades
 		{
 			if (direcao == 0)
 			{
-				setpos(sf::Vector2f(pos.x + vel.x, pos.y));
+				vel.x = VELOCIDADEINIMIGO;
 			}
 			if (direcao == 1)
 			{
-				setpos(sf::Vector2f(pos.x - vel.x, pos.y));
+				vel.x = -VELOCIDADEINIMIGO;
 			}
 
 			dt = Pgrafico->getrelogio().getElapsedTime().asSeconds()-tempo_total;
@@ -82,11 +82,11 @@ namespace Entidades
 			if (podeMover) {
 				if (decideJogador()->getpos().x > pos.x)
 				{
-					setpos(sf::Vector2f(pos.x + vel.x, pos.y));
+					vel.x = VELOCIDADEINIMIGO;
 				}
 				if (decideJogador()->getpos().x < pos.x)
 				{
-					setpos(sf::Vector2f(pos.x - vel.x, pos.y));
+					vel.x = -VELOCIDADEINIMIGO;
 				}
 			}
 
@@ -96,9 +96,10 @@ namespace Entidades
 		{
 			primTempoTotal();
 			move();
-			gravidade();
+			atualizaposicao();
 			verificaVida();
 		}
+
 		Jogador* andomelo::decideJogador()
 		{
 			if (listaJogador.front()->getVivo() == true)

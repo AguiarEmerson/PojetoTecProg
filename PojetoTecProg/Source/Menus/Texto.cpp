@@ -51,6 +51,7 @@ namespace Menus
 	{
 		if (!info.empty()) {
 			info.pop_back();
+			inicializa();
 		}
 	}
 

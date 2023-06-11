@@ -36,14 +36,12 @@ namespace Entidades
 					tempo_total += TEMPOsaltitos;
 					direcao = rand() % 2;
 				}
-				
-
 			}
 			else {
-				if(direcao==1)
-					setpos(sf::Vector2f(pos.x + vel.x, pos.y));
+				if (direcao == 1)
+					vel.x = VELOCIDADEINIMIGO;
 				else
-					setpos(sf::Vector2f(pos.x - vel.x, pos.y));
+					vel.x = -VELOCIDADEINIMIGO;
 			}
 		}
 
@@ -51,19 +49,16 @@ namespace Entidades
 		void saltitos::Executar() {
 			primTempoTotal();
 			move();
-			gravidade();
+			atualizaposicao();
 			verificaVida();	
 		}
 
 		void saltitos::pula() {
 			if (ta_no_chao) {
 				altura = float(rand() % 10)+6.5f;
-				setvel(sf::Vector2f(vel.x, vel.y - altura));
-				setpos(sf::Vector2f(pos.x, pos.y + vel.y));
+				vel.y = -altura;
+				ta_no_chao = false;
 			}
-			ta_no_chao = false;
-
-			setpos(sf::Vector2f(pos.x, pos.y + vel.y));
 		}
 
 		string saltitos::salvaEnt()

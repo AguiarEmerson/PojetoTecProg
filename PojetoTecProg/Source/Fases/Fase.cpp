@@ -30,7 +30,7 @@ namespace Fases
 	void Fase::criaJogador1(sf::Vector2f pos)
 	{
 		Entidades::Personagens::Jogador* jogador = 
-			new Entidades::Personagens::Jogador1(sf::Vector2f(50.0,50.0),pos,sf::Vector2f(3.0, 0.0));
+			new Entidades::Personagens::Jogador1(sf::Vector2f(50.0,50.0),pos,sf::Vector2f(0.0, 0.0));
 		if (jogador) {
 			int i, tam;
 			tam = lista.getTam();
@@ -50,7 +50,7 @@ namespace Fases
 	void Fase::criaJogador2(sf::Vector2f pos)
 	{
 		Entidades::Personagens::Jogador2* jogador =
-			new Entidades::Personagens::Jogador2(sf::Vector2f(50.0, 50.0), pos, sf::Vector2f(3.0, 0.0));
+			new Entidades::Personagens::Jogador2(sf::Vector2f(50.0, 50.0), pos, sf::Vector2f(0.0, 0.0));
 		if (jogador) {
 			int i, tam;
 			bool achoJogador = false;

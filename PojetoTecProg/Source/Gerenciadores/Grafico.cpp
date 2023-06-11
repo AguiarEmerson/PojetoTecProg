@@ -105,8 +105,6 @@ namespace Gerenciadores {
 		lista = listaEnt;
 	}
 
-	//essa função retorn
-
 	sf::Font Grafico::carregarFonte(const char* caminhoFonte) {
 
 		sf::Font fonte;
@@ -126,6 +124,7 @@ namespace Gerenciadores {
 		}
 		return textura;
 	}
+
 	sf::Texture Grafico::mandaTextura(const char* caminhoTextura)
 	{
 		sf::Texture textura;
@@ -140,9 +139,11 @@ namespace Gerenciadores {
 		}
 		return carregarTextura(caminhoTextura);
 	}
+
 	void Grafico::setFundo(sf::RectangleShape box) {
 		fundo = box;
 	}
+
 	void Grafico::atualizaFundo()
 	{
 		fundo.setPosition(camera.getCenter() - sf::Vector2f((camera.getSize().x / 2), (camera.getSize().y / 2)));

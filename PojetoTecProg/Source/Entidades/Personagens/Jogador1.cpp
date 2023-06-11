@@ -23,14 +23,15 @@ namespace Entidades
 		Jogador1::~Jogador1()
 		{}
 		void Jogador1::move() {
+			vel.x = 0.0;
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
 				pula();
 			}
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
-				setpos(sf::Vector2f(pos.x - vel.x, pos.y));
+				vel.x = -VELOCIDADEJOGADOR;
 			}
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
-				setpos(sf::Vector2f(pos.x + vel.x, pos.y));
+				vel.x = VELOCIDADEJOGADOR;
 			}
 			if (!(ac.x >= -0.5 && ac.x <= 0.5))
 			{
@@ -47,7 +48,7 @@ namespace Entidades
 			if (vivo == true&&!ganhouFase) {
 				verificaGanhou();
 				move();
-				gravidade();
+				atualizaposicao();
 				verificaVida();
 			}
 		}

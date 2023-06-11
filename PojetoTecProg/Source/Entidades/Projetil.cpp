@@ -30,20 +30,22 @@ namespace Entidades
 	void Projetil::move()
 	{
 		setpos(sf::Vector2f(pos.x + vel.x, pos.y));
-
 	}
 	void Projetil::Executar()
 	{
 		move();
-		gravidade();
+		atualizaposicao();
 	}
-	const bool Projetil::verificaExiste() {
+	const bool Projetil::verificaExiste() 
+	{
 		return existe;
 	}
-	void Projetil::setExiste(const bool existindo) {
+	void Projetil::setExiste(const bool existindo) 
+	{
 		existe = existindo;
 	}
-	void Projetil::atualizaExiste() {
+	void Projetil::atualizaExiste() 
+	{
 		if (pos.y > 590) {
 			existe = false;
 		}
