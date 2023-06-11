@@ -10,7 +10,6 @@ namespace Entidades
 			textura = Pgrafico->mandaTextura("Arquivos/Imagens/plataforma.png");
 			box.setTexture(&textura);
 			id = "plataforma";
-			estatico = true;
 			num_Plataforma++;
 		}
 		Plataforma::Plataforma() :
@@ -19,7 +18,7 @@ namespace Entidades
 			textura = Pgrafico->mandaTextura("Arquivos/Imagens/plataforma.png");
 			box.setTexture(&textura);
 			id = "plataforma";
-			estatico = true;
+
 			num_Plataforma++;
 		}
 		Plataforma::~Plataforma() {
@@ -44,7 +43,7 @@ namespace Entidades
 				std::cout << "nao foi possível salvar" << std::endl;
 				exit(1);
 			}
-			GravadorEnt << pos.x << ' ' << pos.y << ' ' << vel.x << ' ' << vel.y << ' ' << ta_no_chao << ' ' << podeMover << ' ' << vivo << ' ' << danoso << ' ' << estatico << ' ' << std::endl;
+			GravadorEnt << pos.x << ' ' << pos.y << ' ' << vel.x << ' ' << vel.y << ' ' << ta_no_chao << ' ' << podeMover << ' ' << vivo << ' ' << danoso << ' ' << std::endl;
 
 
 			return aux;
@@ -59,15 +58,14 @@ namespace Entidades
 				exit(1);
 			}
 			float posx = 0, posy = 0, velx = 0, vely = 0;
-			bool chao = false, move = false, danos = false, viv = false,estatic=false;
+			bool chao = false, move = false, danos = false, viv = false;
 				
-			RecuperadorEnt >> posx >> posy >> velx >> vely >> chao >> move >> viv >> danos >> estatic;
+			RecuperadorEnt >> posx >> posy >> velx >> vely >> chao >> move >> viv >> danos;
 			Plataforma* plataforma = new Plataforma(sf::Vector2f(50.0, 50.0), sf::Vector2f(posx, posy), sf::Vector2f(velx, vely));
 			plataforma->setTa_No_Chao(chao);
 			plataforma->setVivo(viv);
 			plataforma->setPodeMover(move);
 			plataforma->setDanoso(danos);
-			plataforma->setEstatico(estatic);
 
 
 
@@ -75,10 +73,7 @@ namespace Entidades
 			return static_cast<Entidade*>(plataforma);
 
 		}
-		void Plataforma::setEstatico(const bool estatic)
-		{
-			estatico = estatic;
-		}
+		
 
 		
 

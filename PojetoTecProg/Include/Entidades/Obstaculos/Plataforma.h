@@ -9,7 +9,6 @@ namespace Entidades
 		class Plataforma :public Obstaculo
 		{
 		protected:
-			bool estatico;
 			static int num_Plataforma;
 			const int num;
 
@@ -19,7 +18,6 @@ namespace Entidades
 			~Plataforma();
 			void colide(Entidade* secundaria, sf::Vector2f ds);
 			void Executar();
-			void setEstatico(const bool estatic);
 
 			string salvaEnt();
 			 static Entidade* carregarEnt(string arquivo);

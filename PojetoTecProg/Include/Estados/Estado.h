@@ -15,16 +15,19 @@ namespace Estados
 	public:
 		Estado();
 		~Estado();
+		static Estado* criaestado(string i);
+
 		Estado* criaestadojogar_fase1(bool p);
 		Estado* criaestadojogar_fase2(bool p);
+		Estado* criarestadoCarregarFase();
 		Estado* criaestadoMenuPrincipal();
 		Estado* criaestadoMenuPausa();
 		Estado* criaestadoRanking();
-		static Estado* criaestado(string i);
-		virtual void Executar() = 0;
-		Estado* criarestadoCarregarFase();
+		Estado* criaestadoGameOver(const bool venceu);
+
 		void passaFase1();
 		void gameOver(const bool vitoria);
-		Estado* criaestadoGameOver(const bool venceu);
+		virtual void Executar() = 0;
+		
 	};
 }

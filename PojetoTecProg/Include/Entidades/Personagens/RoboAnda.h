@@ -16,13 +16,13 @@ namespace Entidades
 
 			~RoboAnda();
 
-			void setjogador(Jogador* j);
-			void moveraleatorio();
+			void Executar();
 			void Perseguir();
 			void move();
-			void Executar();
 			Jogador* decideJogador();
-
+			void setjogador(Jogador* j);
+			void moveraleatorio();
+			
 			string salvaEnt();
 			static Entidade* carregarEnt(string arquivo);
 		};
