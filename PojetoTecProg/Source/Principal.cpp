@@ -23,7 +23,7 @@ Principal::~Principal()
 void Principal::inicializa() 
 {
 
-    pMaquinadeEstados->incluir("Game_over_win");
+    pMaquinadeEstados->incluir("Menu_principal");
 }
 
 void Principal::executar()

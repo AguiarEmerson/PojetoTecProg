@@ -8,6 +8,7 @@ namespace Menus
 	{
 		nomeMenu.setPos(sf::Vector2f(tamjanela.x / 2.0f - tambotao.x / 2.0f, tamjanela.y / 2.0f - tambotao.y * 6.0));
 		criabotoes();
+		tempo = 0.0f;
 	}
 	MenuPrincipal::~MenuPrincipal()
 	{
@@ -59,6 +60,7 @@ namespace Menus
 		desenha();
 		Pgrafico->desenha(nomeMenu.getTexto());
 		controlar();
+		tempo = Pgrafico->getrelogio().getElapsedTime().asSeconds();
 	}
 }
 

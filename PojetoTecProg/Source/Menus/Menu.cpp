@@ -8,6 +8,9 @@ namespace Menus
 		nomeMenu(Pgrafico->carregarFonte("Arquivos/Fonte.ttf"),nome,tamfonte),
 		listabotao(), it(),tambotao(tambotao),tamjanela(Pgrafico->getTamJanela())
 	{
+		dt = 0.0f;
+		tempo_total = 0;
+		tempo = 0.0f;
 	}
 
 	Menu::~Menu()
@@ -77,15 +80,27 @@ namespace Menus
 	{
 		
 		
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)&&Podedigitar()) {
 			selecionacima();
+			tempo_total = Pgrafico->getrelogio().getElapsedTime().asSeconds();
 		}
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)&&Podedigitar()) {
 			selecionabaixo();
+			tempo_total = Pgrafico->getrelogio().getElapsedTime().asSeconds();
 		}
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter)) {
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter)&&Podedigitar()) {
 			selecionar(getbotaoselecionado());
+			tempo_total = Pgrafico->getrelogio().getElapsedTime().asSeconds();
 		}
 	}
+	const bool Menu::Podedigitar()
+	{
+		dt = tempo;
+		if (dt > tempo_total + 0.2f)
+			return true;
+		else
+			return false;
+	}
+
 	
 }

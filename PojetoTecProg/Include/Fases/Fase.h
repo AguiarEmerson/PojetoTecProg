@@ -24,6 +24,7 @@ namespace Fases
 		int num_RoboPula;
 		int ganhoFase;
 		bool perdeu;
+	
 	public:
 		Fase();
 		~Fase();
@@ -45,7 +46,7 @@ namespace Fases
 		void carregaSave();
 		virtual void verificaGanho()=0;
 		virtual int getGanho()=0;
-		void salvaPonto();
+		virtual void salvaPonto()=0;
 		void verificaPerdeu();
 		const bool getPerdeu();
 	};

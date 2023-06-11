@@ -141,7 +141,7 @@ namespace Estados
 	void Estado::passaFase1()
 	{
 		pMaquinadeEstados->remove();
-		std::ifstream recuperaPonto("ponto.dat", std::ios::in);
+		std::ifstream recuperaPonto("ponto1.dat", std::ios::in);
 		if (!recuperaPonto)
 			exit(1);
 		string i,j;
@@ -156,9 +156,9 @@ namespace Estados
 	void Estado::gameOver(const bool vitoria)
 	{
 		if (vitoria)
-			pMaquinadeEstados->incluir("Game_overVenceu");
+			pMaquinadeEstados->incluir("Game_over_win");
 		else
-			pMaquinadeEstados->incluir("Game_overPerdeu");
+			pMaquinadeEstados->incluir("Game_over_lose");
 	}
 	Estado* Estado::criaestadoGameOver(const bool venceu)
 	{

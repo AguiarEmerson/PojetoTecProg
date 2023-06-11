@@ -41,6 +41,7 @@ namespace Fases
         arquivo.close();
         colisoes.setLista(&lista);
         Pgrafico->setLista(&lista);
+       carregaPonto();
     }
     void Fase2::criaEspinho(sf::Vector2f pos)
     {
@@ -179,5 +180,90 @@ namespace Fases
     int Fase2::getGanho()
     {
         return ganhoFase;
+    }
+    void Fase2::salvaPonto()
+    {
+        std::ifstream ifs("ponto2.dat");
+        if (ifs)
+        {
+            remove("ponto2.dat");
+        }
+        std::ofstream gravaPonto("ponto2.dat", std::ios::out);
+        if (!gravaPonto)
+            exit(1);
+        Lista<Entidade>::Elemento<Entidade>* aux;
+        aux = lista.getPrim();
+        int i, tam = lista.getTam();
+        for (i = 0; i < tam; i++)
+        {
+            if (aux->getData()->getId() == "jogador1" || aux->getData()->getId() == "jogador2")
+            {
+
+                Jogador* joga = NULL;
+                joga = static_cast<Jogador*>(aux->getData());
+
+                gravaPonto << joga->getId() << ' ' << joga->getPonto() << std::endl;
+            }
+            aux = aux->getProx();
+        }
+        gravaPonto.close();
+    }
+    void Fase2::carregaPonto()
+    {
+        std::ifstream RecuperaPonto("ponto1.dat", std::ios::in);
+        if (!RecuperaPonto) {
+            return;
+            printf("nao foi possivel carregar");
+        }
+        string id;
+        int ponto;
+        Lista<Entidade>::Elemento<Entidade>* aux;
+        aux = lista.getPrim();
+        int i, tam = lista.getTam();
+        RecuperaPonto >> id >> ponto;
+        int t;
+        if (id == "jogador2")
+            t = 1;
+        else
+            t = 2;
+        Jogador* joga = NULL;
+        if (t == 1)
+        {
+            for (i = 0; i < tam; i++)
+            {
+                if (aux->getData()->getId() == "jogador2") {
+                    joga = static_cast<Jogador*>(aux->getData());
+                    joga->setPontos(ponto);
+                }
+                aux = aux->getProx();
+            }
+        }
+        if (t == 2)
+        {
+            aux = lista.getPrim();
+            for (i = 0; i < tam; i++)
+            {
+                if (aux->getData()->getId() == "jogador2") {
+                    joga = static_cast<Jogador*>(aux->getData());
+                    joga->setPontos(ponto);
+                }
+                aux = aux->getProx();
+            }
+            RecuperaPonto >> id >> ponto;
+            aux = lista.getPrim();
+            for (i = 0; i < tam; i++)
+            {
+                if (aux->getData()->getId() == "jogador1") {
+                    joga = static_cast<Jogador*>(aux->getData());
+                    joga->setPontos(ponto);
+                }
+                aux = aux->getProx();
+            }
+        }
+       
+        
+        RecuperaPonto.close();
+
+
     }
 }

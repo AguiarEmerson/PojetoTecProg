@@ -32,7 +32,7 @@ namespace Entidades
 
 		void Personagem::verificaVida()
 		{
-			if (num_vidas == 0)
+			if (num_vidas <= 0)
 				vivo = false;
 		}
 

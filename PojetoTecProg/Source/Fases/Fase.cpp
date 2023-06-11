@@ -250,13 +250,13 @@ namespace Fases
 		Lista<Entidade>::Elemento<Entidade>* aux;
 		aux = lista.getPrim();
 		int i, tam = lista.getTam();
-		perdeu=1;
+		perdeu=0;
 		for (i = 0; i < tam; i++)
 		{
 			if (aux->getData()->getId() == "jogador1" || aux->getData()->getId() == "jogador2")
 			{
-				if (aux->getData()->getVivo() == true)
-					perdeu= 0;
+				if (aux->getData()->getVivo() == false)
+					perdeu= 1;
 
 			}
 			aux = aux->getProx();

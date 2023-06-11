@@ -13,6 +13,7 @@ namespace Estados
 		static Gerenciadores::Grafico* Pgrafico;
 		Menus::Botao botao;
 		std::list<Menus::Texto*>textos;
+		float tempo_total;
 	public:
 		Ranking();
 		~Ranking();

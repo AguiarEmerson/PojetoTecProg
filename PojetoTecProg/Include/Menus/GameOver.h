@@ -12,12 +12,19 @@ namespace Menus
 		Texto situacao;
 		void criabotoes();
 		Texto* texto;
+		bool primeiroCadastro;
+		
 	public:
 		GameOver(bool Ganhou);
 		~GameOver();
 		void selecionar(Botao* botao);
 		void cadastrar();
 		void Executar();
+		void salvaPonto(string nomeJ, int ponto);
+
+		void cadastraPontuacao();
+		void cadastrasegundaPontuacao();
+		
 	};
 
 }

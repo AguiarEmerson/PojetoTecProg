@@ -172,24 +172,29 @@ namespace Fases
         ganhoFase = 1;
         for (i = 0; i < tam; i++)
         {
-            if (aux->getData()->getId() == "jogador1" || aux->getData()->getId() == "jogador2")
+            if (aux->getData()->getId() == "jogador1"||aux->getData()->getId()=="jogador2")
             {
                 Jogador* joga = NULL;
                 joga = static_cast<Jogador*>(aux->getData());
                 if (joga->getGanhou() == false)
                     ganhoFase = 0;
-
             }
             aux = aux->getProx();
         }
+
     }
     int Fase1::getGanho()
     {
         return ganhoFase;
     }
-    void Fase::salvaPonto()
+    void Fase1::salvaPonto()
     {
-        std::ofstream gravaPonto("ponto.dat", std::ios::out);
+        std::ifstream ifs("ponto1.dat");
+        if (ifs)
+        {
+            remove("ponto1.dat");
+        }
+        std::ofstream gravaPonto("ponto1.dat", std::ios::out);
         if (!gravaPonto)
             exit(1);
         Lista<Entidade>::Elemento<Entidade>* aux;
@@ -202,12 +207,10 @@ namespace Fases
 
                 Jogador* joga = NULL;
                 joga = static_cast<Jogador*>(aux->getData());
-
                 gravaPonto << joga->getId() << ' ' << joga->getPonto() << std::endl;
             }
             aux = aux->getProx();
         }
         gravaPonto.close();
     }
-    
 }

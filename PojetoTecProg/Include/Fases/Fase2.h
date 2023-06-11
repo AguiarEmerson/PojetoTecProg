@@ -19,6 +19,8 @@ namespace Fases
 		void verificaGanho();
 		int getGanho();
 		void Executar();
+		void salvaPonto();
+		void carregaPonto();
 
 	};
 }

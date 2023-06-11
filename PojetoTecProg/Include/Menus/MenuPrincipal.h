@@ -9,6 +9,7 @@ namespace Menus
 	{
 	private:
 		void criabotoes();
+		 
 	public:
 		MenuPrincipal();
 		~MenuPrincipal();

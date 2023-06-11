@@ -6,6 +6,7 @@
 #include <list>
 #include <stack>
 #include<vector>
+#include <map>
 using std::string;
 
 

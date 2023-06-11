@@ -9,6 +9,7 @@ namespace Estados
 	{
 		criaNumero();
 		criaNomes();
+		tempo_total = Pgrafico->getrelogio().getElapsedTime().asSeconds();
 	}
 	Ranking::~Ranking()
 	{
@@ -23,8 +24,10 @@ namespace Estados
 	void Ranking::controlar()
 	{
 		botao.seleciona(true);
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter)) {
-			selecionar(&botao);
+		if (Pgrafico->getrelogio().getElapsedTime().asSeconds() > tempo_total + 2.0f) {
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter)) {
+				selecionar(&botao);
+			}
 		}
 	}
 	void Ranking::Executar()
@@ -54,7 +57,7 @@ namespace Estados
 	}
 	void Ranking::criaNomes()
 	{
-		std::ifstream pegaRanking("Arquivos/ranking.dat", std::ios::in);
+		std::ifstream pegaRanking("ranking.dat", std::ios::in);
 		if (!pegaRanking)
 		{
 			std::cout << "nao foi possivel abrir o ranking" << std::endl;

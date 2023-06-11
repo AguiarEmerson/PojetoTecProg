@@ -18,6 +18,7 @@ namespace Menus
 			situacao.setinfo("Voce Perdeu");
 		}
 		criabotoes();
+		primeiroCadastro = 1;
 	}
 	GameOver::~GameOver()
 	{
@@ -26,152 +27,185 @@ namespace Menus
 	void GameOver::selecionar(Botao* botao)
 	{
 		if (botao->getinfo() == "Sair") {
-
-
 			Pgrafico->fecha();
+		}
+		else if (botao->getinfo() == "Cadastrar")
+		{
+			if(primeiroCadastro)
+				cadastraPontuacao();
+			else
+				cadastrasegundaPontuacao();
 		}
 	}
 
 	void GameOver::cadastrar()
 	{
-		if(sf::Keyboard::isKeyPressed(sf::Keyboard::BackSpace))
+		if(sf::Keyboard::isKeyPressed(sf::Keyboard::BackSpace) && Podedigitar())
 		{
 			nome.pop();
+			tempo_total = Pgrafico->getrelogio().getElapsedTime().asSeconds();
 		}
 		
-		else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+		else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space) && Podedigitar())
 		{
 		nome + ' ';
+		tempo_total = Pgrafico->getrelogio().getElapsedTime().asSeconds();
 		}
 
-		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q))
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q)&&Podedigitar())
 		{
 			nome + 'Q';
+			tempo_total = Pgrafico->getrelogio().getElapsedTime().asSeconds();
 		}
 
-		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) && Podedigitar())
 		{
 			nome + 'W';
+			tempo_total = Pgrafico->getrelogio().getElapsedTime().asSeconds();
 		}
 
-		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::E))
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::E) && Podedigitar())
 		{
 			nome + 'E';
+			tempo_total = Pgrafico->getrelogio().getElapsedTime().asSeconds();
 		}
 
-		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::R))
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::R) && Podedigitar())
 		{
 			nome + 'R';
+			tempo_total = Pgrafico->getrelogio().getElapsedTime().asSeconds();
 		}
 
-		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::T))
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::T) && Podedigitar())
 		{
 			nome + 'T';
+			tempo_total = Pgrafico->getrelogio().getElapsedTime().asSeconds();
 		}
 
-		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Y))
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Y) && Podedigitar())
 		{
 			nome + 'Y';
+			tempo_total = Pgrafico->getrelogio().getElapsedTime().asSeconds();
 		}
 
-		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::U))
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::U) && Podedigitar())
 		{
 			nome + 'U';
+			tempo_total = Pgrafico->getrelogio().getElapsedTime().asSeconds();
 		}
 
-		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::I))
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::I) && Podedigitar())
 		{
 			nome + 'I';
+			tempo_total = Pgrafico->getrelogio().getElapsedTime().asSeconds();
 		}
 
-		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::O))
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::O) && Podedigitar())
 		{
 			nome + 'O';
+			tempo_total = Pgrafico->getrelogio().getElapsedTime().asSeconds();
 		}
 
-		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::P))
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::P) && Podedigitar())
 		{
 			nome + 'P';
+			tempo_total = Pgrafico->getrelogio().getElapsedTime().asSeconds();
 		}
 
-		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) && Podedigitar())
 		{
 			nome + 'A';
+			tempo_total = Pgrafico->getrelogio().getElapsedTime().asSeconds();
 		}
 
-		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S) && Podedigitar())
 		{
 			nome + 'S';
+			tempo_total = Pgrafico->getrelogio().getElapsedTime().asSeconds();
 		}
 
-		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) && Podedigitar())
 		{
 			nome + 'D';
+			tempo_total = Pgrafico->getrelogio().getElapsedTime().asSeconds();
 		}
 
-		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::F))
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::F) && Podedigitar())
 		{
 			nome + 'F';
+			tempo_total = Pgrafico->getrelogio().getElapsedTime().asSeconds();
 		}
 
-		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::G))
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::G) && Podedigitar())
 		{
 			nome + 'G';
+			tempo_total = Pgrafico->getrelogio().getElapsedTime().asSeconds();
 		}
 
-		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::H))
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::H) && Podedigitar())
 		{
 			nome + 'H';
+			tempo_total = Pgrafico->getrelogio().getElapsedTime().asSeconds();
 		}
 		
-		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::J))
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::J) && Podedigitar())
 		{
 			nome + 'J';
+			tempo_total = Pgrafico->getrelogio().getElapsedTime().asSeconds();
 		}
 
-		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::K))
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::K) && Podedigitar())
 		{
 			nome + 'K';
+			tempo_total = Pgrafico->getrelogio().getElapsedTime().asSeconds();
 		}
 
-		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::L))
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::L) && Podedigitar())
 		{
 			nome + 'L';
+			tempo_total = Pgrafico->getrelogio().getElapsedTime().asSeconds();
 		}
 
-		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z))
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z) && Podedigitar())
 		{
 			nome + 'Z';
+			tempo_total = Pgrafico->getrelogio().getElapsedTime().asSeconds();
 		}
 		
-		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::X))
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::X) && Podedigitar())
 		{
 			nome + 'X';
+			tempo_total = Pgrafico->getrelogio().getElapsedTime().asSeconds();
 		}
 
-		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::C))
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::C) && Podedigitar())
 		{
 			nome + 'C';
+			tempo_total = Pgrafico->getrelogio().getElapsedTime().asSeconds();
 		}
 
-		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::V))
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::V) && Podedigitar())
 		{
 			nome + 'V';
+			tempo_total = Pgrafico->getrelogio().getElapsedTime().asSeconds();
 		}
 		
-		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::B))
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::B) && Podedigitar())
 		{
 			nome + 'B';
+			tempo_total = Pgrafico->getrelogio().getElapsedTime().asSeconds();
 		}
 		
-		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::N))
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::N) && Podedigitar())
 		{
 			nome + 'N';
+			tempo_total = Pgrafico->getrelogio().getElapsedTime().asSeconds();
 		}
 
-		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::M))
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::M) && Podedigitar())
 		{
 			nome + 'M';
+			tempo_total = Pgrafico->getrelogio().getElapsedTime().asSeconds();
 		}
 	}
 
@@ -179,9 +213,11 @@ namespace Menus
 	{
 		float botaoposx = tamjanela.x / 2.0f - tambotao.x / 2.0f;
 		incluibotao("Sair", sf::Vector2f(botaoposx, tamjanela.y / 2.0f ));
+		incluibotao("Cadastrar", sf::Vector2f(botaoposx, tamjanela.y / 2 + tamjanela.y / 4));
 		it = listabotao.begin();
 		(*it)->seleciona(true);
 	}
+	
 
 	void GameOver::Executar()
 	{
@@ -193,5 +229,92 @@ namespace Menus
 		Pgrafico->desenha(pontuacao.getTexto());
 		cadastrar();
 		controlar();
+		tempo = Pgrafico->getrelogio().getElapsedTime().asSeconds();
+	}
+	void GameOver::salvaPonto(string nomeJ, int ponto)
+	{
+		std::ifstream pegaRanking("ranking.dat", std::ios::in);
+
+		int i;
+		string nomeAux;
+		int pontoAux;
+		std::map<string, int>ranking;
+		for (i = 0; i < 5; i++)
+		{
+			pegaRanking >> nomeAux >> pontoAux;
+			ranking[nomeAux] = pontoAux;
+		}
+		pegaRanking.close();
+		remove("ranking.dat");
+		ranking[nomeJ] = ponto;
+		std::map<string, int> ::iterator it2;
+		std::map<string, int>aux;
+		for (i = 0; i < 5; i++)
+		{
+			pontoAux = 0;
+			for (it2 = ranking.begin(); it2 != ranking.end(); it2++)
+			{
+				if (it2->second >= pontoAux)
+				{
+					nomeAux = it2->first;
+					pontoAux = it2->second;
+				}
+			}
+			aux[nomeAux] = pontoAux;
+			ranking.erase(nomeAux);
+		}
+		
+		
+		std::ofstream geraRanking("ranking.dat", std::ios::out);
+		std::map<string, int>::iterator it;
+		for (it = aux.begin(); it != aux.end(); it++)
+		{
+			geraRanking << it->first << ' ' << it->second << std::endl;
+		}
+
+		geraRanking.close();
+
+	}
+	void GameOver::cadastraPontuacao() {
+		std::ifstream pegaPonto("ponto2.dat", std::ios::in);
+		if (!pegaPonto)
+		{
+			printf("nao deu pra pegar a pontuacao");
+			exit(1);
+		}
+		string nomeJ;
+		int pont;
+		pegaPonto >> nomeJ >> pont;
+		if (nomeJ == "jogador2")
+		{
+			salvaPonto(nome.getinfo(), pont);
+			pMaquinadeEstados->remove();
+		}
+		else
+		{
+			salvaPonto(nome.getinfo(), pont);
+			nome.setinfo("");
+			primeiroCadastro = 0;
+		}
+		pegaPonto.close();
+
+	}
+	void GameOver::cadastrasegundaPontuacao()
+	{
+		std::ifstream pegaPonto("ponto2.dat", std::ios::in);
+		if (!pegaPonto)
+		{
+			printf("nao deu pra pegar a pontuacao");
+			exit(1);
+		}
+		string nomeJ;
+		int pont;
+		pegaPonto >> nomeJ >> pont;
+		pegaPonto >> nomeJ >> pont;
+		
+		salvaPonto(nome.getinfo(), pont);
+		pegaPonto.close();
+		pMaquinadeEstados->remove();
+		
 	}
 }

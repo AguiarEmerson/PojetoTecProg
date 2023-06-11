@@ -40,6 +40,7 @@ namespace Menus
 		desenha();
 		Pgrafico->desenha(nomeMenu.getTexto());
 		controlar();
+		tempo = Pgrafico->getrelogio().getElapsedTime().asSeconds();
 	}
 	
 }
