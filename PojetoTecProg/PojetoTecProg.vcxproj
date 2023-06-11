@@ -29,7 +29,7 @@
     <ClCompile Include="Source\Entidades\Obstaculo\Espinho.cpp" />
     <ClCompile Include="Source\Entidades\Personagens\Canhao.cpp" />
     <ClCompile Include="Source\Entidades\Projetil.cpp" />
-    <ClCompile Include="Source\Entidades\Personagens\RoboPula.cpp" />
+    <ClCompile Include="Source\Entidades\Personagens\Saltitos.cpp" />
     <ClCompile Include="Source\Fases\Fase.cpp" />
     <ClCompile Include="Source\Fases\Fase2.cpp" />
     <ClCompile Include="Source\Gerenciadores\Colisao.cpp" />
@@ -46,7 +46,7 @@
     <ClCompile Include="Source\Entidades\Entidade.cpp" />
     <ClCompile Include="Source\Entidades\Obstaculo\Obstaculo.cpp" />
     <ClCompile Include="Source\Entidades\Obstaculo\Plataforma.cpp" />
-    <ClCompile Include="Source\Entidades\Personagens\RoboAnda.cpp" />
+    <ClCompile Include="Source\Entidades\Personagens\Andomelo.cpp" />
     <ClCompile Include="Source\Entidades\Personagens\Inimigo.cpp" />
     <ClCompile Include="Source\Entidades\Personagens\Jogador.cpp" />
     <ClCompile Include="Source\Entidades\Personagens\Personagem.cpp" />
@@ -63,7 +63,7 @@
     <ClInclude Include="Include\Entidades\Entidade.h" />
     <ClInclude Include="Include\Entidades\Obstaculos\Obstaculo.h" />
     <ClInclude Include="Include\Entidades\Obstaculos\Plataforma.h" />
-    <ClInclude Include="Include\Entidades\Personagens\RoboAnda.h" />
+    <ClInclude Include="Include\Entidades\Personagens\Andomelo.h" />
     <ClInclude Include="Include\Entidades\Personagens\Inimigo.h" />
     <ClInclude Include="Include\Entidades\Personagens\Jogador.h" />
     <ClInclude Include="Include\Entidades\Personagens\Personagem.h" />
@@ -83,7 +83,7 @@
     <ClInclude Include="Include\Principal.h" />
     <ClInclude Include="Include\Entidades\Personagens\Canhao.h" />
     <ClInclude Include="Include\Entidades\Projetil.h" />
-    <ClInclude Include="Include\Entidades\Personagens\RoboPula.h" />
+    <ClInclude Include="Include\Entidades\Personagens\Saltitos.h" />
     <ClInclude Include="Include\Entidades\Obstaculos\Trampolim.h" />
     <ClInclude Include="Include\stdafx.h" />
     <ClInclude Include="Include\Entidades\Personagens\Jogador1.h" />
@@ -126,14 +126,14 @@
     <Image Include="Arquivos\Imagens\fundo1.png" />
     <Image Include="Arquivos\Imagens\jogador2.png" />
     <Image Include="Arquivos\Imagens\lama.png" />
-    <Image Include="Arquivos\Imagens\RoboAnda.png" />
+    <Image Include="Arquivos\Imagens\andomelo.png" />
     <Image Include="Arquivos\Imagens\espinho.png" />
     <Image Include="Arquivos\Imagens\jogador1.png" />
     <Image Include="Arquivos\Imagens\Canhao.png" />
     <Image Include="Arquivos\Imagens\plataforma.png" />
     <Image Include="Imagens\plataformal.png" />
     <Image Include="Arquivos\Imagens\projetil.png" />
-    <Image Include="Arquivos\Imagens\RoboPula.png" />
+    <Image Include="Arquivos\Imagens\saltitos.png" />
     <Image Include="Arquivos\Imagens\trampolim.png" />
     <Image Include="Sorce\Entidades\Personagens\download.jpeg" />
   </ItemGroup>

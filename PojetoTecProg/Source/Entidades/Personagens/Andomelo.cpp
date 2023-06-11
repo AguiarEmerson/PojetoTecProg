@@ -1,41 +1,41 @@
-#include "..\Entidades\Personagens\RoboAnda.h"
+#include "..\Entidades\Personagens\andomelo.h"
 #include "..\Gerenciadores\Grafico.h"
 
 namespace Entidades
 {
 	namespace Personagens {
-		RoboAnda::RoboAnda(sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v , int h) :
-			Inimigo(tam, p, v, h),num(num_RoboAnda)
+		andomelo::andomelo(sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v , int h) :
+			Inimigo(tam, p, v, h),num(num_andomelo)
 		{
-			textura = Pgrafico->mandaTextura("Arquivos/Imagens/RoboAnda.png");
+			textura = Pgrafico->mandaTextura("Arquivos/Imagens/andomelo.png");
 			box.setTexture(&textura);
-			id = "RoboAnda";
+			id = "andomelo";
 			direcao = rand() % 2;
-			num_RoboAnda++;
+			num_andomelo++;
 			ponto = 100;
 		}
-		RoboAnda::RoboAnda():
-			Inimigo(), num(num_RoboAnda)
+		andomelo::andomelo():
+			Inimigo(), num(num_andomelo)
 		{
-			textura = Pgrafico->mandaTextura("Arquivos/Imagens/RoboAnda.png");
+			textura = Pgrafico->mandaTextura("Arquivos/Imagens/andomelo.png");
 			box.setTexture(&textura);
 			direcao = rand() % 2;
-			id = "RoboAnda";
-			num_RoboAnda++;
+			id = "andomelo";
+			num_andomelo++;
 
 		}
-		RoboAnda::~RoboAnda()
+		andomelo::~andomelo()
 		{
 			listaJogador.clear();
 		}
 
 
-		void RoboAnda::setjogador(Jogador* j)
+		void andomelo::setjogador(Jogador* j)
 		{
 			listaJogador.push_back (j);
 		}
 
-		void RoboAnda::moveraleatorio()
+		void andomelo::moveraleatorio()
 		{
 			if (direcao == 0)
 			{
@@ -47,13 +47,13 @@ namespace Entidades
 			}
 
 			dt = Pgrafico->getrelogio().getElapsedTime().asSeconds()-tempo_total;
-			if (dt >= TEMPORoboAnda) {
+			if (dt >= TEMPOandomelo) {
 				direcao = rand() % 2;
-				tempo_total += TEMPORoboAnda;
+				tempo_total += TEMPOandomelo;
 			}
 		}
 
-		void RoboAnda:: move()
+		void andomelo:: move()
 		{
 			if (!(ac.x >= -0.5 && ac.x <= 0.5 && ac.y >= -0.5 && ac.y <= 0.5))
 			{
@@ -77,7 +77,7 @@ namespace Entidades
 				moveraleatorio();
 		}
 
-		void RoboAnda::Perseguir()
+		void andomelo::Perseguir()
 		{
 			if (podeMover) {
 				if (decideJogador()->getpos().x > pos.x)
@@ -92,21 +92,21 @@ namespace Entidades
 
 		}
 
-		void RoboAnda::Executar()
+		void andomelo::Executar()
 		{
 			primTempoTotal();
 			move();
 			gravidade();
 			verificaVida();
 		}
-		Jogador* RoboAnda::decideJogador()
+		Jogador* andomelo::decideJogador()
 		{
 			if (listaJogador.front()->getVivo() == true)
 				return listaJogador.front();
 			else
 				return listaJogador.back();
 		}
-		string RoboAnda::salvaEnt()
+		string andomelo::salvaEnt()
 		{
 			string aux = criaNomeArquivo(num);
 			char* nomeArquivo = &aux[0];
@@ -123,7 +123,7 @@ namespace Entidades
 			GravadorEnt.close();
 			return aux;
 		}
-		Entidade* RoboAnda::carregarEnt(string arquivo)
+		Entidade* andomelo::carregarEnt(string arquivo)
 		{
 
 			std::ifstream RecuperadorEnt(arquivo, std::ios::in);
@@ -136,18 +136,18 @@ namespace Entidades
 			bool chao = false, move = false, viv = false;
 			int dan = 0, num_vida = 0, direca = 0;
 			RecuperadorEnt >> posx >> posy >> velx >> vely >> chao >> move >> viv >> num_vida >> dan >> acx >> acy >> direca;
-			RoboAnda* roboAnda = new RoboAnda(sf::Vector2f(50.0, 50.0), sf::Vector2f(posx, posy), sf::Vector2f(velx, vely), num_vida);
-			roboAnda->setTa_No_Chao(chao);
-			roboAnda->setVivo(viv);
-			roboAnda->setPodeMover(move);
-			roboAnda->setAc(sf::Vector2f(acx, acy));
-			roboAnda->setDirecao(direca);
-			roboAnda->setDano(dan);
+			andomelo* andomelo = new Entidades::andomelo(sf::Vector2f(50.0, 50.0), sf::Vector2f(posx, posy), sf::Vector2f(velx, vely), num_vida);
+			andomelo->setTa_No_Chao(chao);
+			andomelo->setVivo(viv);
+			andomelo->setPodeMover(move);
+			andomelo->setAc(sf::Vector2f(acx, acy));
+			andomelo->setDirecao(direca);
+			andomelo->setDano(dan);
 
 			RecuperadorEnt.close();
-			return static_cast<Entidade*>(roboAnda);
+			return static_cast<Entidade*>(andomelo);
 
 		}
 	}
 }
-int Entidades::Personagens::RoboAnda::num_RoboAnda = 0;
+int Entidades::Personagens::andomelo::num_andomelo = 0;

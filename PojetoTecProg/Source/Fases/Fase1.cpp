@@ -56,22 +56,22 @@ namespace Fases
             exit(1);
         }
     }
-    void Fase1::criaRoboAnda(sf::Vector2f pos)
+    void Fase1::criaandomelo(sf::Vector2f pos)
     {
-        Entidades::Personagens::RoboAnda* RoboAnda =
-            new Entidades::Personagens::RoboAnda(sf::Vector2f(50.0, 50.0), pos);
-        if (RoboAnda) {
+        Entidades::Personagens::andomelo* andomelo =
+            new Entidades::Personagens::andomelo(sf::Vector2f(50.0, 50.0), pos);
+        if (andomelo) {
             int i, tam;
             tam = lista.getTam();
             for (i = 0; i < tam; i++) {
                 if (lista.getEnt(i)->getId() == "jogador1"|| lista.getEnt(i)->getId() == "jogador2") {
-                    RoboAnda->setjogador(static_cast<Jogador*>(lista.getEnt(i)));
+                    andomelo->setjogador(static_cast<Jogador*>(lista.getEnt(i)));
                 }
             }
-            lista.incluir(static_cast<Entidade*>(RoboAnda));
+            lista.incluir(static_cast<Entidade*>(andomelo));
         }
         else {
-            std::cout << "ERROR::nao foi possivel criar um RoboAnda" << std::endl;
+            std::cout << "ERROR::nao foi possivel criar um andomelo" << std::endl;
             exit(1);
         }
     }
@@ -106,13 +106,13 @@ namespace Fases
 
 		case('C'):
 		{
-			criaRoboAnda(posAux);
+			criaandomelo(posAux);
 		}
 		break;
 
 		case('S'):
 		{
-			criaRoboPula(posAux);
+			criasaltitos(posAux);
 		}
 		break;
 

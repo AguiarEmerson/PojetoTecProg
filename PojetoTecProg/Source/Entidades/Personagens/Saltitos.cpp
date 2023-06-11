@@ -1,39 +1,39 @@
-#include "..\Entidades\Personagens\RoboPula.h"
+#include "..\Entidades\Personagens\saltitos.h"
 #include "..\Gerenciadores\Grafico.h"
 
 namespace Entidades
 {
 	namespace Personagens {
-		RoboPula::RoboPula(sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v, int h) :
-			Inimigo(tam, p, v, h),num(num_RoboPula)
+		saltitos::saltitos(sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v, int h) :
+			Inimigo(tam, p, v, h),num(num_saltitos)
 		{
-			textura = Pgrafico->mandaTextura("Arquivos/Imagens/RoboPula.png");
+			textura = Pgrafico->mandaTextura("Arquivos/Imagens/saltitos.png");
 			box.setTexture(&textura);
-			id = "RoboPula";
+			id = "saltitos";
 			direcao = rand() % 2;
 			altura = 0;
-			num_RoboPula++;
+			num_saltitos++;
 			ponto = 200;
 		}
-		RoboPula::RoboPula() :
-			Inimigo(), num(num_RoboPula)
+		saltitos::saltitos() :
+			Inimigo(), num(num_saltitos)
 		{
-			textura = Pgrafico->mandaTextura("Arquivos/Imagens/RoboPula.png");
+			textura = Pgrafico->mandaTextura("Arquivos/Imagens/saltitos.png");
 			box.setTexture(&textura);
-			id = "RoboPula";
+			id = "saltitos";
 			altura = 0;
 			direcao = rand() % 2;
-			num_RoboPula++;
+			num_saltitos++;
 		}
-		RoboPula::~RoboPula()
+		saltitos::~saltitos()
 		{
 		}
-		void RoboPula::move() {
+		void saltitos::move() {
 			if (ta_no_chao) {
 				dt = Pgrafico->getrelogio().getElapsedTime().asSeconds()-tempo_total;
-				if (dt >= TEMPORoboPula) {
+				if (dt >= TEMPOsaltitos) {
 					pula();
-					tempo_total += TEMPORoboPula;
+					tempo_total += TEMPOsaltitos;
 					direcao = rand() % 2;
 				}
 				
@@ -48,14 +48,14 @@ namespace Entidades
 		}
 
 
-		void RoboPula::Executar() {
+		void saltitos::Executar() {
 			primTempoTotal();
 			move();
 			gravidade();
 			verificaVida();	
 		}
 
-		void RoboPula::pula() {
+		void saltitos::pula() {
 			if (ta_no_chao) {
 				altura = float(rand() % 10)+6.5f;
 				setvel(sf::Vector2f(vel.x, vel.y - altura));
@@ -66,7 +66,7 @@ namespace Entidades
 			setpos(sf::Vector2f(pos.x, pos.y + vel.y));
 		}
 
-		string RoboPula::salvaEnt()
+		string saltitos::salvaEnt()
 		{
 
 			string aux = criaNomeArquivo(num);
@@ -87,7 +87,7 @@ namespace Entidades
 		}
 
 	}
-	Entidade* RoboPula:: carregarEnt(string arquivo)
+	Entidade* saltitos:: carregarEnt(string arquivo)
 	{
 
 		std::ifstream RecuperadorEnt(arquivo, std::ios::in);
@@ -100,24 +100,24 @@ namespace Entidades
 		bool chao = false, move = false, viv = false;
 		int dan = 0, num_vida = 0, direca = 0;
 		RecuperadorEnt >> posx >> posy >> velx >> vely >> chao >> move >> viv >> num_vida >> dan >> acx >> acy >> direca>>altura;
-		RoboPula* roboPula = new RoboPula(sf::Vector2f(50.0, 50.0), sf::Vector2f(posx, posy), sf::Vector2f(velx, vely), num_vida);
-		roboPula->setTa_No_Chao(chao);
-		roboPula->setVivo(viv);
-		roboPula->setPodeMover(move);
-		roboPula->setAc(sf::Vector2f(acx, acy));
-		roboPula->setDirecao(direca);
-		roboPula->setDano(dan);
-		roboPula->setAltura(altura);
+		saltitos* saltitos = new Personagens::saltitos(sf::Vector2f(50.0, 50.0), sf::Vector2f(posx, posy), sf::Vector2f(velx, vely), num_vida);
+		saltitos->setTa_No_Chao(chao);
+		saltitos->setVivo(viv);
+		saltitos->setPodeMover(move);
+		saltitos->setAc(sf::Vector2f(acx, acy));
+		saltitos->setDirecao(direca);
+		saltitos->setDano(dan);
+		saltitos->setAltura(altura);
 
 		RecuperadorEnt.close();
 
 
 
-		return static_cast<Entidade*>(roboPula);
+		return static_cast<Entidade*>(saltitos);
 	}
-	void RoboPula::setAltura(float alt)
+	void saltitos::setAltura(float alt)
 	{
 		altura = alt;
 	}
 }
-int Entidades::Personagens::RoboPula::num_RoboPula = 0;
+int Entidades::Personagens::saltitos::num_saltitos = 0;

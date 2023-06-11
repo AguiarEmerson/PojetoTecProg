@@ -18,7 +18,7 @@ namespace Menus
 			situacao.setinfo("Voce Perdeu");
 		}
 		criabotoes();
-		primeiroCadastro = 1;
+		primeiroCadastro = true;
 	}
 	GameOver::~GameOver()
 	{
@@ -31,10 +31,12 @@ namespace Menus
 		}
 		else if (botao->getinfo() == "Cadastrar")
 		{
-			if(primeiroCadastro)
+			if (primeiroCadastro) {
 				cadastraPontuacao();
-			else
+			}
+			else {
 				cadastrasegundaPontuacao();
+			}
 		}
 	}
 
@@ -249,6 +251,7 @@ namespace Menus
 		ranking[nomeJ] = ponto;
 		std::map<string, int> ::iterator it2;
 		std::map<string, int>aux;
+		
 		for (i = 0; i < 5; i++)
 		{
 			pontoAux = 0;
@@ -256,6 +259,7 @@ namespace Menus
 			{
 				if (it2->second >= pontoAux)
 				{
+					std::cout << pontoAux << std::endl;
 					nomeAux = it2->first;
 					pontoAux = it2->second;
 				}
@@ -271,7 +275,6 @@ namespace Menus
 		{
 			geraRanking << it->first << ' ' << it->second << std::endl;
 		}
-
 		geraRanking.close();
 
 	}
@@ -287,16 +290,25 @@ namespace Menus
 		pegaPonto >> nomeJ >> pont;
 		if (nomeJ == "jogador2")
 		{
+			pegaPonto.close();
 			salvaPonto(nome.getinfo(), pont);
 			pMaquinadeEstados->remove();
+			
+				
 		}
-		else
+		else if(nomeJ=="jogador1")
 		{
 			salvaPonto(nome.getinfo(), pont);
 			nome.setinfo("");
 			primeiroCadastro = 0;
 		}
+		else
+		{
+			std::cout << "houve um erro no cadastro" << std::endl;
+			exit(1);
+		}
 		pegaPonto.close();
+		printf("oi");
 
 	}
 	void GameOver::cadastrasegundaPontuacao()

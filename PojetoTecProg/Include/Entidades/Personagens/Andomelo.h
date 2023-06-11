@@ -5,16 +5,16 @@
 namespace Entidades
 {
 	namespace Personagens {
-		class RoboAnda :public Inimigo {
+		class andomelo :public Inimigo {
 		protected:
 			std::list<Jogador*> listaJogador;
-			static int num_RoboAnda;
+			static int num_andomelo;
 			const int num;
 		public:
-			RoboAnda(sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v = sf::Vector2f(3.0, 0.0), int h = 3);
-			RoboAnda();
+			andomelo(sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v = sf::Vector2f(3.0, 0.0), int h = 3);
+			andomelo();
 
-			~RoboAnda();
+			~andomelo();
 
 			void Executar();
 			void Perseguir();

@@ -13,7 +13,7 @@ namespace Fases
 		Fase1();
 		~Fase1();
 
-		void criaRoboAnda(sf::Vector2f pos);
+		void criaandomelo(sf::Vector2f pos);
 		void criaEsteira(sf::Vector2f pos);
 		void criaEntidade(char id, sf::Vector2i pos);
 		void criaMapa(bool p);

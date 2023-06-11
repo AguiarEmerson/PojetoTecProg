@@ -42,15 +42,15 @@ Principal::Principal():
     jogador(),<<<<<<< Emerson
     plataforma(sf::Vector2f(10000.0, 10.0), sf::Vector2f(-5000.0, 500), sf::Vector2f(0.0, 0.0)),
     plataforma2(sf::Vector2f(50.0, 50.0), sf::Vector2f(0.0, 320.0), sf::Vector2f(0.0, 0.0)),
-    RoboAnda(sf::Vector2f(50.0, 50.0), sf::Vector2f(500.0, -213.0), sf::Vector2f(1.0, 0.0)),
-    //RoboPula(sf::Vector2f(50.0, 50.0), sf::Vector2f(500.0, -213.0), sf::Vector2f(1.0, 0.0)),
+    andomelo(sf::Vector2f(50.0, 50.0), sf::Vector2f(500.0, -213.0), sf::Vector2f(1.0, 0.0)),
+    //saltitos(sf::Vector2f(50.0, 50.0), sf::Vector2f(500.0, -213.0), sf::Vector2f(1.0, 0.0)),
     Canhao(sf::Vector2f(50.0, 50.0), sf::Vector2f(500.0, -213.0), sf::Vector2f(1.0, 0.0)),
     // trampolim(15.0f,sf::Vector2f(200.0, 50.0), sf::Vector2f(0.0, 320.0), sf::Vector2f(0.0, 0.0)),
     espinho( sf::Vector2f(200.0, 50.0), sf::Vector2f(0.0, 320.0), sf::Vector2f(0.0, 0.0))
 
     plataforma(sf::Vector2f(1000.0, 100.0), sf::Vector2f(0.0, 500), sf::Vector2f(0.0, 0.0)),
-   RoboAnda(sf::Vector2f(50.0, 50.0), sf::Vector2f(500.0, -213.0), sf::Vector2f(1.0, 0.0)),
-   RoboPula(sf::Vector2f(50.0, 50.0), sf::Vector2f(500.0, -213.0), sf::Vector2f(1.0, 0.0)),
+   andomelo(sf::Vector2f(50.0, 50.0), sf::Vector2f(500.0, -213.0), sf::Vector2f(1.0, 0.0)),
+   saltitos(sf::Vector2f(50.0, 50.0), sf::Vector2f(500.0, -213.0), sf::Vector2f(1.0, 0.0)),
     Canhao(sf::Vector2f(50.0, 50.0), sf::Vector2f(500.0, -213.0), sf::Vector2f(1.0, 0.0)),
    //trampolim(15.0f,sf::Vector2f(200.0, 50.0), sf::Vector2f(0.0, 320.0), sf::Vector2f(0.0, 0.0)),
     espinho( sf::Vector2f(50.0, 50.0), sf::Vector2f(0.0, 320.0), sf::Vector2f(0.0, 0.0
@@ -62,8 +62,8 @@ Principal::Principal():
 
     lista.incluir(static_cast<Entidade*>(&plataforma));
     lista.incluir(static_cast<Entidade*>(&jogador));
-    lista.incluir(static_cast<Entidade*>(&RoboAnda));<<<<<<< Emerson
-    // lista.incluir(static_cast<Entidade*>(&RoboPula));
+    lista.incluir(static_cast<Entidade*>(&andomelo));<<<<<<< Emerson
+    // lista.incluir(static_cast<Entidade*>(&saltitos));
     lista.incluir(static_cast<Entidade*>(&Canhao));
     lista.incluir(static_cast<Entidade*>(Canhao.getProjetil()));
     //lista.incluir(static_cast<Entidade*>(&trampolim));
@@ -81,7 +81,7 @@ Principal::Principal():
     colisoes.setLista(&lista);
     Pgrafico->setLista(&lista);
 
-    RoboAnda.setjogador(&jogador);
+    andomelo.setjogador(&jogador);
 
     executar();
 }

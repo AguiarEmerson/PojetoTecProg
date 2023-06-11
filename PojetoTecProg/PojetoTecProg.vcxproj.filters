@@ -27,7 +27,7 @@
     <ClCompile Include="Source\Entidades\Obstaculo\Plataforma.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Entidades\Personagens\RoboAnda.cpp">
+    <ClCompile Include="Source\Entidades\Personagens\Andomelo.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
     <ClCompile Include="Source\Entidades\Personagens\Inimigo.cpp">
@@ -51,7 +51,7 @@
     <ClCompile Include="Source\Lista\ListaEntidades.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Entidades\Personagens\RoboPula.cpp">
+    <ClCompile Include="Source\Entidades\Personagens\Saltitos.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
     <ClCompile Include="Source\Entidades\Projetil.cpp">
@@ -137,7 +137,7 @@
     <ClInclude Include="Include\Entidades\Obstaculos\Plataforma.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Entidades\Personagens\RoboAnda.h">
+    <ClInclude Include="Include\Entidades\Personagens\Andomelo.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
     <ClInclude Include="Include\Entidades\Personagens\Inimigo.h">
@@ -149,7 +149,7 @@
     <ClInclude Include="Include\Entidades\Personagens\Personagem.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Entidades\Personagens\RoboPula.h">
+    <ClInclude Include="Include\Entidades\Personagens\Saltitos.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
     <ClInclude Include="Include\Gerenciadores\Colisao.h">
@@ -262,7 +262,7 @@
     <Image Include="Sorce\Entidades\Personagens\download.jpeg">
       <Filter>Arquivos de Recurso</Filter>
     </Image>
-    <Image Include="Arquivos\Imagens\RoboAnda.png">
+    <Image Include="Arquivos\Imagens\andomelo.png">
       <Filter>Arquivos de Recurso</Filter>
     </Image>
     <Image Include="Arquivos\Imagens\espinho.png">
@@ -283,7 +283,7 @@
     <Image Include="Arquivos\Imagens\projetil.png">
       <Filter>Arquivos de Recurso</Filter>
     </Image>
-    <Image Include="Arquivos\Imagens\RoboPula.png">
+    <Image Include="Arquivos\Imagens\saltitos.png">
       <Filter>Arquivos de Recurso</Filter>
     </Image>
     <Image Include="Arquivos\Imagens\esteirad.png">

@@ -1,8 +1,8 @@
 #pragma once
 #include "..\Gerenciadores\Grafico.h"
 #include "..\Gerenciadores\Colisao.h"
-#include "..\Entidades\Personagens\RoboAnda.h"
-#include "..\Entidades\Personagens\RoboPula.h"
+#include "..\Entidades\Personagens\andomelo.h"
+#include "..\Entidades\Personagens\saltitos.h"
 #include "..\Lista\ListaEntidades.h"
 #include "..\Entidades\Obstaculos\Plataforma.h"
 #include "..\Entidades\Personagens\Jogador1.h"
@@ -21,7 +21,7 @@ namespace Fases
 		bool primeiroCiclo;
 		static Gerenciadores::MaquinadeEstados* pMaquinadeEstados;
 		int i;
-		int num_RoboPula;
+		int num_saltitos;
 		int ganhoFase;
 		bool perdeu;
 	
@@ -32,7 +32,7 @@ namespace Fases
 		void criaJogador2(sf::Vector2f pos);
 		void criaPlataforma(sf::Vector2f pos);
 		void criaTrampolim(sf::Vector2f pos);
-		void criaRoboPula(sf::Vector2f pos);
+		void criasaltitos(sf::Vector2f pos);
 		virtual void criaEntidade(char id, sf::Vector2i pos)=0;
 		virtual void criaMapa(bool p ) = 0;
 		virtual void Executar()=0;

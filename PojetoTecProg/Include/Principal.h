@@ -16,8 +16,8 @@ public:
 /*
 #include "..\Gerenciadores\Grafico.h"
 #include "..\Gerenciadores\Colisao.h"
-#include "..\Entidades\Personagens\RoboAnda.h"
-#include "..\Entidades\Personagens\RoboPula.h"
+#include "..\Entidades\Personagens\andomelo.h"
+#include "..\Entidades\Personagens\saltitos.h"
 #include "..\Entidades\Personagens\Canhao.h"
 #include "..\Lista\ListaEntidades.h"
 #include "..\Entidades\Obstaculos\Plataforma.h"

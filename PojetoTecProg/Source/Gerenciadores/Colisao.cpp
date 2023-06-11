@@ -35,7 +35,7 @@ namespace Gerenciadores
 		{
 			if (lista->getEnt(i)->getId() == "plataforma"|| lista->getEnt(i)->getId() == "trampolim"|| lista->getEnt(i)->getId() == "espinho"|| lista->getEnt(i)->getId() == "Esteira")
 				listaObstaculo.push_back(lista->getEnt(i));
-			else if (lista->getEnt(i)->getId() == "RoboAnda"|| lista->getEnt(i)->getId() == "RoboPula")
+			else if (lista->getEnt(i)->getId() == "andomelo"|| lista->getEnt(i)->getId() == "saltitos")
 				listaInimigo.push_back(lista->getEnt(i));
 			else if (lista->getEnt(i)->getId() == "jogador1"|| lista->getEnt(i)->getId() == "jogador2")
 				listaJogador.push_back(lista->getEnt(i));	

@@ -5,18 +5,18 @@
 namespace Entidades
 {
 	namespace Personagens {
-		class RoboPula :public Inimigo
+		class saltitos :public Inimigo
 		{
 		protected:
 			float altura;
-			static int num_RoboPula;
+			static int num_saltitos;
 			const int num;
 		public:
 
-			RoboPula(sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v = sf::Vector2f(3.0, 0.0), int h = 3);
-			RoboPula();
+			saltitos(sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v = sf::Vector2f(3.0, 0.0), int h = 3);
+			saltitos();
 
-			~RoboPula();
+			~saltitos();
 
 			void pula();
 			void move();

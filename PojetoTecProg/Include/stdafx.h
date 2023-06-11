@@ -18,8 +18,8 @@ using std::string;
 #define GRAVIDADE 0.5
 #define RAIO_VISAO 500.0
 #define TEMPOMOVECanhao 4.0
-#define TEMPORoboAnda 3.0
-#define TEMPORoboPula 2.0
+#define TEMPOandomelo 3.0
+#define TEMPOsaltitos 2.0
 #define TEMPOTRAMPOLIM 5.0
 #define TEMPOESPINHO 4.0
 #define VELOCIDADECOICE 7.0

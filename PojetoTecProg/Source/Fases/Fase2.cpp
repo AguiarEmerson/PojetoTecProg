@@ -106,7 +106,7 @@ namespace Fases
 
         case('S'):
         {
-            criaRoboPula(posAux);
+            criasaltitos(posAux);
         }
         break;
 

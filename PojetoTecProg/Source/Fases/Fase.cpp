@@ -15,7 +15,7 @@ namespace Fases
 		fundo = sf::RectangleShape(sf::Vector2f(1000.0f, 600.0f));
 		primeiroCiclo = true;
 		i = 0;
-		num_RoboPula = 2+rand()%6;
+		num_saltitos = 2+rand()%6;
 		ganhoFase = 0;
 		perdeu = false;
 		
@@ -99,16 +99,16 @@ namespace Fases
 		}
 	}
 
-	void Fase::criaRoboPula(sf::Vector2f pos)
+	void Fase::criasaltitos(sf::Vector2f pos)
 	{
-		Entidades::Personagens::RoboPula* RoboPula = 
-			new Entidades::Personagens::RoboPula(sf::Vector2f (50.0,50.0),pos);
-		if (RoboPula&&i<num_RoboPula) {
-			lista.incluir(static_cast<Entidade*>(RoboPula));
+		Entidades::Personagens::saltitos* saltitos = 
+			new Entidades::Personagens::saltitos(sf::Vector2f (50.0,50.0),pos);
+		if (saltitos&&i<num_saltitos) {
+			lista.incluir(static_cast<Entidade*>(saltitos));
 			i++;
 		}
-		else if(!RoboPula){
-			std::cout << "ERROR::nao foi possivel criar um RoboPula" << std::endl;
+		else if(!saltitos){
+			std::cout << "ERROR::nao foi possivel criar um saltitos" << std::endl;
 			exit(1);
 		}
 	}
@@ -218,24 +218,24 @@ namespace Fases
 					lista.incluir(entidade);
 					
 				}
-				else if (id == "RoboAnda") {
+				else if (id == "andomelo") {
 					Entidade* entidade = NULL;
-					entidade=RoboAnda::carregarEnt(nomeArquivo);
-					RoboAnda* roboAnda=NULL;
-					roboAnda = static_cast<RoboAnda*>(entidade);
+					entidade=andomelo::carregarEnt(nomeArquivo);
+					andomelo* andomelo=NULL;
+					andomelo = static_cast<Personagens::andomelo*>(entidade);
 					int i, tam;
 					bool achoJogador = false;
 					tam = lista.getTam();
 					for (i = 0; i < tam&&!achoJogador; i++) {
 						if (lista.getEnt(i)->getId() == "jogador1"||lista.getEnt(i)->getId()=="jogador2") {
 							achoJogador = true;
-							roboAnda->setjogador(static_cast<Jogador*>(lista.getEnt(i)));
+							andomelo->setjogador(static_cast<Jogador*>(lista.getEnt(i)));
 						}
 					}
 					lista.incluir(entidade);
 				}
-				else if (id == "RoboPula")
-					lista.incluir(RoboPula::carregarEnt(nomeArquivo));
+				else if (id == "saltitos")
+					lista.incluir(saltitos::carregarEnt(nomeArquivo));
 				else if (id == "projetil")
 					lista.incluir(Projetil::carregarEnt(nomeArquivo));
 				
