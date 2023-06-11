@@ -227,8 +227,8 @@ namespace Fases
 					bool achoJogador = false;
 					tam = lista.getTam();
 					for (i = 0; i < tam&&!achoJogador; i++) {
-						if (lista.getEnt(i)->getId() == "jogador1"||lista.getEnt(i)->getId()=="Jogador2") {
-							achoJogador = 1;
+						if (lista.getEnt(i)->getId() == "jogador1"||lista.getEnt(i)->getId()=="jogador2") {
+							achoJogador = true;
 							roboAnda->setjogador(static_cast<Jogador*>(lista.getEnt(i)));
 						}
 					}

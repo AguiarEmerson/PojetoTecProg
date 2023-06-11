@@ -7,10 +7,11 @@ plataforma plataforma4.dat
 plataforma plataforma5.dat 
 plataforma plataforma6.dat 
 plataforma plataforma7.dat 
-plataforma plataforma8.dat 
-jogador1 jogador1.dat 
 jogador2 jogador2.dat 
-RoboAnda RoboAnda0.dat 
+RoboPula RoboPula0.dat 
+RoboPula RoboPula1.dat 
+RoboPula RoboPula2.dat 
+plataforma plataforma8.dat 
 plataforma plataforma9.dat 
 plataforma plataforma10.dat 
 plataforma plataforma11.dat 
@@ -20,8 +21,7 @@ Esteira Esteira0.dat
 Esteira Esteira1.dat 
 Esteira Esteira2.dat 
 Esteira Esteira3.dat 
-Esteira Esteira4.dat 
-Esteira Esteira5.dat 
+RoboAnda RoboAnda0.dat 
 plataforma plataforma14.dat 
 plataforma plataforma15.dat 
 plataforma plataforma16.dat 
