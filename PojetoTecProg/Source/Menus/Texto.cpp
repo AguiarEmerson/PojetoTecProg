@@ -31,7 +31,7 @@ namespace Menus
 		return info;
 	}
 
-	void Texto::setinfo(std::string i)
+	void Texto::setinfo(const std::string i)
 	{
 		info = i;
 		inicializa();

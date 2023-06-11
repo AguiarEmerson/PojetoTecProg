@@ -13,10 +13,10 @@ namespace Menus
 		sf::Vector2f tamjanela;
 		Texto nomeMenu;
 		static Gerenciadores::Grafico* Pgrafico;
-		virtual void criabotoes() = 0;
 		float dt;
 		float tempo_total;
 		float tempo;
+		virtual void criabotoes() = 0;
 	public:
 		Menu(const string nome, sf::Vector2f tambotao, const int tamfonte=75);
 		~Menu();

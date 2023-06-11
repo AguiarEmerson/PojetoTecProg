@@ -10,9 +10,9 @@ namespace Menus
 		Texto pontuacao;
 		Texto nome;
 		Texto situacao;
-		void criabotoes();
 		Texto* texto;
 		bool primeiroCadastro;
+		void criabotoes();
 		
 	public:
 		GameOver(bool Ganhou);

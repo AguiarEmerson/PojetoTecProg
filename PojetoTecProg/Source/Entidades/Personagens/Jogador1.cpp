@@ -7,7 +7,7 @@ namespace Entidades
 		Jogador(tam,p,v,h,xp)
 		{
 			id = "jogador1";
-			cura = false;
+			sozinho = false;
 			textura = Pgrafico->carregarTextura("Arquivos/Imagens/jogador1.png");
 			box.setTexture(&textura);
 		
@@ -16,7 +16,7 @@ namespace Entidades
 		Jogador()
 		{
 			id = "jogador1";
-			cura = false;
+			sozinho = false;
 			textura = Pgrafico->carregarTextura("Arquivos/Imagens/jogador1.png");
 			box.setTexture(&textura);
 		}

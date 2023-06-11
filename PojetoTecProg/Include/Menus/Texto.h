@@ -19,7 +19,7 @@ namespace Menus
 		~Texto();
 		const sf::Text getTexto() const;
 		const std::string getinfo() const;
-		void setinfo(std::string i);
+		void setinfo(const std::string i);
 		void setPos(const sf::Vector2f pos);
 		void operator+(char l);
 		void pop();

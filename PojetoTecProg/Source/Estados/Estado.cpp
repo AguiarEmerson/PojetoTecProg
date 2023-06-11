@@ -160,10 +160,6 @@ namespace Estados
 		else
 			pMaquinadeEstados->incluir("Game_over_lose");
 	}
-	Estado* Estado::criaestadoGameOver(const bool venceu)
-	{
-		Menus::GameOver* gameover = new Menus::GameOver(venceu);
-		return static_cast <Estados::Estado*>(gameover);
-	}
+
 	
 }

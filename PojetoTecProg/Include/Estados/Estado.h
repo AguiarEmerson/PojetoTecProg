@@ -24,7 +24,7 @@ namespace Estados
 		Estado* criaestadoMenuPausa();
 		Estado* CriaestadoGameOver(bool ganhou);
 		Estado* criaestadoRanking();
-		Estado* criaestadoGameOver(const bool venceu);
+
 
 		void passaFase1();
 		void gameOver(const bool vitoria);
