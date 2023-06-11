@@ -213,7 +213,6 @@ namespace Fases
         std::ifstream RecuperaPonto("ponto1.dat", std::ios::in);
         if (!RecuperaPonto) {
             return;
-            printf("nao foi possivel carregar");
         }
         string id;
         int ponto;
@@ -266,4 +265,5 @@ namespace Fases
 
 
     }
+    
 }

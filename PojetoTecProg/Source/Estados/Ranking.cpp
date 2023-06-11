@@ -48,11 +48,15 @@ namespace Estados
 	void Ranking::criaNumero()
 	{
 		int i;
+		int j;
+		j = 5;
 		for (i = 1; i < 6; i++)
 		{
-			Menus::Texto* aux = new Menus::Texto(Pgrafico->carregarFonte("Arquivos/Fonte.ttf"), std::to_string(i));
+
+			Menus::Texto* aux = new Menus::Texto(Pgrafico->carregarFonte("Arquivos/Fonte.ttf"), std::to_string(j));
 			aux->setPos(sf::Vector2f(60.0f, (100.0f + 75.0f * i)));
 			textos.push_back(aux);
+			j--;
 		}
 	}
 	void Ranking::criaNomes()
