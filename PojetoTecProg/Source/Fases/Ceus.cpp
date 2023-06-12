@@ -76,13 +76,13 @@ namespace Fases
         {
         case('J'):
         {
-            criaJogador1(posAux);
+            criarobo(posAux);
         }
         break;
 
         case('P'):
         {
-            criaJogador2(posAux);
+            criazoiudo(posAux);
         }
         break;
 
@@ -196,7 +196,7 @@ namespace Fases
         int i, tam = lista.getTam();
         for (i = 0; i < tam; i++)
         {
-            if (aux->getData()->getId() == "jogador1" || aux->getData()->getId() == "jogador2")
+            if (aux->getData()->getId() == "robo" || aux->getData()->getId() == "zoiudo")
             {
 
                 Jogador* joga = NULL;
@@ -221,7 +221,7 @@ namespace Fases
         int i, tam = lista.getTam();
         RecuperaPonto >> id >> ponto;
         int t;
-        if (id == "jogador2")
+        if (id == "zoiudo")
             t = 1;
         else
             t = 2;
@@ -230,7 +230,7 @@ namespace Fases
         {
             for (i = 0; i < tam; i++)
             {
-                if (aux->getData()->getId() == "jogador2") {
+                if (aux->getData()->getId() == "zoiudo") {
                     joga = static_cast<Jogador*>(aux->getData());
                     joga->setPontos(ponto);
                 }
@@ -242,7 +242,7 @@ namespace Fases
             aux = lista.getPrim();
             for (i = 0; i < tam; i++)
             {
-                if (aux->getData()->getId() == "jogador2") {
+                if (aux->getData()->getId() == "zoiudo") {
                     joga = static_cast<Jogador*>(aux->getData());
                     joga->setPontos(ponto);
                 }
@@ -252,7 +252,7 @@ namespace Fases
             aux = lista.getPrim();
             for (i = 0; i < tam; i++)
             {
-                if (aux->getData()->getId() == "jogador1") {
+                if (aux->getData()->getId() == "robo") {
                     joga = static_cast<Jogador*>(aux->getData());
                     joga->setPontos(ponto);
                 }

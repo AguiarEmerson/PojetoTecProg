@@ -64,7 +64,7 @@ namespace Fases
             int i, tam;
             tam = lista.getTam();
             for (i = 0; i < tam; i++) {
-                if (lista.getEnt(i)->getId() == "jogador1"|| lista.getEnt(i)->getId() == "jogador2") {
+                if (lista.getEnt(i)->getId() == "robo"|| lista.getEnt(i)->getId() == "zoiudo") {
                     andomelo->setjogador(static_cast<Jogador*>(lista.getEnt(i)));
                 }
             }
@@ -82,13 +82,13 @@ namespace Fases
 		{
 		case('J'):
 		{
-			criaJogador1(posAux);
+			criarobo(posAux);
 		}
 		break;
 
 		case('P'):
 		{
-			criaJogador2(posAux);
+			criazoiudo(posAux);
 		}
 		break;
 
@@ -172,7 +172,7 @@ namespace Fases
         ganhoFase = 1;
         for (i = 0; i < tam; i++)
         {
-            if (aux->getData()->getId() == "jogador1"||aux->getData()->getId()=="jogador2")
+            if (aux->getData()->getId() == "robo"||aux->getData()->getId()=="zoiudo")
             {
                 Jogador* joga = NULL;
                 joga = static_cast<Jogador*>(aux->getData());
@@ -202,7 +202,7 @@ namespace Fases
         int i, tam = lista.getTam();
         for (i = 0; i < tam; i++)
         {
-            if (aux->getData()->getId() == "jogador1" || aux->getData()->getId() == "jogador2")
+            if (aux->getData()->getId() == "robo" || aux->getData()->getId() == "zoiudo")
             {
 
                 Jogador* joga = NULL;

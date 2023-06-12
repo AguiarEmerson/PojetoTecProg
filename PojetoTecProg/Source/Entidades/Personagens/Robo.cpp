@@ -1,28 +1,28 @@
-#include "..\..\..\Include\Entidades\Personagens\Jogador1.h"
+#include "..\..\..\Include\Entidades\Personagens\robo.h"
 namespace Entidades
 {
 	namespace Personagens
 	{
-		Jogador1::Jogador1(sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v , int h , int xp ) :
+		robo::robo(sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v , int h , int xp ) :
 		Jogador(tam,p,v,h,xp)
 		{
-			id = "jogador1";
+			id = "robo";
 			sozinho = false;
-			textura = Pgrafico->carregarTextura("Arquivos/Imagens/jogador1.png");
+			textura = Pgrafico->carregarTextura("Arquivos/Imagens/robo.png");
 			box.setTexture(&textura);
 		
 		}
-		Jogador1::Jogador1():
+		robo::robo():
 		Jogador()
 		{
-			id = "jogador1";
+			id = "robo";
 			sozinho = false;
-			textura = Pgrafico->carregarTextura("Arquivos/Imagens/jogador1.png");
+			textura = Pgrafico->carregarTextura("Arquivos/Imagens/robo.png");
 			box.setTexture(&textura);
 		}
-		Jogador1::~Jogador1()
+		robo::~robo()
 		{}
-		void Jogador1::move() {
+		void robo::move() {
 			vel.x = 0.0;
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
 				pula();
@@ -43,7 +43,7 @@ namespace Entidades
 					ac.x -= 0.5;
 			}
 		}
-		void Jogador1::Executar()
+		void robo::Executar()
 		{
 			if (vivo == true&&!ganhouFase) {
 				verificaGanhou();
@@ -52,7 +52,7 @@ namespace Entidades
 				verificaVida();
 			}
 		}
-		string Jogador1::salvaEnt()
+		string robo::salvaEnt()
 		{
 			string aux = criaNomeArquivo();
 			char* nomeArquivo = &aux[0];
@@ -69,7 +69,7 @@ namespace Entidades
 
 			return aux;
 		}
-		Entidade* Jogador1::carregarEnt(string arquivo)
+		Entidade* robo::carregarEnt(string arquivo)
 		{
 
 			std::ifstream RecuperadorEnt(arquivo, std::ios::in);
@@ -82,7 +82,7 @@ namespace Entidades
 			bool chao = false, move = false, viv = false,ganhou=false;
 			int dan = 0, num_vida = 0,pont=0;
 			RecuperadorEnt >> posx >> posy >> velx >> vely >> chao >> move >> viv >> num_vida >> dan >> acx >> acy>>pont>>ganhou;
-			Jogador1* jogador = new Jogador1(sf::Vector2f(50.0, 50.0), sf::Vector2f(posx, posy), sf::Vector2f(velx, vely), num_vida);
+			robo* jogador = new robo(sf::Vector2f(50.0, 50.0), sf::Vector2f(posx, posy), sf::Vector2f(velx, vely), num_vida);
 			jogador->setTa_No_Chao(chao);
 			jogador->setVivo(viv);
 			jogador->setPodeMover(move);

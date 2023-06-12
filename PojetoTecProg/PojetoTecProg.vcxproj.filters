@@ -75,10 +75,10 @@
     <ClCompile Include="Source\Fases\Floresta.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Entidades\Personagens\Jogador1.cpp">
+    <ClCompile Include="Source\Entidades\Personagens\Robo.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Entidades\Personagens\Jogador2.cpp">
+    <ClCompile Include="Source\Entidades\Personagens\Zoiudo.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
     <ClCompile Include="Source\Estados\Estado.cpp">
@@ -182,10 +182,10 @@
     <ClInclude Include="Include\Fases\Floresta.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Entidades\Personagens\Jogador1.h">
+    <ClInclude Include="Include\Entidades\Personagens\Robo.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Entidades\Personagens\Jogador2.h">
+    <ClInclude Include="Include\Entidades\Personagens\Zoiudo.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
     <ClInclude Include="Include\Estados\Estado.h">
@@ -271,7 +271,7 @@
     <Image Include="Arquivos\Imagens\espinho.png">
       <Filter>Arquivos de Recurso</Filter>
     </Image>
-    <Image Include="Arquivos\Imagens\jogador1.png">
+    <Image Include="Arquivos\Imagens\robo.png">
       <Filter>Arquivos de Recurso</Filter>
     </Image>
     <Image Include="Arquivos\Imagens\Canhao.png">
@@ -298,7 +298,7 @@
     <Image Include="Arquivos\Imagens\fundo1.png">
       <Filter>Arquivos de Recurso</Filter>
     </Image>
-    <Image Include="Arquivos\Imagens\jogador2.png">
+    <Image Include="Arquivos\Imagens\zoiudo.png">
       <Filter>Arquivos de Recurso</Filter>
     </Image>
     <Image Include="Arquivos\Imagens\lama.png">

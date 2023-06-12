@@ -147,7 +147,7 @@ namespace Estados
 		string i,j;
 		recuperaPonto >> i >> j;
 		Estado* estado = NULL;
-		if (i=="jogador2") 
+		if (i=="zoiudo") 
 			pMaquinadeEstados->incluir("jogar_Ceus_1p");
 		else
 			pMaquinadeEstados->incluir("jogar_Ceus_2p");

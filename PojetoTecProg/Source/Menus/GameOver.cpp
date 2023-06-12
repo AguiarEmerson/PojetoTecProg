@@ -281,14 +281,14 @@ namespace Menus
 		string nomeJ;
 		int pont;
 		pegaPonto >> nomeJ >> pont;
-		if (nomeJ == "jogador2")
+		if (nomeJ == "zoiudo")
 		{
 			pegaPonto.close();
 			salvaPonto(nome.getinfo(), pont);
 			Pgrafico->fecha();
 
 		}
-		else if(nomeJ=="jogador1")
+		else if(nomeJ=="robo")
 		{
 			salvaPonto(nome.getinfo(), pont);
 			nome.setinfo("");

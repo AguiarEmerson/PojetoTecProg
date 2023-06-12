@@ -5,8 +5,8 @@
 #include "..\Entidades\Personagens\saltitos.h"
 #include "..\Lista\ListaEntidades.h"
 #include "..\Entidades\Obstaculos\Plataforma.h"
-#include "..\Entidades\Personagens\Jogador1.h"
-#include "..\Entidades\Personagens\Jogador2.h"
+#include "..\Entidades\Personagens\robo.h"
+#include "..\Entidades\Personagens\zoiudo.h"
 #include "..\Gerenciadores\MaquinadeEstados.h"
 
 namespace Fases
@@ -28,8 +28,8 @@ namespace Fases
 	public:
 		Fase();
 		~Fase();
-		void criaJogador1(sf::Vector2f pos);
-		void criaJogador2(sf::Vector2f pos);
+		void criarobo(sf::Vector2f pos);
+		void criazoiudo(sf::Vector2f pos);
 		void criaPlataforma(sf::Vector2f pos);
 		void criaTrampolim(sf::Vector2f pos);
 		void criasaltitos(sf::Vector2f pos);
