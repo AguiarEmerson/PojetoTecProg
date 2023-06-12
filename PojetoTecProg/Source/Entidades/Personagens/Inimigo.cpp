@@ -11,6 +11,7 @@ namespace Entidades
 			primeiro_ciclo = 1;
 			tempo_total = 0;
 			dt = 0;
+			ponto = 0;
 			
 		}
 
@@ -21,6 +22,7 @@ namespace Entidades
 			primeiro_ciclo = 1;
 			tempo_total = 0;
 			dt = 0;
+			ponto = 0;
 		}
 
 		Inimigo::~Inimigo()
@@ -30,13 +32,13 @@ namespace Entidades
 		
 		void Inimigo::coice(Entidade* entidade,float angulo)
 		{
-			ac.x = ac.x + cos(angulo) * VELOCIDADECOICE;
-			vel.y = vel.y + sin(angulo) * VELOCIDADECOICE;
+			ac.x = static_cast<float>(ac.x + cos(angulo) * VELOCIDADECOICE);
+			vel.y = static_cast<float>(vel.y + sin(angulo) * VELOCIDADECOICE);
 			Jogador* jogador = nullptr;
 			jogador = static_cast<Jogador*>(entidade);
 			jogador->tomaDano(dano);
-			jogador->setAc(sf::Vector2f(-(jogador->getAc().x + cos(angulo) * VELOCIDADECOICE), jogador->getAc().y));
-			jogador->setvel(sf::Vector2f(jogador->getvel().x, jogador->getvel().y - sin(angulo) * VELOCIDADECOICE));
+			jogador->setAc(sf::Vector2f(-(jogador->getAc().x + cos(angulo) * float(VELOCIDADECOICE)), jogador->getAc().y));
+			jogador->setvel(sf::Vector2f(jogador->getvel().x, jogador->getvel().y - sin(angulo) * float(VELOCIDADECOICE)));
 			
 
 		}

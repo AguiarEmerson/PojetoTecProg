@@ -7,7 +7,7 @@ namespace Menus
 		Estado(), fase(fase),
 		Menu("Pausado", sf::Vector2f(TAMANHO_BOTAO_X, TAMANHO_BOTAO_Y))
 	{
-		nomeMenu.setPos(sf::Vector2f(tamjanela.x / 2.0f - tambotao.x / 2.0f, tamjanela.y / 2.0f - tambotao.y * 6.0));
+		nomeMenu.setPos(sf::Vector2f(tamjanela.x / 2.0f - tambotao.x / 2.0f, tamjanela.y / 2.0f - tambotao.y * 6.0f));
 		criabotoes();
 	}
 	MenuPausa::~MenuPausa()
@@ -17,7 +17,7 @@ namespace Menus
 	{
 		float botaoposx = tamjanela.x / 2.0f - tambotao.x / 2.0f;
 		incluibotao("Salvar", sf::Vector2f( botaoposx, tamjanela.y / 2.0f));
-		incluibotao("Voltar", sf::Vector2f(botaoposx, tamjanela.y / 2.0f + tambotao.y * 1.2));
+		incluibotao("Voltar", sf::Vector2f(botaoposx, tamjanela.y / 2.0f + tambotao.y * 1.2f));
 		it = listabotao.begin();
 		(*it)->seleciona(true);
 	}

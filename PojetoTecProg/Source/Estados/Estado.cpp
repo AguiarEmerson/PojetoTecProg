@@ -53,9 +53,11 @@ namespace Estados
 		{
 			std::cout << "nao foi possivel carregar fase" << std::endl;
 			exit(1);
+			return NULL;
 		}
 		string fas;
 		qualFase >> fas;
+		qualFase.close();
 		Fases::Fase* Floresta = static_cast<Fases::Fase*>(new Fases::Floresta());
 		Fases::Fase* Ceus = static_cast<Fases::Fase*>(new Fases::Ceus());
 		if (fas == "Ceus") {
@@ -65,19 +67,14 @@ namespace Estados
 				return static_cast<Estados::Estado*> (estado);
 			}
 		}
-		else if (fas == "Floresta") {
+		else if (fas == "Floresta") { 
 			Floresta->carregaSave();
 			if (Floresta) {
 				Estados::EstadoJogar* estado = new EstadoJogar(Floresta);
 				return static_cast<Estados::Estado*> (estado);
 			}
 		}
-		else
-		{
-			std::cout << "nao foi possivel carregar fase" << std::endl;
-			exit(1);
-		}
-		qualFase.close();
+		return NULL;
 	}
 
 	Estado* Estado::criaestadoMenuPrincipal()

@@ -14,7 +14,7 @@ namespace Entidades
 		{
 		protected:
 			int pontos;
-			bool ganhouFase;
+			bool ganhouFase; 
 			
 		public:
 			Jogador(sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v = sf::Vector2f(3.0, 0.0), int h = 5, int xp = 0);

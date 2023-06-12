@@ -8,7 +8,7 @@ namespace Fases
 	{
         textura = Grafico::getgrafico()->carregarTextura("Arquivos/Imagens/fundo1.png");
         fundo.setTexture(&textura);
-        srand(Pgrafico->getrelogio().getElapsedTime().asSeconds());
+        srand(static_cast<int>(Pgrafico->getrelogio().getElapsedTime().asSeconds()));
         num_Esteira = 3 + rand() % 7;
         j = 0;
 	}
@@ -31,9 +31,9 @@ namespace Fases
             std::cout << "nao foi possivel abrir o arquivo: Mapa_Floresta" << std::endl;
             exit(1);
         }
-        int j = 0;
+        unsigned int j = 0;
         while (std::getline(arquivo, linha)) {
-            for (int i = 0; i < linha.size(); i++) {
+            for (unsigned int i = 0; i < linha.size(); i++) {
                 if (linha[i] != ' ') {
                     criaEntidade(linha[i], sf::Vector2i(i, j));
                 }

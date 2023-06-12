@@ -19,7 +19,7 @@ using std::string;
 #define GRAVIDADE 0.5
 #define RAIO_VISAO 500.0
 #define TEMPOMOVECanhao 4.0
-#define TEMPOandomelo 3.0
+#define TEMPOandomelo 3.0 
 #define TEMPOsaltitos 2.0
 #define TEMPOTRAMPOLIM 5.0
 #define TEMPOESPINHO 4.0
@@ -28,7 +28,7 @@ using std::string;
 #define VELOCIDADEJOGADOR 5.0
 #define DELAY 0.5
 //L é lateral
-#define IMPULSOESPINHOL 5.0
+#define IMPULSOESPINHOL 5.0 
 #define PULOALTO 10.0
 #define FORCAPROJETIL 2.0
 #define VELMINPROJETILX 2.0

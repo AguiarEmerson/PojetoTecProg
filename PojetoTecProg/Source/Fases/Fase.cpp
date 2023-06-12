@@ -15,7 +15,7 @@ namespace Fases
 		fundo = sf::RectangleShape(sf::Vector2f(1000.0f, 600.0f));
 		primeiroCiclo = true;
 		i = 0;
-		srand(Pgrafico->getrelogio().getElapsedTime().asSeconds());
+		srand(static_cast<int>(Pgrafico->getrelogio().getElapsedTime().asSeconds()));
 		num_saltitos = 2+rand()%6;
 		ganhoFase = 0;
 		perdeu = false;

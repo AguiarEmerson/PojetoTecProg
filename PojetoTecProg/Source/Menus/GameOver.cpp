@@ -7,10 +7,10 @@ namespace Menus
 		pontuacao(Pgrafico->carregarFonte("Arquivos/Fonte.ttf"), "Sua pontuacao foi:"),
 		Estado(),nome(Pgrafico->carregarFonte("Arquivos/Fonte.ttf")), situacao(Pgrafico->carregarFonte("Arquivos/Fonte.ttf"))
 	{
-		nomeMenu.setPos(sf::Vector2f(tamjanela.x / 2.0f - tambotao.x / 2.0f, tamjanela.y / 2.0f - tambotao.y * 6.0));
-		nome.setPos(sf::Vector2f(tamjanela.x / 2.0f - tambotao.x / 2.0f, tamjanela.y / 2.0f - tambotao.y * 2.4));
-		situacao.setPos(sf::Vector2f(tamjanela.x / 2.0f - tambotao.x / 2.0f, tamjanela.y / 2.0f - tambotao.y * 4.8));
-		pontuacao.setPos(sf::Vector2f(tamjanela.x / 2.0f - tambotao.x / 2.0f, tamjanela.y / 2.0f - tambotao.y * 3.6));
+		nomeMenu.setPos(sf::Vector2f(tamjanela.x / 2.0f - tambotao.x / 2.0f, tamjanela.y / 2.0f - tambotao.y * 6.0f));
+		nome.setPos(sf::Vector2f(tamjanela.x / 2.0f - tambotao.x / 2.0f, tamjanela.y / 2.0f - tambotao.y * 2.4f));
+		situacao.setPos(sf::Vector2f(tamjanela.x / 2.0f - tambotao.x / 2.0f, tamjanela.y / 2.0f - tambotao.y * 4.8f));
+		pontuacao.setPos(sf::Vector2f(tamjanela.x / 2.0f - tambotao.x / 2.0f, tamjanela.y / 2.0f - tambotao.y * 3.6f));
 		if (ganhou) {
 			situacao.setinfo("Voce ganhou");
 		}
@@ -237,7 +237,7 @@ namespace Menus
 	{
 		std::ifstream pegaRanking("ranking.dat", std::ios::in);
 
-		int i;
+		unsigned int i;
 		string nomeAux;
 		int pontoAux;
 		std::multimap<int,string>ranking;
@@ -253,7 +253,7 @@ namespace Menus
 		std::ofstream geraRanking("ranking.dat", std::ios::out);
 		std::multimap<int, string> aux;
 		std::multimap<int, string>::iterator it;
-		int j;
+		unsigned int j;
 		for(i=0;i<5;i++)
 		{
 			it = ranking.begin();

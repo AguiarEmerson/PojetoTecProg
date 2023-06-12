@@ -31,7 +31,7 @@ namespace Entidades
 		void Jogador::pula()
 		{
 			if (ta_no_chao) {
-				vel.y = -sqrt(2.0 * GRAVIDADE * ALTURAPULO);
+				vel.y = -sqrt(2.0f * float(GRAVIDADE) * float(ALTURAPULO));
 				ta_no_chao = false;
 			}
 		}
@@ -53,11 +53,11 @@ namespace Entidades
 						if (secundaria->getId() == "projetil")
 						{
 							deletaProjetil(secundaria);
-							setAc(sf::Vector2f(-FORCAPROJETIL*secundaria->getvel().x, 0.0f));
+							setAc(sf::Vector2f(-float(FORCAPROJETIL)*secundaria->getvel().x, 0.0f));
 						}
 						if (secundaria->getId() == "espinho")
 						{
-							setAc(sf::Vector2f(IMPULSOESPINHOL * vel.x, 0.0f));
+							setAc(sf::Vector2f(float(IMPULSOESPINHOL) * vel.x, 0.0f));
 							danoEspinho(secundaria);
 						}
 						if (secundaria->getId() == "plataforma" || secundaria->getId() == "mola" || secundaria->getId() == "esteira")
@@ -69,11 +69,11 @@ namespace Entidades
 						if (secundaria->getId() == "projetil")
 						{
 							deletaProjetil(secundaria);
-							setAc(sf::Vector2f(-FORCAPROJETIL*secundaria->getvel().x, 0));
+							setAc(sf::Vector2f(-float(FORCAPROJETIL)*secundaria->getvel().x, 0));
 						}
 						if (secundaria->getId() == "espinho")
 						{
-								setAc(sf::Vector2f(-IMPULSOESPINHOL * vel.x, 0.0f));
+								setAc(sf::Vector2f(-float(IMPULSOESPINHOL) * vel.x, 0.0f));
 								danoEspinho(secundaria);
 						}
 						if (secundaria->getId() == "plataforma" || secundaria->getId() == "mola" || secundaria->getId() == "esteira")
@@ -99,7 +99,7 @@ namespace Entidades
 						if (secundaria->getId() == "projetil")
 						{
 							deletaProjetil(secundaria);
-							setAc(sf::Vector2f(-FORCAPROJETIL*secundaria->getvel().x, 0));
+							setAc(sf::Vector2f(-float(FORCAPROJETIL)*secundaria->getvel().x, 0));
 						}
 						if (secundaria->getId() == "espinho")
 						{
@@ -116,7 +116,7 @@ namespace Entidades
 						if (secundaria->getId() == "projetil")
 						{
 							deletaProjetil(secundaria);
-							setAc(sf::Vector2f(-FORCAPROJETIL*secundaria->getvel().x, 0));
+							setAc(sf::Vector2f(-float(FORCAPROJETIL)*secundaria->getvel().x, 0));
 						}
 						if (secundaria->getId() == "espinho")
 						{
@@ -132,7 +132,7 @@ namespace Entidades
 		}
 		void Jogador::esmagaInimigo(Entidade* inimigo)
 		{
-			setvel(sf::Vector2f(vel.x, -sqrt(2.0*GRAVIDADE*ALTURAPULO)));
+			setvel(sf::Vector2f(vel.x, -float(sqrt(2.0*float(GRAVIDADE)*float(ALTURAPULO)))));
 			ta_no_chao = false;
 			
 		}

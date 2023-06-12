@@ -6,7 +6,7 @@ namespace Entidades
 	namespace Personagens {
 		Canhao::Canhao(sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v, int h) :
 			Inimigo(tam, p, v, h),num(num_Canhao),
-			projetil(sf::Vector2f(25.0,25.0),sf::Vector2f(p.x,p.y+tam.y+0.5),sf::Vector2f(0.0,0.0))
+			projetil(sf::Vector2f(25.0,25.0),sf::Vector2f(p.x,p.y+tam.y+float(0.5)),sf::Vector2f(0.0,0.0))
 		{
 			textura = Pgrafico->mandaTextura("Arquivos/Imagens/Canhao.png");
 			box.setTexture(&textura);
@@ -67,11 +67,11 @@ namespace Entidades
 				novapos.x = pos.x + rand() % int(getTam().x - projetil.getTam().x);
 				novapos.y = pos.y - (projetil.getTam().y + 1.0f);
 				if (direcao == 1) 
-					novavel.x = (rand() % 5)+VELMINPROJETILX;
+					novavel.x = float(rand() % 5)+ float(VELMINPROJETILX);
 				
 				else
-					novavel.x = ( - rand() % 5 )- VELMINPROJETILX;
-				novavel.y = -((rand() % 5) + VELMINPROJETILY);
+					novavel.x = float( - rand() % 5 )- float(VELMINPROJETILX);
+				novavel.y = -(float(rand() % 5) + float(VELMINPROJETILY));
 
 				projetil.reiniciaProjetil(novapos, novavel);
 			}
