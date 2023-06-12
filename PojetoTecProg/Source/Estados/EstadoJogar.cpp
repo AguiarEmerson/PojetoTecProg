@@ -22,7 +22,7 @@ namespace Estados
 		fase->Executar();
 		if (fase->getGanho() == 1) {
 			fase->salvaPonto();
-			passaFase1();
+			passaFloresta();
 		}
 		else if (fase->getGanho() == 2)
 		{

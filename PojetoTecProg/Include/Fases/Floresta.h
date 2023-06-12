@@ -1,26 +1,26 @@
 #pragma once
 #include "..\Fases\Fase.h"
+#include "..\Lista\Lista.h"
 
 namespace Fases
 {
-	class Fase2 : public Fase
+	class Floresta : public Fase
 	{
 	protected:
 		int j;
-		int num_Espinho;
+		int num_Esteira;
 	public:
-		Fase2();
-		~Fase2();
-		void criaCanhao(sf::Vector2f pos);
-		void criaEspinho(sf::Vector2f pos);
+		Floresta();
+		~Floresta();
+
+		void criaandomelo(sf::Vector2f pos);
+		void criaEsteira(sf::Vector2f pos);
 		void criaEntidade(char id, sf::Vector2i pos);
 		void criaMapa(bool p);
 		void salva();
 		void verificaGanho();
-		int getGanho();
 		void Executar();
+		int getGanho();
 		void salvaPonto();
-		void carregaPonto();
-
 	};
 }

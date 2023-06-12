@@ -25,13 +25,13 @@
     <ClCompile Include="Source\Entidades\Personagens\Jogador2.cpp" />
     <ClCompile Include="Source\Estados\Estado.cpp" />
     <ClCompile Include="Source\Estados\EstadoJogar.cpp" />
-    <ClCompile Include="Source\Fases\Fase1.cpp" />
+    <ClCompile Include="Source\Fases\Floresta.cpp" />
     <ClCompile Include="Source\Entidades\Obstaculo\Espinho.cpp" />
     <ClCompile Include="Source\Entidades\Personagens\Canhao.cpp" />
     <ClCompile Include="Source\Entidades\Projetil.cpp" />
     <ClCompile Include="Source\Entidades\Personagens\Saltitos.cpp" />
     <ClCompile Include="Source\Fases\Fase.cpp" />
-    <ClCompile Include="Source\Fases\Fase2.cpp" />
+    <ClCompile Include="Source\Fases\Ceus.cpp" />
     <ClCompile Include="Source\Gerenciadores\Colisao.cpp" />
     <ClCompile Include="Source\Gerenciadores\MaquinadeEstados.cpp" />
     <ClCompile Include="Source\Gerenciadores\Grafico.cpp" />
@@ -67,8 +67,8 @@
     <ClInclude Include="Include\Entidades\Personagens\Inimigo.h" />
     <ClInclude Include="Include\Entidades\Personagens\Jogador.h" />
     <ClInclude Include="Include\Entidades\Personagens\Personagem.h" />
-    <ClInclude Include="Include\Fases\Fase1.h" />
-    <ClInclude Include="Include\Fases\Fase2.h" />
+    <ClInclude Include="Include\Fases\Floresta.h" />
+    <ClInclude Include="Include\Fases\Ceus.h" />
     <ClInclude Include="Include\Gerenciadores\Colisao.h" />
     <ClInclude Include="Include\Gerenciadores\MaquinadeEstados.h" />
     <ClInclude Include="Include\Gerenciadores\Grafico.h" />
@@ -117,10 +117,10 @@
     <None Include="ranking.dat" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="Arquivos\Fases\Mapa_fase1_1p.txt" />
-    <Text Include="Arquivos\Fases\Mapa_fase1_2p.txt" />
-    <Text Include="Arquivos\Fases\Mapa_fase2_1p.txt" />
-    <Text Include="Arquivos\Fases\Mapa_fase2_2p.txt" />
+    <Text Include="Arquivos\Fases\Mapa_Floresta_1p.txt" />
+    <Text Include="Arquivos\Fases\Mapa_Floresta_2p.txt" />
+    <Text Include="Arquivos\Fases\Mapa_Ceus_1p.txt" />
+    <Text Include="Arquivos\Fases\Mapa_Ceus_2p.txt" />
     <Text Include="Debug\PojetoTecProg.log" />
   </ItemGroup>
   <ItemGroup>

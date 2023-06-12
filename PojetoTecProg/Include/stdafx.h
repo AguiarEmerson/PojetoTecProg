@@ -26,6 +26,7 @@ using std::string;
 #define VELOCIDADECOICE 7.0
 #define ALTURAPULO 110.0
 #define VELOCIDADEJOGADOR 5.0
+#define DELAY 0.5
 //L é lateral
 #define IMPULSOESPINHOL 5.0
 #define PULOALTO 10.0

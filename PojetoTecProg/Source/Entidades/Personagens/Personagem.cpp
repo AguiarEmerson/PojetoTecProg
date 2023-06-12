@@ -1,4 +1,5 @@
 #include "..\Entidades\Personagens\Personagem.h"
+#include"..\..\..\Include\Gerenciadores\Grafico.h"
 
 namespace Entidades
 {
@@ -8,7 +9,7 @@ namespace Entidades
 			num_vidas(h),
 			dano(1)
 		{
-			
+			invencivel = 0;
 		}
 		Personagem::Personagem() :
 			Entidade(),
@@ -38,7 +39,10 @@ namespace Entidades
 
 		void Personagem::tomaDano(const int dano)
 		{
-			num_vidas-= dano;
+			if (Pgrafico->getrelogio().getElapsedTime().asSeconds() > invencivel + DELAY) {
+				num_vidas -= dano;
+				invencivel = Pgrafico->getrelogio().getElapsedTime().asSeconds();
+			}
 		}
 
 		void Personagem::setDano(const int dan)

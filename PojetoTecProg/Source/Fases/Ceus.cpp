@@ -1,8 +1,8 @@
-#include "..\Fases\Fase2.h"
+#include "..\Fases\Ceus.h"
 
 namespace Fases
 {
-    Fase2::Fase2() :
+    Ceus::Ceus() :
         Fase()
     {
         textura = Grafico::getgrafico()->carregarTextura("Arquivos/Imagens/fundo2.png");
@@ -10,23 +10,23 @@ namespace Fases
         num_Espinho = 3 + rand() % 10;
         j = 0;
     }
-    Fase2::~Fase2()
+    Ceus::~Ceus()
     {
     }
 
-    void Fase2::criaMapa(bool p)
+    void Ceus::criaMapa(bool p)
     {
         std::ifstream arquivo;
         std::string linha;
         deletaSave();
         if (p) {
-            arquivo.open("Arquivos/Fases/Mapa_fase2_2p.txt");
+            arquivo.open("Arquivos/Fases/Mapa_Ceus_2p.txt");
         }
         else {
-            arquivo.open("Arquivos/Fases/Mapa_fase2_1p.txt");
+            arquivo.open("Arquivos/Fases/Mapa_Ceus_1p.txt");
         }
         if (!arquivo.is_open()) {
-            std::cout << "nao foi possivel abrir o arquivo: Mapa_fase2" << std::endl;
+            std::cout << "nao foi possivel abrir o arquivo: Mapa_Ceus" << std::endl;
             exit(1);
         }
         int j = 0;
@@ -43,7 +43,7 @@ namespace Fases
         Pgrafico->setLista(&lista);
        carregaPonto();
     }
-    void Fase2::criaEspinho(sf::Vector2f pos)
+    void Ceus::criaEspinho(sf::Vector2f pos)
     {
         Entidades::Obstaculos::Espinho* espinho =
             new Entidades::Obstaculos::Espinho(sf::Vector2f(50.0, 50.0), pos);
@@ -56,7 +56,7 @@ namespace Fases
             exit(1);
         }
     }
-    void Fase2::criaCanhao(sf::Vector2f pos)
+    void Ceus::criaCanhao(sf::Vector2f pos)
     {
         Entidades::Personagens::Canhao* Canhao =
             new Entidades::Personagens::Canhao(sf::Vector2f(50.0, 50.0), pos);
@@ -69,7 +69,7 @@ namespace Fases
             exit(1);
         }
     }
-    void Fase2::criaEntidade(char id, sf::Vector2i pos)
+    void Ceus::criaEntidade(char id, sf::Vector2i pos)
     {
         sf::Vector2f posAux = sf::Vector2f(pos.x * 50.0f, pos.y * 50.0f);
         switch (id)
@@ -118,7 +118,7 @@ namespace Fases
 
         }
     }
-    void Fase2::salva()
+    void Ceus::salva()
     {
         std::ofstream GravadorFase("fase.dat", std::ios::out);
 
@@ -127,7 +127,7 @@ namespace Fases
             std::cout << " nao pode salvar fase" << std::endl;
             exit(1);
         }
-        GravadorFase << "Fase2" << std::endl;
+        GravadorFase << "Ceus" << std::endl;
 
         int i = 0;
         int tam = lista.getTam();
@@ -138,7 +138,7 @@ namespace Fases
         }
         GravadorFase.close();
     }
-    void Fase2::Executar()
+    void Ceus::Executar()
     {
         verificaGanho();
         verificaPerdeu();
@@ -159,7 +159,7 @@ namespace Fases
         //verifica as colisoes
         colisoes.executar();
     }
-    void Fase2::verificaGanho()
+    void Ceus::verificaGanho()
     {
         Lista<Entidade>::Elemento<Entidade>* aux;
         aux = lista.getPrim();
@@ -177,11 +177,11 @@ namespace Fases
             aux = aux->getProx();
         }
     }
-    int Fase2::getGanho()
+    int Ceus::getGanho()
     {
         return ganhoFase;
     }
-    void Fase2::salvaPonto()
+    void Ceus::salvaPonto()
     {
         std::ifstream ifs("ponto2.dat");
         if (ifs)
@@ -208,7 +208,7 @@ namespace Fases
         }
         gravaPonto.close();
     }
-    void Fase2::carregaPonto()
+    void Ceus::carregaPonto()
     {
         std::ifstream RecuperaPonto("ponto1.dat", std::ios::in);
         if (!RecuperaPonto) {

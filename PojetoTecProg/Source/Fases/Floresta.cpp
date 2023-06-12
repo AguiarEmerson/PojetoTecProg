@@ -1,9 +1,9 @@
-    #include "..\Fases\Fase1.h"
+    #include "..\Fases\Floresta.h"
 using namespace Listas;
 
 namespace Fases
 {
-	Fase1::Fase1() :
+	Floresta::Floresta() :
 		Fase()
 	{
         textura = Grafico::getgrafico()->carregarTextura("Arquivos/Imagens/fundo1.png");
@@ -11,23 +11,23 @@ namespace Fases
         num_Esteira = 2 + rand() % 6;
         j = 0;
 	}
-	Fase1::~Fase1()
+	Floresta::~Floresta()
 	{
 	}
 
-	void Fase1::criaMapa(bool p)
+	void Floresta::criaMapa(bool p)
 	{
         std::ifstream arquivo;
         std::string linha;
         deletaSave();
         if (p) {
-            arquivo.open("Arquivos/Fases/Mapa_fase1_2p.txt");
+            arquivo.open("Arquivos/Fases/Mapa_Floresta_2p.txt");
         }
         else {
-            arquivo.open("Arquivos/Fases/Mapa_fase1_1p.txt");
+            arquivo.open("Arquivos/Fases/Mapa_Floresta_1p.txt");
         }
         if (!arquivo.is_open()) {
-            std::cout << "nao foi possivel abrir o arquivo: Mapa_fase1" << std::endl;
+            std::cout << "nao foi possivel abrir o arquivo: Mapa_Floresta" << std::endl;
             exit(1);
         }
         int j = 0;
@@ -43,7 +43,7 @@ namespace Fases
         colisoes.setLista(&lista);
         Pgrafico->setLista(&lista);
 	}
-    void Fase1::criaEsteira(sf::Vector2f pos)
+    void Floresta::criaEsteira(sf::Vector2f pos)
     {
         Entidades::Obstaculos::Esteira* Esteira =
             new Entidades::Obstaculos::Esteira(sf::Vector2f(50.0, 50.0), pos, sf::Vector2f(0.0, 0.0));
@@ -56,7 +56,7 @@ namespace Fases
             exit(1);
         }
     }
-    void Fase1::criaandomelo(sf::Vector2f pos)
+    void Floresta::criaandomelo(sf::Vector2f pos)
     {
         Entidades::Personagens::andomelo* andomelo =
             new Entidades::Personagens::andomelo(sf::Vector2f(50.0, 50.0), pos);
@@ -75,7 +75,7 @@ namespace Fases
             exit(1);
         }
     }
-	void Fase1::criaEntidade(char id, sf::Vector2i pos)
+	void Floresta::criaEntidade(char id, sf::Vector2i pos)
 	{
 		sf::Vector2f posAux = sf::Vector2f(pos.x * 50.0f, pos.y * 50.0f);
 		switch (id)
@@ -124,7 +124,7 @@ namespace Fases
 
 		}
 	}
-    void Fase1::salva()
+    void Floresta::salva()
     {
         std::ofstream GravadorFase("fase.dat", std::ios::out);
         
@@ -133,7 +133,7 @@ namespace Fases
                 std::cout <<" nao pode salvar fase" << std::endl;
                 exit(1);
             }
-            GravadorFase << "Fase1" << std::endl;
+            GravadorFase << "Floresta" << std::endl;
 
             int i = 0;
             int tam = getTam();
@@ -143,7 +143,7 @@ namespace Fases
             }
             GravadorFase.close();
     }
-    void Fase1::Executar()
+    void Floresta::Executar()
     {
         //verifica se a fase foi vencida
         verificaGanho();
@@ -165,7 +165,7 @@ namespace Fases
         //verifica as colisoes
         colisoes.executar();
     }
-    void Fase1::verificaGanho() {
+    void Floresta::verificaGanho() {
         Lista<Entidade>::Elemento<Entidade>* aux;
         aux = lista.getPrim();
         int i, tam = lista.getTam();
@@ -183,11 +183,11 @@ namespace Fases
         }
 
     }
-    int Fase1::getGanho()
+    int Floresta::getGanho()
     {
         return ganhoFase;
     }
-    void Fase1::salvaPonto()
+    void Floresta::salvaPonto()
     {
         std::ifstream ifs("ponto1.dat");
         if (ifs)

@@ -72,7 +72,7 @@
     <ClCompile Include="Source\Principal.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Fases\Fase1.cpp">
+    <ClCompile Include="Source\Fases\Floresta.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
     <ClCompile Include="Source\Entidades\Personagens\Jogador1.cpp">
@@ -84,7 +84,7 @@
     <ClCompile Include="Source\Estados\Estado.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Fases\Fase2.cpp">
+    <ClCompile Include="Source\Fases\Ceus.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
     <ClCompile Include="Source\Estados\EstadoJogar.cpp">
@@ -179,7 +179,7 @@
     <ClInclude Include="Include\Entidades\Obstaculos\Espinho.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Fases\Fase1.h">
+    <ClInclude Include="Include\Fases\Floresta.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
     <ClInclude Include="Include\Entidades\Personagens\Jogador1.h">
@@ -194,7 +194,7 @@
     <ClInclude Include="Include\Estados\EstadoJogar.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Fases\Fase2.h">
+    <ClInclude Include="Include\Fases\Ceus.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
     <ClInclude Include="Include\Gerenciadores\MaquinadeEstados.h">
@@ -256,10 +256,10 @@
     <Text Include="Debug\PojetoTecProg.log">
       <Filter>Arquivos de Recurso</Filter>
     </Text>
-    <Text Include="Arquivos\Fases\Mapa_fase1_1p.txt" />
-    <Text Include="Arquivos\Fases\Mapa_fase1_2p.txt" />
-    <Text Include="Arquivos\Fases\Mapa_fase2_1p.txt" />
-    <Text Include="Arquivos\Fases\Mapa_fase2_2p.txt" />
+    <Text Include="Arquivos\Fases\Mapa_Floresta_1p.txt" />
+    <Text Include="Arquivos\Fases\Mapa_Floresta_2p.txt" />
+    <Text Include="Arquivos\Fases\Mapa_Ceus_1p.txt" />
+    <Text Include="Arquivos\Fases\Mapa_Ceus_2p.txt" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Sorce\Entidades\Personagens\download.jpeg">

@@ -10,6 +10,7 @@ namespace Entidades
 			int num_vidas;
 			int dano;
 			sf::Vector2f ac;
+			float invencivel;
 		public:
 			Personagem(sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v, int h);
 			Personagem();

@@ -4,8 +4,8 @@
 #include "..\Menus\MenuPausa.h"
 #include "..\Menus\GameOver.h"
 #include "..\Estados\EstadoJogar.h"
-#include "..\Fases\Fase1.h"
-#include "..\Fases\Fase2.h"
+#include "..\Fases\Floresta.h"
+#include "..\Fases\Ceus.h"
 #include "..\Estados\Ranking.h"
 
 namespace Estados
@@ -19,30 +19,30 @@ namespace Estados
 	{
 	}
 
-	Estado* Estado::criaestadojogar_fase1(bool p) 
+	Estado* Estado::criaestadojogar_Floresta(bool p) 
 	{
-		Fases::Fase* fase = static_cast<Fases::Fase*>(new Fases::Fase1());
+		Fases::Fase* fase = static_cast<Fases::Fase*>(new Fases::Floresta());
 		fase->criaMapa(p);
 		if (fase) {
 			Estados::EstadoJogar* estado = new EstadoJogar(fase);
 			return static_cast<Estados::Estado*> (estado);
 		}
 		else {
-			std::cout << "ERROR nao foi possivel criar uma Fase1" << std::endl;
+			std::cout << "ERROR nao foi possivel criar uma Floresta" << std::endl;
 			exit(1);
 		}
 	}
 
-	Estado* Estado::criaestadojogar_fase2(bool p)
+	Estado* Estado::criaestadojogar_Ceus(bool p)
 	{
-		Fases::Fase* fase = static_cast<Fases::Fase*>(new Fases::Fase2());
+		Fases::Fase* fase = static_cast<Fases::Fase*>(new Fases::Ceus());
 		fase->criaMapa(p);
 		if (fase) {
 			Estados::EstadoJogar* estado = new EstadoJogar(fase);
 			return static_cast<Estados::Estado*> (estado);
 		}
 		else {
-			std::cout << "ERROR nao foi possivel criar uma Fase2" << std::endl;
+			std::cout << "ERROR nao foi possivel criar uma Ceus" << std::endl;
 			exit(1);
 		}
 	}
@@ -56,19 +56,19 @@ namespace Estados
 		}
 		string fas;
 		qualFase >> fas;
-		Fases::Fase* fase1 = static_cast<Fases::Fase*>(new Fases::Fase1());
-		Fases::Fase* fase2 = static_cast<Fases::Fase*>(new Fases::Fase2());
-		if (fas == "Fase2") {
-			fase2->carregaSave();
-			if (fase2) {
-				Estados::EstadoJogar* estado = new EstadoJogar(fase2);
+		Fases::Fase* Floresta = static_cast<Fases::Fase*>(new Fases::Floresta());
+		Fases::Fase* Ceus = static_cast<Fases::Fase*>(new Fases::Ceus());
+		if (fas == "Ceus") {
+			Ceus->carregaSave();
+			if (Ceus) {
+				Estados::EstadoJogar* estado = new EstadoJogar(Ceus);
 				return static_cast<Estados::Estado*> (estado);
 			}
 		}
-		else if (fas == "Fase1") {
-			fase1->carregaSave();
-			if (fase1) {
-				Estados::EstadoJogar* estado = new EstadoJogar(fase1);
+		else if (fas == "Floresta") {
+			Floresta->carregaSave();
+			if (Floresta) {
+				Estados::EstadoJogar* estado = new EstadoJogar(Floresta);
 				return static_cast<Estados::Estado*> (estado);
 			}
 		}
@@ -105,17 +105,17 @@ namespace Estados
 
 	Estado* Estado::criaestado(string i) {
 		Estado* estado = NULL;
-		if      (i == "jogar_fase1_1p") {
-			estado = estado->criaestadojogar_fase1(false);
+		if      (i == "jogar_Floresta_1p") {
+			estado = estado->criaestadojogar_Floresta(false);
 		}
-		else if (i == "jogar_fase1_2p") {
-			estado = estado->criaestadojogar_fase1(true);
+		else if (i == "jogar_Floresta_2p") {
+			estado = estado->criaestadojogar_Floresta(true);
 		}
-		else if (i == "jogar_fase2_1p") {
-			estado = estado->criaestadojogar_fase2(false);
+		else if (i == "jogar_Ceus_1p") {
+			estado = estado->criaestadojogar_Ceus(false);
 		}
-		else if (i == "jogar_fase2_2p") {
-			estado = estado->criaestadojogar_fase2(true);
+		else if (i == "jogar_Ceus_2p") {
+			estado = estado->criaestadojogar_Ceus(true);
 		}
 		else if (i == "Menu_principal") {
 			estado = estado->criaestadoMenuPrincipal();
@@ -138,7 +138,7 @@ namespace Estados
 		return estado;
 	}
 
-	void Estado::passaFase1()
+	void Estado::passaFloresta()
 	{
 		pMaquinadeEstados->remove();
 		std::ifstream recuperaPonto("ponto1.dat", std::ios::in);
@@ -148,9 +148,9 @@ namespace Estados
 		recuperaPonto >> i >> j;
 		Estado* estado = NULL;
 		if (i=="jogador2") 
-			pMaquinadeEstados->incluir("jogar_fase2_1p");
+			pMaquinadeEstados->incluir("jogar_Ceus_1p");
 		else
-			pMaquinadeEstados->incluir("jogar_fase2_2p");
+			pMaquinadeEstados->incluir("jogar_Ceus_2p");
 		recuperaPonto.close();
 	}
 	void Estado::gameOver(const bool vitoria)
