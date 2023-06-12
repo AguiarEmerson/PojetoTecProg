@@ -13,7 +13,7 @@ namespace Entidades
 			const int num;
 			
 		public:
-			Canhao(sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v = sf::Vector2f(3.0, 0.0), int h = 3);
+			Canhao(sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v = sf::Vector2f(3.0, 0.0), int h = 4);
 			Canhao();
 			~Canhao();
 

@@ -6,7 +6,7 @@ namespace Entidades
 	namespace Personagens {
 		Canhao::Canhao(sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v, int h) :
 			Inimigo(tam, p, v, h),num(num_Canhao),
-			projetil(sf::Vector2f(15.0,15.0),sf::Vector2f(p.x,p.y+tam.y+0.5),sf::Vector2f(0.0,0.0))
+			projetil(sf::Vector2f(25.0,25.0),sf::Vector2f(p.x,p.y+tam.y+0.5),sf::Vector2f(0.0,0.0))
 		{
 			textura = Pgrafico->mandaTextura("Arquivos/Imagens/Canhao.png");
 			box.setTexture(&textura);

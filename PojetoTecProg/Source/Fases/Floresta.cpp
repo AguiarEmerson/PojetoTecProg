@@ -8,7 +8,8 @@ namespace Fases
 	{
         textura = Grafico::getgrafico()->carregarTextura("Arquivos/Imagens/fundo1.png");
         fundo.setTexture(&textura);
-        num_Esteira = 2 + rand() % 6;
+        srand(Pgrafico->getrelogio().getElapsedTime().asSeconds());
+        num_Esteira = 3 + rand() % 7;
         j = 0;
 	}
 	Floresta::~Floresta()

@@ -59,7 +59,7 @@ namespace Fases
     void Ceus::criaCanhao(sf::Vector2f pos)
     {
         Entidades::Personagens::Canhao* Canhao =
-            new Entidades::Personagens::Canhao(sf::Vector2f(50.0, 50.0), pos);
+            new Entidades::Personagens::Canhao(sf::Vector2f(100.0, 100.0), pos);
         if (Canhao) {
             lista.incluir(static_cast<Entidade*>(Canhao->getProjetil()));
             lista.incluir(static_cast<Entidade*>(Canhao));
