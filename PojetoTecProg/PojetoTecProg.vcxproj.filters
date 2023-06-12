@@ -248,6 +248,9 @@
     <None Include="Debug\PojetoTecProg.tlog\PojetoTecProg.lastbuildstate" />
     <None Include="Debug\PojetoTecProg.tlog\unsuccessfulbuild" />
     <None Include="Arquivos\ranking.dat" />
+    <None Include="ponto1.dat" />
+    <None Include="ponto2.dat" />
+    <None Include="ranking.dat" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Debug\PojetoTecProg.log">
@@ -302,6 +305,9 @@
       <Filter>Arquivos de Recurso</Filter>
     </Image>
     <Image Include="Arquivos\Imagens\trampolim.png">
+      <Filter>Arquivos de Recurso</Filter>
+    </Image>
+    <Image Include="Arquivos\Imagens\fundo2.png">
       <Filter>Arquivos de Recurso</Filter>
     </Image>
   </ItemGroup>

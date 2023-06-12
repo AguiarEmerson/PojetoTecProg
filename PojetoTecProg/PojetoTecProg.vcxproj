@@ -112,6 +112,9 @@
     <None Include="Debug\PojetoTecProg.tlog\PojetoTecProg.lastbuildstate" />
     <None Include="Debug\PojetoTecProg.tlog\unsuccessfulbuild" />
     <None Include="Arquivos\ranking.dat" />
+    <None Include="ponto1.dat" />
+    <None Include="ponto2.dat" />
+    <None Include="ranking.dat" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Arquivos\Fases\Mapa_fase1_1p.txt" />
@@ -124,6 +127,7 @@
     <Image Include="Arquivos\Imagens\esteirad.png" />
     <Image Include="Arquivos\Imagens\esteirae.png" />
     <Image Include="Arquivos\Imagens\fundo1.png" />
+    <Image Include="Arquivos\Imagens\fundo2.png" />
     <Image Include="Arquivos\Imagens\jogador2.png" />
     <Image Include="Arquivos\Imagens\lama.png" />
     <Image Include="Arquivos\Imagens\andomelo.png" />
