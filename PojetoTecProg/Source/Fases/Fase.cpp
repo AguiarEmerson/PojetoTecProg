@@ -27,15 +27,15 @@ namespace Fases
 
 	
 
-	void Fase::criaJogador1(sf::Vector2f pos)
+	void Fase::criarobo(sf::Vector2f pos)
 	{
 		Entidades::Personagens::Jogador* jogador = 
-			new Entidades::Personagens::Jogador1(sf::Vector2f(50.0,50.0),pos,sf::Vector2f(0.0, 0.0));
+			new Entidades::Personagens::robo(sf::Vector2f(50.0,50.0),pos,sf::Vector2f(0.0, 0.0));
 		if (jogador) {
 			int i, tam;
 			tam = lista.getTam();
 			for (i = 0; i < tam; i++) {
-				if (lista.getEnt(i)->getId() == "jogador1") {
+				if (lista.getEnt(i)->getId() == "robo") {
 					std::cout << "nao foi possivel gerar a fase pois o jogador 2 esta depois do 1" << std::endl;
 					exit(1);
 				}
@@ -47,18 +47,18 @@ namespace Fases
 			exit(1);
 		}
 	}
-	void Fase::criaJogador2(sf::Vector2f pos)
+	void Fase::criazoiudo(sf::Vector2f pos)
 	{
-		Entidades::Personagens::Jogador2* jogador =
-			new Entidades::Personagens::Jogador2(sf::Vector2f(50.0, 50.0), pos, sf::Vector2f(0.0, 0.0));
+		Entidades::Personagens::zoiudo* jogador =
+			new Entidades::Personagens::zoiudo(sf::Vector2f(50.0, 50.0), pos, sf::Vector2f(0.0, 0.0));
 		if (jogador) {
 			int i, tam;
 			bool achoJogador = false;
 			tam = lista.getTam();
 			for (i = 0; i < tam; i++) {
-				if (lista.getEnt(i)->getId() == "jogador1") {
+				if (lista.getEnt(i)->getId() == "robo") {
 					achoJogador = 1;
-					jogador->setJogador(static_cast<Jogador1*>(lista.getEnt(i)));
+					jogador->setJogador(static_cast<robo*>(lista.getEnt(i)));
 				}
 			}
 			if (achoJogador == false)
@@ -195,20 +195,20 @@ namespace Fases
 					lista.incluir(static_cast<Entidade*>(canhao->getProjetil()));
 					lista.incluir(entidade);
 				}
-				else if (id == "jogador1")
-					lista.incluir(Jogador1::carregarEnt(nomeArquivo));
-				else if (id == "jogador2") {
+				else if (id == "robo")
+					lista.incluir(robo::carregarEnt(nomeArquivo));
+				else if (id == "zoiudo") {
 					Entidade* entidade = NULL;
-					entidade=Jogador2::carregarEnt(nomeArquivo);
-					Jogador2* jogador = NULL;
-					jogador = static_cast<Jogador2*>(entidade);
+					entidade=zoiudo::carregarEnt(nomeArquivo);
+					zoiudo* jogador = NULL;
+					jogador = static_cast<zoiudo*>(entidade);
 					int i, tam;
 					bool achoJogador = false;
 					tam = lista.getTam();
 					for (i = 0; i < tam; i++) {
-						if (lista.getEnt(i)->getId() == "jogador1") {
+						if (lista.getEnt(i)->getId() == "robo") {
 							achoJogador = 1;
-							jogador->setJogador(static_cast<Jogador1*>(lista.getEnt(i)));
+							jogador->setJogador(static_cast<robo*>(lista.getEnt(i)));
 						}
 					}
 					if (achoJogador == false)
@@ -227,7 +227,7 @@ namespace Fases
 					bool achoJogador = false;
 					tam = lista.getTam();
 					for (i = 0; i < tam&&!achoJogador; i++) {
-						if (lista.getEnt(i)->getId() == "jogador1"||lista.getEnt(i)->getId()=="jogador2") {
+						if (lista.getEnt(i)->getId() == "robo"||lista.getEnt(i)->getId()=="zoiudo") {
 							achoJogador = true;
 							andomelo->setjogador(static_cast<Jogador*>(lista.getEnt(i)));
 						}
@@ -253,7 +253,7 @@ namespace Fases
 		perdeu=0;
 		for (i = 0; i < tam; i++)
 		{
-			if (aux->getData()->getId() == "jogador1" || aux->getData()->getId() == "jogador2")
+			if (aux->getData()->getId() == "robo" || aux->getData()->getId() == "zoiudo")
 			{
 				if (aux->getData()->getVivo() == false)
 					perdeu= 1;

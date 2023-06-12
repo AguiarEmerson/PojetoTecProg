@@ -18,16 +18,16 @@ namespace Menus
 	void MenuPrincipal::selecionar(Botao* botao)
 	{
 		if      (botao->getinfo() == "Jogar Fase 1: 1 player") {
-			pMaquinadeEstados->incluir("jogar_fase1_1p");
+			pMaquinadeEstados->incluir("jogar_Floresta_1p");
 		}
 		else if (botao->getinfo() == "Jogar Fase 1: 2 player") {
-			pMaquinadeEstados->incluir("jogar_fase1_2p");
+			pMaquinadeEstados->incluir("jogar_Floresta_2p");
 		}
 		else if (botao->getinfo() == "Jogar Fase 2: 1 player") {
-			pMaquinadeEstados->incluir("jogar_fase2_1p");
+			pMaquinadeEstados->incluir("jogar_Ceus_1p");
 		}
 		else if (botao->getinfo() == "Jogar Fase 2: 2 player") {
-			pMaquinadeEstados->incluir("jogar_fase2_2p");
+			pMaquinadeEstados->incluir("jogar_Ceus_2p");
 		}
 		else if (botao->getinfo() == "Continuar") {
 			pMaquinadeEstados->incluir("carregar_fase");

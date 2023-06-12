@@ -21,17 +21,17 @@
   <ItemGroup>
     <ClCompile Include="Source\Estados\Ranking.cpp" />
     <ClCompile Include="Source\Entidades\Obstaculo\Esteira.cpp" />
-    <ClCompile Include="Source\Entidades\Personagens\Jogador1.cpp" />
-    <ClCompile Include="Source\Entidades\Personagens\Jogador2.cpp" />
+    <ClCompile Include="Source\Entidades\Personagens\Robo.cpp" />
+    <ClCompile Include="Source\Entidades\Personagens\Zoiudo.cpp" />
     <ClCompile Include="Source\Estados\Estado.cpp" />
     <ClCompile Include="Source\Estados\EstadoJogar.cpp" />
-    <ClCompile Include="Source\Fases\Fase1.cpp" />
+    <ClCompile Include="Source\Fases\Floresta.cpp" />
     <ClCompile Include="Source\Entidades\Obstaculo\Espinho.cpp" />
     <ClCompile Include="Source\Entidades\Personagens\Canhao.cpp" />
     <ClCompile Include="Source\Entidades\Projetil.cpp" />
     <ClCompile Include="Source\Entidades\Personagens\Saltitos.cpp" />
     <ClCompile Include="Source\Fases\Fase.cpp" />
-    <ClCompile Include="Source\Fases\Fase2.cpp" />
+    <ClCompile Include="Source\Fases\Ceus.cpp" />
     <ClCompile Include="Source\Gerenciadores\Colisao.cpp" />
     <ClCompile Include="Source\Gerenciadores\MaquinadeEstados.cpp" />
     <ClCompile Include="Source\Gerenciadores\Grafico.cpp" />
@@ -67,8 +67,8 @@
     <ClInclude Include="Include\Entidades\Personagens\Inimigo.h" />
     <ClInclude Include="Include\Entidades\Personagens\Jogador.h" />
     <ClInclude Include="Include\Entidades\Personagens\Personagem.h" />
-    <ClInclude Include="Include\Fases\Fase1.h" />
-    <ClInclude Include="Include\Fases\Fase2.h" />
+    <ClInclude Include="Include\Fases\Floresta.h" />
+    <ClInclude Include="Include\Fases\Ceus.h" />
     <ClInclude Include="Include\Gerenciadores\Colisao.h" />
     <ClInclude Include="Include\Gerenciadores\MaquinadeEstados.h" />
     <ClInclude Include="Include\Gerenciadores\Grafico.h" />
@@ -86,8 +86,8 @@
     <ClInclude Include="Include\Entidades\Personagens\Saltitos.h" />
     <ClInclude Include="Include\Entidades\Obstaculos\Trampolim.h" />
     <ClInclude Include="Include\stdafx.h" />
-    <ClInclude Include="Include\Entidades\Personagens\Jogador1.h" />
-    <ClInclude Include="Include\Entidades\Personagens\Jogador2.h" />
+    <ClInclude Include="Include\Entidades\Personagens\Robo.h" />
+    <ClInclude Include="Include\Entidades\Personagens\Zoiudo.h" />
     <ClInclude Include="Include\Entidades\Obstaculos\Esteira.h" />
     <ClInclude Include="Include\Estados\Ranking.h" />
   </ItemGroup>
@@ -112,23 +112,27 @@
     <None Include="Debug\PojetoTecProg.tlog\PojetoTecProg.lastbuildstate" />
     <None Include="Debug\PojetoTecProg.tlog\unsuccessfulbuild" />
     <None Include="Arquivos\ranking.dat" />
+    <None Include="ponto1.dat" />
+    <None Include="ponto2.dat" />
+    <None Include="ranking.dat" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="Arquivos\Fases\Mapa_fase1_1p.txt" />
-    <Text Include="Arquivos\Fases\Mapa_fase1_2p.txt" />
-    <Text Include="Arquivos\Fases\Mapa_fase2_1p.txt" />
-    <Text Include="Arquivos\Fases\Mapa_fase2_2p.txt" />
+    <Text Include="Arquivos\Fases\Mapa_Floresta_1p.txt" />
+    <Text Include="Arquivos\Fases\Mapa_Floresta_2p.txt" />
+    <Text Include="Arquivos\Fases\Mapa_Ceus_1p.txt" />
+    <Text Include="Arquivos\Fases\Mapa_Ceus_2p.txt" />
     <Text Include="Debug\PojetoTecProg.log" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Arquivos\Imagens\esteirad.png" />
     <Image Include="Arquivos\Imagens\esteirae.png" />
     <Image Include="Arquivos\Imagens\fundo1.png" />
-    <Image Include="Arquivos\Imagens\jogador2.png" />
+    <Image Include="Arquivos\Imagens\fundo2.png" />
+    <Image Include="Arquivos\Imagens\zoiudo.png" />
     <Image Include="Arquivos\Imagens\lama.png" />
     <Image Include="Arquivos\Imagens\andomelo.png" />
     <Image Include="Arquivos\Imagens\espinho.png" />
-    <Image Include="Arquivos\Imagens\jogador1.png" />
+    <Image Include="Arquivos\Imagens\robo.png" />
     <Image Include="Arquivos\Imagens\Canhao.png" />
     <Image Include="Arquivos\Imagens\plataforma.png" />
     <Image Include="Imagens\plataformal.png" />

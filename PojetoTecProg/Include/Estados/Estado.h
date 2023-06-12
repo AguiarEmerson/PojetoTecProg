@@ -17,8 +17,8 @@ namespace Estados
 		~Estado();
 		static Estado* criaestado(string i);
 
-		Estado* criaestadojogar_fase1(bool p);
-		Estado* criaestadojogar_fase2(bool p);
+		Estado* criaestadojogar_Floresta(bool p);
+		Estado* criaestadojogar_Ceus(bool p);
 		Estado* criarestadoCarregarFase();
 		Estado* criaestadoMenuPrincipal();
 		Estado* criaestadoMenuPausa();
@@ -26,7 +26,7 @@ namespace Estados
 		Estado* criaestadoRanking();
 
 
-		void passaFase1();
+		void passaFloresta();
 		void gameOver(const bool vitoria);
 		virtual void Executar() = 0;
 		
