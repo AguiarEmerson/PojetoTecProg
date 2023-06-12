@@ -8,7 +8,6 @@ namespace Gerenciadores
 	private:
 		std::stack <Estados::Estado*> PilhadeEstados;
 
-		//singletojjn
 		static MaquinadeEstados* pMaquinadeEstados;
 		MaquinadeEstados();
 	public:

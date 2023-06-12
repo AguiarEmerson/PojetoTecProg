@@ -38,9 +38,9 @@ namespace Entidades
 			else if (dt <= TEMPOMOVECanhao/2)
 			{
 				if (direcao == 1)
-					setpos(sf::Vector2f(getpos().x + getvel().x, getpos().y));
+					vel.x = VELOCIDADEINIMIGO;
 				if (direcao == 0)
-					setpos(sf::Vector2f(getpos().x - getvel().x, getpos().y));
+					vel.x = -VELOCIDADEINIMIGO;
 			}
 			else {
 				tempo_total += TEMPOMOVECanhao;
@@ -51,7 +51,7 @@ namespace Entidades
 			primTempoTotal();
 			controlaProjetil();
 			move();
-			gravidade();
+			atualizaposicao();
 			verificaVida();
 		}
 

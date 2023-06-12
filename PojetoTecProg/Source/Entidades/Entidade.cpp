@@ -58,15 +58,15 @@ namespace Entidades
 		return vel;
 	}
 
-	void Entidade::gravidade()
+	void Entidade::atualizaposicao()
 	{
 		if (ta_no_chao) {
-			setvel(sf::Vector2f(vel.x, 0.0));
+			vel.y = 0.0;
 		}
 		else {
-			setvel(sf::Vector2f(vel.x, vel.y + GRAVIDADE)); //0.3 == gravidade
+			vel.y += GRAVIDADE;
 		}
-		setpos(sf::Vector2f(pos.x, pos.y + vel.y));
+		setpos(sf::Vector2f(pos.x+vel.x, pos.y + vel.y));
 	}
 	const sf::Vector2f Entidade::getTam()
 	{

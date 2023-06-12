@@ -31,12 +31,9 @@ namespace Entidades
 		void Jogador::pula()
 		{
 			if (ta_no_chao) {
-				setvel(sf::Vector2f(vel.x, - VELOCIDADEPULO));
-				setpos(sf::Vector2f(pos.x, pos.y + vel.y));
+				vel.y = -sqrt(2.0 * GRAVIDADE * ALTURAPULO);
+				ta_no_chao = false;
 			}
-			ta_no_chao = false;
-
-			setpos(sf::Vector2f(pos.x, pos.y + vel.y));
 		}
 
 		void Jogador::colide(Entidade* secundaria, sf::Vector2f ds)
@@ -135,7 +132,7 @@ namespace Entidades
 		}
 		void Jogador::esmagaInimigo(Entidade* inimigo)
 		{
-			setvel(sf::Vector2f(vel.x, - VELOCIDADEPULO));
+			setvel(sf::Vector2f(vel.x, -sqrt(2.0*GRAVIDADE*ALTURAPULO)));
 			ta_no_chao = false;
 			
 		}

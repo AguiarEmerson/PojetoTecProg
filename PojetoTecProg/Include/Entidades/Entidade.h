@@ -29,7 +29,7 @@ namespace Entidades
 		void setvel(const sf::Vector2f v);
 		const sf::Vector2f getvel();
 
-		void gravidade();
+		void atualizaposicao();
 		const sf::Vector2f getTam();
 
 		void setVivo(const bool vive);
