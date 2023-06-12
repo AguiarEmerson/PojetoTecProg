@@ -55,6 +55,7 @@
     <ClCompile Include="Source\Entidades\Obstaculo\Trampolim.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Include\AventuraFofa.h" />
     <ClInclude Include="Include\Entidades\Obstaculos\Espinho.h" />
     <ClInclude Include="Include\Estados\Estado.h" />
     <ClInclude Include="Include\Estados\EstadoJogar.h" />
@@ -80,7 +81,6 @@
     <ClInclude Include="Include\Menus\MenuPausa.h" />
     <ClInclude Include="Include\Menus\MenuPrincipal.h" />
     <ClInclude Include="Include\Menus\Texto.h" />
-    <ClInclude Include="Include\Principal.h" />
     <ClInclude Include="Include\Entidades\Personagens\Canhao.h" />
     <ClInclude Include="Include\Entidades\Projetil.h" />
     <ClInclude Include="Include\Entidades\Personagens\Saltitos.h" />

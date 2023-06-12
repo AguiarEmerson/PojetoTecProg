@@ -1,9 +1,9 @@
-#include "..\AventuraFofa.h"
+#include "..\principal.h"
 
-Gerenciadores::Grafico* AventuraFofa::Pgrafico = Gerenciadores::Grafico::getgrafico();
-Gerenciadores::MaquinadeEstados* AventuraFofa::pMaquinadeEstados = Gerenciadores::MaquinadeEstados::getMaquinadeEstados();
+Gerenciadores::Grafico* Principal::Pgrafico = Gerenciadores::Grafico::getgrafico();
+Gerenciadores::MaquinadeEstados* Principal::pMaquinadeEstados = Gerenciadores::MaquinadeEstados::getMaquinadeEstados();
 
-AventuraFofa::AventuraFofa()
+Principal::Principal()
 {
     if (Pgrafico == nullptr) {
         std::cout << "ERROR nao foi possivel criar o GerenciadorGrafico" << std::endl;
@@ -16,17 +16,17 @@ AventuraFofa::AventuraFofa()
     inicializa();
 }
 
-AventuraFofa::~AventuraFofa()
+Principal::~Principal()
 {
 }
 
-void AventuraFofa::inicializa()
+void Principal::inicializa() 
 {
 
     pMaquinadeEstados->incluir("Menu_principal");
 }
 
-void AventuraFofa::executar()
+void Principal::executar()
 {
     while (Pgrafico->verificaJanelaAberta()) {
         //limpa a tela

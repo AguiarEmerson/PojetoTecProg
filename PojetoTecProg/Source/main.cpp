@@ -1,8 +1,8 @@
-#include "..\Principal.h"
+#include "..\AventuraFofa.h"
 
 int main()
 {
-    Principal objPricipal;
+    AventuraFofa objPricipal;
     objPricipal.executar();
     
     return 0;

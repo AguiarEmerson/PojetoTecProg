@@ -14,7 +14,7 @@ namespace Gerenciadores {
 
 	Grafico::Grafico():
 	lista(nullptr),
-	window(new sf::RenderWindow(sf::VideoMode((unsigned int)TAMW_X, (unsigned int)TAMW_Y), "UAAU FUNCIONA", sf::Style::Titlebar | sf::Style::Close)),
+	window(new sf::RenderWindow(sf::VideoMode((unsigned int)TAMW_X, (unsigned int)TAMW_Y), "AventuraFofa", sf::Style::Titlebar | sf::Style::Close)),
 	camera(sf::Vector2f(TAMW_X / 2,TAMW_Y  / 2), sf::Vector2f(TAMW_X, TAMW_Y))
 	{
 		if (window == nullptr) {

@@ -125,9 +125,6 @@
     <ClInclude Include="Include\stdafx.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Principal.h">
-      <Filter>Arquivos de Recurso</Filter>
-    </ClInclude>
     <ClInclude Include="Include\Entidades\Entidade.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
@@ -222,6 +219,9 @@
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
     <ClInclude Include="Include\Estados\Ranking.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\AventuraFofa.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
   </ItemGroup>
