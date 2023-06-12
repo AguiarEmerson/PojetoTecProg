@@ -23,6 +23,43 @@ namespace Menus
 	GameOver::~GameOver()
 	{
 	}
+	void GameOver::salvaPonto(string nomeJ, int ponto)
+	{
+		std::ifstream pegaRanking("ranking.dat", std::ios::in);
+
+		unsigned int i;
+		string nomeAux;
+		int pontoAux;
+		std::multimap<int, string>ranking;
+		for (i = 0; i < 5; i++)
+		{
+			pegaRanking >> nomeAux >> pontoAux;
+			ranking.insert(std::pair<int, string>(pontoAux, nomeAux));
+		}
+		pegaRanking.clear();
+		pegaRanking.close();
+
+		ranking.insert(std::pair<int, string>(ponto, nomeJ));
+		std::ofstream geraRanking("ranking.dat", std::ios::out);
+		std::multimap<int, string> aux;
+		std::multimap<int, string>::iterator it;
+		unsigned int j;
+		for (i = 0; i < 5; i++)
+		{
+			it = ranking.begin();
+			for (j = 0; j < ranking.size() - i - 1; j++)
+			{
+				it++;
+			}
+			aux.insert(std::pair<int, string>(it->first, it->second));
+
+		}
+		for (it = aux.begin(); it != aux.end(); it++)
+			geraRanking << it->second << ' ' << it->first << std::endl;
+		geraRanking.close();
+
+
+	}
 
 	void GameOver::selecionar(Botao* botao)
 	{
@@ -233,43 +270,7 @@ namespace Menus
 		controlar();
 		tempo = Pgrafico->getrelogio().getElapsedTime().asSeconds();
 	}
-	void GameOver::salvaPonto(string nomeJ, int ponto)
-	{
-		std::ifstream pegaRanking("ranking.dat", std::ios::in);
-
-		unsigned int i;
-		string nomeAux;
-		int pontoAux;
-		std::multimap<int,string>ranking;
-		for (i = 0; i < 5; i++)
-		{
-			pegaRanking >> nomeAux >> pontoAux;
-			ranking.insert(std::pair<int,string>(pontoAux , nomeAux));
-		}
-		pegaRanking.clear();
-		pegaRanking.close();
-		
-		ranking.insert(std::pair<int, string>(ponto, nomeJ));
-		std::ofstream geraRanking("ranking.dat", std::ios::out);
-		std::multimap<int, string> aux;
-		std::multimap<int, string>::iterator it;
-		unsigned int j;
-		for(i=0;i<5;i++)
-		{
-			it = ranking.begin();
-			for (j=0;j<ranking.size()-i-1;j++)
-			{
-				it++;
-			}
-			aux.insert(std::pair<int, string>(it->first, it->second));
-			
-		}
-		for (it = aux.begin(); it != aux.end(); it++)
-			geraRanking << it->second << ' ' << it->first << std::endl;
-		geraRanking.close();
-		
-
-	}
+	
 	void GameOver::cadastraPontuacao() {
 		
 		std::ifstream pegaPonto("ponto2.dat", std::ios::in);
@@ -303,7 +304,6 @@ namespace Menus
 	}
 	void GameOver::cadastrasegundaPontuacao()
 	{
-		printf("oi");
 		std::ifstream pegaPonto("ponto2.dat", std::ios::in);
 		if (!pegaPonto)
 		{

@@ -6,7 +6,7 @@ namespace Entidades
 	namespace Personagens {
 		Canhao::Canhao(sf::Vector2f tam, sf::Vector2f p, sf::Vector2f v, int h) :
 			Inimigo(tam, p, v, h),num(num_Canhao),
-			projetil(sf::Vector2f(25.0,25.0),sf::Vector2f(p.x,p.y+tam.y+float(0.5)),sf::Vector2f(0.0,0.0))
+			projetil(sf::Vector2f(17.0,17.0),sf::Vector2f(p.x,p.y+tam.y+float(0.5)),sf::Vector2f(0.0,0.0))
 		{
 			textura = Pgrafico->mandaTextura("Arquivos/Imagens/Canhao.png");
 			box.setTexture(&textura);
@@ -114,7 +114,7 @@ namespace Entidades
 			bool chao = false, move = false, viv = false;
 			int dan = 0, num_vida = 0, direca = 0;
 			RecuperadorEnt >> posx >> posy >> velx >> vely >> chao >> move >> viv >> num_vida>>dan>>acx>>acy>>direca;
-			Canhao* canhao = new Canhao(sf::Vector2f(50.0, 50.0), sf::Vector2f(posx, posy), sf::Vector2f(velx, vely),num_vida);
+			Canhao* canhao = new Canhao(sf::Vector2f(100.0, 100.0), sf::Vector2f(posx, posy), sf::Vector2f(velx, vely),num_vida);
 			canhao->setTa_No_Chao(chao);
 			canhao->setVivo(viv);
 			canhao->setPodeMover(move);

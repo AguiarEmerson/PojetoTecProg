@@ -10,6 +10,8 @@ namespace Entidades
 	protected:
 		bool existe;
 		int dano;
+		static int num_Projetil;
+		const int num;
 	public:
 		Projetil(sf::Vector2f tam, sf::Vector2f p = sf::Vector2f(0.0, 0.0), sf::Vector2f v = sf::Vector2f(8.0, 0.0));
 		Projetil();

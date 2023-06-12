@@ -3,22 +3,24 @@
 namespace Entidades
 {
 	Projetil::Projetil(sf::Vector2f tam, sf::Vector2f p , sf::Vector2f v ):
-		Entidade(tam,p,v)
+		Entidade(tam,p,v),num(num_Projetil)
 	{
 		textura = Pgrafico->mandaTextura("Arquivos/Imagens/projetil.png");
 		box.setTexture(&textura);
 		dano = 1;
 		existe = false;
 		id = "projetil";
+		num_Projetil++;
 	}
 	Projetil::Projetil():
-		Entidade()
+		Entidade(), num(num_Projetil)
 	{
 		textura = Pgrafico->mandaTextura("Arquivos/Imagens/projetil.png");
 		box.setTexture(&textura);
 		dano = 1;
 		existe = false;
 		id = "projetil";
+		num_Projetil++;
 	}
 	Projetil::~Projetil()
 	{
@@ -63,7 +65,7 @@ namespace Entidades
 
 	string Projetil::salvaEnt()
 	{
-		string aux = criaNomeArquivo();
+		string aux = criaNomeArquivo(num);
 		char* nomeArquivo = &aux[0];
 		std::ofstream GravadorEnt(nomeArquivo, std::ios::out);
 		if (!GravadorEnt)
@@ -128,3 +130,4 @@ namespace Entidades
 	}
 	
 }
+int Entidades::Projetil::num_Projetil = 0;
