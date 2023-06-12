@@ -47,7 +47,7 @@ namespace Menus
 		inicializa();
 	}
 
-	void Texto::pop()
+	void Texto::operator--()
 	{
 		if (!info.empty()) {
 			info.pop_back();

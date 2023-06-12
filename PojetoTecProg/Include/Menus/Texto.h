@@ -22,7 +22,7 @@ namespace Menus
 		void setinfo(const std::string i);
 		void setPos(const sf::Vector2f pos);
 		void operator+(char l);
-		void pop();
+		void operator--();
 		sf::Vector2f getTam();
 	};
 }
