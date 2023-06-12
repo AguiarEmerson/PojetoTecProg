@@ -44,7 +44,7 @@ namespace Menus
 	{
 		if(sf::Keyboard::isKeyPressed(sf::Keyboard::BackSpace) && Podedigitar())
 		{
-			nome.pop();
+			nome.operator--();
 			tempo_total = Pgrafico->getrelogio().getElapsedTime().asSeconds();
 		}
 		
